@@ -112,7 +112,15 @@ module.exports = class BaseDevice extends Homey.Device {
           }
         }
 
-        await this.updateIfChanged('target_temperature', result.acState.targetTemperature);
+        // Determine the correct target temperature
+        const targetTemperature =
+          result.acState.temperatureUnit === 'F' && result.acState.nativeTemperatureUnit === 'C' && result.acState.nativeTargetTemperature !== undefined
+            ? result.acState.nativeTargetTemperature
+            : result.acState.targetTemperature;
+
+        // Update target_temperature capability
+        await this.updateIfChanged('target_temperature', targetTemperature);
+
         await this.updateIfChanged('se_fanlevel', result.acState.fanLevel);
         await this.updateIfChanged('se_fanlevel_pure', result.acState.fanLevel);
         await this.updateIfChanged('se_fandirection', result.acState.swing);

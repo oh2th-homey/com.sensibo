@@ -53,6 +53,14 @@
       "example": 23
     },
     {
+      "name": "temperatureUnit",
+      "type": "string",
+      "title": {
+        "en": "Temperature unit"
+      },
+      "example": "C"
+    },
+    {
       "name": "mode",
       "type": "string",
       "title": {

@@ -123,6 +123,7 @@ module.exports = class SensiboDevice extends BaseDevice {
 						on: anAcState.acState.on,
 						fanLevel: anAcState.acState.fanLevel ? anAcState.acState.fanLevel : '',
 						targetTemperature: anAcState.acState.targetTemperature,
+						temperatureUnit: anAcState.acState.temperatureUnit ? anAcState.acState.temperatureUnit : '',
 						mode: anAcState.acState.mode ? anAcState.acState.mode : '',
 						swing: anAcState.acState.swing ? anAcState.acState.swing : '',
 						failureReason: anAcState.failureReason ? anAcState.failureReason : '',
