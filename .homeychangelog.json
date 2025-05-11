@@ -160,5 +160,8 @@
   },
   "1.18.7": {
     "en": "Add onUninit() for devices"
+  },
+  "1.18.8": {
+    "en": "FIX: Detect if API is returning targetTemperature/temperatureUnit as C or F."
   }
 }
