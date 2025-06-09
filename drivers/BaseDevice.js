@@ -163,7 +163,9 @@ module.exports = class BaseDevice extends Homey.Device {
           await this.updateIfChanged('measure_co2', result.measurements.co2);
         }
         if (result.measurements.tvoc) {
-          await this.updateIfChanged('measure_tvoc', result.measurements.tvoc);
+          // Sensibo API returns TVOC in ppb, Homey expects µg/m³.
+          // Approximate conversion: 1 ppb ≈ 4.09 µg/m³ (approximation at 25°C, 1 atm)
+          await this.updateIfChanged('measure_tvoc', Math.round(result.measurements.tvoc * 4.09));
         }
         if (result.measurements.etoh) {
           await this.updateIfChanged('measure_etoh', result.measurements.etoh);
