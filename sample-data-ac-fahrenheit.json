@@ -1,0 +1,46 @@
+{
+  "id": "bQ9xT4Aa",
+  "room": {
+    "uid": "6cjGqTCi",
+    "name": "aula",
+    "icon": "Livingroom",
+    "pureBoostConfig": null
+  },
+  "acState": {
+    "timestamp": { "time": "2025-06-09T04:42:02.248993Z", "secondsAgo": 0 },
+    "on": true,
+    "mode": "heat",
+    "targetTemperature": 72,
+    "temperatureUnit": "F",
+    "nativeTargetTemperature": 22,
+    "nativeTemperatureUnit": "C",
+    "fanLevel": "medium_high",
+    "swing": "fixedMiddleBottom",
+    "horizontalSwing": "rangeFull"
+  },
+  "connectionStatus": {
+    "isAlive": true,
+    "lastSeen": { "time": "2025-06-09T04:41:39.963832Z", "secondsAgo": 22 }
+  },
+  "productModel": "airq",
+  "motionSensors": [],
+  "timer": null,
+  "filtersCleaning": {
+    "acOnSecondsSinceLastFiltersClean": 4984392,
+    "filtersCleanSecondsThreshold": 1080000,
+    "lastFiltersCleanTime": { "time": "2024-10-21T10:37:58Z", "secondsAgo": 19937044 },
+    "shouldCleanFilters": true
+  },
+  "measurements": {
+    "time": { "time": "2025-06-09T04:41:39.963832Z", "secondsAgo": 22 },
+    "temperature": 23,
+    "humidity": 47.7,
+    "feelsLike": 23,
+    "rssi": -61,
+    "motion": false,
+    "roomIsOccupied": null,
+    "tvoc": 42,
+    "co2": 473,
+    "iaq": 12
+  }
+}

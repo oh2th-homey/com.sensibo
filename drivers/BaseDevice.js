@@ -113,10 +113,7 @@ module.exports = class BaseDevice extends Homey.Device {
         }
 
         // Determine the correct target temperature
-        const targetTemperature =
-          result.acState.temperatureUnit === 'F' && result.acState.nativeTemperatureUnit === 'C' && result.acState.nativeTargetTemperature !== undefined
-            ? result.acState.nativeTargetTemperature
-            : result.acState.targetTemperature;
+        const targetTemperature = result.acState.temperatureUnit === 'F' ? Math.round(((result.acState.targetTemperature - 32) * 5) / 9) : result.acState.targetTemperature;
 
         // Update target_temperature capability
         await this.updateIfChanged('target_temperature', targetTemperature);
