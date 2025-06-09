@@ -96,6 +96,14 @@ module.exports = class BaseDevice extends Homey.Device {
   async onDeviceInfoReceived(result) {
     if (result) {
       this.log(`Device info for: ${this.getData().id}:`, result);
+      // Only convert targetTemperature if unit is F, measurements.temperature is always in C
+      if (result.acState && result.acState.temperatureUnit === 'F') {
+        if (typeof result.acState.targetTemperature === 'number') {
+          const origTemp = result.acState.targetTemperature;
+          result.acState.targetTemperature = util.toCelsius(origTemp);
+          this.log(`Converted targetTemperature from F (${origTemp}) to C (${result.acState.targetTemperature})`);
+        }
+      }
       if (result.acState) {
         this._sensibo.updateAcState(result.acState);
         if (await this.updateIfChanged('se_onoff', result.acState.on)) {

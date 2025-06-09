@@ -1282,7 +1282,7 @@
         "target_temperature": {
           "decimals": 0,
           "min": 10,
-          "max": 30,
+          "max": 31,
           "step": 1
         }
       },
