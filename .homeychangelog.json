@@ -163,5 +163,8 @@
   },
   "1.18.9": {
     "en": "FIX: Target temperature Fahrenheit handling in Sensibo API"
+  },
+  "1.19.0": {
+    "en": "BREAK: Require Homey OS 12.2.0 and above. Sensibo Elements: Revert measure_tvoc capability to Homey default capability, adds approximation from ppb to µg/m³."
   }
 }
