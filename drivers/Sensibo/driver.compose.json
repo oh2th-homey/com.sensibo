@@ -6,7 +6,7 @@
 	"$extends": [
 		"defaults"
 	],
-	"class": "thermostat",
+	"class": "airconditioning",
 	"capabilities": [
 		"se_onoff",
 		"target_temperature",

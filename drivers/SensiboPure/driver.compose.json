@@ -6,7 +6,7 @@
 	"$extends": [
 		"defaults"
 	],
-	"class": "fan",
+	"class": "airpurifier",
 	"capabilities": [
 		"se_onoff",
 		"se_fanlevel_pure",
