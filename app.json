@@ -84,7 +84,8 @@
             },
             "example": "Excellent"
           }
-        ]
+        ],
+        "deprecated": true
       },
       {
         "id": "alarm_filter",
@@ -1260,7 +1261,7 @@
       "name": {
         "en": "Sensibo"
       },
-      "class": "thermostat",
+      "class": "airconditioning",
       "capabilities": [
         "se_onoff",
         "target_temperature",
@@ -1349,7 +1350,7 @@
       "name": {
         "en": "Sensibo Elements"
       },
-      "class": "sensor",
+      "class": "other",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -1423,11 +1424,12 @@
       "name": {
         "en": "Sensibo Pure"
       },
-      "class": "fan",
+      "class": "airpurifier",
       "capabilities": [
         "se_onoff",
         "se_fanlevel_pure",
         "air_quality",
+        "level_aqi",
         "se_last_seen",
         "se_last_seen_seconds",
         "alarm_filter",
@@ -1592,7 +1594,7 @@
     "measure_iaq": {
       "type": "number",
       "title": {
-        "en": "Inside Air Qauality Score"
+        "en": "Indoor Air Quality Score"
       },
       "icon": "./assets/iaq.svg",
       "getable": true,

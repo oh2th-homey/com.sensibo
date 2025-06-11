@@ -19,5 +19,6 @@
       },
       "example": "Excellent"
     }
-  ]
+  ],
+  "deprecated": true
 }

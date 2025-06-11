@@ -1,7 +1,7 @@
 {
 	"type": "number",
 	"title": {
-		"en": "Indoor Air Qauality Score"
+		"en": "Indoor Air Quality Score"
 	},
 	"icon": "./assets/iaq.svg",
 	"getable": true,

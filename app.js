@@ -25,6 +25,7 @@ class SensiboApp extends Homey.App {
 		this._offlineTrigger = this.homey.flow.getDeviceTriggerCard('se_offline');
 		this._acStateChangedTrigger = this.homey.flow.getDeviceTriggerCard('se_ac_state_changed');
 		this._climateReactChangedTrigger = this.homey.flow.getDeviceTriggerCard('se_climate_react_changed');
+		// To be deprecated in favor of Homey's level_aqi
 		this._triggerAirQualityChanged = this.homey.flow.getDeviceTriggerCard('air_quality_changed');
 		this._timerCreatedTrigger = this.homey.flow.getDeviceTriggerCard('se_timer_created');
 		this._timerFiredTrigger = this.homey.flow.getDeviceTriggerCard('se_timer_fired');
