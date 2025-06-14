@@ -70,11 +70,11 @@ module.exports = class BaseDevice extends Homey.Device {
       await this.addCapability('measure_iaq');
     }
     if (capabilities.measurements.pm25 !== undefined && this.hasCapability('level_aqi') === false) {
-      // if (this.hasCapability('air_quality') === true) {
-        // To be deprecated in favor of level_aqi
-      //  await this.removeCapability('air_quality');
-      //}
       await this.addCapability('level_aqi');
+    }
+    // To be deprecated in favor of level_aqi
+    if (this.hasCapability('air_quality') === true) {
+      await this.removeCapability('air_quality');
     }
   }
 
@@ -183,11 +183,6 @@ module.exports = class BaseDevice extends Homey.Device {
         // PM2.5 is different for Pure (air_quality reference) and Elements (pm25 value)
         if (result.measurements.pm25) {
           if (result.productModel === 'pure') {
-            // To be deprecated in favor of level_aqi
-            const airQuality = util.AIR_QUALITIES[result.measurements.pm25];
-            if (airQuality) {
-              await this.updateIfChanged('air_quality', airQuality);
-            }
             const level_aqi = util.LEVEL_AQI[result.measurements.pm25];
             if (level_aqi) {
               await this.updateIfChanged('level_aqi', level_aqi)
