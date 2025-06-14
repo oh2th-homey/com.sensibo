@@ -166,5 +166,8 @@
   },
   "1.19.0": {
     "en": "BREAK: Require Homey OS 12.2.0 and above. Sensibo Elements: Revert measure_tvoc capability to Homey default capability, adds approximation from ppb to µg/m³."
+  },
+  "1.19.1": {
+    "en": "BREAK: Sensibo Pure: replaces custom *Air quality* capability and trigger with Homey default *Air quality level* capability and flow cards"
   }
 }
