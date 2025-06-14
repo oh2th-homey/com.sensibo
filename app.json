@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sensibo",
-  "version": "1.19.0",
+  "version": "1.19.1",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -1428,7 +1428,6 @@
       "capabilities": [
         "se_onoff",
         "se_fanlevel_pure",
-        "air_quality",
         "level_aqi",
         "se_last_seen",
         "se_last_seen_seconds",
@@ -1440,6 +1439,28 @@
       "capabilitiesOptions": {
         "se_onoff": {
           "greyout": true
+        },
+        "level_aqi": {
+          "values": [
+            {
+              "id": "good",
+              "title": {
+                "en": "Good"
+              }
+            },
+            {
+              "id": "fair",
+              "title": {
+                "en": "Fair"
+              }
+            },
+            {
+              "id": "poor",
+              "title": {
+                "en": "Poor"
+              }
+            }
+          ]
         }
       },
       "settings": [

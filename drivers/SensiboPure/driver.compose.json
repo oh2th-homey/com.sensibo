@@ -10,7 +10,7 @@
 	"capabilities": [
 		"se_onoff",
 		"se_fanlevel_pure",
-		"air_quality",
+    "level_aqi",
 		"se_last_seen",
 		"se_last_seen_seconds",
 		"alarm_filter",
@@ -21,6 +21,28 @@
 	"capabilitiesOptions": {
 		"se_onoff": {
 			"greyout": true
-		}
+		},
+    "level_aqi": {
+      "values": [
+        {
+          "id": "good",
+          "title": {
+            "en": "Good"
+          }
+        },
+        {
+          "id": "fair",
+          "title": {
+            "en": "Fair"
+          }
+        },
+        {
+          "id": "poor",
+          "title": {
+            "en": "Poor"
+          }
+        }
+      ]
+    }
 	}
 }
