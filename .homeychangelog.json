@@ -169,5 +169,8 @@
   },
   "1.19.1": {
     "en": "BREAK: Sensibo Pure: replaces custom *Air quality* capability and trigger with Homey default *Air quality level* capability and flow cards"
+  },
+  "1.20.0": {
+    "en": "ADD: Support additional modes for Sensibo such as dry and fan modes."
   }
 }
