@@ -78,8 +78,8 @@ module.exports = class BaseDevice extends Homey.Device {
         currentOptions = { values: [] };
       }
 
-      // Update only, if there are changes on thermostat_mode modes
-      if (util.arraysEqualIgnoreOrder(availableModes, currentOptions.values.map((option) => option.id)) === false) {
+      // Update only if there are changes on thermostat_mode modes
+      if (!util.arraysEqualIgnoreOrder(availableModes, currentOptions.values.map((option) => option.id))) {
         const newOptions = {
           values: availableModes.map((mode) => ({
             id: mode,
