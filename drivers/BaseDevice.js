@@ -59,6 +59,37 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onRemoteCapabilitiesReceived(capabilities) {
+    // Adjust modes for thermostat_mode
+    if (capabilities.modes !== undefined && this.hasCapability('thermostat_mode') === true) {
+      const defaultModes = ['auto', 'heat', 'cool', 'off'];
+      // Modes reported by the remote device
+      const remoteModes = util.getModes(capabilities) || [];
+
+      const availableModes = Array.from(new Set([...defaultModes, ...remoteModes]));
+
+      // Fetch current options (may throw if not set yet, so wrap safely)
+      let currentOptions;
+      try {
+        currentOptions = this.getCapabilityOptions('thermostat_mode');
+      } catch (err) {
+        currentOptions = { values: [] };
+      }
+
+      const currentModes = (currentOptions.values || []).map((v) => v.id);
+
+      // Update if there are changes on thermostat_mode modes
+      if (availableModes.length !== currentModes.length || !availableModes.every((mode) => currentModes.includes(mode))) {
+        const newOptions = {
+          values: availableModes.map((mode) => ({
+            id: mode,
+            title: this.homey.__(`thermostat_mode.${mode}`)
+          }))
+        };
+        await this.setCapabilityOptions('thermostat_mode', newOptions);
+        this.log('Updated thermostat_mode options ->', availableModes);
+      }
+    }
+
     // Add Sensibo device model specific measurement capabilities, if available and not yet added.
     if (capabilities.measurements.tvoc !== undefined && this.hasCapability('measure_tvoc') === false) {
       await this.addCapability('measure_tvoc');
@@ -185,7 +216,7 @@ module.exports = class BaseDevice extends Homey.Device {
           if (result.productModel === 'pure') {
             const level_aqi = util.LEVEL_AQI[result.measurements.pm25];
             if (level_aqi) {
-              await this.updateIfChanged('level_aqi', level_aqi)
+              await this.updateIfChanged('level_aqi', level_aqi);
             }
           }
           if (result.productModel === 'elements') {
