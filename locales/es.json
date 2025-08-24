@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Haz que tu aire acondicionado sea inteligente",
+    "apikey_help": "Ve a https://home.sensibo.com/me/api para obtener una clave API",
+    "apikey_header": "Introduce la clave API",
+    "apikey_label": "Clave API",
+    "valid_apikey": "Introduce una clave API válida",
+    "submit": "Enviar"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "No se pudieron recuperar los dispositivos.",
+    "no_devices": "No se encontraron dispositivos.",
+    "light_not_supported": "La luz no está soportada para este dispositivo."
+  },
+  "thermostat_mode": {
+    "auto": "Automático",
+    "heat": "Calentar",
+    "cool": "Enfriar",
+    "off": "Desactivado",
+    "dry": "Seco",
+    "fan": "Solo ventilador"
+  }
+}

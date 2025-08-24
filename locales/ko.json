@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "센시보",
+    "subtitle": "에어컨을 스마트하게 만드세요",
+    "apikey_help": "API 키를 얻으려면 https://home.sensibo.com/me/api 로 이동하세요",
+    "apikey_header": "API 키 입력",
+    "apikey_label": "API 키",
+    "valid_apikey": "유효한 API 키를 입력하세요",
+    "submit": "제출"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "장치를 가져오지 못했습니다.",
+    "no_devices": "장치를 찾을 수 없습니다.",
+    "light_not_supported": "이 장치에서는 조명이 지원되지 않습니다."
+  },
+  "thermostat_mode": {
+    "auto": "자동",
+    "heat": "난방",
+    "cool": "냉방",
+    "off": "꺼짐",
+    "dry": "제습",
+    "fan": "팬 전용"
+  }
+}

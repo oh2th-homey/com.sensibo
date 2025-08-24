@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Сделайте ваш кондиционер умным",
+    "apikey_help": "Перейдите на https://home.sensibo.com/me/api, чтобы получить API-ключ",
+    "apikey_header": "Введите API-ключ",
+    "apikey_label": "API-ключ",
+    "valid_apikey": "Введите действительный API-ключ",
+    "submit": "Отправить"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Не удалось получить устройства.",
+    "no_devices": "Устройства не найдены.",
+    "light_not_supported": "Подсветка не поддерживается для этого устройства."
+  },
+  "thermostat_mode": {
+    "auto": "Автоматически",
+    "heat": "Обогрев",
+    "cool": "Охлаждение",
+    "off": "Выкл",
+    "dry": "Осушение",
+    "fan": "Только вентилятор"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Rendez votre climatiseur intelligent",
+    "apikey_help": "Allez sur https://home.sensibo.com/me/api pour obtenir une clé API",
+    "apikey_header": "Entrez la clé API",
+    "apikey_label": "Clé API",
+    "valid_apikey": "Veuillez entrer une clé API valide",
+    "submit": "Valider"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Échec de la récupération des appareils.",
+    "no_devices": "Aucun appareil trouvé.",
+    "light_not_supported": "La lumière n'est pas prise en charge pour cet appareil."
+  },
+  "thermostat_mode": {
+    "auto": "Automatique",
+    "heat": "Chauffer",
+    "cool": "Refroidir",
+    "off": "Désactivé",
+    "dry": "Sec",
+    "fan": "Ventilateur seulement"
+  }
+}

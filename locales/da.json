@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Gør din aircondition smart",
+    "apikey_help": "Gå til https://home.sensibo.com/me/api for at få en API-nøgle",
+    "apikey_header": "Indtast API-nøglen",
+    "apikey_label": "API-nøgle",
+    "valid_apikey": "Indtast en gyldig API-nøgle",
+    "submit": "Send"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Kunne ikke hente enheder.",
+    "no_devices": "Ingen enheder blev fundet.",
+    "light_not_supported": "Lys understøttes ikke for denne enhed."
+  },
+  "thermostat_mode": {
+    "auto": "Automatisk",
+    "heat": "Opvarm",
+    "cool": "Køl ned",
+    "off": "Deaktiveret",
+    "dry": "Tør",
+    "fan": "Kun blæser"
+  }
+}

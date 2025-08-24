@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Rendi il tuo condizionatore intelligente",
+    "apikey_help": "Vai su https://home.sensibo.com/me/api per ottenere una chiave API",
+    "apikey_header": "Inserisci la chiave API",
+    "apikey_label": "Chiave API",
+    "valid_apikey": "Inserisci una chiave API valida",
+    "submit": "Invia"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Impossibile recuperare i dispositivi.",
+    "no_devices": "Nessun dispositivo trovato.",
+    "light_not_supported": "La luce non è supportata per questo dispositivo."
+  },
+  "thermostat_mode": {
+    "auto": "Automatica",
+    "heat": "Calore",
+    "cool": "Raffreddamento",
+    "off": "Disattivata",
+    "dry": "Asciutto",
+    "fan": "Solo ventilatore"
+  }
+}

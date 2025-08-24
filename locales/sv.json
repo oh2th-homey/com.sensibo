@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Gör din luftkonditionering smart",
+    "apikey_help": "Gå till https://home.sensibo.com/me/api för att få en API-nyckel",
+    "apikey_header": "Ange API-nyckeln",
+    "apikey_label": "API-nyckel",
+    "valid_apikey": "Ange en giltig API-nyckel",
+    "submit": "Skicka"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Misslyckades med att hämta enheter.",
+    "no_devices": "Inga enheter hittades.",
+    "light_not_supported": "Ljuset stöds inte för denna enhet."
+  },
+  "thermostat_mode": {
+    "auto": "Automatiskt",
+    "heat": "Värme",
+    "cool": "Kyla",
+    "off": "Av",
+    "dry": "Torr",
+    "fan": "Endast fläkt"
+  }
+}

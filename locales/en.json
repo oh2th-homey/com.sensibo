@@ -14,9 +14,9 @@
     "light_not_supported": "Light is not supported for this device."
   },
   "thermostat_mode": {
-    "cool": "Cool",
-    "heat": "Heat",
     "auto": "Automatic",
+    "heat": "Heat",
+    "cool": "Cool",
     "off": "Off",
     "dry": "Dry",
     "fan": "Fan Only"

@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Machen Sie Ihre Klimaanlage intelligent",
+    "apikey_help": "Gehen Sie zu https://home.sensibo.com/me/api, um einen API-Schlüssel zu erhalten",
+    "apikey_header": "API-Schlüssel eingeben",
+    "apikey_label": "API-Schlüssel",
+    "valid_apikey": "Bitte geben Sie einen gültigen API-Schlüssel ein",
+    "submit": "Senden"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Geräte konnten nicht abgerufen werden.",
+    "no_devices": "Es wurden keine Geräte gefunden.",
+    "light_not_supported": "Licht wird für dieses Gerät nicht unterstützt."
+  },
+  "thermostat_mode": {
+    "auto": "Automatisch",
+    "heat": "Heizen",
+    "cool": "Kühlen",
+    "off": "Aus",
+    "dry": "Trocken",
+    "fan": "Nur Lüfter"
+  }
+}

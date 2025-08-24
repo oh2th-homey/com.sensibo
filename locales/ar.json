@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "سينسيبو",
+    "subtitle": "اجعل مكيف الهواء الخاص بك ذكيًا",
+    "apikey_help": "اذهب إلى https://home.sensibo.com/me/api للحصول على مفتاح API",
+    "apikey_header": "أدخل مفتاح API",
+    "apikey_label": "مفتاح API",
+    "valid_apikey": "أدخل مفتاح API صالح",
+    "submit": "إرسال"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "فشل في استرجاع الأجهزة.",
+    "no_devices": "لم يتم العثور على أي أجهزة.",
+    "light_not_supported": "الإضاءة غير مدعومة لهذا الجهاز."
+  },
+  "thermostat_mode": {
+    "auto": "تلقائي",
+    "heat": "تسخين",
+    "cool": "تبريد",
+    "off": "إيقاف التشغيل",
+    "dry": "جاف",
+    "fan": "مروحة فقط"
+  }
+}

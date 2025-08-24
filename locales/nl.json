@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Maak je airconditioner slim",
+    "apikey_help": "Ga naar https://home.sensibo.com/me/api om een API-sleutel te krijgen",
+    "apikey_header": "Voer de API-sleutel in",
+    "apikey_label": "API-sleutel",
+    "valid_apikey": "Voer een geldige API-sleutel in",
+    "submit": "Versturen"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Het ophalen van apparaten is mislukt.",
+    "no_devices": "Geen apparaten gevonden.",
+    "light_not_supported": "Licht wordt niet ondersteund voor dit apparaat."
+  },
+  "thermostat_mode": {
+    "auto": "Automatisch",
+    "heat": "Verhitten",
+    "cool": "Koelen",
+    "off": "Uit",
+    "dry": "Droog",
+    "fan": "Alleen ventilator"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "title": "Sensibo",
+    "subtitle": "Spraw, aby Twój klimatyzator był inteligentny",
+    "apikey_help": "Przejdź do https://home.sensibo.com/me/api, aby uzyskać klucz API",
+    "apikey_header": "Wprowadź klucz API",
+    "apikey_label": "Klucz API",
+    "valid_apikey": "Wprowadź poprawny klucz API",
+    "submit": "Wyślij"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Nie udało się pobrać urządzeń.",
+    "no_devices": "Nie znaleziono urządzeń.",
+    "light_not_supported": "Światło nie jest obsługiwane dla tego urządzenia."
+  },
+  "thermostat_mode": {
+    "auto": "Automatyczny",
+    "heat": "Ogrzewanie",
+    "cool": "Chłodzenie",
+    "off": "Wył",
+    "dry": "Osuszanie",
+    "fan": "Tylko wentylator"
+  }
+}
