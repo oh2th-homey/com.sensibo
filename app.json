@@ -1570,20 +1570,6 @@
     }
   ],
   "capabilities": {
-    "air_quality": {
-      "type": "string",
-      "title": {
-        "en": "Air quality"
-      },
-      "desc": {
-        "en": "Air quality"
-      },
-      "icon": "./assets/air_quality.svg",
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": false
-    },
     "alarm_filter": {
       "type": "boolean",
       "title": {

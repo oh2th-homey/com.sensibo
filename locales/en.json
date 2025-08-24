@@ -12,5 +12,13 @@
     "failed_to_retrieve_devices": "Failed to retrieve devices.",
     "no_devices": "No devices were found.",
     "light_not_supported": "Light is not supported for this device."
+  },
+  "thermostat_mode": {
+    "cool": "Cool",
+    "heat": "Heat",
+    "auto": "Automatic",
+    "off": "Off",
+    "dry": "Dry",
+    "fan": "Fan Only"
   }
 }
