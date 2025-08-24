@@ -65,7 +65,10 @@ module.exports = class BaseDevice extends Homey.Device {
       // Modes reported by the remote device
       const remoteModes = util.getModes(capabilities) || [];
 
-      const availableModes = Array.from(new Set([...defaultModes, ...remoteModes]));
+      const availableModes = [
+        ...defaultModes,
+        ...remoteModes.filter((mode) => !defaultModes.includes(mode))
+      ];
 
       // Fetch current options (may throw if not set yet, so wrap safely)
       let currentOptions;
@@ -75,10 +78,10 @@ module.exports = class BaseDevice extends Homey.Device {
         currentOptions = { values: [] };
       }
 
-      const currentModes = (currentOptions.values || []).map((v) => v.id);
-
-      // Update if there are changes on thermostat_mode modes
-      if (availableModes.length !== currentModes.length || !availableModes.every((mode) => currentModes.includes(mode))) {
+      // Update only, if there are changes on thermostat_mode modes
+      if (
+        availableModes.length !== currentModes.length || !availableModes.every((mode) => currentModes.includes(mode)) || !currentModes.every((mode) => availableModes.includes(mode))
+      ) {
         const newOptions = {
           values: availableModes.map((mode) => ({
             id: mode,
