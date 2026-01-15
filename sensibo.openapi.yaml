@@ -1,0 +1,1289 @@
+openapi: 3.1.0
+info:
+  title: Sensibo API
+  version: 2.0.0
+  description: |
+    The Sensibo API is built on HTTP and follows REST principles. It accepts and returns JSON data in all requests.
+
+    ### Client Libraries
+
+    You can use any HTTP/REST library in your preferred programming language to interact with our API. We also provide an official [Python client library](https://github.com/Sensibo/sensibo-python-sdk) to get you started quickly.
+
+    ### Always use gzip in your requests
+
+    **Always enable gzip compression** by including the header `Accept-Encoding: gzip` in your requests to get a higher rate limit.
+
+    ### Try it Live
+
+    Want to explore the API interactively? Upload this specification file to [Swagger Editor](https://editor-next.swagger.io/?url=https://sensibo.github.io/sensibo.openapi.yaml) to try it live.
+
+    ### Getting Help
+
+    - **Facebook Group**: Join our [official Sensibo Facebook group](https://facebook.com/groups/sensibo) for community support and discussions
+    - **Support Site**: Visit our [support site](http://support.sensibo.com) for additional resources and documentation
+
+    ## Authentication
+
+    1. Generate your API keys in your [account settings](https://home.sensibo.com/me/api)
+    2. Include your API key in requests via the query parameter: `?apiKey={your_api_key}`
+    3. You can delete and rotate keys as needed from the same settings page
+
+    ## OAuth2
+
+    OAuth2 is available for commercial users. To get access and start developing, please contact support@sensibo.com with specific details.
+
+    ## Making Requests
+
+    ### GET Requests
+    Most GET endpoints support a `fields` parameter to specify which data fields to retrieve:
+    - Use comma-separated field names to get specific fields
+    - Use `fields=*` to get all available fields
+
+    ### Common Examples
+
+    **Get all devices info:**
+    ```bash
+    curl --compressed -X GET "https://home.sensibo.com/api/v2/users/me/pods?fields=*&apiKey={api_key}"
+    ```
+
+    **Turn AC on:**
+    ```bash
+    curl --compressed -X POST "https://home.sensibo.com/api/v2/pods/{device_id}/acStates?apiKey={api_key}" \
+      -d '{"acState":{"on":true}}'
+    ```
+
+    **Turn AC off:**
+    ```bash
+    curl --compressed -X POST "https://home.sensibo.com/api/v2/pods/{device_id}/acStates?apiKey={api_key}" \
+      -d '{"acState":{"on":false}}'
+    ```
+
+    **Get historical measurements:**
+    ```bash
+    curl --compressed "https://home.sensibo.com/api/v2/pods/{device_id}/historicalMeasurements?apiKey={api_key}&days=1"
+    ```
+
+    ### Rate Limiting
+    - Requests are subject to rate limiting
+    - HTTP 429 status code indicates you've hit the limit
+    - Using gzip compression can help increase your rate limits
+
+    ## Airbend API
+
+    The Airbend API is designed for commercial and enterprise customers who need to manage multiple devices across organizations. It provides bulk operations, user management, and advanced device control capabilities.
+
+    ### Key Features
+    - **Organization Management**: Create and manage organizations with device limits and user permissions
+    - **Bulk Operations**: Perform operations across multiple devices simultaneously
+    - **User Management**: Add/remove users and manage their permissions within organizations
+    - **Advanced Device Control**: Enhanced device management and monitoring capabilities
+
+    ### Access Requirements
+    - **Admin Only**: Organization admin privileges required for user management and sensitive operations
+    - **Organization Member**: Basic organization membership required for device access
+
+servers:
+  - url: https://home.sensibo.com/api/v2
+
+security:
+  - api_key: []
+
+tags:
+  - name: API
+    description: General API Commands
+  - name: Scheduling
+  - name: Climate React
+  - name: Airbend
+    description: Airbend API Commands
+
+paths:
+  /users/me/pods:
+    get:
+      summary: Get all devices
+      tags:
+        - API
+      parameters:
+        - name: fields
+          in: query
+          description: comma separated fields to retrieve or * for all
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: Successful response
+
+  "/pods/{device_id}":
+    get:
+      summary: Get specific device info
+      tags:
+        - API
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: fields
+          in: query
+          description: comma separated fields to retrieve or * for all
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+
+  "/pods/{device_id}/acStates":
+    get:
+      summary: Get current and previous AC states
+      tags:
+        - API
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: number of states to retrieve. Max=20
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+    post:
+      summary: Set the AC state
+      tags:
+        - API
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/acStateObject"
+      responses:
+        "200":
+          description: Success. Returns when command actually happened
+  "/pods/{device_id}/acStates/{property}":
+    patch:
+      summary: Change only one property of the AC state
+      tags:
+        - API
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: property
+          in: path
+          description: "The property to change (e.g., targetTemperature)"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/newValueObject"
+      responses:
+        "200":
+          description: Success. Returns historical measurements
+
+  "/pods/{device_id}/historicalMeasurements":
+    get:
+      summary: Get historical measurements
+      tags:
+        - API
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: number of days, default is 1
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Success. Returns when command actually happened
+  "/pods/{device_id}/events":
+    get:
+      summary: Get device events
+      description: |
+        Returns device-related events such as state changes.
+
+        ## Event Categories
+
+        ### Device Events (1,000,000 - 1,999,999)
+
+        #### AC State Events
+        - `1000000` - **AC State Changed** - Triggered when the air conditioner state is modified
+        - `1000010` - **AC Error Code Changed** - Triggered when the AC unit reports an error code change
+
+        #### Remote Control Events  
+        - `1010000` - **Remote Changed** - Triggered when remote control settings are modified
+        - `1011000` - **Remote Recognition Started** - Triggered when the device begins learning a new remote control
+
+        #### Scheduling Events
+        - `1020000` - **Schedule Changed** - Triggered when an existing schedule is modified
+        - `1020010` - **Schedule Created** - Triggered when a new schedule is created
+        - `1020020` - **Schedule Deleted** - Triggered when a schedule is removed
+
+        #### Climate React Events
+        - `1030000` - **Climate React Enabled/Disabled** - Triggered when Climate React feature is toggled
+        - `1030010` - **Climate React Geofence Toggle** - Triggered when Climate React is enabled/disabled based on geofence
+        - `1030020` - **Climate React Schedule Toggle** - Triggered when Climate React is enabled/disabled by schedule
+        - `1030030` - **Climate React Motion Toggle** - Triggered when Climate React is enabled/disabled based on motion
+        - `1030040` - **Climate React Sync Toggle** - Triggered when Climate React is enabled/disabled via sync
+        - `1031000` - **Climate React Threshold Crossed** - Triggered when temperature/humidity thresholds are crossed
+        - `1032000` - **Climate React Changed** - Triggered when Climate React settings are modified
+        - `1032100` - **Climate React Changed by Schedule** - Triggered when Climate React is modified by a scheduled event
+
+        #### Geofence Events
+        - `1040010` - **Everyone Left Geofence** - Triggered when all users leave the defined geofence area
+        - `1041000` - **Geofence Changed** - Triggered when geofence settings are modified
+
+        #### Motion Detection Events
+        - `1060000` - **Motion Detection Enabled/Disabled** - Triggered when motion detection is toggled
+        - `1060010` - **Motion Detection Geofence Toggle** - Triggered when motion detection is enabled/disabled based on geofence
+        - `1060020` - **Motion Detection Schedule Toggle** - Triggered when motion detection is enabled/disabled by schedule
+        - `1061000` - **Motion Sensor Created** - Triggered when a new motion sensor is added
+        - `1061010` - **Motion Sensor Changed** - Triggered when motion sensor settings are modified
+        - `1062000` - **Motion Detected** - Triggered when motion is detected
+        - `1062010` - **Motion Ended** - Triggered when motion is no longer detected
+
+        #### Pure Boost Events
+        - `1070000` - **Pure Boost Created** - Triggered when a Pure Boost session is created
+        - `1070010` - **Pure Boost Changed** - Triggered when Pure Boost settings are modified
+        - `1070020` - **Pure Boost Enabled/Disabled** - Triggered when Pure Boost feature is toggled
+        - `1070030` - **Pure Boost Schedule Toggle** - Triggered when Pure Boost is enabled/disabled by schedule
+        - `1070040` - **Pure Boost Unknown Event** - Triggered for unspecified Pure Boost events
+
+        #### Door Sensor Events
+        - `1080000` - **Door State Changed** - Triggered when a door sensor detects a state change
+
+        ### Location Events (2,000,000 - 2,999,999)
+
+        #### Location Management
+        - `2000000` - **Location Created** - Triggered when a new location is added to the account
+        - `2000010` - **Location Changed** - Triggered when location settings are modified
+
+        ### User Events (3,000,000 - 3,999,999)
+
+        #### User Geofence Events
+        - `3000000` - **User Entered Geofence** - Triggered when a user enters the defined geofence area
+        - `3000010` - **User Left Geofence** - Triggered when a user leaves the defined geofence area
+      tags:
+        - API
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: days_backwards
+          in: query
+          description: Number of days backwards to retrieve (default 1)
+          schema:
+            type: integer
+            default: 1
+      responses:
+        "200":
+          description: Device events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DeviceEvent"
+  "/pods/{device_id}/smartmode":
+    get:
+      summary: Get the Climate React settings
+      tags:
+        - Climate React
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+    put:
+      summary: Enable or disable Climate React
+      tags:
+        - Climate React
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                enabled:
+                  description: whether to enable or disable Climate React
+                  type: boolean
+      responses:
+        "200":
+          description: Success
+    post:
+      summary: Set Climate React configuration
+      tags:
+        - Climate React
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                enabled:
+                  description: whether to enable or disable Climate React
+                  type: boolean
+                lowTemperatureThreshold:
+                  description: low threshold to trigger Climate React
+                  type: number
+                lowTemperatureState:
+                  description: desired state when low threshold is triggered
+                  type: object
+                highTemperatureThreshold:
+                  description: high threshold to trigger Climate React
+                  type: number
+                highTemperatureState:
+                  description: desired state when high threshold is triggered
+                  type: object
+              example:
+                enabled: true
+                lowTemperatureThreshold: 22
+                lowTemperatureState: { "on": false }
+                highTemperatureThreshold: 25
+                highTemperatureState: { "on": true, mode: "cool" }
+
+      responses:
+        "200":
+          description: Success
+  "/doorSensors/{sensor_id}/events":
+    get:
+      summary: Get door sensor open/close events
+      description: Returns open/close events detected from the door sensor's history
+      tags:
+        - API
+      parameters:
+        - name: sensor_id
+          in: path
+          description: door sensor unique id (starts with ds_)
+          required: true
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days of history to analyze (default 1)
+          schema:
+            type: integer
+            default: 1
+      responses:
+        "200":
+          description: Door sensor events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DoorSensorEvent"
+  "/pods/{device_id}/timer/":
+    servers:
+      - url: https://home.sensibo.com/api/v1/
+    get:
+      summary: Get the current timer
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+    delete:
+      summary: Delete a timer
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+    put:
+      summary: Set a timer
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/timerObject"
+      responses:
+        "200":
+          description: Success
+  "/pods/{device_id}/schedules/":
+    servers:
+      - url: https://home.sensibo.com/api/v1/
+    get:
+      summary: Get the scheduled items
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+    post:
+      summary: create a new schedule
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/scheduleObject"
+      responses:
+        "200":
+          description: Success
+  "/pods/{device_id}/schedules/{schedule_id}/":
+    servers:
+      - url: https://home.sensibo.com/api/v1/
+    get:
+      summary: Get a specific schedule
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: schedule_id
+          in: path
+          description: schedule id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+    delete:
+      summary: Delete a specific schedule
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: schedule_id
+          in: path
+          description: schedule id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+    put:
+      summary: Enable or disable a specific schedule
+      tags:
+        - Scheduling
+      parameters:
+        - name: device_id
+          in: path
+          description: device unique id
+          required: true
+          schema:
+            type: string
+        - name: schedule_id
+          in: path
+          description: schedule id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                isEnabled:
+                  description: whether to enable or disable the schedule
+                  type: boolean
+      responses:
+        "200":
+          description: Success
+
+  # Airbend Device Management
+  "/airbend/me/devices":
+    get:
+      summary: Get all devices in an Airbend organization
+      description: Returns detailed information about all devices belonging to the organization
+      tags:
+        - Airbend
+      responses:
+        "200":
+          description: List of organization devices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AirbendDevice"
+
+  # Airbend Bulk Operations
+  "/airbend/me/bulk/historicalMeasurements":
+    get:
+      summary: Get bulk historical measurements for organization devices
+      description: Returns historical sensor measurements for all devices in the organization within the specified time range
+      tags:
+        - Airbend
+      parameters:
+        - name: minutes
+          in: query
+          schema:
+            type: integer
+            default: 60
+          description: Number of minutes back from now to retrieve measurements
+      responses:
+        "200":
+          description: Historical measurements by device
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkHistoricalMeasurements"
+
+  "/airbend/me/bulk/doorSensorEvents":
+    get:
+      summary: Get bulk door sensor events for organization devices
+      description: Returns door open/close events for all door sensors in the organization within the specified time range
+      tags:
+        - Airbend
+      parameters:
+        - name: minutes
+          in: query
+          schema:
+            type: integer
+            default: 60
+          description: Number of minutes back from now to retrieve events
+      responses:
+        "200":
+          description: Door sensor events by sensor
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkDoorSensorEvents"
+
+  "/airbend/me/bulk/events":
+    get:
+      summary: Get bulk device events for organization devices
+      description: Returns device events (state changes, connections, etc.) for all devices in the organization within the specified time range
+      tags:
+        - Airbend
+      parameters:
+        - name: minutes
+          in: query
+          schema:
+            type: integer
+            default: 60
+          description: Number of minutes back from now to retrieve events
+      responses:
+        "200":
+          description: Device events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DeviceEvent"
+
+  "/airbend/me/bulk/acStates":
+    post:
+      summary: Set AC state for multiple devices simultaneously
+      description: Applies the same AC state to multiple devices in the organization. Creates scheduled tasks for each device.
+      tags:
+        - Airbend
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BulkAcStateRequest"
+      responses:
+        "200":
+          description: Bulk AC state operation results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkAcStateResponse"
+
+  "/airbend/me/bulk/deviceReset":
+    post:
+      summary: Bulk reset devices in an organization (admin only)
+      description: Resets multiple devices by clearing their settings, timers, room assignments, and user associations. Only organization admins can perform this operation.
+      tags:
+        - Airbend
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BulkDeviceResetRequest"
+      responses:
+        "200":
+          description: Bulk device reset results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkDeviceResetResponse"
+
+  # Airbend User Management
+  "/airbend/me/users":
+    get:
+      summary: Get all users in an Airbend organization (admin only)
+      description: Returns a list of all users with their permissions in the organization. Only organization admins can access this endpoint.
+      tags:
+        - Airbend
+      responses:
+        "200":
+          description: List of organization users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AirbendUser"
+
+  "/airbend/me/users/{email}":
+    delete:
+      summary: Remove a user from an Airbend organization (admin only)
+      description: Removes a user from the organization. Only organization admins can perform this operation, and they cannot remove themselves.
+      tags:
+        - Airbend
+      parameters:
+        - name: email
+          in: path
+          required: true
+          schema:
+            type: string
+            format: email
+          description: User email address
+      responses:
+        "200":
+          description: User removed successfully
+
+  "/airbend/me/users/{email}/permissions":
+    get:
+      summary: Get user permissions in an Airbend organization
+      description: Returns the permissions for a specific user within the organization
+      tags:
+        - Airbend
+      parameters:
+        - name: email
+          in: path
+          required: true
+          schema:
+            type: string
+            format: email
+          description: User email address
+      responses:
+        "200":
+          description: User permissions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserPermissions"
+
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: query
+      name: apiKey
+
+  schemas:
+    acStateObject:
+      required:
+        - acState
+      properties:
+        acState:
+          $ref: "#/components/schemas/acState"
+    acState:
+      type: object
+      required:
+        - on
+        - mode
+        - fanLevel
+        - targetTemperature
+      properties:
+        on:
+          type: boolean
+          description: true for on, false for off
+        mode:
+          type: string
+          description: 'one of modes in remoteCapabilities ("cool", "heat", "fan", "auto", "dry")'
+        fanLevel:
+          type: string
+          description: 'one of fan levels in remoteCapabilities (e.g., "low", "medium", "high", "auto")'
+        targetTemperature:
+          type: integer
+          description: target temperature
+        temperatureUnit:
+          type: string
+          description: "'C' for Celsius or 'F' for Fahrenheit"
+        swing:
+          type: string
+          description: 'one of the swing states in remoteCapabilities (e.g., "stopped", "rangeful")'
+    newValueObject:
+      type: object
+      required:
+        - newValue
+      properties:
+        newValue:
+          type: string
+          description: the new value
+    timerObject:
+      type: object
+      required:
+        - minutesFromNow
+        - acState
+      properties:
+        minutesFromNow:
+          type: integer
+          description: fire the timer in X minutes
+        acState:
+          $ref: "#/components/schemas/acState"
+
+    scheduleObject:
+      type: object
+      required:
+        - targetTimeLocal
+        - timezone
+        - acState
+        - recurOnDaysOfWeek
+      properties:
+        targetTimeLocal:
+          type: string
+          description: time in 24 hour format. e.g., 22:15 for ten fifteen pm
+        timezone:
+          type: string
+          description: timezone for the user (e.g., Europe/Oslo)
+        acState:
+          $ref: "#/components/schemas/acState"
+        recurOnDaysOfWeek:
+          description: a list of days the schedule is recurring (e.g., ["sunday", "tuesday"]). Empty list if not recurring
+          type: array
+          items:
+            type: string
+
+    # Airbend Organization Schemas
+    AirbendOrganizationSummary:
+      type: object
+      properties:
+        organization:
+          $ref: "#/components/schemas/OrganizationDetails"
+        admins:
+          type: array
+          items:
+            $ref: "#/components/schemas/UserDetails"
+
+    AirbendOrganizationDetails:
+      type: object
+      properties:
+        organization:
+          $ref: "#/components/schemas/OrganizationDetails"
+        admins:
+          type: array
+          items:
+            $ref: "#/components/schemas/UserDetails"
+
+    OrganizationDetails:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Organization unique identifier
+        name:
+          type: string
+          description: Organization name
+        expires_at:
+          type: string
+          format: date-time
+          description: Organization expiration date
+        device_limit:
+          type: integer
+          description: Maximum number of devices allowed
+        control_remote_limit:
+          type: integer
+          description: Maximum number of control remotes allowed
+        room_sensor_limit:
+          type: integer
+          description: Maximum number of room sensors allowed
+        door_sensor_limit:
+          type: integer
+          description: Maximum number of door sensors allowed
+        is_active:
+          type: boolean
+          description: Whether the organization is active
+        comment:
+          type: string
+          description: Admin comments about the organization
+        account_owner:
+          type: string
+          format: email
+          description: Email of the account owner
+
+    CreateOrganizationRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: Organization name
+        expires_at:
+          type: string
+          format: date-time
+          description: Organization expiration date
+        device_limit:
+          type: integer
+          description: Maximum number of devices allowed
+        control_remote_limit:
+          type: integer
+          description: Maximum number of control remotes allowed
+        room_sensor_limit:
+          type: integer
+          description: Maximum number of room sensors allowed
+        door_sensor_limit:
+          type: integer
+          description: Maximum number of door sensors allowed
+        billing_organization:
+          type: string
+          description: UID of billing organization (for sub-organizations)
+
+    UpdateOrganizationRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Organization name
+        expires_at:
+          type: string
+          format: date-time
+          description: Organization expiration date
+        device_limit:
+          type: integer
+          description: Maximum number of devices allowed
+        control_remote_limit:
+          type: integer
+          description: Maximum number of control remotes allowed
+        room_sensor_limit:
+          type: integer
+          description: Maximum number of room sensors allowed
+        door_sensor_limit:
+          type: integer
+          description: Maximum number of door sensors allowed
+        is_active:
+          type: boolean
+          description: Whether the organization is active
+        comment:
+          type: string
+          description: Admin comments about the organization
+        account_owner:
+          type: string
+          format: email
+          description: Email of the account owner
+
+    UserDetails:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+        date_joined:
+          type: string
+          format: date-time
+
+    # Airbend Device Schemas
+    AirbendDevice:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Device unique identifier
+        isAlive:
+          type: boolean
+          description: Whether the device is currently connected
+        roomName:
+          type: string
+          description: Name of the room where device is located
+        tags:
+          type: array
+          items:
+            type: string
+          description: List of device tags
+        productModel:
+          type: string
+          description: Device product model
+        acState:
+          $ref: "#/components/schemas/acState"
+        remoteName:
+          type: string
+          description: Name of the associated remote control
+        location:
+          $ref: "#/components/schemas/DeviceLocation"
+        measurements:
+          $ref: "#/components/schemas/DeviceMeasurements"
+        acUsage:
+          type: number
+          description: AC usage for current month
+        filterCleaning:
+          $ref: "#/components/schemas/FilterCleaningInfo"
+        policies:
+          type: array
+          items:
+            type: string
+          description: List of policy UIDs applied to device
+        policy:
+          type: [string, "null"]
+          description: Current policy UID
+        qrId:
+          type: string
+          description: QR code identifier for device
+        hasSensiboRemote:
+          type: boolean
+          description: Whether device has a Sensibo remote
+        hasRoomSensor:
+          type: boolean
+          description: Whether device has room sensors
+        hasDoorSensor:
+          type: boolean
+          description: Whether device has door sensors
+        doorSensors:
+          type: array
+          items:
+            type: string
+          description: List of door sensor UIDs
+        roomSensors:
+          type: array
+          items:
+            type: string
+          description: List of room sensor UIDs
+        firstConnected:
+          type: [string, "null"]
+          format: date-time
+          description: First connection timestamp
+        lastDisconnected:
+          type: [string, "null"]
+          format: date-time
+          description: Last disconnection timestamp
+        serialNumber:
+          type: string
+          description: Device serial number
+
+    DeviceLocation:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Location name
+        uid:
+          type: [string, "null"]
+          description: Location unique identifier
+        latitude:
+          type: [number, "null"]
+          description: Location latitude
+        longitude:
+          type: [number, "null"]
+          description: Location longitude
+
+    DeviceMeasurements:
+      type: object
+      properties:
+        temperature:
+          type: number
+          description: Current temperature
+        humidity:
+          type: number
+          description: Current humidity
+        time:
+          type: string
+          format: date-time
+          description: Measurement timestamp
+
+    FilterCleaningInfo:
+      type: object
+      properties:
+        acOnSecondsSinceLastFiltersClean:
+          type: integer
+          description: Seconds of AC usage since last filter cleaning
+        filtersCleanSecondsThreshold:
+          type: integer
+          description: Threshold for filter cleaning reminder
+
+    MoveDevicesRequest:
+      type: object
+      required:
+        - device_uids
+      properties:
+        device_uids:
+          type: array
+          items:
+            type: string
+          description: List of device UIDs to move to the organization
+
+    # Airbend Bulk Operation Schemas
+    BulkHistoricalMeasurements:
+      type: object
+      additionalProperties:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: string
+                format: date-time
+              temperature:
+                type: number
+              humidity:
+                type: number
+      description: Historical measurements grouped by device UID, then by measurement type
+
+    BulkDoorSensorEvents:
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          $ref: "#/components/schemas/DoorSensorEvent"
+      description: Door sensor events grouped by sensor UID
+
+    DoorSensorEvent:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: Event timestamp
+        event:
+          type: string
+          enum: [opened, closed]
+          description: Door event type
+
+    DeviceEvent:
+      type: object
+      properties:
+        event_id:
+          type: integer
+          description: Unique event identifier. See Event Categories under the device events endpoint for meanings.
+        timestamp:
+          type: string
+          format: date-time
+          description: Event timestamp
+        event_kind:
+          type: string
+          description: Type of event
+        event_description:
+          type: string
+          description: Human-readable event description
+        details:
+          type: object
+          description: Additional event details
+        object_id:
+          type: string
+          description: Device UID that generated the event
+        object_kind:
+          type: string
+          description: Type of object (usually 'device')
+
+    BulkAcStateRequest:
+      type: object
+      required:
+        - device_uids
+        - acState
+      properties:
+        device_uids:
+          type: array
+          items:
+            type: string
+          description: List of device UIDs to apply the AC state to
+        acState:
+          $ref: "#/components/schemas/acState"
+
+    BulkAcStateResponse:
+      type: object
+      properties:
+        completed:
+          type: array
+          items:
+            type: string
+          description: List of device UIDs that were successfully scheduled
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/BulkOperationError"
+          description: List of errors for devices that failed
+
+    BulkDeviceResetRequest:
+      type: object
+      required:
+        - device_uids
+      properties:
+        device_uids:
+          type: array
+          items:
+            type: string
+          description: List of device UIDs to reset
+
+    BulkDeviceResetResponse:
+      type: object
+      properties:
+        completed:
+          type: array
+          items:
+            type: string
+          description: List of device UIDs that were successfully reset
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/BulkOperationError"
+          description: List of errors for devices that failed to reset
+
+    BulkOperationError:
+      type: object
+      properties:
+        device_uid:
+          type: string
+          description: Device UID that failed
+        error:
+          type: string
+          description: Error code
+        message:
+          type: string
+          description: Human-readable error message
+
+    # Airbend User Management Schemas
+    AirbendUser:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: User's first name
+        lastName:
+          type: string
+          description: User's last name
+        created:
+          type: string
+          format: date-time
+          description: User creation timestamp
+        email:
+          type: string
+          format: email
+          description: User email address
+        permissions:
+          $ref: "#/components/schemas/UserPermissions"
+
+    UserPermissions:
+      type: object
+      properties:
+        is_admin:
+          type: boolean
+          description: Whether user has admin privileges in the organization
+        can_control_devices:
+          type: boolean
+          description: Whether user can control devices
+        can_view_reports:
+          type: boolean
+          description: Whether user can view organization reports
+
+    # Staff-only endpoint schemas
+    EnableAirbendRequest:
+      type: object
+      required:
+        - organization_uid
+        - user_email
+      properties:
+        organization_uid:
+          type: string
+          description: Organization UID to add user to
+        user_email:
+          type: string
+          format: email
+          description: Email of user to add to organization
+
+    DisableAirbendRequest:
+      type: object
+      required:
+        - organization_uid
+        - user_email
+      properties:
+        organization_uid:
+          type: string
+          description: Organization UID to remove user from
+        user_email:
+          type: string
+          format: email
+          description: Email of user to remove from organization
