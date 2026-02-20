@@ -175,5 +175,8 @@
   },
   "1.20.1": {
     "en": "ADD: Support additional modes for Sensibo such as dry and fan modes."
+  },
+  "1.20.2": {
+    "en": "Add error handling for when device has been deleted and new data is received for that device."
   }
 }
