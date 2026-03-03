@@ -169,6 +169,7 @@ module.exports = class BaseDevice extends Homey.Device {
         if (thermostat_mode) {
           await this.updateIfChanged('thermostat_mode', thermostat_mode);
         }
+        await this.updateLightCapabilities(result.acState.light);
       }
       if (result.timer && result.timer.isEnabled && result.timer.targetTimeSecondsFromNow >= 0) {
         this.scheduleTimer(result.timer.targetTimeSecondsFromNow);
@@ -509,12 +510,25 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async isLightOn() {
+    const light = this._sensibo.getAcState()['light'];
+    if (light !== undefined) {
+      return light !== 'off';
+    }
     const lightModes = this._sensibo.getAllLights();
     if (lightModes) {
-      const light = this._sensibo.getAcState()['light'];
-      return !!light && light !== 'off';
+      return false;
     }
     throw new Error(this.homey.__('errors.light_not_supported'));
+  }
+
+  async updateLightCapabilities(lightState) {
+    if (lightState === undefined) {
+      return;
+    }
+    const normalizedLightState = lightState === 'off' ? 'off' : 'on';
+    if (this.hasCapability('se_light')) {
+      await this.updateIfChanged('se_light', normalizedLightState);
+    }
   }
 
   async onDeleteTimer() {
@@ -574,9 +588,18 @@ module.exports = class BaseDevice extends Homey.Device {
   async onControlLight(state) {
     try {
       this.clearCheckData();
-      this.log(`set light: ${this._sensibo.getDeviceId()} -> ${state}`);
-      await this._sensibo.setAcState({ light: state });
-      this.log(`set light OK: ${this._sensibo.getDeviceId()} -> ${state}`);
+      const normalizedState = String(state).toLowerCase();
+      if (normalizedState !== 'off' && normalizedState !== 'on') {
+        throw new Error(`Unsupported light state: ${normalizedState}`);
+      }
+      this.log(`set light: ${this._sensibo.getDeviceId()} -> ${normalizedState}`);
+      const lightModes = this._sensibo.getAllLights() || ['on', 'off'];
+      if (!lightModes.includes(normalizedState)) {
+        throw new Error(`Unsupported light state: ${normalizedState} (${lightModes.join(',')})`);
+      }
+      await this._sensibo.setAcProperty('light', normalizedState);
+      await this.updateLightCapabilities(normalizedState);
+      this.log(`set light OK: ${this._sensibo.getDeviceId()} -> ${normalizedState}`);
     } catch (err) {
       let message = err;
       if (err.response.data.message !== undefined) {
@@ -590,7 +613,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onLightAutocomplete(query, args) {
-    const items = this._sensibo.getAllLights() || ['on', 'off'];
+    const items = ['off', 'on'];
     return Promise.resolve(
       items
         .map((item) => {

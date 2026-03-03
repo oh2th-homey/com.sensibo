@@ -377,7 +377,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=Sensibo|SensiboPure"
+            "filter": "driver_id=Sensibo|SensiboPure|SensiboElements"
           }
         ]
       },
@@ -706,7 +706,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=Sensibo|SensiboPure"
+            "filter": "driver_id=Sensibo|SensiboPure|SensiboElements"
           },
           {
             "name": "state",
@@ -746,7 +746,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=Sensibo|SensiboPure"
+            "filter": "driver_id=Sensibo|SensiboPure|SensiboElements"
           },
           {
             "name": "state",
@@ -1352,6 +1352,7 @@
       },
       "class": "other",
       "capabilities": [
+        "se_light",
         "measure_temperature",
         "measure_humidity",
         "measure_co2",
@@ -1951,6 +1952,33 @@
       "setable": false,
       "uiComponent": null,
       "insights": false
+    },
+    "se_light": {
+      "type": "enum",
+      "title": {
+        "en": "Light"
+      },
+      "desc": {
+        "en": "Light state"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "insights": false,
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On"
+          }
+        }
+      ]
     },
     "se_onoff": {
       "type": "boolean",
