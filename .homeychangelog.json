@@ -178,5 +178,8 @@
   },
   "1.20.2": {
     "en": "Add error handling for when device has been deleted and new data is received for that device."
+  },
+  "1.20.3": {
+    "en": "FIX: A/C mode set to fan or dry from Sensibo mobile app was not reflected back to Homey."
   }
 }
