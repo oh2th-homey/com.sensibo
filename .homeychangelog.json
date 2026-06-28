@@ -181,5 +181,8 @@
   },
   "1.20.3": {
     "en": "FIX: A/C mode set to fan or dry from Sensibo mobile app was not reflected back to Homey."
+  },
+  "1.20.4": {
+    "en": "Linting fixes"
   }
 }
