@@ -164,8 +164,7 @@ module.exports = class BaseDevice extends Homey.Device {
         await this.updateIfChanged('se_fanlevel_pure', result.acState.fanLevel);
         await this.updateIfChanged('se_fandirection', result.acState.swing);
         await this.updateIfChanged('se_horizontal_swing', result.acState.horizontalSwing);
-        const thermostat_mode =
-          result.acState.on === false ? 'off' : result.acState.mode === 'heat' || result.acState.mode === 'cool' || result.acState.mode === 'auto' ? result.acState.mode : undefined;
+        const thermostat_mode = result.acState.on === false ? 'off' : result.acState.mode;
         if (thermostat_mode) {
           await this.updateIfChanged('thermostat_mode', thermostat_mode);
         }
@@ -342,7 +341,7 @@ module.exports = class BaseDevice extends Homey.Device {
       await this.setCapabilityValue('se_onoff', true).catch((err) => this.log(err));
       if (this.hasCapability('thermostat_mode')) {
         let mode = this._sensibo.getAcState()['mode'];
-        mode = mode !== 'heat' && mode !== 'cool' && mode !== 'auto' ? 'auto' : mode;
+        mode = mode || 'auto';
         await this.setCapabilityValue('thermostat_mode', mode).catch((err) => this.log(err));
       }
       this.homey.app._turnedOnTrigger.trigger(this, { state: 1 }, {});
