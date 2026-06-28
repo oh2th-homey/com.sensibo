@@ -1,0 +1,27 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Light"
+  },
+  "desc": {
+    "en": "Light state"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "insights": false,
+  "values": [
+    {
+      "id": "off",
+      "title": {
+        "en": "Off"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On"
+      }
+    }
+  ]
+}
