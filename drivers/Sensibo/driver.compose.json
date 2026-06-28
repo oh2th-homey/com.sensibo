@@ -30,6 +30,82 @@
 			"min": 10,
 			"max": 31,
 			"step": 1
-		}
+		},
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic",
+            "nl": "Automatisch",
+            "de": "Automatisch",
+            "fr": "Automatique",
+            "it": "Automatica",
+            "sv": "Automatiskt",
+            "no": "Automatisk",
+            "es": "Automático",
+            "da": "Automatisk",
+            "ru": "Автоматически",
+            "pl": "Automatyczny",
+            "ko": "자동",
+            "ar": "تلقائي"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat",
+            "nl": "Verhitten",
+            "de": "Heizen",
+            "fr": "Chauffer",
+            "it": "Calore",
+            "sv": "Värme",
+            "no": "Varme",
+            "es": "Calentar",
+            "da": "Opvarm",
+            "ru": "Обогрев",
+            "pl": "Ogrzewanie",
+            "ko": "난방",
+            "ar": "تسخين"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool",
+            "nl": "Koelen",
+            "de": "Kühlen",
+            "fr": "Refroidir",
+            "it": "Raffreddamento",
+            "sv": "Kyla",
+            "no": "Avkjøle",
+            "es": "Enfriar",
+            "da": "Køl ned",
+            "ru": "Охлаждение",
+            "pl": "Chłodzenie",
+            "ko": "냉방",
+            "ar": "تبريد"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "it": "Disattivata",
+            "sv": "Av",
+            "no": "Av",
+            "es": "Desactivado",
+            "da": "Deaktiveret",
+            "ru": "Выкл",
+            "pl": "Wył",
+            "ko": "꺼짐",
+            "ar": "إيقاف التشغيل"
+          }
+        }
+      ]
+    }
 	}
 }

@@ -5,6 +5,7 @@ const Sensibo = require('../lib/sensibo');
 const util = require('../lib/util');
 
 module.exports = class BaseDevice extends Homey.Device {
+
   async onInit() {
     await this.migrate();
     await this.createSensiboApi(this.log);
