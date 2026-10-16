@@ -1,13 +1,16 @@
 {
   "id": "sensibo_sync_state",
   "title": {
-    "en": "Sync power state"
+    "en": "Sync power state",
+    "nl": "Synchroniseer stroomstatus"
   },
   "titleFormatted": {
-    "en": "Sync power state [[state]]"
+    "en": "Sync power state [[state]]",
+    "nl": "Synchroniseer stroomstatus [[state]]"
   },
   "hint": {
-    "en": "Sync the power state of the Sensibo"
+    "en": "Sync the power state of the Sensibo",
+    "nl": "Synchroniseer de stroomstatus van de Sensibo"
   },
   "args": [
     {
@@ -18,20 +21,23 @@
     {
       "name": "state",
       "title": {
-        "en": "Power state"
+        "en": "Power state",
+        "nl": "Stroomstatus"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
           "id": "on",
           "label": {
-            "en": "On"
+            "en": "On",
+            "nl": "Aan"
           }
         }
       ]

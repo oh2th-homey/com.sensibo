@@ -1,7 +1,8 @@
 {
   "id": "se_climate_react_enabled",
   "title": {
-    "en": "Climate React is !{{enabled|disabled}}"
+    "en": "Climate React is !{{enabled|disabled}}",
+    "nl": "Climate React is !{{ingeschakeld|uitgeschakeld}}"
   },
   "args": [
     {

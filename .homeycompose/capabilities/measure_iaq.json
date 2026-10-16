@@ -1,7 +1,8 @@
 {
 	"type": "number",
 	"title": {
-		"en": "Indoor Air Quality Score"
+		"en": "Indoor Air Quality Score",
+    "nl": "Binnenluchtkwaliteitsscore"
 	},
 	"icon": "./assets/iaq.svg",
 	"getable": true,

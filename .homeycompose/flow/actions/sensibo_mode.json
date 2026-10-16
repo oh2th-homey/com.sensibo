@@ -2,13 +2,16 @@
   "id": "sensibo_mode",
   "deprecated": true,
   "title": {
-    "en": "Set the fan mode"
+    "en": "Set the fan mode",
+    "nl": "Stel de ventilatormodus in"
   },
   "titleFormatted": {
-    "en": "Set the fan mode to [[mode]]"
+    "en": "Set the fan mode to [[mode]]",
+    "nl": "Stel de ventilatormodus in op [[mode]]"
   },
   "hint": {
-    "en": "Set the mode (heat, cool, fan, auto or dry)"
+    "en": "Set the mode (heat, cool, fan, auto or dry)",
+    "nl": "Stel de modus in (warmte, koelen, ventileren, auto of drogen)"
   },
   "args": [
     {
@@ -19,26 +22,30 @@
     {
       "name": "mode",
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "cool",
           "label": {
-            "en": "Cool"
+            "en": "Cool",
+            "nl": "Koelen"
           }
         },
         {
           "id": "heat",
           "label": {
-            "en": "Heat"
+            "en": "Heat",
+            "nl": "Verwarmen"
           }
         },
         {
           "id": "fan",
           "label": {
-            "en": "Fan"
+            "en": "Fan",
+            "nl": "Ventileren"
           }
         },
         {
@@ -50,7 +57,8 @@
         {
           "id": "dry",
           "label": {
-            "en": "Dry"
+            "en": "Dry",
+            "nl": "Drogen"
           }
         }
       ]

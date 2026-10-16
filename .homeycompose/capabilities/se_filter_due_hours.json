@@ -1,13 +1,16 @@
 {
   "type": "number",
   "title": {
-    "en": "Filter hours remaining"
+    "en": "Filter hours remaining",
+    "nl": "Uren resterend voor filter"
   },
   "desc": {
-    "en": "Hours remaining to clean filters."
+    "en": "Hours remaining to clean filters.",
+    "nl": "Uren resterend voor filterreiniging."
   },
   "units": {
-      "en": "h"
+    "en": "h",
+    "nl": "u"
   },
   "icon": "./assets/clock.svg",
   "getable": true,

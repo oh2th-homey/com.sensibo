@@ -1,7 +1,8 @@
 {
   "id": "se_ac_state_changed",
   "title": {
-    "en": "AC state changed"
+    "en": "AC state changed",
+    "nl": "AC status veranderd"
   },
   "tokens": [
     {
@@ -16,7 +17,8 @@
       "name": "reason",
       "type": "string",
       "title": {
-        "en": "Reason"
+        "en": "Reason",
+        "nl": "Reden"
       },
       "example": "ScheduledCommand"
     },
@@ -24,7 +26,8 @@
       "name": "failureReason",
       "type": "string",
       "title": {
-        "en": "Failure reason"
+        "en": "Failure reason",
+        "nl": "Faalreden"
       },
       "example": "Some reason"
     },
@@ -32,7 +35,8 @@
       "name": "on",
       "type": "boolean",
       "title": {
-        "en": "On"
+        "en": "On",
+        "nl": "Aan"
       },
       "example": true
     },
@@ -40,7 +44,8 @@
       "name": "fanLevel",
       "type": "string",
       "title": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "example": "low"
     },
@@ -48,7 +53,8 @@
       "name": "targetTemperature",
       "type": "number",
       "title": {
-        "en": "Target temperature"
+        "en": "Target temperature",
+        "nl": "Doeltemperatuur"
       },
       "example": 23
     },
@@ -56,7 +62,8 @@
       "name": "mode",
       "type": "string",
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus"
       },
       "example": "cool"
     },
@@ -64,7 +71,8 @@
       "name": "swing",
       "type": "string",
       "title": {
-        "en": "Swing"
+        "en": "Swing",
+        "nl": "Luchtstroom"
       },
       "example": "stopped"
     }

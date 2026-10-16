@@ -1,13 +1,16 @@
 {
   "id": "sensibo_cr",
   "title": {
-    "en": "Control Climate React"
+    "en": "Control Climate React",
+    "nl": "Control Reactie regelen"
   },
   "titleFormatted": {
-    "en": "Climate React [[enabled]]"
+    "en": "Climate React [[enabled]]",
+    "nl": "Zet Climate React [[enabled]]"
   },
   "hint": {
-    "en": "Enable or disable Climate React"
+    "en": "Enable or disable Climate React",
+    "nl": "Schakel Climate React in of uit"
   },
   "args": [
     {
@@ -18,20 +21,23 @@
     {
       "name": "enabled",
       "title": {
-        "en": "Enabled"
+        "en": "State",
+        "nl": "Status"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
           "id": "on",
           "label": {
-            "en": "On"
+            "en": "On",
+            "nl": "Aan"
           }
         }
       ]

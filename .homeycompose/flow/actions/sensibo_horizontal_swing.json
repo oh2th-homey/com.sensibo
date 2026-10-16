@@ -1,13 +1,16 @@
 {
   "id": "sensibo_horizontal_swing",
   "title": {
-    "en": "Set horizontal swing"
+    "en": "Set horizontal swing",
+    "nl": "Stel horizontale luchtstroom in"
   },
   "titleFormatted": {
-    "en": "Set horizontal swing to [[horizontalSwing]]"
+    "en": "Set horizontal swing to [[horizontalSwing]]",
+    "nl": "Stel horizontale luchtstroom in op [[horizontalSwing]]"
   },
   "hint": {
-    "en": "Set the horizontal swing"
+    "en": "Set the horizontal swing",
+    "nl": "Stel de horizontale luchtstroom in"
   },
   "args": [
     {
@@ -18,11 +21,13 @@
     {
       "name": "horizontalSwing",
       "label": {
-        "en": "Horizontal swing"
+        "en": "Horizontal swing",
+        "nl": "Horizontale luchtstroom"
       },
       "type": "autocomplete",
       "placeholder": {
-        "en": "Horizontal swing..."
+        "en": "Horizontal swing...",
+        "nl": "Horizontale luchtstroom..."
       }
     }
   ]

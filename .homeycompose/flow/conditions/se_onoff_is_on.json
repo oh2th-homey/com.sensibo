@@ -1,7 +1,8 @@
 {
   "id": "se_onoff_is_on",
   "title": {
-    "en": "Device is !{{on|off}}"
+    "en": "Device is !{{on|off}}",
+    "nl": "Apparaat is !{{aan|uit}}"
   },
   "args": [
     {

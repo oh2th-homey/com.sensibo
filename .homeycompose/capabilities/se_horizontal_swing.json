@@ -1,10 +1,12 @@
 {
   "type": "enum",
   "title": {
-    "en": "Horizontal swing"
+    "en": "Horizontal swing",
+    "nl": "Horizontale luchtstroom"
   },
   "desc": {
-    "en": "Horizontal swing"
+    "en": "Horizontal swing",
+    "nl": "Horizontale luchtstroom"
   },
   "getable": true,
   "setable": true,
@@ -14,55 +16,64 @@
     {
       "id": "stopped",
       "title": {
-        "en": "Stopped"
+        "en": "Stopped",
+        "nl": "Gestopt"
       }
     },
     {
       "id": "fixedLeft",
       "title": {
-        "en": "Fixed left"
+        "en": "Fixed left",
+        "nl": "Vast links"
       }
     },
     {
       "id": "fixedCenterLeft",
       "title": {
-        "en": "Fixed center left"
+        "en": "Fixed center left",
+        "nl": "Vast midden links"
       }
     },
     {
       "id": "fixedCenter",
       "title": {
-        "en": "Fixed center"
+        "en": "Fixed center",
+        "nl": "Vast midden"
       }
     },
     {
       "id": "fixedCenterRight",
       "title": {
-        "en": "Fixed center right"
+        "en": "Fixed center right",
+        "nl": "Vast midden rechts"
       }
     },
     {
       "id": "fixedRight",
       "title": {
-        "en": "Fixed right"
+        "en": "Fixed right",
+        "nl": "Vast rechts"
       }
     },
     {
       "id": "fixedLeftRight",
       "title": {
-        "en": "Fixed left right"
+        "en": "Fixed left right",
+        "nl": "Vast links rechts"
       }
     },
     {
       "id": "rangeCenter",
       "title": {
-        "en": "Range center"
+        "en": "Range center",
+        "nl": "Bereik midden"
       }
     },
     {
       "id": "rangeFull",
       "title": {
-        "en": "Range full"
+        "en": "Range full",
+        "nl": "Bereik volledig"
       }
     }
   ]
