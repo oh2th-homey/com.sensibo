@@ -1,10 +1,12 @@
 {
 	"type": "number",
 	"title": {
-		"en": "Ethanol"
+		"en": "Ethanol",
+    "nl": "Ethanol"
 	},
 	"units": {
-		"en": "ppm"
+		"en": "ppm",
+    "nl": "ppm"
 	},
 	"icon": "./assets/EtOH.svg",
 	"uiComponent": "sensor",

@@ -2,12 +2,14 @@
   "id": "Delay_Offline",
   "type": "number",
   "label": {
-    "en": "Delay for offline"
+    "en": "Delay for offline",
+    "nl": "Vertraging voor offline"
   },
   "value": 300,
   "min": 120,
   "max": 3600,
   "hint": {
-    "en": "Delay when checking if the device is offline (seconds)"
+    "en": "Delay when checking if the device is offline (seconds)",
+    "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)"
   }
 }

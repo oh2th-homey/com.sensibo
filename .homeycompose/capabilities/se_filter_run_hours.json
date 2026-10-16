@@ -1,13 +1,16 @@
 {
   "type": "number",
   "title": {
-    "en": "Filter hours"
+    "en": "Filter hours",
+    "nl": "Filter uren"
   },
   "desc": {
-    "en": "Run hours since filters cleaned."
+    "en": "Run hours since filters cleaned.",
+    "nl": "Aantal uren sinds de filters zijn schoongemaakt."
   },
   "units": {
-    "en": "h"
+    "en": "h",
+    "nl": "u"
   },
   "icon": "./assets/clock.svg",
   "getable": true,

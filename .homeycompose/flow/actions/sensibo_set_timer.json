@@ -1,13 +1,16 @@
 {
   "id": "sensibo_set_timer",
   "title": {
-    "en": "Set timer"
+    "en": "Set timer",
+    "nl": "Timer instellen"
   },
   "titleFormatted": {
-    "en": "Set timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]"
+    "en": "Set timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "nl": "Timer instellen [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]"
   },
   "hint": {
-    "en": "Set minutes from now and select one or more parameters to be changed when the timer fires."
+    "en": "Set minutes from now and select one or more parameters to be changed when the timer fires.",
+    "nl": "Stel het aantal minuten in en selecteer een of meer parameters die worden gewijzigd wanneer de timer afgaat."
   },
   "args": [
     {
@@ -22,32 +25,37 @@
       "max": 1440,
       "step": 1,
       "placeholder": {
-        "en": "Minutes from now"
+        "en": "Minutes from now",
+        "nl": "Aantal minuten vanaf nu"
       }
     },
     {
       "name": "on",
       "title": {
-        "en": "On / off"
+        "en": "On / off",
+        "nl": "Aan / uit"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "nop",
           "label": {
-            "en": "- Unchanged -"
+            "en": "- Unchanged -",
+            "nl": "- Ongewijzigd -"
           }
         },
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
           "id": "on",
           "label": {
-            "en": "On"
+            "en": "On",
+            "nl": "Aan"
           }
         }
       ]
@@ -55,32 +63,37 @@
     {
       "name": "mode",
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "nop",
           "label": {
-            "en": "- Unchanged -"
+            "en": "- Unchanged -",
+            "nl": "- Ongewijzigd -"
           }
         },
         {
           "id": "cool",
           "label": {
-            "en": "Cool"
+            "en": "Cool",
+            "nl": "Koelen"
           }
         },
         {
           "id": "heat",
           "label": {
-            "en": "Heat"
+            "en": "Heat",
+            "nl": "Verwarmen"
           }
         },
         {
           "id": "fan",
           "label": {
-            "en": "Fan"
+            "en": "Fan",
+            "nl": "Ventileren"
           }
         },
         {
@@ -92,7 +105,8 @@
         {
           "id": "dry",
           "label": {
-            "en": "Dry"
+            "en": "Dry",
+            "nl": "Drogen"
           }
         }
       ]
@@ -100,14 +114,16 @@
     {
       "name": "fanLevel",
       "title": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "nop",
           "label": {
-            "en": "- Unchanged -"
+            "en": "- Unchanged -",
+            "nl": "- Ongewijzigd -"
           }
         },
         {
@@ -119,19 +135,22 @@
         {
           "id": "high",
           "label": {
-            "en": "High"
+            "en": "High",
+            "nl": "Hoog"
           }
         },
         {
           "id": "medium",
           "label": {
-            "en": "Medium"
+            "en": "Medium",
+            "nl": "Middel"
           }
         },
         {
           "id": "low",
           "label": {
-            "en": "Low"
+            "en": "Low",
+            "nl": "Laag"
           }
         }
       ]
@@ -145,7 +164,8 @@
       "label": "°C",
       "labelDecimals": 0,
       "title": {
-        "en": "Target temperature"
+        "en": "Target temperature",
+        "nl": "Doeltemperatuur"
       }
     }
   ]

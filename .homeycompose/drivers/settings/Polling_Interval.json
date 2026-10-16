@@ -2,12 +2,14 @@
   "id": "Polling_Interval",
   "type": "number",
   "label": {
-    "en": "Polling interval"
+    "en": "Polling interval",
+    "nl": "Polling interval"
   },
   "value": 60,
   "min": 15,
   "max": 300,
   "hint": {
-    "en": "Polling interval (seconds)"
+    "en": "Polling interval (seconds)",
+    "nl": "Polling interval (seconden)"
   }
 }

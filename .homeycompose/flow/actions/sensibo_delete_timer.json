@@ -1,10 +1,12 @@
 {
   "id": "sensibo_delete_timer",
   "title": {
-    "en": "Delete timer"
+    "en": "Delete timer",
+    "nl": "Timer verwijderen"
   },
   "hint": {
-    "en": "Delete the current timer"
+    "en": "Delete the current timer",
+    "nl": "Verwijder de huidige timer"
   },
   "args": [
     {

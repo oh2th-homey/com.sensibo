@@ -1,7 +1,8 @@
 {
   "id": "light_on",
   "title": {
-    "en": "Is light turned !{{on|off}}"
+    "en": "Is light turned !{{on|off}}",
+    "nl": "Is licht !{{aan|uit}}"
   },
   "args": [
     {

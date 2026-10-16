@@ -2,13 +2,16 @@
   "id": "sensibo_fanlevel",
   "deprecated": true,
   "title": {
-    "en": "Set the fan level"
+    "en": "Set the fan level",
+    "nl": "Stel de ventilatorsnelheid in"
   },
   "titleFormatted": {
-    "en": "Set fan level to [[fanLevel]]"
+    "en": "Set fan level to [[fanLevel]]",
+    "nl": "Stel ventilatorsnelheid in op [[fanLevel]]"
   },
   "hint": {
-    "en": "Set the fan level (auto, high, medium or low)"
+    "en": "Set the fan level (auto, high, medium or low)",
+    "nl": "Stel de ventilatorsnelheid in (auto, hoog, middel of laag)"
   },
   "args": [
     {
@@ -19,7 +22,8 @@
     {
       "name": "fanLevel",
       "title": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "type": "dropdown",
       "values": [
@@ -32,19 +36,22 @@
         {
           "id": "high",
           "label": {
-            "en": "High"
+            "en": "High",
+            "nl": "Hoog"
           }
         },
         {
           "id": "medium",
           "label": {
-            "en": "Medium"
+            "en": "Medium",
+            "nl": "Middel"
           }
         },
         {
           "id": "low",
           "label": {
-            "en": "Low"
+            "en": "Low",
+            "nl": "Laag"
           }
         }
       ]

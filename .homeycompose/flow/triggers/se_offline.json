@@ -1,14 +1,16 @@
 {
   "id": "se_offline",
   "title": {
-    "en": "Device offline"
+    "en": "Device offline",
+    "nl": "Apparaat offline"
   },
   "tokens": [
     {
       "name": "seconds_ago",
       "type": "number",
       "title": {
-        "en": "Last seen seconds"
+        "en": "Last seen seconds",
+        "nl": "Laatst gezien seconden"
       },
       "example": 300
     },
@@ -16,7 +18,8 @@
       "name": "last_seen",
       "type": "string",
       "title": {
-        "en": "Last seen"
+        "en": "Last seen",
+        "nl": "Laatst gezien"
       },
       "example": "10:01:02"
     }

@@ -1,14 +1,16 @@
 {
   "id": "alarm_filter",
   "title": {
-    "en": "Filter alarm changed"
+    "en": "Filter alarm changed",
+    "nl": "Alarm filter veranderd"
   },
   "tokens": [
     {
       "name": "state",
       "type": "boolean",
       "title": {
-        "en": "State"
+        "en": "State",
+        "nl": "Status"
       },
       "example": true
     }

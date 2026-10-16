@@ -1,13 +1,16 @@
 {
   "id": "sensibo_swing",
   "title": {
-    "en": "Set swing"
+    "en": "Set swing",
+    "nl": "Zet luchtstroom"
   },
   "titleFormatted": {
-    "en": "Set swing to [[swing]]"
+    "en": "Set swing to [[swing]]",
+    "nl": "Zet luchtstroom naar [[swing]]"
   },
   "hint": {
-    "en": "Set the swing"
+    "en": "Set the swing",
+    "nl": "Zet de luchtstroom"
   },
   "args": [
     {
@@ -18,11 +21,13 @@
     {
       "name": "swing",
       "label": {
-        "en": "Swing"
+        "en": "Swing",
+        "nl": "Luchtstroom"
       },
       "type": "autocomplete",
       "placeholder": {
-        "en": "Swing..."
+        "en": "Swing...",
+        "nl": "Luchtstroom..."
       }
     }
   ]

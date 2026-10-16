@@ -11,7 +11,8 @@
     "en": "Sensibo"
   },
   "description": {
-    "en": "Make your air conditioner smart"
+    "en": "Make your air conditioner smart",
+    "nl": "Maak je airconditioner slim"
   },
   "category": [
     "climate"
@@ -66,7 +67,8 @@
       {
         "id": "air_quality_changed",
         "title": {
-          "en": "Air quality changed"
+          "en": "Air quality changed",
+          "nl": "Luchtkwaliteit veranderd"
         },
         "args": [
           {
@@ -80,7 +82,8 @@
             "name": "air_quality",
             "type": "string",
             "title": {
-              "en": "Air quality"
+              "en": "Air quality",
+              "nl": "Luchtkwaliteit"
             },
             "example": "Excellent"
           }
@@ -90,14 +93,16 @@
       {
         "id": "alarm_filter",
         "title": {
-          "en": "Filter alarm changed"
+          "en": "Filter alarm changed",
+          "nl": "Alarm filter veranderd"
         },
         "tokens": [
           {
             "name": "state",
             "type": "boolean",
             "title": {
-              "en": "State"
+              "en": "State",
+              "nl": "Status"
             },
             "example": true
           }
@@ -113,7 +118,8 @@
       {
         "id": "se_ac_state_changed",
         "title": {
-          "en": "AC state changed"
+          "en": "AC state changed",
+          "nl": "AC status veranderd"
         },
         "tokens": [
           {
@@ -128,7 +134,8 @@
             "name": "reason",
             "type": "string",
             "title": {
-              "en": "Reason"
+              "en": "Reason",
+              "nl": "Reden"
             },
             "example": "ScheduledCommand"
           },
@@ -136,7 +143,8 @@
             "name": "failureReason",
             "type": "string",
             "title": {
-              "en": "Failure reason"
+              "en": "Failure reason",
+              "nl": "Faalreden"
             },
             "example": "Some reason"
           },
@@ -144,7 +152,8 @@
             "name": "on",
             "type": "boolean",
             "title": {
-              "en": "On"
+              "en": "On",
+              "nl": "Aan"
             },
             "example": true
           },
@@ -152,7 +161,8 @@
             "name": "fanLevel",
             "type": "string",
             "title": {
-              "en": "Fan level"
+              "en": "Fan level",
+              "nl": "Ventilatorsnelheid"
             },
             "example": "low"
           },
@@ -160,7 +170,8 @@
             "name": "targetTemperature",
             "type": "number",
             "title": {
-              "en": "Target temperature"
+              "en": "Target temperature",
+              "nl": "Doeltemperatuur"
             },
             "example": 23
           },
@@ -168,7 +179,8 @@
             "name": "mode",
             "type": "string",
             "title": {
-              "en": "Mode"
+              "en": "Mode",
+              "nl": "Modus"
             },
             "example": "cool"
           },
@@ -176,7 +188,8 @@
             "name": "swing",
             "type": "string",
             "title": {
-              "en": "Swing"
+              "en": "Swing",
+              "nl": "Luchtstroom"
             },
             "example": "stopped"
           }
@@ -192,14 +205,16 @@
       {
         "id": "se_climate_react_changed",
         "title": {
-          "en": "Climate React changed"
+          "en": "Climate React changed",
+          "nl": "Climate React veranderd"
         },
         "tokens": [
           {
             "name": "climate_react_enabled",
             "type": "boolean",
             "title": {
-              "en": "Climate React enabled"
+              "en": "Climate React enabled",
+              "nl": "Climate React ingeschakeld"
             },
             "example": true
           },
@@ -223,14 +238,16 @@
       {
         "id": "se_offline",
         "title": {
-          "en": "Device offline"
+          "en": "Device offline",
+          "nl": "Apparaat offline"
         },
         "tokens": [
           {
             "name": "seconds_ago",
             "type": "number",
             "title": {
-              "en": "Last seen seconds"
+              "en": "Last seen seconds",
+              "nl": "Laatst gezien seconden"
             },
             "example": 300
           },
@@ -238,7 +255,8 @@
             "name": "last_seen",
             "type": "string",
             "title": {
-              "en": "Last seen"
+              "en": "Last seen",
+              "nl": "Laatst gezien"
             },
             "example": "10:01:02"
           }
@@ -254,14 +272,16 @@
       {
         "id": "se_onoff_false",
         "title": {
-          "en": "Device turned off"
+          "en": "Device turned off",
+          "nl": "Apparaat uitgeschakeld"
         },
         "tokens": [
           {
             "name": "state",
             "type": "number",
             "title": {
-              "en": "State"
+              "en": "State",
+              "nl": "Status"
             },
             "example": 0
           }
@@ -277,14 +297,16 @@
       {
         "id": "se_onoff_true",
         "title": {
-          "en": "Device turned on"
+          "en": "Device turned on",
+          "nl": "Apparaat ingeschakeld"
         },
         "tokens": [
           {
             "name": "state",
             "type": "number",
             "title": {
-              "en": "State"
+              "en": "State",
+              "nl": "Status"
             },
             "example": 1
           }
@@ -300,14 +322,16 @@
       {
         "id": "se_timer_created",
         "title": {
-          "en": "Timer created"
+          "en": "Timer created",
+          "nl": "Timer aangemaakt"
         },
         "tokens": [
           {
             "name": "homey",
             "type": "boolean",
             "title": {
-              "en": "From Homey flow"
+              "en": "From Homey flow",
+              "nl": "Van Homey flow"
             },
             "example": true
           }
@@ -323,14 +347,16 @@
       {
         "id": "se_timer_deleted",
         "title": {
-          "en": "Timer deleted"
+          "en": "Timer deleted",
+          "nl": "Timer verwijderd"
         },
         "tokens": [
           {
             "name": "homey",
             "type": "boolean",
             "title": {
-              "en": "From Homey flow"
+              "en": "From Homey flow",
+              "nl": "Van Homey flow"
             },
             "example": true
           }
@@ -346,14 +372,16 @@
       {
         "id": "se_timer_fired",
         "title": {
-          "en": "Timer fired"
+          "en": "Timer fired",
+          "nl": "Timer afgelopen"
         },
         "tokens": [
           {
             "name": "state",
             "type": "number",
             "title": {
-              "en": "State"
+              "en": "State",
+              "nl": "Status"
             },
             "example": 1
           }
@@ -371,7 +399,8 @@
       {
         "id": "light_on",
         "title": {
-          "en": "Is light turned !{{on|off}}"
+          "en": "Is light turned !{{on|off}}",
+          "nl": "Is licht !{{aan|uit}}"
         },
         "args": [
           {
@@ -384,7 +413,8 @@
       {
         "id": "se_climate_react_enabled",
         "title": {
-          "en": "Climate React is !{{enabled|disabled}}"
+          "en": "Climate React is !{{enabled|disabled}}",
+          "nl": "Climate React is !{{ingeschakeld|uitgeschakeld}}"
         },
         "args": [
           {
@@ -397,7 +427,8 @@
       {
         "id": "se_onoff_is_on",
         "title": {
-          "en": "Device is !{{on|off}}"
+          "en": "Device is !{{on|off}}",
+          "nl": "Apparaat is !{{aan|uit}}"
         },
         "args": [
           {
@@ -410,7 +441,8 @@
       {
         "id": "se_timer_enabled",
         "title": {
-          "en": "Timer is !{{enabled|disabled}}"
+          "en": "Timer is !{{enabled|disabled}}",
+          "nl": "Timer is !{{ingeschakeld|uitgeschakeld}}"
         },
         "args": [
           {
@@ -425,13 +457,16 @@
       {
         "id": "sensibo_cr",
         "title": {
-          "en": "Control Climate React"
+          "en": "Control Climate React",
+          "nl": "Control Reactie regelen"
         },
         "titleFormatted": {
-          "en": "Climate React [[enabled]]"
+          "en": "Climate React [[enabled]]",
+          "nl": "Zet Climate React [[enabled]]"
         },
         "hint": {
-          "en": "Enable or disable Climate React"
+          "en": "Enable or disable Climate React",
+          "nl": "Schakel Climate React in of uit"
         },
         "args": [
           {
@@ -442,20 +477,23 @@
           {
             "name": "enabled",
             "title": {
-              "en": "Enabled"
+              "en": "State",
+              "nl": "Status"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
                 "id": "on",
                 "label": {
-                  "en": "On"
+                  "en": "On",
+                  "nl": "Aan"
                 }
               }
             ]
@@ -465,10 +503,12 @@
       {
         "id": "sensibo_delete_timer",
         "title": {
-          "en": "Delete timer"
+          "en": "Delete timer",
+          "nl": "Timer verwijderen"
         },
         "hint": {
-          "en": "Delete the current timer"
+          "en": "Delete the current timer",
+          "nl": "Verwijder de huidige timer"
         },
         "args": [
           {
@@ -482,13 +522,16 @@
         "id": "sensibo_fandirection",
         "deprecated": true,
         "title": {
-          "en": "Set swing"
+          "en": "Set swing",
+          "nl": "Zet luchtstroom"
         },
         "titleFormatted": {
-          "en": "Set swing to [[fanDirection]]"
+          "en": "Set swing to [[fanDirection]]",
+          "nl": "Zet luchtstroom naar [[fanDirection]]"
         },
         "hint": {
-          "en": "Set the fan direction"
+          "en": "Set the fan direction",
+          "nl": "Zet de ventilatierichting"
         },
         "args": [
           {
@@ -499,80 +542,93 @@
           {
             "name": "fanDirection",
             "title": {
-              "en": "Swing"
+              "en": "Swing",
+              "nl": "Luchtstroom"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "stopped",
                 "label": {
-                  "en": "Stopped"
+                  "en": "Stopped",
+                  "nl": "Gestopt"
                 }
               },
               {
                 "id": "fixedBottom",
                 "label": {
-                  "en": "Fixed bottom"
+                  "en": "Fixed bottom",
+                  "nl": "Vast onder"
                 }
               },
               {
                 "id": "fixedMiddleBottom",
                 "label": {
-                  "en": "Fixed middle bottom"
+                  "en": "Fixed middle bottom",
+                  "nl": "Vast midden onder"
                 }
               },
               {
                 "id": "fixedMiddle",
                 "label": {
-                  "en": "Fixed middle"
+                  "en": "Fixed middle",
+                  "nl": "Vast midden"
                 }
               },
               {
                 "id": "fixedMiddleTop",
                 "label": {
-                  "en": "Fixed middle top"
+                  "en": "Fixed middle top",
+                  "nl": "Vast midden boven"
                 }
               },
               {
                 "id": "fixedTop",
                 "label": {
-                  "en": "Fixed top"
+                  "en": "Fixed top",
+                  "nl": "Vast boven"
                 }
               },
               {
                 "id": "rangeBottom",
                 "label": {
-                  "en": "Range bottom"
+                  "en": "Range bottom",
+                  "nl": "Bereik onder"
                 }
               },
               {
                 "id": "rangeMiddle",
                 "label": {
-                  "en": "Range middle"
+                  "en": "Range middle",
+                  "nl": "Bereik midden"
                 }
               },
               {
                 "id": "rangeTop",
                 "label": {
-                  "en": "Range top"
+                  "en": "Range top",
+                  "nl": "Bereik boven"
                 }
               },
               {
                 "id": "rangeFull",
                 "label": {
-                  "en": "Range full"
+                  "en": "Range full",
+                  "nl": "Bereik volledig"
                 }
               },
               {
                 "id": "horizontal",
                 "label": {
-                  "en": "Horizontal"
+                  "en": "Horizontal",
+                  "nl": "Horizontaal"
                 }
               },
               {
                 "id": "both",
                 "label": {
-                  "en": "Both"
+                  "en": "Both",
+                  "nl": "Beide"
                 }
               }
             ]
@@ -583,13 +639,16 @@
         "id": "sensibo_fanlevel",
         "deprecated": true,
         "title": {
-          "en": "Set the fan level"
+          "en": "Set the fan level",
+          "nl": "Stel de ventilatorsnelheid in"
         },
         "titleFormatted": {
-          "en": "Set fan level to [[fanLevel]]"
+          "en": "Set fan level to [[fanLevel]]",
+          "nl": "Stel ventilatorsnelheid in op [[fanLevel]]"
         },
         "hint": {
-          "en": "Set the fan level (auto, high, medium or low)"
+          "en": "Set the fan level (auto, high, medium or low)",
+          "nl": "Stel de ventilatorsnelheid in (auto, hoog, middel of laag)"
         },
         "args": [
           {
@@ -600,7 +659,8 @@
           {
             "name": "fanLevel",
             "title": {
-              "en": "Fan level"
+              "en": "Fan level",
+              "nl": "Ventilatorsnelheid"
             },
             "type": "dropdown",
             "values": [
@@ -613,19 +673,22 @@
               {
                 "id": "high",
                 "label": {
-                  "en": "High"
+                  "en": "High",
+                  "nl": "Hoog"
                 }
               },
               {
                 "id": "medium",
                 "label": {
-                  "en": "Medium"
+                  "en": "Medium",
+                  "nl": "Middel"
                 }
               },
               {
                 "id": "low",
                 "label": {
-                  "en": "Low"
+                  "en": "Low",
+                  "nl": "Laag"
                 }
               }
             ]
@@ -635,13 +698,16 @@
       {
         "id": "sensibo_fanlevel2",
         "title": {
-          "en": "Set the fan level"
+          "en": "Set the fan level",
+          "nl": "Stel de ventilatorsnelheid in"
         },
         "titleFormatted": {
-          "en": "Set the fan level to [[fanLevel]]"
+          "en": "Set the fan level to [[fanLevel]]",
+          "nl": "Stel de ventilatorsnelheid in op [[fanLevel]]"
         },
         "hint": {
-          "en": "Set the fan level"
+          "en": "Set the fan level",
+          "nl": "Stel de ventilatorsnelheid in"
         },
         "args": [
           {
@@ -652,11 +718,13 @@
           {
             "name": "fanLevel",
             "label": {
-              "en": "Fan level"
+              "en": "Fan level",
+              "nl": "Ventilatorsnelheid"
             },
             "type": "autocomplete",
             "placeholder": {
-              "en": "Fan level..."
+              "en": "Fan level...",
+              "nl": "Ventilatorsnelheid..."
             }
           }
         ]
@@ -664,13 +732,16 @@
       {
         "id": "sensibo_horizontal_swing",
         "title": {
-          "en": "Set horizontal swing"
+          "en": "Set horizontal swing",
+          "nl": "Stel horizontale luchtstroom in"
         },
         "titleFormatted": {
-          "en": "Set horizontal swing to [[horizontalSwing]]"
+          "en": "Set horizontal swing to [[horizontalSwing]]",
+          "nl": "Stel horizontale luchtstroom in op [[horizontalSwing]]"
         },
         "hint": {
-          "en": "Set the horizontal swing"
+          "en": "Set the horizontal swing",
+          "nl": "Stel de horizontale luchtstroom in"
         },
         "args": [
           {
@@ -681,11 +752,13 @@
           {
             "name": "horizontalSwing",
             "label": {
-              "en": "Horizontal swing"
+              "en": "Horizontal swing",
+              "nl": "Horizontale luchtstroom"
             },
             "type": "autocomplete",
             "placeholder": {
-              "en": "Horizontal swing..."
+              "en": "Horizontal swing...",
+              "nl": "Horizontale luchtstroom..."
             }
           }
         ]
@@ -694,13 +767,16 @@
         "id": "sensibo_light",
         "deprecated": true,
         "title": {
-          "en": "Control light"
+          "en": "Control light",
+          "nl": "Bedien licht"
         },
         "titleFormatted": {
-          "en": "Turn light [[state]]"
+          "en": "Turn light [[state]]",
+          "nl": "Zet licht [[state]]"
         },
         "hint": {
-          "en": "Control light"
+          "en": "Control light",
+          "nl": "Bedien licht"
         },
         "args": [
           {
@@ -711,20 +787,23 @@
           {
             "name": "state",
             "title": {
-              "en": "Light state"
+              "en": "Light state",
+              "nl": "Lichtstatus"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
                 "id": "on",
                 "label": {
-                  "en": "On"
+                  "en": "On",
+                  "nl": "Aan"
                 }
               }
             ]
@@ -734,13 +813,16 @@
       {
         "id": "sensibo_light2",
         "title": {
-          "en": "Control light"
+          "en": "Control light",
+          "nl": "Bedien licht"
         },
         "titleFormatted": {
-          "en": "Turn light [[state]]"
+          "en": "Turn light [[state]]",
+          "nl": "Zet licht [[state]]"
         },
         "hint": {
-          "en": "Control light"
+          "en": "Control light",
+          "nl": "Bedien licht"
         },
         "args": [
           {
@@ -751,11 +833,13 @@
           {
             "name": "state",
             "label": {
-              "en": "Light state"
+              "en": "Light state",
+              "nl": "Lichtstatus"
             },
             "type": "autocomplete",
             "placeholder": {
-              "en": "Light state..."
+              "en": "Light state...",
+              "nl": "Lichtstatus..."
             }
           }
         ]
@@ -764,13 +848,16 @@
         "id": "sensibo_mode",
         "deprecated": true,
         "title": {
-          "en": "Set the fan mode"
+          "en": "Set the fan mode",
+          "nl": "Stel de ventilatormodus in"
         },
         "titleFormatted": {
-          "en": "Set the fan mode to [[mode]]"
+          "en": "Set the fan mode to [[mode]]",
+          "nl": "Stel de ventilatormodus in op [[mode]]"
         },
         "hint": {
-          "en": "Set the mode (heat, cool, fan, auto or dry)"
+          "en": "Set the mode (heat, cool, fan, auto or dry)",
+          "nl": "Stel de modus in (warmte, koelen, ventileren, auto of drogen)"
         },
         "args": [
           {
@@ -781,26 +868,30 @@
           {
             "name": "mode",
             "title": {
-              "en": "Mode"
+              "en": "Mode",
+              "nl": "Modus"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "cool",
                 "label": {
-                  "en": "Cool"
+                  "en": "Cool",
+                  "nl": "Koelen"
                 }
               },
               {
                 "id": "heat",
                 "label": {
-                  "en": "Heat"
+                  "en": "Heat",
+                  "nl": "Verwarmen"
                 }
               },
               {
                 "id": "fan",
                 "label": {
-                  "en": "Fan"
+                  "en": "Fan",
+                  "nl": "Ventileren"
                 }
               },
               {
@@ -812,7 +903,8 @@
               {
                 "id": "dry",
                 "label": {
-                  "en": "Dry"
+                  "en": "Dry",
+                  "nl": "Drogen"
                 }
               }
             ]
@@ -822,13 +914,16 @@
       {
         "id": "sensibo_mode2",
         "title": {
-          "en": "Set the fan mode"
+          "en": "Set the fan mode",
+          "nl": "Stel de ventilatormodus in"
         },
         "titleFormatted": {
-          "en": "Set the fan mode to [[mode]]"
+          "en": "Set the fan mode to [[mode]]",
+          "nl": "Stel de ventilatormodus in op [[mode]]"
         },
         "hint": {
-          "en": "Set the mode"
+          "en": "Set the mode",
+          "nl": "Stel de modus in"
         },
         "args": [
           {
@@ -839,11 +934,13 @@
           {
             "name": "mode",
             "label": {
-              "en": "Mode"
+              "en": "Mode",
+              "nl": "Modus"
             },
             "type": "autocomplete",
             "placeholder": {
-              "en": "Mode..."
+              "en": "Mode...",
+              "nl": "Modus..."
             }
           }
         ]
@@ -851,10 +948,12 @@
       {
         "id": "sensibo_off",
         "title": {
-          "en": "Turn off"
+          "en": "Turn off",
+          "nl": "Zet uit"
         },
         "hint": {
-          "en": "Turn off"
+          "en": "Turn off",
+          "nl": "Zet uit"
         },
         "args": [
           {
@@ -867,10 +966,12 @@
       {
         "id": "sensibo_on",
         "title": {
-          "en": "Turn on"
+          "en": "Turn on",
+          "nl": "Zet aan"
         },
         "hint": {
-          "en": "Turn on"
+          "en": "Turn on",
+          "nl": "Zet aan"
         },
         "args": [
           {
@@ -883,13 +984,16 @@
       {
         "id": "sensibo_pureboost",
         "title": {
-          "en": "Control Pure Boost"
+          "en": "Control Pure Boost",
+          "nl": "Pure Boost aan/uit"
         },
         "titleFormatted": {
-          "en": "Pure Boost [[enabled]]"
+          "en": "Pure Boost [[enabled]]",
+          "nl": "Pure Boost [[enabled]]"
         },
         "hint": {
-          "en": "Enable or disable Pure Boost"
+          "en": "Enable or disable Pure Boost",
+          "nl": "Zet Pure Boost aan of uit"
         },
         "args": [
           {
@@ -900,20 +1004,23 @@
           {
             "name": "enabled",
             "title": {
-              "en": "Enabled"
+              "en": "State",
+              "nl": "Status"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
                 "id": "on",
                 "label": {
-                  "en": "On"
+                  "en": "On",
+                  "nl": "Aan"
                 }
               }
             ]
@@ -923,13 +1030,16 @@
       {
         "id": "sensibo_set_timer",
         "title": {
-          "en": "Set timer"
+          "en": "Set timer",
+          "nl": "Timer instellen"
         },
         "titleFormatted": {
-          "en": "Set timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]"
+          "en": "Set timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+          "nl": "Timer instellen [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]"
         },
         "hint": {
-          "en": "Set minutes from now and select one or more parameters to be changed when the timer fires."
+          "en": "Set minutes from now and select one or more parameters to be changed when the timer fires.",
+          "nl": "Stel het aantal minuten in en selecteer een of meer parameters die worden gewijzigd wanneer de timer afgaat."
         },
         "args": [
           {
@@ -944,32 +1054,37 @@
             "max": 1440,
             "step": 1,
             "placeholder": {
-              "en": "Minutes from now"
+              "en": "Minutes from now",
+              "nl": "Aantal minuten vanaf nu"
             }
           },
           {
             "name": "on",
             "title": {
-              "en": "On / off"
+              "en": "On / off",
+              "nl": "Aan / uit"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "nop",
                 "label": {
-                  "en": "- Unchanged -"
+                  "en": "- Unchanged -",
+                  "nl": "- Ongewijzigd -"
                 }
               },
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
                 "id": "on",
                 "label": {
-                  "en": "On"
+                  "en": "On",
+                  "nl": "Aan"
                 }
               }
             ]
@@ -977,32 +1092,37 @@
           {
             "name": "mode",
             "title": {
-              "en": "Mode"
+              "en": "Mode",
+              "nl": "Modus"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "nop",
                 "label": {
-                  "en": "- Unchanged -"
+                  "en": "- Unchanged -",
+                  "nl": "- Ongewijzigd -"
                 }
               },
               {
                 "id": "cool",
                 "label": {
-                  "en": "Cool"
+                  "en": "Cool",
+                  "nl": "Koelen"
                 }
               },
               {
                 "id": "heat",
                 "label": {
-                  "en": "Heat"
+                  "en": "Heat",
+                  "nl": "Verwarmen"
                 }
               },
               {
                 "id": "fan",
                 "label": {
-                  "en": "Fan"
+                  "en": "Fan",
+                  "nl": "Ventileren"
                 }
               },
               {
@@ -1014,7 +1134,8 @@
               {
                 "id": "dry",
                 "label": {
-                  "en": "Dry"
+                  "en": "Dry",
+                  "nl": "Drogen"
                 }
               }
             ]
@@ -1022,14 +1143,16 @@
           {
             "name": "fanLevel",
             "title": {
-              "en": "Fan level"
+              "en": "Fan level",
+              "nl": "Ventilatorsnelheid"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "nop",
                 "label": {
-                  "en": "- Unchanged -"
+                  "en": "- Unchanged -",
+                  "nl": "- Ongewijzigd -"
                 }
               },
               {
@@ -1041,19 +1164,22 @@
               {
                 "id": "high",
                 "label": {
-                  "en": "High"
+                  "en": "High",
+                  "nl": "Hoog"
                 }
               },
               {
                 "id": "medium",
                 "label": {
-                  "en": "Medium"
+                  "en": "Medium",
+                  "nl": "Middel"
                 }
               },
               {
                 "id": "low",
                 "label": {
-                  "en": "Low"
+                  "en": "Low",
+                  "nl": "Laag"
                 }
               }
             ]
@@ -1067,7 +1193,8 @@
             "label": "°C",
             "labelDecimals": 0,
             "title": {
-              "en": "Target temperature"
+              "en": "Target temperature",
+              "nl": "Doeltemperatuur"
             }
           }
         ]
@@ -1075,13 +1202,16 @@
       {
         "id": "sensibo_set_timer_pure",
         "title": {
-          "en": "Set timer"
+          "en": "Set timer",
+          "nl": "Timer instellen"
         },
         "titleFormatted": {
-          "en": "Set timer [[minutesFromNow]], [[on]], [[fanLevel]]"
+          "en": "Set timer [[minutesFromNow]], [[on]], [[fanLevel]]",
+          "nl": "Timer instellen [[minutesFromNow]], [[on]], [[fanLevel]]"
         },
         "hint": {
-          "en": "Set minutes from now and select one or more parameters to be changed when the timer fires."
+          "en": "Set minutes from now and select one or more parameters to be changed when the timer fires.",
+          "nl": "Stel het aantal minuten in en selecteer een of meer parameters die worden gewijzigd wanneer de timer afgaat."
         },
         "args": [
           {
@@ -1096,32 +1226,37 @@
             "max": 1440,
             "step": 1,
             "placeholder": {
-              "en": "Minutes from now"
+              "en": "Minutes from now",
+              "nl": "Aantal minuten vanaf nu"
             }
           },
           {
             "name": "on",
             "title": {
-              "en": "On / off"
+              "en": "On / off",
+              "nl": "Aan / uit"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "nop",
                 "label": {
-                  "en": "- Unchanged -"
+                  "en": "- Unchanged -",
+                  "nl": "- Ongewijzigd -"
                 }
               },
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
                 "id": "on",
                 "label": {
-                  "en": "On"
+                  "en": "On",
+                  "nl": "Aan"
                 }
               }
             ]
@@ -1129,26 +1264,30 @@
           {
             "name": "fanLevel",
             "title": {
-              "en": "Fan level"
+              "en": "Fan level",
+              "nl": "Ventilatorsnelheid"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "nop",
                 "label": {
-                  "en": "- Unchanged -"
+                  "en": "- Unchanged -",
+                  "nl": "- Ongewijzigd -"
                 }
               },
               {
                 "id": "high",
                 "label": {
-                  "en": "High"
+                  "en": "High",
+                  "nl": "Hoog"
                 }
               },
               {
                 "id": "low",
                 "label": {
-                  "en": "Low"
+                  "en": "Low",
+                  "nl": "Laag"
                 }
               }
             ]
@@ -1158,13 +1297,16 @@
       {
         "id": "sensibo_swing",
         "title": {
-          "en": "Set swing"
+          "en": "Set swing",
+          "nl": "Zet luchtstroom"
         },
         "titleFormatted": {
-          "en": "Set swing to [[swing]]"
+          "en": "Set swing to [[swing]]",
+          "nl": "Zet luchtstroom naar [[swing]]"
         },
         "hint": {
-          "en": "Set the swing"
+          "en": "Set the swing",
+          "nl": "Zet de luchtstroom"
         },
         "args": [
           {
@@ -1175,11 +1317,13 @@
           {
             "name": "swing",
             "label": {
-              "en": "Swing"
+              "en": "Swing",
+              "nl": "Luchtstroom"
             },
             "type": "autocomplete",
             "placeholder": {
-              "en": "Swing..."
+              "en": "Swing...",
+              "nl": "Luchtstroom..."
             }
           }
         ]
@@ -1187,13 +1331,16 @@
       {
         "id": "sensibo_sync_state",
         "title": {
-          "en": "Sync power state"
+          "en": "Sync power state",
+          "nl": "Synchroniseer stroomstatus"
         },
         "titleFormatted": {
-          "en": "Sync power state [[state]]"
+          "en": "Sync power state [[state]]",
+          "nl": "Synchroniseer stroomstatus [[state]]"
         },
         "hint": {
-          "en": "Sync the power state of the Sensibo"
+          "en": "Sync the power state of the Sensibo",
+          "nl": "Synchroniseer de stroomstatus van de Sensibo"
         },
         "args": [
           {
@@ -1204,20 +1351,23 @@
           {
             "name": "state",
             "title": {
-              "en": "Power state"
+              "en": "Power state",
+              "nl": "Stroomstatus"
             },
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
                 "id": "on",
                 "label": {
-                  "en": "On"
+                  "en": "On",
+                  "nl": "Aan"
                 }
               }
             ]
@@ -1368,26 +1518,30 @@
           "id": "Polling_Interval",
           "type": "number",
           "label": {
-            "en": "Polling interval"
+            "en": "Polling interval",
+            "nl": "Polling interval"
           },
           "value": 60,
           "min": 15,
           "max": 300,
           "hint": {
-            "en": "Polling interval (seconds)"
+            "en": "Polling interval (seconds)",
+            "nl": "Polling interval (seconden)"
           }
         },
         {
           "id": "Delay_Offline",
           "type": "number",
           "label": {
-            "en": "Delay for offline"
+            "en": "Delay for offline",
+            "nl": "Vertraging voor offline"
           },
           "value": 300,
           "min": 120,
           "max": 3600,
           "hint": {
-            "en": "Delay when checking if the device is offline (seconds)"
+            "en": "Delay when checking if the device is offline (seconds)",
+            "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)"
           }
         }
       ]
@@ -1442,26 +1596,30 @@
           "id": "Polling_Interval",
           "type": "number",
           "label": {
-            "en": "Polling interval"
+            "en": "Polling interval",
+            "nl": "Polling interval"
           },
           "value": 60,
           "min": 15,
           "max": 300,
           "hint": {
-            "en": "Polling interval (seconds)"
+            "en": "Polling interval (seconds)",
+            "nl": "Polling interval (seconden)"
           }
         },
         {
           "id": "Delay_Offline",
           "type": "number",
           "label": {
-            "en": "Delay for offline"
+            "en": "Delay for offline",
+            "nl": "Vertraging voor offline"
           },
           "value": 300,
           "min": 120,
           "max": 3600,
           "hint": {
-            "en": "Delay when checking if the device is offline (seconds)"
+            "en": "Delay when checking if the device is offline (seconds)",
+            "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)"
           }
         }
       ]
@@ -1544,26 +1702,30 @@
           "id": "Polling_Interval",
           "type": "number",
           "label": {
-            "en": "Polling interval"
+            "en": "Polling interval",
+            "nl": "Polling interval"
           },
           "value": 60,
           "min": 15,
           "max": 300,
           "hint": {
-            "en": "Polling interval (seconds)"
+            "en": "Polling interval (seconds)",
+            "nl": "Polling interval (seconden)"
           }
         },
         {
           "id": "Delay_Offline",
           "type": "number",
           "label": {
-            "en": "Delay for offline"
+            "en": "Delay for offline",
+            "nl": "Vertraging voor offline"
           },
           "value": 300,
           "min": 120,
           "max": 3600,
           "hint": {
-            "en": "Delay when checking if the device is offline (seconds)"
+            "en": "Delay when checking if the device is offline (seconds)",
+            "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)"
           }
         }
       ]
@@ -1620,26 +1782,30 @@
           "id": "Polling_Interval",
           "type": "number",
           "label": {
-            "en": "Polling interval"
+            "en": "Polling interval",
+            "nl": "Polling interval"
           },
           "value": 60,
           "min": 15,
           "max": 300,
           "hint": {
-            "en": "Polling interval (seconds)"
+            "en": "Polling interval (seconds)",
+            "nl": "Polling interval (seconden)"
           }
         },
         {
           "id": "Delay_Offline",
           "type": "number",
           "label": {
-            "en": "Delay for offline"
+            "en": "Delay for offline",
+            "nl": "Vertraging voor offline"
           },
           "value": 300,
           "min": 120,
           "max": 3600,
           "hint": {
-            "en": "Delay when checking if the device is offline (seconds)"
+            "en": "Delay when checking if the device is offline (seconds)",
+            "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)"
           }
         }
       ]
@@ -1649,10 +1815,12 @@
     "alarm_filter": {
       "type": "boolean",
       "title": {
-        "en": "Filter Alarm"
+        "en": "Filter Alarm",
+        "nl": "Filter alarm"
       },
       "desc": {
-        "en": "Filter needs cleaning"
+        "en": "Filter needs cleaning",
+        "nl": "Filter moet worden schoongemaakt"
       },
       "icon": "./assets/air_filter.svg",
       "getable": true,
@@ -1663,10 +1831,12 @@
     "measure_etoh": {
       "type": "number",
       "title": {
-        "en": "Ethanol"
+        "en": "Ethanol",
+        "nl": "Ethanol"
       },
       "units": {
-        "en": "ppm"
+        "en": "ppm",
+        "nl": "ppm"
       },
       "icon": "./assets/EtOH.svg",
       "uiComponent": "sensor",
@@ -1677,7 +1847,8 @@
     "measure_iaq": {
       "type": "number",
       "title": {
-        "en": "Indoor Air Quality Score"
+        "en": "Indoor Air Quality Score",
+        "nl": "Binnenluchtkwaliteitsscore"
       },
       "icon": "./assets/iaq.svg",
       "getable": true,
@@ -1715,10 +1886,12 @@
     "se_fandirection": {
       "type": "enum",
       "title": {
-        "en": "Swing"
+        "en": "Swing",
+        "nl": "Luchtstroom"
       },
       "desc": {
-        "en": "Swing"
+        "en": "Swing",
+        "nl": "Luchtstroom"
       },
       "getable": true,
       "setable": true,
@@ -1728,73 +1901,85 @@
         {
           "id": "stopped",
           "title": {
-            "en": "Stopped"
+            "en": "Stopped",
+            "nl": "Gestopt"
           }
         },
         {
           "id": "fixedBottom",
           "title": {
-            "en": "Fixed bottom"
+            "en": "Fixed bottom",
+            "nl": "Vast onder"
           }
         },
         {
           "id": "fixedMiddleBottom",
           "title": {
-            "en": "Fixed middle bottom"
+            "en": "Fixed middle bottom",
+            "nl": "Vast midden onder"
           }
         },
         {
           "id": "fixedMiddle",
           "title": {
-            "en": "Fixed middle"
+            "en": "Fixed middle",
+            "nl": "Vast midden"
           }
         },
         {
           "id": "fixedMiddleTop",
           "title": {
-            "en": "Fixed middle top"
+            "en": "Fixed middle top",
+            "nl": "Vast midden boven"
           }
         },
         {
           "id": "fixedTop",
           "title": {
-            "en": "Fixed top"
+            "en": "Fixed top",
+            "nl": "Vast boven"
           }
         },
         {
           "id": "rangeBottom",
           "title": {
-            "en": "Range bottom"
+            "en": "Range bottom",
+            "nl": "Bereik onder"
           }
         },
         {
           "id": "rangeMiddle",
           "title": {
-            "en": "Range middle"
+            "en": "Range middle",
+            "nl": "Bereik midden"
           }
         },
         {
           "id": "rangeTop",
           "title": {
-            "en": "Range top"
+            "en": "Range top",
+            "nl": "Bereik boven"
           }
         },
         {
           "id": "rangeFull",
           "title": {
-            "en": "Range full"
+            "en": "Range full",
+            "nl": "Bereik volledig"
           }
         },
         {
           "id": "horizontal",
           "title": {
-            "en": "Horizontal"
+            "en": "Horizontal",
+            "nl": "Horizontaal"
           }
         },
         {
           "id": "both",
           "title": {
-            "en": "Both"
+            "en": "Both",
+            "nl": "Beide"
           }
         }
       ]
@@ -1802,10 +1987,12 @@
     "se_fanlevel": {
       "type": "enum",
       "title": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "desc": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "getable": true,
       "setable": true,
@@ -1821,37 +2008,43 @@
         {
           "id": "high",
           "title": {
-            "en": "High"
+            "en": "High",
+            "nl": "Hoog"
           }
         },
         {
           "id": "medium_high",
           "title": {
-            "en": "Medium high"
+            "en": "Medium high",
+            "nl": "Middel hoog"
           }
         },
         {
           "id": "medium",
           "title": {
-            "en": "Medium"
+            "en": "Medium",
+            "nl": "Middel"
           }
         },
         {
           "id": "medium_low",
           "title": {
-            "en": "Medium low"
+            "en": "Medium low",
+            "nl": "Middel laag"
           }
         },
         {
           "id": "low",
           "title": {
-            "en": "Low"
+            "en": "Low",
+            "nl": "Laag"
           }
         },
         {
           "id": "quiet",
           "title": {
-            "en": "Quiet"
+            "en": "Quiet",
+            "nl": "Stil"
           }
         }
       ]
@@ -1859,10 +2052,12 @@
     "se_fanlevel_pure": {
       "type": "enum",
       "title": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "desc": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "getable": true,
       "setable": true,
@@ -1872,13 +2067,15 @@
         {
           "id": "high",
           "title": {
-            "en": "High"
+            "en": "High",
+            "nl": "Hoog"
           }
         },
         {
           "id": "low",
           "title": {
-            "en": "Low"
+            "en": "Low",
+            "nl": "Laag"
           }
         }
       ]
@@ -1886,10 +2083,12 @@
     "se_filter_due_date": {
       "type": "string",
       "title": {
-        "en": "Clean filters by"
+        "en": "Clean filters by",
+        "nl": "Filters schoonmaken voor"
       },
       "desc": {
-        "en": "Clean the filters by date."
+        "en": "Clean the filters by date.",
+        "nl": "Filters schoonmaken voor datum."
       },
       "icon": "./assets/clock.svg",
       "getable": true,
@@ -1900,13 +2099,16 @@
     "se_filter_due_hours": {
       "type": "number",
       "title": {
-        "en": "Filter hours remaining"
+        "en": "Filter hours remaining",
+        "nl": "Uren resterend voor filter"
       },
       "desc": {
-        "en": "Hours remaining to clean filters."
+        "en": "Hours remaining to clean filters.",
+        "nl": "Uren resterend voor filterreiniging."
       },
       "units": {
-        "en": "h"
+        "en": "h",
+        "nl": "u"
       },
       "icon": "./assets/clock.svg",
       "getable": true,
@@ -1917,13 +2119,16 @@
     "se_filter_run_hours": {
       "type": "number",
       "title": {
-        "en": "Filter hours"
+        "en": "Filter hours",
+        "nl": "Filter uren"
       },
       "desc": {
-        "en": "Run hours since filters cleaned."
+        "en": "Run hours since filters cleaned.",
+        "nl": "Aantal uren sinds de filters zijn schoongemaakt."
       },
       "units": {
-        "en": "h"
+        "en": "h",
+        "nl": "u"
       },
       "icon": "./assets/clock.svg",
       "getable": true,
@@ -1934,10 +2139,12 @@
     "se_horizontal_swing": {
       "type": "enum",
       "title": {
-        "en": "Horizontal swing"
+        "en": "Horizontal swing",
+        "nl": "Horizontale luchtstroom"
       },
       "desc": {
-        "en": "Horizontal swing"
+        "en": "Horizontal swing",
+        "nl": "Horizontale luchtstroom"
       },
       "getable": true,
       "setable": true,
@@ -1947,55 +2154,64 @@
         {
           "id": "stopped",
           "title": {
-            "en": "Stopped"
+            "en": "Stopped",
+            "nl": "Gestopt"
           }
         },
         {
           "id": "fixedLeft",
           "title": {
-            "en": "Fixed left"
+            "en": "Fixed left",
+            "nl": "Vast links"
           }
         },
         {
           "id": "fixedCenterLeft",
           "title": {
-            "en": "Fixed center left"
+            "en": "Fixed center left",
+            "nl": "Vast midden links"
           }
         },
         {
           "id": "fixedCenter",
           "title": {
-            "en": "Fixed center"
+            "en": "Fixed center",
+            "nl": "Vast midden"
           }
         },
         {
           "id": "fixedCenterRight",
           "title": {
-            "en": "Fixed center right"
+            "en": "Fixed center right",
+            "nl": "Vast midden rechts"
           }
         },
         {
           "id": "fixedRight",
           "title": {
-            "en": "Fixed right"
+            "en": "Fixed right",
+            "nl": "Vast rechts"
           }
         },
         {
           "id": "fixedLeftRight",
           "title": {
-            "en": "Fixed left right"
+            "en": "Fixed left right",
+            "nl": "Vast links rechts"
           }
         },
         {
           "id": "rangeCenter",
           "title": {
-            "en": "Range center"
+            "en": "Range center",
+            "nl": "Bereik midden"
           }
         },
         {
           "id": "rangeFull",
           "title": {
-            "en": "Range full"
+            "en": "Range full",
+            "nl": "Bereik volledig"
           }
         }
       ]
@@ -2003,10 +2219,12 @@
     "se_last_seen": {
       "type": "string",
       "title": {
-        "en": "Last seen"
+        "en": "Last seen",
+        "nl": "Laatst gezien"
       },
       "desc": {
-        "en": "Last seen"
+        "en": "Last seen",
+        "nl": "Laatst gezien"
       },
       "icon": "./assets/clock.svg",
       "getable": true,
@@ -2017,10 +2235,12 @@
     "se_last_seen_seconds": {
       "type": "number",
       "title": {
-        "en": "Last seen seconds ago"
+        "en": "Last seen seconds ago",
+        "nl": "Laatst gezien seconden geleden"
       },
       "desc": {
-        "en": "Last seen seconds ago"
+        "en": "Last seen seconds ago",
+        "nl": "Laatst gezien seconden geleden"
       },
       "icon": "./assets/clock.svg",
       "getable": true,
@@ -2031,10 +2251,12 @@
     "se_onoff": {
       "type": "boolean",
       "title": {
-        "en": "State"
+        "en": "State",
+        "nl": "Status"
       },
       "desc": {
-        "en": "State of the device"
+        "en": "State of the device",
+        "nl": "Status van het apparaat"
       },
       "getable": true,
       "setable": true,

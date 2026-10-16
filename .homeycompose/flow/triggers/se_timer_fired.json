@@ -1,14 +1,16 @@
 {
   "id": "se_timer_fired",
   "title": {
-    "en": "Timer fired"
+    "en": "Timer fired",
+    "nl": "Timer afgelopen"
   },
   "tokens": [
     {
       "name": "state",
       "type": "number",
       "title": {
-        "en": "State"
+        "en": "State",
+        "nl": "Status"
       },
       "example": 1
     }
