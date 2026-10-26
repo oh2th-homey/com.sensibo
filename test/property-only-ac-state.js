@@ -74,6 +74,33 @@ async function run() {
   assert.deepStrictEqual(sent[sent.length - 1], ['on', true], 'a failed batch must not block later requests');
   assert(waits.every((delay) => delay > 0), 'outbound requests should be throttled');
 
+  // Exercise the real API wrapper while intercepting requests (no network).
+  const Sensibo = require('../lib/sensibo');
+  const api = new Sensibo({ logger: () => {} });
+  const requests = [];
+  api.request = async (action, method, url, body) => {
+    requests.push({ method, property: url.split('/acStates/')[1].split('?')[0], body });
+  };
+  device._sensibo = api;
+  api._acState = { temperatureUnit: 'F', targetTemperature: 50, mode: 'heat' };
+  device._pendingAcStatePatch = { on: true, fanLevel: 'quiet' };
+  await device.flushAcStateBatch();
+  assert.deepStrictEqual(requests, [
+    { method: 'PATCH', property: 'on', body: { newValue: true } },
+    { method: 'PATCH', property: 'fanLevel', body: { newValue: 'quiet' } }
+  ], 'power/fan requests must not resend a cached temperature');
+  device._pendingAcStatePatch = { targetTemperature: 20 };
+  await device.flushAcStateBatch();
+  assert.deepStrictEqual(requests[2], {
+    method: 'PATCH', property: 'targetTemperature', body: { newValue: 68 }
+  }, 'explicit Celsius setpoints must be converted for Fahrenheit devices');
+  api._acState.temperatureUnit = 'C';
+  device._pendingAcStatePatch = { targetTemperature: 24 };
+  await device.flushAcStateBatch();
+  assert.deepStrictEqual(requests[3], {
+    method: 'PATCH', property: 'targetTemperature', body: { newValue: 24 }
+  }, 'Celsius setpoints must remain unchanged');
+
   console.log('Sensibo property-only AC state tests passed');
 }
 
