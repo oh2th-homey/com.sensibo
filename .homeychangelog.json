@@ -199,5 +199,8 @@
   },
   "1.22.4": {
     "en": "Enchanced API error handling and oflline status"
+  },
+  "1.22.5": {
+    "en": "FIX: Repair updates the API key for all devices and restores availability; migrates device class on repair."
   }
 }
