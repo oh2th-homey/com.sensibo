@@ -163,6 +163,14 @@ module.exports = class BaseDevice extends Homey.Device {
     return this.getStoreValue('apikey');
   }
 
+  async updateApiKey(apikey) {
+    await this.setStoreValue('apikey', apikey);
+    if (this._sensibo) {
+      this._sensibo.setApiKey(apikey);
+      await this.fetchRemoteCapabilities();
+    }
+  }
+
   isInitialized() {
     return this._initialized;
   }
@@ -276,6 +284,7 @@ module.exports = class BaseDevice extends Homey.Device {
   async onDeviceInfoReceived(result) {
     if (result) {
       this.log(`Device info for: ${this.getData().id}:`, result);
+      await this.ensureDeviceAvailable();
       // Only convert targetTemperature if unit is F, measurements.temperature is always in C
       if (result.acState && result.acState.temperatureUnit === 'F') {
         if (typeof result.acState.targetTemperature === 'number') {

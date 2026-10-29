@@ -2,7 +2,7 @@
 
 const Homey = require('homey');
 const Sensibo = require('./lib/sensibo');
-const { randomDelay } = require('./lib/util');
+const { randomDelay, maskApiKey } = require('./lib/util');
 
 class SensiboApp extends Homey.App {
   async onInit() {
@@ -132,7 +132,10 @@ class SensiboApp extends Homey.App {
           const data = await this._sensibo.getAllDeviceInfo(apikey);
           await this.onDevicesDataReceived(data, devices);
         } catch (err) {
-          this.log('checkData api', err);
+          const names = Array.from(devices.values())
+            .filter((device) => device.getApiKey() === apikey)
+            .map((device) => device.getName());
+          this.log(`checkData api failed for key ${maskApiKey(apikey)} used by:`, names, err);
         }
       }
     } catch (err) {
@@ -164,7 +167,7 @@ class SensiboApp extends Homey.App {
       });
     });
 
-    this.log('Got Sensibo devices:', apiKeys, Array.from(devices.keys()), pInterval);
+    this.log('Got Sensibo devices:', Array.from(apiKeys).map(maskApiKey), Array.from(devices.keys()), pInterval);
     return { apiKeys, devices, pInterval };
   }
 
