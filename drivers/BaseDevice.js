@@ -28,6 +28,9 @@ module.exports = class BaseDevice extends Homey.Device {
     this._acStateBatchTimeout = undefined;
     this._acStateBatchResolvers = [];
     this._acStateBatchRejectors = [];
+    // Serialize property-only requests across consecutive batches.
+    this._acStateSendQueue = Promise.resolve();
+    this._lastAcStateCommandAt = 0;
   }
 
   clearAcStateBatch() {
@@ -88,6 +91,27 @@ module.exports = class BaseDevice extends Homey.Device {
     return batchPromise;
   }
 
+  async sendAcStatePropertyUpdates(patch) {
+    // Avoid resending cached mode/temperature when only power or fan level changes.
+    // Sensibo supports a PATCH endpoint for each individual AC property.
+    for (const [property, value] of Object.entries(patch)) {
+      if (this._deleted) {
+        throw new Error('Device uninitialized during acState update');
+      }
+      // Pace requests (including consecutive batches) to reduce Sensibo API 429 errors.
+      const elapsed = Date.now() - this._lastAcStateCommandAt;
+      const delay = Math.max(0, 750 - elapsed);
+      if (delay > 0) {
+        await new Promise((resolve) => this.homey.setTimeout(resolve, delay));
+      }
+      if (this._deleted) {
+        throw new Error('Device uninitialized during acState update');
+      }
+      this._lastAcStateCommandAt = Date.now();
+      await this._sensibo.setAcProperty(property, value);
+    }
+  }
+
   async flushAcStateBatch() {
     if (this._deleted) {
       this.clearAcStateBatch();
@@ -107,7 +131,10 @@ module.exports = class BaseDevice extends Homey.Device {
       return;
     }
     try {
-      await this._sensibo.setAcState(patch);
+      const operation = this._acStateSendQueue.then(() => this.sendAcStatePropertyUpdates(patch));
+      // Keep subsequent batches working after a failed request.
+      this._acStateSendQueue = operation.catch(() => {});
+      await operation;
       await this.ensureDeviceAvailable();
       this.resolvePendingAcStateBatch(undefined, resolvers);
     } catch (err) {
