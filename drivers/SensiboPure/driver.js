@@ -8,7 +8,7 @@ module.exports = class SensiboPureDriver extends BaseDriver {
 
   filterProductModel = (device) => {
     return device.productModel === 'pure';
-  }
+  };
 
   deviceName = (device) => `Sensibo Pure ${device.room.name}`;
 

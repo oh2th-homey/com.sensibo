@@ -40,6 +40,6 @@ module.exports = class SensiboRoomSensorDriver extends BaseDriver {
           },
         };
       });
-  }
+  };
 
 };
