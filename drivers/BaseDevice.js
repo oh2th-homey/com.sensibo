@@ -95,7 +95,14 @@ module.exports = class BaseDevice extends Homey.Device {
       return;
     }
     try {
-      await this._sensibo.setAcState(patch);
+      const properties = Object.keys(patch);
+      if (properties.length === 1) {
+        // A single change is sent as a PATCH, so no cached values are resent with it
+        await this._sensibo.setAcProperty(properties[0], patch[properties[0]]);
+      } else {
+        // The full state POST sends all changes as one command, so the AC beeps only once
+        await this._sensibo.setAcState(patch);
+      }
       await this.ensureDeviceAvailable();
       this.resolvePendingAcStateBatch(undefined, resolvers);
     } catch (err) {
