@@ -1,0 +1,3 @@
+Sensibo macht deine Klimaanlage, Wärmepumpe und deinen Luftreiniger smart. Mit dieser App steuert Homey deine Sensibo Sky, Air, Air Pro und Pure und nutzt die Messwerte von Sensibo Elements und dem Room Sensor, sodass das Raumklima in deinem Zuhause Teil deiner täglichen Routinen wird.
+
+Heize das Haus vor, bevor du nach Hause kommst, schalte die Wärmepumpe in den Lüftermodus, wenn der Kamin brennt, starte die Kühlung, wenn ein Raum zu warm wird, oder schalte alles aus, wenn die letzte Person das Haus verlässt. Temperatur, Luftfeuchtigkeit und Luftqualität deiner Sensibo-Geräte können jeden Flow in Homey starten.

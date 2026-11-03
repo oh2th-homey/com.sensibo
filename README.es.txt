@@ -1,0 +1,3 @@
+Sensibo hace inteligentes tu aire acondicionado, tu bomba de calor y tu purificador de aire. Con esta app, Homey controla tus Sensibo Sky, Air, Air Pro y Pure, y usa las mediciones de Sensibo Elements y del Room Sensor, para que el clima de tu hogar forme parte de tus rutinas diarias.
+
+Calienta la casa antes de llegar, pon la bomba de calor en modo ventilador cuando la chimenea esté encendida, empieza a enfriar cuando una habitación se caliente demasiado o apágalo todo cuando salga la última persona. La temperatura, la humedad y la calidad del aire de tus dispositivos Sensibo pueden iniciar cualquier Flow en Homey.

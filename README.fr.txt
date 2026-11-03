@@ -1,0 +1,3 @@
+Sensibo rend votre climatiseur, votre pompe à chaleur et votre purificateur d'air intelligents. Avec cette application, Homey pilote vos Sensibo Sky, Air, Air Pro et Pure, et utilise les mesures de Sensibo Elements et du Room Sensor, pour que le climat de votre maison fasse partie de vos routines quotidiennes.
+
+Réchauffez la maison avant de rentrer, passez la pompe à chaleur en mode ventilation quand la cheminée est allumée, lancez le refroidissement quand une pièce devient trop chaude, ou éteignez tout quand la dernière personne part. La température, l'humidité et la qualité de l'air de vos appareils Sensibo peuvent déclencher n'importe quel Flow dans Homey.

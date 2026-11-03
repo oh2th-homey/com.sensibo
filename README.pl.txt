@@ -1,0 +1,3 @@
+Sensibo sprawia, że Twój klimatyzator, pompa ciepła i oczyszczacz powietrza stają się inteligentne. Dzięki tej aplikacji Homey steruje urządzeniami Sensibo Sky, Air, Air Pro i Pure oraz korzysta z pomiarów Sensibo Elements i Room Sensor, dzięki czemu klimat w Twoim domu staje się częścią codziennych rutyn.
+
+Ogrzej dom, zanim wrócisz, przełącz pompę ciepła w tryb wentylatora, gdy pali się w kominku, włącz chłodzenie, gdy w pokoju robi się za ciepło, albo wyłącz wszystko, gdy ostatnia osoba wychodzi z domu. Temperatura, wilgotność i jakość powietrza z urządzeń Sensibo mogą uruchomić dowolny Flow w Homey.
