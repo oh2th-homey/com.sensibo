@@ -8,6 +8,10 @@ module.exports = class BaseDevice extends Homey.Device {
   async onInit() {
     await this.migrate();
     await this.createSensiboApi(this.log);
+    // Changes within this window are sent as one command, so the AC beeps only once.
+    // Each new change restarts the window. Cards in a normal Flow run arrive milliseconds apart and are merged.
+    // Kept at 500 ms for responsive controls: a longer window delays every command, including a single tap.
+    // Running cards one by one in the Flow editor spaces them ~1.5 s apart, so those are sent separately.
     this._acStateBatchWindowMs = 500;
     this._pendingAcStatePatch = {};
     this._acStateBatchResolvers = [];
