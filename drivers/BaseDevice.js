@@ -133,6 +133,14 @@ module.exports = class BaseDevice extends Homey.Device {
 
   async setUnavailableFromApiError(err) {
     const message = this.getApiFailureMessage(err);
+    // A single timeout is usually transient, only go unavailable if the next request times out too
+    if (err && err.timeout) {
+      this._consecutiveTimeouts = (this._consecutiveTimeouts || 0) + 1;
+      if (this._consecutiveTimeouts < 2) {
+        this.log('setUnavailableFromApiError ignoring first timeout', message);
+        return;
+      }
+    }
     try {
       await this.setUnavailable(message);
     } catch (setUnavailableErr) {
@@ -148,6 +156,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async ensureDeviceAvailable() {
+    this._consecutiveTimeouts = 0;
     try {
       if (!this.getAvailable()) {
         await this.setAvailable();
