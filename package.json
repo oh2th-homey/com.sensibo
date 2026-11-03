@@ -1,6 +1,6 @@
 {
   "name": "com.sensibo",
-  "version": "1.22.5",
+  "private": true,
   "main": "app.js",
   "engines": {
     "node": ">=22"
