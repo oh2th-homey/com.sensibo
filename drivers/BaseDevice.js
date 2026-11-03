@@ -95,7 +95,13 @@ module.exports = class BaseDevice extends Homey.Device {
       return;
     }
     try {
-      await this._sensibo.setAcState(patch);
+      const changedProps = Object.keys(patch);
+      if (changedProps.length === 1) {
+        const property = changedProps[0];
+        await this._sensibo.setAcProperty(property, patch[property]);
+      } else {
+        await this._sensibo.setAcState(patch);
+      }
       await this.ensureDeviceAvailable();
       this.resolvePendingAcStateBatch(undefined, resolvers);
     } catch (err) {
