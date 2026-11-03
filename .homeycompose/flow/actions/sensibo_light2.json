@@ -1,13 +1,16 @@
 {
   "id": "sensibo_light2",
   "title": {
-    "en": "Control light"
+    "en": "Control light",
+    "nl": "Bedien licht"
   },
   "titleFormatted": {
-    "en": "Turn light [[state]]"
+    "en": "Turn light [[state]]",
+    "nl": "Zet licht [[state]]"
   },
   "hint": {
-    "en": "Control light"
+    "en": "Control light",
+    "nl": "Bedien licht"
   },
   "args": [
     {
@@ -18,11 +21,13 @@
     {
       "name": "state",
       "label": {
-        "en": "Light state"
+        "en": "Light state",
+        "nl": "Lichtstatus"
       },
       "type": "autocomplete",
       "placeholder": {
-        "en": "Light state..."
+        "en": "Light state...",
+        "nl": "Lichtstatus..."
       }
     }
   ]

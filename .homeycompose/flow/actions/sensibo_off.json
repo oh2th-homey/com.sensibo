@@ -1,10 +1,12 @@
 {
   "id": "sensibo_off",
   "title": {
-    "en": "Turn off"
+    "en": "Turn off",
+    "nl": "Zet uit"
   },
   "hint": {
-    "en": "Turn off"
+    "en": "Turn off",
+    "nl": "Zet uit"
   },
   "args": [
     {

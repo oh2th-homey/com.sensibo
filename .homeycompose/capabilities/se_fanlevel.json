@@ -1,10 +1,12 @@
 {
   "type": "enum",
   "title": {
-    "en": "Fan level"
+    "en": "Fan level",
+    "nl": "Ventilatorsnelheid"
   },
   "desc": {
-    "en": "Fan level"
+    "en": "Fan level",
+    "nl": "Ventilatorsnelheid"
   },
   "getable": true,
   "setable": true,
@@ -20,37 +22,43 @@
     {
       "id": "high",
       "title": {
-        "en": "High"
+        "en": "High",
+        "nl": "Hoog"
       }
     },
     {
       "id": "medium_high",
       "title": {
-        "en": "Medium high"
+        "en": "Medium high",
+        "nl": "Middel hoog"
       }
     },
     {
       "id": "medium",
       "title": {
-        "en": "Medium"
+        "en": "Medium",
+        "nl": "Middel"
       }
     },
     {
       "id": "medium_low",
       "title": {
-        "en": "Medium low"
+        "en": "Medium low",
+        "nl": "Middel laag"
       }
     },
     {
       "id": "low",
       "title": {
-        "en": "Low"
+        "en": "Low",
+        "nl": "Laag"
       }
     },
     {
       "id": "quiet",
       "title": {
-        "en": "Quiet"
+        "en": "Quiet",
+        "nl": "Stil"
       }
     }
   ]

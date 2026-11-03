@@ -1,10 +1,12 @@
 {
   "type": "string",
   "title": {
-    "en": "Clean filters by"
+    "en": "Clean filters by",
+    "nl": "Filters schoonmaken voor"
   },
   "desc": {
-    "en": "Clean the filters by date."
+    "en": "Clean the filters by date.",
+    "nl": "Filters schoonmaken voor datum."
   },
   "icon": "./assets/clock.svg",
   "getable": true,

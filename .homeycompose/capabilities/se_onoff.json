@@ -1,10 +1,12 @@
 {
   "type": "boolean",
   "title": {
-    "en": "State"
+    "en": "State",
+    "nl": "Status"
   },
   "desc": {
-    "en": "State of the device"
+    "en": "State of the device",
+    "nl": "Status van het apparaat"
   },
   "getable": true,
   "setable": true,

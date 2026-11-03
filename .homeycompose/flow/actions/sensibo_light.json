@@ -2,13 +2,16 @@
   "id": "sensibo_light",
   "deprecated": true,
   "title": {
-    "en": "Control light"
+    "en": "Control light",
+    "nl": "Bedien licht"
   },
   "titleFormatted": {
-    "en": "Turn light [[state]]"
+    "en": "Turn light [[state]]",
+    "nl": "Zet licht [[state]]"
   },
   "hint": {
-    "en": "Control light"
+    "en": "Control light",
+    "nl": "Bedien licht"
   },
   "args": [
     {
@@ -19,20 +22,23 @@
     {
       "name": "state",
       "title": {
-        "en": "Light state"
+        "en": "Light state",
+        "nl": "Lichtstatus"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
           "id": "on",
           "label": {
-            "en": "On"
+            "en": "On",
+            "nl": "Aan"
           }
         }
       ]

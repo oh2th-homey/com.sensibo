@@ -1,10 +1,12 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Filter Alarm"
+    "en": "Filter Alarm",
+    "nl": "Filter alarm"
   },
   "desc": {
-    "en": "Filter needs cleaning"
+    "en": "Filter needs cleaning",
+    "nl": "Filter moet worden schoongemaakt"
   },
   "icon": "./assets/air_filter.svg",
   "getable": true,

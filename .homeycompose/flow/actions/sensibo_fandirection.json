@@ -2,13 +2,16 @@
   "id": "sensibo_fandirection",
   "deprecated": true,
   "title": {
-    "en": "Set swing"
+    "en": "Set swing",
+    "nl": "Zet luchtstroom"
   },
   "titleFormatted": {
-    "en": "Set swing to [[fanDirection]]"
+    "en": "Set swing to [[fanDirection]]",
+    "nl": "Zet luchtstroom naar [[fanDirection]]"
   },
   "hint": {
-    "en": "Set the fan direction"
+    "en": "Set the fan direction",
+    "nl": "Zet de ventilatierichting"
   },
   "args": [
     {
@@ -19,80 +22,93 @@
     {
       "name": "fanDirection",
       "title": {
-        "en": "Swing"
+        "en": "Swing",
+        "nl": "Luchtstroom"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "stopped",
           "label": {
-            "en": "Stopped"
+            "en": "Stopped",
+            "nl": "Gestopt"
           }
         },
         {
           "id": "fixedBottom",
           "label": {
-            "en": "Fixed bottom"
+            "en": "Fixed bottom",
+            "nl": "Vast onder"
           }
         },
         {
           "id": "fixedMiddleBottom",
           "label": {
-            "en": "Fixed middle bottom"
+            "en": "Fixed middle bottom",
+            "nl": "Vast midden onder"
           }
         },
         {
           "id": "fixedMiddle",
           "label": {
-            "en": "Fixed middle"
+            "en": "Fixed middle",
+            "nl": "Vast midden"
           }
         },
         {
           "id": "fixedMiddleTop",
           "label": {
-            "en": "Fixed middle top"
+            "en": "Fixed middle top",
+            "nl": "Vast midden boven"
           }
         },
         {
           "id": "fixedTop",
           "label": {
-            "en": "Fixed top"
+            "en": "Fixed top",
+            "nl": "Vast boven"
           }
         },
         {
           "id": "rangeBottom",
           "label": {
-            "en": "Range bottom"
+            "en": "Range bottom",
+            "nl": "Bereik onder"
           }
         },
         {
           "id": "rangeMiddle",
           "label": {
-            "en": "Range middle"
+            "en": "Range middle",
+            "nl": "Bereik midden"
           }
         },
         {
           "id": "rangeTop",
           "label": {
-            "en": "Range top"
+            "en": "Range top",
+            "nl": "Bereik boven"
           }
         },
         {
           "id": "rangeFull",
           "label": {
-            "en": "Range full"
+            "en": "Range full",
+            "nl": "Bereik volledig"
           }
         },
         {
           "id": "horizontal",
           "label": {
-            "en": "Horizontal"
+            "en": "Horizontal",
+            "nl": "Horizontaal"
           }
         },
         {
           "id": "both",
           "label": {
-            "en": "Both"
+            "en": "Both",
+            "nl": "Beide"
           }
         }
       ]

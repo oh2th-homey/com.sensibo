@@ -1,13 +1,16 @@
 {
   "id": "sensibo_set_timer_pure",
   "title": {
-    "en": "Set timer"
+    "en": "Set timer",
+    "nl": "Timer instellen"
   },
   "titleFormatted": {
-    "en": "Set timer [[minutesFromNow]], [[on]], [[fanLevel]]"
+    "en": "Set timer [[minutesFromNow]], [[on]], [[fanLevel]]",
+    "nl": "Timer instellen [[minutesFromNow]], [[on]], [[fanLevel]]"
   },
   "hint": {
-    "en": "Set minutes from now and select one or more parameters to be changed when the timer fires."
+    "en": "Set minutes from now and select one or more parameters to be changed when the timer fires.",
+    "nl": "Stel het aantal minuten in en selecteer een of meer parameters die worden gewijzigd wanneer de timer afgaat."
   },
   "args": [
     {
@@ -22,32 +25,37 @@
       "max": 1440,
       "step": 1,
       "placeholder": {
-        "en": "Minutes from now"
+        "en": "Minutes from now",
+        "nl": "Aantal minuten vanaf nu"
       }
     },
     {
       "name": "on",
       "title": {
-        "en": "On / off"
+        "en": "On / off",
+        "nl": "Aan / uit"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "nop",
           "label": {
-            "en": "- Unchanged -"
+            "en": "- Unchanged -",
+            "nl": "- Ongewijzigd -"
           }
         },
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
           "id": "on",
           "label": {
-            "en": "On"
+            "en": "On",
+            "nl": "Aan"
           }
         }
       ]
@@ -55,26 +63,30 @@
     {
       "name": "fanLevel",
       "title": {
-        "en": "Fan level"
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "nop",
           "label": {
-            "en": "- Unchanged -"
+            "en": "- Unchanged -",
+            "nl": "- Ongewijzigd -"
           }
         },
         {
           "id": "high",
           "label": {
-            "en": "High"
+            "en": "High",
+            "nl": "Hoog"
           }
         },
         {
           "id": "low",
           "label": {
-            "en": "Low"
+            "en": "Low",
+            "nl": "Laag"
           }
         }
       ]

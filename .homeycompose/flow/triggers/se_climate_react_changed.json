@@ -1,14 +1,16 @@
 {
   "id": "se_climate_react_changed",
   "title": {
-    "en": "Climate React changed"
+    "en": "Climate React changed",
+    "nl": "Climate React veranderd"
   },
   "tokens": [
     {
       "name": "climate_react_enabled",
       "type": "boolean",
       "title": {
-        "en": "Climate React enabled"
+        "en": "Climate React enabled",
+        "nl": "Climate React ingeschakeld"
       },
       "example": true
     },

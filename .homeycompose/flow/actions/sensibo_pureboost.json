@@ -1,13 +1,16 @@
 {
   "id": "sensibo_pureboost",
   "title": {
-    "en": "Control Pure Boost"
+    "en": "Control Pure Boost",
+    "nl": "Pure Boost aan/uit"
   },
   "titleFormatted": {
-    "en": "Pure Boost [[enabled]]"
+    "en": "Pure Boost [[enabled]]",
+    "nl": "Pure Boost [[enabled]]"
   },
   "hint": {
-    "en": "Enable or disable Pure Boost"
+    "en": "Enable or disable Pure Boost",
+    "nl": "Zet Pure Boost aan of uit"
   },
   "args": [
     {
@@ -18,20 +21,23 @@
     {
       "name": "enabled",
       "title": {
-        "en": "Enabled"
+        "en": "State",
+        "nl": "Status"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
           "id": "on",
           "label": {
-            "en": "On"
+            "en": "On",
+            "nl": "Aan"
           }
         }
       ]

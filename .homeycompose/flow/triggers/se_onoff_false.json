@@ -1,14 +1,16 @@
 {
   "id": "se_onoff_false",
   "title": {
-    "en": "Device turned off"
+    "en": "Device turned off",
+    "nl": "Apparaat uitgeschakeld"
   },
   "tokens": [
     {
       "name": "state",
       "type": "number",
       "title": {
-        "en": "State"
+        "en": "State",
+        "nl": "Status"
       },
       "example": 0
     }

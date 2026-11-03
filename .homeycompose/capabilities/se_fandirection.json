@@ -1,10 +1,12 @@
 {
   "type": "enum",
   "title": {
-    "en": "Swing"
+    "en": "Swing",
+    "nl": "Luchtstroom"
   },
   "desc": {
-    "en": "Swing"
+    "en": "Swing",
+    "nl": "Luchtstroom"
   },
   "getable": true,
   "setable": true,
@@ -14,73 +16,86 @@
     {
       "id": "stopped",
       "title": {
-        "en": "Stopped"
+        "en": "Stopped",
+        "nl": "Gestopt"
       }
     },
     {
       "id": "fixedBottom",
       "title": {
-        "en": "Fixed bottom"
+        "en": "Fixed bottom",
+        "nl": "Vast onder"
+
       }
     },
     {
       "id": "fixedMiddleBottom",
       "title": {
-        "en": "Fixed middle bottom"
+        "en": "Fixed middle bottom",
+        "nl": "Vast midden onder"
       }
     },
     {
       "id": "fixedMiddle",
       "title": {
-        "en": "Fixed middle"
+        "en": "Fixed middle",
+        "nl": "Vast midden"
       }
     },
     {
       "id": "fixedMiddleTop",
       "title": {
-        "en": "Fixed middle top"
+        "en": "Fixed middle top",
+        "nl": "Vast midden boven"
       }
     },
     {
       "id": "fixedTop",
       "title": {
-        "en": "Fixed top"
+        "en": "Fixed top",
+        "nl": "Vast boven"
       }
     },
     {
       "id": "rangeBottom",
       "title": {
-        "en": "Range bottom"
+        "en": "Range bottom",
+        "nl": "Bereik onder"
       }
     },
     {
       "id": "rangeMiddle",
       "title": {
-        "en": "Range middle"
+        "en": "Range middle",
+        "nl": "Bereik midden"
       }
     },
     {
       "id": "rangeTop",
       "title": {
-        "en": "Range top"
+        "en": "Range top",
+        "nl": "Bereik boven"
       }
     },
     {
       "id": "rangeFull",
       "title": {
-        "en": "Range full"
+        "en": "Range full",
+        "nl": "Bereik volledig"
       }
     },
     {
       "id": "horizontal",
       "title": {
-        "en": "Horizontal"
+        "en": "Horizontal",
+        "nl": "Horizontaal"
       }
     },
     {
       "id": "both",
       "title": {
-        "en": "Both"
+        "en": "Both",
+        "nl": "Beide"
       }
     }
   ]

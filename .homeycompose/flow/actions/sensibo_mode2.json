@@ -1,13 +1,16 @@
 {
   "id": "sensibo_mode2",
   "title": {
-    "en": "Set the fan mode"
+    "en": "Set the fan mode",
+    "nl": "Stel de ventilatormodus in"
   },
   "titleFormatted": {
-    "en": "Set the fan mode to [[mode]]"
+    "en": "Set the fan mode to [[mode]]",
+    "nl": "Stel de ventilatormodus in op [[mode]]"
   },
   "hint": {
-    "en": "Set the mode"
+    "en": "Set the mode",
+    "nl": "Stel de modus in"
   },
   "args": [
     {
@@ -18,11 +21,13 @@
     {
       "name": "mode",
       "label": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus"
       },
       "type": "autocomplete",
       "placeholder": {
-        "en": "Mode..."
+        "en": "Mode...",
+        "nl": "Modus..."
       }
     }
   ]

@@ -1,7 +1,8 @@
 {
   "id": "se_timer_enabled",
   "title": {
-    "en": "Timer is !{{enabled|disabled}}"
+    "en": "Timer is !{{enabled|disabled}}",
+    "nl": "Timer is !{{ingeschakeld|uitgeschakeld}}"
   },
   "args": [
     {

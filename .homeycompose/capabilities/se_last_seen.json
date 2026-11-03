@@ -1,10 +1,12 @@
 {
   "type": "string",
   "title": {
-    "en": "Last seen"
+    "en": "Last seen",
+    "nl": "Laatst gezien"
   },
   "desc": {
-    "en": "Last seen"
+    "en": "Last seen",
+    "nl": "Laatst gezien"
   },
   "icon": "./assets/clock.svg",
   "getable": true,

@@ -1,7 +1,8 @@
 {
   "id": "air_quality_changed",
   "title": {
-    "en": "Air quality changed"
+    "en": "Air quality changed",
+    "nl": "Luchtkwaliteit veranderd"
   },
   "args": [
     {
@@ -15,7 +16,8 @@
       "name": "air_quality",
       "type": "string",
       "title": {
-        "en": "Air quality"
+        "en": "Air quality",
+        "nl": "Luchtkwaliteit"
       },
       "example": "Excellent"
     }

@@ -1,14 +1,16 @@
 {
   "id": "se_timer_created",
   "title": {
-    "en": "Timer created"
+    "en": "Timer created",
+    "nl": "Timer aangemaakt"
   },
   "tokens": [
     {
       "name": "homey",
       "type": "boolean",
       "title": {
-        "en": "From Homey flow"
+        "en": "From Homey flow",
+        "nl": "Van Homey flow"
       },
       "example": true
     }

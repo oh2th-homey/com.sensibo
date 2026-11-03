@@ -1,14 +1,16 @@
 {
   "id": "se_timer_deleted",
   "title": {
-    "en": "Timer deleted"
+    "en": "Timer deleted",
+    "nl": "Timer verwijderd"
   },
   "tokens": [
     {
       "name": "homey",
       "type": "boolean",
       "title": {
-        "en": "From Homey flow"
+        "en": "From Homey flow",
+        "nl": "Van Homey flow"
       },
       "example": true
     }

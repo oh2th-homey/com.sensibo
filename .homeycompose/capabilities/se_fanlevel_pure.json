@@ -1,10 +1,12 @@
 {
   "type": "enum",
   "title": {
-    "en": "Fan level"
+    "en": "Fan level",
+    "nl": "Ventilatorsnelheid"
   },
   "desc": {
-    "en": "Fan level"
+    "en": "Fan level",
+    "nl": "Ventilatorsnelheid"
   },
   "getable": true,
   "setable": true,
@@ -14,13 +16,15 @@
     {
       "id": "high",
       "title": {
-        "en": "High"
+        "en": "High",
+        "nl": "Hoog"
       }
     },
     {
       "id": "low",
       "title": {
-        "en": "Low"
+        "en": "Low",
+        "nl": "Laag"
       }
     }
   ]
