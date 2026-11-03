@@ -1,0 +1,41 @@
+name: Sync package.json version
+
+# The Homey CLI bumps the version in app.json only, keep package.json in step with it
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - app.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set package.json version from app.json
+        id: sync
+        run: |
+          version=$(node -p "require('./app.json').version")
+          current=$(node -p "require('./package.json').version")
+          echo "app.json: $version, package.json: $current"
+          if [ "$version" = "$current" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          npm pkg set version="$version"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Sync package.json version to v${{ steps.sync.outputs.version }}"
+          git push
