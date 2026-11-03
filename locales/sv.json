@@ -20,5 +20,15 @@
     "off": "Av",
     "dry": "Torr",
     "fan": "Endast fläkt"
+  },
+  "fan_level": {
+    "quiet": "Tyst",
+    "low": "Låg",
+    "medium_low": "Medel-låg",
+    "medium": "Medel",
+    "medium_high": "Medel-hög",
+    "high": "Hög",
+    "strong": "Stark",
+    "auto": "Automatiskt"
   }
 }

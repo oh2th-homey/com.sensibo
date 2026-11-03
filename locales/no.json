@@ -20,5 +20,15 @@
     "off": "Av",
     "dry": "Tørr",
     "fan": "Kun vifte"
+  },
+  "fan_level": {
+    "quiet": "Stille",
+    "low": "Lav",
+    "medium_low": "Middels lav",
+    "medium": "Middels",
+    "medium_high": "Middels høy",
+    "high": "Høy",
+    "strong": "Sterk",
+    "auto": "Automatisk"
   }
 }

@@ -20,5 +20,15 @@
     "off": "Off",
     "dry": "Dry",
     "fan": "Fan Only"
+  },
+  "fan_level": {
+    "quiet": "Quiet",
+    "low": "Low",
+    "medium_low": "Medium low",
+    "medium": "Medium",
+    "medium_high": "Medium high",
+    "high": "High",
+    "strong": "Strong",
+    "auto": "Auto"
   }
 }

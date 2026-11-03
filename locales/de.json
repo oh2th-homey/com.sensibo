@@ -20,5 +20,15 @@
     "off": "Aus",
     "dry": "Trocken",
     "fan": "Nur Lüfter"
+  },
+  "fan_level": {
+    "quiet": "Leise",
+    "low": "Niedrig",
+    "medium_low": "Mittel-niedrig",
+    "medium": "Mittel",
+    "medium_high": "Mittel-hoch",
+    "high": "Hoch",
+    "strong": "Stark",
+    "auto": "Automatisch"
   }
 }

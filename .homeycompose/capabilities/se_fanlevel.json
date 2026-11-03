@@ -20,6 +20,13 @@
       }
     },
     {
+      "id": "strong",
+      "title": {
+        "en": "Strong",
+        "nl": "Krachtig"
+      }
+    },
+    {
       "id": "high",
       "title": {
         "en": "High",

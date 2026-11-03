@@ -20,5 +20,15 @@
     "off": "Désactivé",
     "dry": "Sec",
     "fan": "Ventilateur seulement"
+  },
+  "fan_level": {
+    "quiet": "Silencieux",
+    "low": "Bas",
+    "medium_low": "Moyen-bas",
+    "medium": "Moyen",
+    "medium_high": "Moyen-haut",
+    "high": "Haut",
+    "strong": "Fort",
+    "auto": "Automatique"
   }
 }

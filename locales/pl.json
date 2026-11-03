@@ -20,5 +20,15 @@
     "off": "Wył",
     "dry": "Osuszanie",
     "fan": "Tylko wentylator"
+  },
+  "fan_level": {
+    "quiet": "Cichy",
+    "low": "Niski",
+    "medium_low": "Średnio-niski",
+    "medium": "Średni",
+    "medium_high": "Średnio-wysoki",
+    "high": "Wysoki",
+    "strong": "Mocny",
+    "auto": "Automatyczny"
   }
 }

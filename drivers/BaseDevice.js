@@ -209,38 +209,53 @@ module.exports = class BaseDevice extends Homey.Device {
     }
   }
 
+  // Set the picker values of an enum capability to what the remote device supports.
+  // Titles come from locales/<i18nPrefix>.<id>, unknown values fall back to a readable id.
+  async updateEnumCapabilityValues(capabilityId, ids, i18nPrefix) {
+    // Fetch current options (may throw if not set yet, so wrap safely)
+    let currentOptions;
+    try {
+      currentOptions = this.getCapabilityOptions(capabilityId);
+    } catch (err) {
+      currentOptions = {};
+    }
+    const currentIds = (currentOptions.values || []).map((option) => option.id);
+    // Update only if there are changes
+    if (util.arraysEqualIgnoreOrder(ids, currentIds)) {
+      return;
+    }
+    const values = ids.map((id) => {
+      const key = `${i18nPrefix}.${id}`;
+      const title = this.homey.__(key);
+      return {
+        id,
+        title: title && title !== key ? title : id.charAt(0).toUpperCase() + id.slice(1).replace(/_/g, ' ')
+      };
+    });
+    await this.setCapabilityOptions(capabilityId, { values });
+    this.log(`Updated ${capabilityId} options ->`, ids);
+  }
+
   async onRemoteCapabilitiesReceived(capabilities) {
     // Adjust modes for thermostat_mode
     if (capabilities.modes !== undefined && this.hasCapability('thermostat_mode') === true) {
       const defaultModes = ['auto', 'heat', 'cool', 'off'];
       // Modes reported by the remote device
       const remoteModes = util.getModes(capabilities) || [];
-
       const availableModes = [...defaultModes, ...remoteModes.filter((mode) => !defaultModes.includes(mode))];
+      await this.updateEnumCapabilityValues('thermostat_mode', availableModes, 'thermostat_mode');
+    }
 
-      // Fetch current options (may throw if not set yet, so wrap safely)
-      let currentOptions;
-      try {
-        currentOptions = this.getCapabilityOptions('thermostat_mode');
-      } catch (err) {
-        currentOptions = { values: [] };
-      }
-
-      // Update only if there are changes on thermostat_mode modes
-      if (
-        !util.arraysEqualIgnoreOrder(
-          availableModes,
-          currentOptions.values.map((option) => option.id)
-        )
-      ) {
-        const newOptions = {
-          values: availableModes.map((mode) => ({
-            id: mode,
-            title: this.homey.__(`thermostat_mode.${mode}`)
-          }))
-        };
-        await this.setCapabilityOptions('thermostat_mode', newOptions);
-        this.log('Updated thermostat_mode options ->', availableModes);
+    // Adjust fan levels for se_fanlevel to the levels reported by the remote device, in a fixed low-to-high order
+    if (capabilities.modes !== undefined && this.hasCapability('se_fanlevel') === true) {
+      const remoteFanLevels = util.getAllFanLevels(capabilities);
+      if (remoteFanLevels) {
+        const order = ['quiet', 'low', 'medium_low', 'medium', 'medium_high', 'high', 'strong', 'auto'];
+        const fanLevels = [
+          ...order.filter((level) => remoteFanLevels.includes(level)),
+          ...remoteFanLevels.filter((level) => !order.includes(level))
+        ];
+        await this.updateEnumCapabilityValues('se_fanlevel', fanLevels, 'fan_level');
       }
     }
 

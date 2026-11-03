@@ -20,5 +20,15 @@
     "off": "Disattivata",
     "dry": "Asciutto",
     "fan": "Solo ventilatore"
+  },
+  "fan_level": {
+    "quiet": "Silenzioso",
+    "low": "Bassa",
+    "medium_low": "Medio-bassa",
+    "medium": "Media",
+    "medium_high": "Medio-alta",
+    "high": "Alta",
+    "strong": "Forte",
+    "auto": "Automatica"
   }
 }

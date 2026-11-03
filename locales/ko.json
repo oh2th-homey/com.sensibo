@@ -20,5 +20,15 @@
     "off": "꺼짐",
     "dry": "제습",
     "fan": "팬 전용"
+  },
+  "fan_level": {
+    "quiet": "저소음",
+    "low": "약",
+    "medium_low": "중약",
+    "medium": "중",
+    "medium_high": "중강",
+    "high": "강",
+    "strong": "강력",
+    "auto": "자동"
   }
 }

@@ -20,5 +20,15 @@
     "off": "Deaktiveret",
     "dry": "Tør",
     "fan": "Kun blæser"
+  },
+  "fan_level": {
+    "quiet": "Stille",
+    "low": "Lav",
+    "medium_low": "Middel-lav",
+    "medium": "Middel",
+    "medium_high": "Middel-høj",
+    "high": "Høj",
+    "strong": "Kraftig",
+    "auto": "Automatisk"
   }
 }

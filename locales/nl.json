@@ -20,5 +20,15 @@
     "off": "Uit",
     "dry": "Drogen",
     "fan": "Alleen ventilator"
+  },
+  "fan_level": {
+    "quiet": "Stil",
+    "low": "Laag",
+    "medium_low": "Middel laag",
+    "medium": "Middel",
+    "medium_high": "Middel hoog",
+    "high": "Hoog",
+    "strong": "Krachtig",
+    "auto": "Automatisch"
   }
 }
