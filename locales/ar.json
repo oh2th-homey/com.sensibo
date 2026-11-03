@@ -30,5 +30,30 @@
     "high": "مرتفع",
     "strong": "قوي",
     "auto": "تلقائي"
+  },
+  "swing": {
+    "stopped": "متوقف",
+    "fixedBottom": "ثابت أسفل",
+    "fixedMiddleBottom": "ثابت وسط أسفل",
+    "fixedMiddle": "ثابت وسط",
+    "fixedMiddleTop": "ثابت وسط أعلى",
+    "fixedTop": "ثابت أعلى",
+    "rangeBottom": "تأرجح أسفل",
+    "rangeMiddle": "تأرجح وسط",
+    "rangeTop": "تأرجح أعلى",
+    "rangeFull": "تأرجح كامل",
+    "horizontal": "أفقي",
+    "both": "كلاهما"
+  },
+  "horizontal_swing": {
+    "stopped": "متوقف",
+    "fixedLeft": "ثابت يسار",
+    "fixedCenterLeft": "ثابت وسط يسار",
+    "fixedCenter": "ثابت وسط",
+    "fixedCenterRight": "ثابت وسط يمين",
+    "fixedRight": "ثابت يمين",
+    "fixedLeftRight": "ثابت يسار ويمين",
+    "rangeCenter": "تأرجح وسط",
+    "rangeFull": "تأرجح كامل"
   }
 }

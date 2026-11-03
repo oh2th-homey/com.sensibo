@@ -30,5 +30,30 @@
     "high": "High",
     "strong": "Strong",
     "auto": "Auto"
+  },
+  "swing": {
+    "stopped": "Stopped",
+    "fixedBottom": "Fixed bottom",
+    "fixedMiddleBottom": "Fixed middle bottom",
+    "fixedMiddle": "Fixed middle",
+    "fixedMiddleTop": "Fixed middle top",
+    "fixedTop": "Fixed top",
+    "rangeBottom": "Range bottom",
+    "rangeMiddle": "Range middle",
+    "rangeTop": "Range top",
+    "rangeFull": "Range full",
+    "horizontal": "Horizontal",
+    "both": "Both"
+  },
+  "horizontal_swing": {
+    "stopped": "Stopped",
+    "fixedLeft": "Fixed left",
+    "fixedCenterLeft": "Fixed center left",
+    "fixedCenter": "Fixed center",
+    "fixedCenterRight": "Fixed center right",
+    "fixedRight": "Fixed right",
+    "fixedLeftRight": "Fixed left right",
+    "rangeCenter": "Range center",
+    "rangeFull": "Range full"
   }
 }

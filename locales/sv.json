@@ -30,5 +30,30 @@
     "high": "Hög",
     "strong": "Stark",
     "auto": "Automatiskt"
+  },
+  "swing": {
+    "stopped": "Stoppad",
+    "fixedBottom": "Fast nere",
+    "fixedMiddleBottom": "Fast mitten nere",
+    "fixedMiddle": "Fast mitten",
+    "fixedMiddleTop": "Fast mitten uppe",
+    "fixedTop": "Fast uppe",
+    "rangeBottom": "Svep nere",
+    "rangeMiddle": "Svep mitten",
+    "rangeTop": "Svep uppe",
+    "rangeFull": "Svep full",
+    "horizontal": "Horisontell",
+    "both": "Båda"
+  },
+  "horizontal_swing": {
+    "stopped": "Stoppad",
+    "fixedLeft": "Fast vänster",
+    "fixedCenterLeft": "Fast mitten vänster",
+    "fixedCenter": "Fast mitten",
+    "fixedCenterRight": "Fast mitten höger",
+    "fixedRight": "Fast höger",
+    "fixedLeftRight": "Fast vänster höger",
+    "rangeCenter": "Svep mitten",
+    "rangeFull": "Svep full"
   }
 }

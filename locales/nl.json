@@ -30,5 +30,30 @@
     "high": "Hoog",
     "strong": "Krachtig",
     "auto": "Automatisch"
+  },
+  "swing": {
+    "stopped": "Gestopt",
+    "fixedBottom": "Vast onder",
+    "fixedMiddleBottom": "Vast midden onder",
+    "fixedMiddle": "Vast midden",
+    "fixedMiddleTop": "Vast midden boven",
+    "fixedTop": "Vast boven",
+    "rangeBottom": "Bereik onder",
+    "rangeMiddle": "Bereik midden",
+    "rangeTop": "Bereik boven",
+    "rangeFull": "Bereik volledig",
+    "horizontal": "Horizontaal",
+    "both": "Beide"
+  },
+  "horizontal_swing": {
+    "stopped": "Gestopt",
+    "fixedLeft": "Vast links",
+    "fixedCenterLeft": "Vast midden links",
+    "fixedCenter": "Vast midden",
+    "fixedCenterRight": "Vast midden rechts",
+    "fixedRight": "Vast rechts",
+    "fixedLeftRight": "Vast links rechts",
+    "rangeCenter": "Bereik midden",
+    "rangeFull": "Bereik volledig"
   }
 }

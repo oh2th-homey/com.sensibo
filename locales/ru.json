@@ -30,5 +30,30 @@
     "high": "Высокая",
     "strong": "Сильная",
     "auto": "Авто"
+  },
+  "swing": {
+    "stopped": "Остановлено",
+    "fixedBottom": "Фиксировано внизу",
+    "fixedMiddleBottom": "Фиксировано середина-низ",
+    "fixedMiddle": "Фиксировано середина",
+    "fixedMiddleTop": "Фиксировано середина-верх",
+    "fixedTop": "Фиксировано вверху",
+    "rangeBottom": "Качание внизу",
+    "rangeMiddle": "Качание середина",
+    "rangeTop": "Качание вверху",
+    "rangeFull": "Качание полное",
+    "horizontal": "Горизонтально",
+    "both": "Оба"
+  },
+  "horizontal_swing": {
+    "stopped": "Остановлено",
+    "fixedLeft": "Фиксировано слева",
+    "fixedCenterLeft": "Фиксировано центр-слева",
+    "fixedCenter": "Фиксировано центр",
+    "fixedCenterRight": "Фиксировано центр-справа",
+    "fixedRight": "Фиксировано справа",
+    "fixedLeftRight": "Фиксировано слева и справа",
+    "rangeCenter": "Качание центр",
+    "rangeFull": "Качание полное"
   }
 }

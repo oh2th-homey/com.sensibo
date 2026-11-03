@@ -210,8 +210,10 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   // Set the picker values of an enum capability to what the remote device supports.
+  // Known ids are listed in the given order, new ones are appended.
   // Titles come from locales/<i18nPrefix>.<id>, unknown values fall back to a readable id.
-  async updateEnumCapabilityValues(capabilityId, ids, i18nPrefix) {
+  async updateEnumCapabilityValues(capabilityId, remoteIds, i18nPrefix, order = []) {
+    const ids = [...order.filter((id) => remoteIds.includes(id)), ...remoteIds.filter((id) => !order.includes(id))];
     // Fetch current options (may throw if not set yet, so wrap safely)
     let currentOptions;
     try {
@@ -227,9 +229,11 @@ module.exports = class BaseDevice extends Homey.Device {
     const values = ids.map((id) => {
       const key = `${i18nPrefix}.${id}`;
       const title = this.homey.__(key);
+      // e.g. medium_high -> Medium high, fixedMiddleTop -> Fixed middle top
+      const readable = id.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
       return {
         id,
-        title: title && title !== key ? title : id.charAt(0).toUpperCase() + id.slice(1).replace(/_/g, ' ')
+        title: title && title !== key ? title : readable.charAt(0).toUpperCase() + readable.slice(1)
       };
     });
     await this.setCapabilityOptions(capabilityId, { values });
@@ -246,16 +250,27 @@ module.exports = class BaseDevice extends Homey.Device {
       await this.updateEnumCapabilityValues('thermostat_mode', availableModes, 'thermostat_mode');
     }
 
-    // Adjust fan levels for se_fanlevel to the levels reported by the remote device, in a fixed low-to-high order
-    if (capabilities.modes !== undefined && this.hasCapability('se_fanlevel') === true) {
+    // Adjust fan levels and swings to the values reported by the remote device
+    if (capabilities.modes !== undefined) {
       const remoteFanLevels = util.getAllFanLevels(capabilities);
-      if (remoteFanLevels) {
-        const order = ['quiet', 'low', 'medium_low', 'medium', 'medium_high', 'high', 'strong', 'auto'];
-        const fanLevels = [
-          ...order.filter((level) => remoteFanLevels.includes(level)),
-          ...remoteFanLevels.filter((level) => !order.includes(level))
-        ];
-        await this.updateEnumCapabilityValues('se_fanlevel', fanLevels, 'fan_level');
+      if (remoteFanLevels && this.hasCapability('se_fanlevel') === true) {
+        await this.updateEnumCapabilityValues('se_fanlevel', remoteFanLevels, 'fan_level', [
+          'quiet', 'low', 'medium_low', 'medium', 'medium_high', 'high', 'strong', 'auto'
+        ]);
+      }
+      const remoteSwings = util.getAllSwings(capabilities);
+      if (remoteSwings && this.hasCapability('se_fandirection') === true) {
+        await this.updateEnumCapabilityValues('se_fandirection', remoteSwings, 'swing', [
+          'stopped', 'fixedBottom', 'fixedMiddleBottom', 'fixedMiddle', 'fixedMiddleTop', 'fixedTop',
+          'rangeBottom', 'rangeMiddle', 'rangeTop', 'rangeFull', 'horizontal', 'both'
+        ]);
+      }
+      const remoteHorizontalSwings = util.getAllHorizontalSwings(capabilities);
+      if (remoteHorizontalSwings && this.hasCapability('se_horizontal_swing') === true) {
+        await this.updateEnumCapabilityValues('se_horizontal_swing', remoteHorizontalSwings, 'horizontal_swing', [
+          'stopped', 'fixedLeft', 'fixedCenterLeft', 'fixedCenter', 'fixedCenterRight', 'fixedRight',
+          'fixedLeftRight', 'rangeCenter', 'rangeFull'
+        ]);
       }
     }
 

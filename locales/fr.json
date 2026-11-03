@@ -30,5 +30,30 @@
     "high": "Haut",
     "strong": "Fort",
     "auto": "Automatique"
+  },
+  "swing": {
+    "stopped": "Arrêté",
+    "fixedBottom": "Fixe bas",
+    "fixedMiddleBottom": "Fixe milieu bas",
+    "fixedMiddle": "Fixe milieu",
+    "fixedMiddleTop": "Fixe milieu haut",
+    "fixedTop": "Fixe haut",
+    "rangeBottom": "Balayage bas",
+    "rangeMiddle": "Balayage milieu",
+    "rangeTop": "Balayage haut",
+    "rangeFull": "Balayage complet",
+    "horizontal": "Horizontal",
+    "both": "Les deux"
+  },
+  "horizontal_swing": {
+    "stopped": "Arrêté",
+    "fixedLeft": "Fixe gauche",
+    "fixedCenterLeft": "Fixe centre gauche",
+    "fixedCenter": "Fixe centre",
+    "fixedCenterRight": "Fixe centre droite",
+    "fixedRight": "Fixe droite",
+    "fixedLeftRight": "Fixe gauche droite",
+    "rangeCenter": "Balayage centre",
+    "rangeFull": "Balayage complet"
   }
 }

@@ -30,5 +30,30 @@
     "high": "Alta",
     "strong": "Forte",
     "auto": "Automatica"
+  },
+  "swing": {
+    "stopped": "Fermo",
+    "fixedBottom": "Fisso basso",
+    "fixedMiddleBottom": "Fisso medio basso",
+    "fixedMiddle": "Fisso medio",
+    "fixedMiddleTop": "Fisso medio alto",
+    "fixedTop": "Fisso alto",
+    "rangeBottom": "Oscillazione basso",
+    "rangeMiddle": "Oscillazione medio",
+    "rangeTop": "Oscillazione alto",
+    "rangeFull": "Oscillazione completo",
+    "horizontal": "Orizzontale",
+    "both": "Entrambi"
+  },
+  "horizontal_swing": {
+    "stopped": "Fermo",
+    "fixedLeft": "Fisso sinistra",
+    "fixedCenterLeft": "Fisso centro sinistra",
+    "fixedCenter": "Fisso centro",
+    "fixedCenterRight": "Fisso centro destra",
+    "fixedRight": "Fisso destra",
+    "fixedLeftRight": "Fisso sinistra destra",
+    "rangeCenter": "Oscillazione centro",
+    "rangeFull": "Oscillazione completo"
   }
 }

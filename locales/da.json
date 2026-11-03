@@ -30,5 +30,30 @@
     "high": "Høj",
     "strong": "Kraftig",
     "auto": "Automatisk"
+  },
+  "swing": {
+    "stopped": "Stoppet",
+    "fixedBottom": "Fast nede",
+    "fixedMiddleBottom": "Fast midt nede",
+    "fixedMiddle": "Fast midt",
+    "fixedMiddleTop": "Fast midt oppe",
+    "fixedTop": "Fast oppe",
+    "rangeBottom": "Sving nede",
+    "rangeMiddle": "Sving midt",
+    "rangeTop": "Sving oppe",
+    "rangeFull": "Sving fuld",
+    "horizontal": "Vandret",
+    "both": "Begge"
+  },
+  "horizontal_swing": {
+    "stopped": "Stoppet",
+    "fixedLeft": "Fast venstre",
+    "fixedCenterLeft": "Fast midt venstre",
+    "fixedCenter": "Fast midt",
+    "fixedCenterRight": "Fast midt højre",
+    "fixedRight": "Fast højre",
+    "fixedLeftRight": "Fast venstre højre",
+    "rangeCenter": "Sving midt",
+    "rangeFull": "Sving fuld"
   }
 }

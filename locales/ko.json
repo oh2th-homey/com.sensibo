@@ -30,5 +30,30 @@
     "high": "강",
     "strong": "강력",
     "auto": "자동"
+  },
+  "swing": {
+    "stopped": "정지",
+    "fixedBottom": "하단 고정",
+    "fixedMiddleBottom": "중하단 고정",
+    "fixedMiddle": "중앙 고정",
+    "fixedMiddleTop": "중상단 고정",
+    "fixedTop": "상단 고정",
+    "rangeBottom": "하단 스윙",
+    "rangeMiddle": "중앙 스윙",
+    "rangeTop": "상단 스윙",
+    "rangeFull": "전체 스윙",
+    "horizontal": "수평",
+    "both": "모두"
+  },
+  "horizontal_swing": {
+    "stopped": "정지",
+    "fixedLeft": "왼쪽 고정",
+    "fixedCenterLeft": "중앙 왼쪽 고정",
+    "fixedCenter": "중앙 고정",
+    "fixedCenterRight": "중앙 오른쪽 고정",
+    "fixedRight": "오른쪽 고정",
+    "fixedLeftRight": "좌우 고정",
+    "rangeCenter": "중앙 스윙",
+    "rangeFull": "전체 스윙"
   }
 }

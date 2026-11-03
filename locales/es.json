@@ -30,5 +30,30 @@
     "high": "Alta",
     "strong": "Fuerte",
     "auto": "Automático"
+  },
+  "swing": {
+    "stopped": "Detenido",
+    "fixedBottom": "Fijo abajo",
+    "fixedMiddleBottom": "Fijo medio abajo",
+    "fixedMiddle": "Fijo medio",
+    "fixedMiddleTop": "Fijo medio arriba",
+    "fixedTop": "Fijo arriba",
+    "rangeBottom": "Barrido abajo",
+    "rangeMiddle": "Barrido medio",
+    "rangeTop": "Barrido arriba",
+    "rangeFull": "Barrido completo",
+    "horizontal": "Horizontal",
+    "both": "Ambos"
+  },
+  "horizontal_swing": {
+    "stopped": "Detenido",
+    "fixedLeft": "Fijo izquierda",
+    "fixedCenterLeft": "Fijo centro izquierda",
+    "fixedCenter": "Fijo centro",
+    "fixedCenterRight": "Fijo centro derecha",
+    "fixedRight": "Fijo derecha",
+    "fixedLeftRight": "Fijo izquierda derecha",
+    "rangeCenter": "Barrido centro",
+    "rangeFull": "Barrido completo"
   }
 }
