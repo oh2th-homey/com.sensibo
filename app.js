@@ -75,7 +75,7 @@ class SensiboApp extends Homey.App {
 
     this.homey.flow.getActionCard('sensibo_cr').registerRunListener((args, state) => args.device.onActionClimateReact(args.enabled));
 
-    this.homey.flow.getActionCard('sensibo_pureboost').registerRunListener((args, state) => args.device.onActionPureBoost(args.enabled));
+    this.homey.flow.getActionCard('sensibo_pureboost').registerRunListener((args, state) => args.device.onUpdatePureBoost(args.enabled));
 
     this.homey.flow.getActionCard('sensibo_delete_timer').registerRunListener((args, state) => args.device.onDeleteTimer());
 
@@ -96,6 +96,7 @@ class SensiboApp extends Homey.App {
 
   async createSensiboApi() {
     this._sensibo = new Sensibo({
+      homey: this.homey,
       logger: this.log
     });
   }
@@ -107,13 +108,15 @@ class SensiboApp extends Homey.App {
     }
   }
 
-  async scheduleCheckData(interval = 60) {
+  scheduleCheckData(interval = 60) {
     if (this._deleted) {
       return;
     }
     this.clearCheckData();
     // this.log(`New polling in ${interval} seconds`);
-    this.curTimeout = this.homey.setTimeout(this.checkData.bind(this), interval * 1000);
+    this.curTimeout = this.homey.setTimeout(() => {
+      this.checkData().catch((err) => this.log('checkData error', err));
+    }, interval * 1000);
   }
 
   async checkData() {
@@ -127,7 +130,7 @@ class SensiboApp extends Homey.App {
       const { apiKeys, devices, pInterval } = this.getSensiboDevices();
       pollingInterval = pInterval;
       for (const apikey of apiKeys) {
-        await randomDelay(2, 10);
+        await randomDelay(this.homey, 2, 10);
         try {
           const data = await this._sensibo.getAllDeviceInfo(apikey);
           await this.onDevicesDataReceived(data, devices);
