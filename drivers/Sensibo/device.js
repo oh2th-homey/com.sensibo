@@ -95,10 +95,10 @@ module.exports = class SensiboDevice extends BaseDevice {
       this.clearCheckData();
       if (this.hasCapability('se_climate_react')) {
         this.log(`Fetching AC state for: ${this._sensibo.getDeviceId()}`);
-        await randomDelay(1, 3);
+        await randomDelay(this.homey, 1, 3);
         const acStatesData = await this._sensibo.getAcStates();
         await this.onAcStatesReceived(acStatesData);
-        await randomDelay(2, 10);
+        await randomDelay(this.homey, 2, 10);
         const climateReactSettings = await this._sensibo.getClimateReactSettings();
         await this.onClimateReactSettingsReceived(climateReactSettings);
         await this.ensureDeviceAvailable();

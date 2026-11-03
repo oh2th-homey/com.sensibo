@@ -8,7 +8,10 @@ module.exports = class BaseDevice extends Homey.Device {
   async onInit() {
     await this.migrate();
     await this.createSensiboApi(this.log);
-    this.initAcStateBatching();
+    this._acStateBatchWindowMs = 500;
+    this._pendingAcStatePatch = {};
+    this._acStateBatchResolvers = [];
+    this._acStateBatchRejectors = [];
     await this.registerCapabilityListeners();
     await this.fetchRemoteCapabilities();
     this.log(`${this.deviceName()} device initialized`);
@@ -22,28 +25,18 @@ module.exports = class BaseDevice extends Homey.Device {
     this.clearCheckData();
   }
 
-  initAcStateBatching() {
-    this._acStateBatchWindowMs = 500;
-    this._pendingAcStatePatch = {};
-    this._acStateBatchTimeout = undefined;
-    this._acStateBatchResolvers = [];
-    this._acStateBatchRejectors = [];
-  }
-
   clearAcStateBatch() {
     if (this._acStateBatchTimeout) {
       this.homey.clearTimeout(this._acStateBatchTimeout);
       this._acStateBatchTimeout = undefined;
     }
     this._pendingAcStatePatch = {};
-    this.rejectPendingAcStateBatch(new Error('Device uninitialized before batched acState flush'));
-  }
-
-  createAcStateBatchPromise() {
-    return new Promise((resolve, reject) => {
-      this._acStateBatchResolvers.push(resolve);
-      this._acStateBatchRejectors.push(reject);
-    });
+    const rejectors = this._acStateBatchRejectors;
+    this._acStateBatchResolvers = [];
+    this._acStateBatchRejectors = [];
+    for (const reject of rejectors) {
+      reject(new Error('Device uninitialized before batched acState flush'));
+    }
   }
 
   resolvePendingAcStateBatch(value, resolvers = this._acStateBatchResolvers) {
@@ -51,14 +44,6 @@ module.exports = class BaseDevice extends Homey.Device {
     this._acStateBatchRejectors = [];
     for (const resolve of resolvers) {
       resolve(value);
-    }
-  }
-
-  rejectPendingAcStateBatch(err, rejectors = this._acStateBatchRejectors) {
-    this._acStateBatchResolvers = [];
-    this._acStateBatchRejectors = [];
-    for (const reject of rejectors) {
-      reject(err);
     }
   }
 
@@ -81,7 +66,10 @@ module.exports = class BaseDevice extends Homey.Device {
     // Keep local state in sync with queued updates so subsequent validations use the effective pending state.
     this._sensibo.updateAcState(patch);
     this._pendingAcStatePatch = { ...this._pendingAcStatePatch, ...patch };
-    const batchPromise = this.createAcStateBatchPromise();
+    const batchPromise = new Promise((resolve, reject) => {
+      this._acStateBatchResolvers.push(resolve);
+      this._acStateBatchRejectors.push(reject);
+    });
     // Attach a no-op rejection handler so fire-and-forget callers do not create unhandled rejections.
     batchPromise.catch(() => {});
     this.scheduleAcStateBatchFlush();
@@ -125,10 +113,6 @@ module.exports = class BaseDevice extends Homey.Device {
       return err.message;
     }
     return 'Unknown API error';
-  }
-
-  isApiFailureError(err) {
-    return !!(err && (err.apiMessage || err.status || err.responseData));
   }
 
   async setUnavailableFromApiError(err) {
@@ -186,6 +170,7 @@ module.exports = class BaseDevice extends Homey.Device {
 
   async createSensiboApi(logger) {
     this._sensibo = new Sensibo({
+      homey: this.homey,
       apikey: this.getApiKey(),
       deviceId: this.getData().id,
       logger
@@ -272,7 +257,7 @@ module.exports = class BaseDevice extends Homey.Device {
   };
 
   onAdded() {
-    this.homey.scheduleCheckData(5);
+    this.homey.app.scheduleCheckData(5);
     this.log(`${this.deviceName()} added:`, this.getData().id);
   }
 
@@ -393,7 +378,7 @@ module.exports = class BaseDevice extends Homey.Device {
 
           if (result.measurements.time.secondsAgo > limitOffline && !this._offlineTrigged) {
             try {
-              this.homey.app._offlineTrigger.trigger(
+              await this.homey.app._offlineTrigger.trigger(
                 this,
                 {
                   seconds_ago: result.measurements.time.secondsAgo,
@@ -449,17 +434,19 @@ module.exports = class BaseDevice extends Homey.Device {
     }
   }
 
-  async scheduleCheckData(seconds) {
+  scheduleCheckData(seconds) {
     if (this._deleted) {
       return;
     }
     this.clearCheckData();
     let interval = seconds;
     if (!interval) {
-      const settings = await this.getSettings();
+      const settings = this.getSettings();
       interval = settings.Polling_Interval || 30;
     }
-    this.curTimeout = this.homey.setTimeout(this.checkData.bind(this), interval * 1000);
+    this.curTimeout = this.homey.setTimeout(() => {
+      this.checkData().catch((err) => this.log('checkData error', err));
+    }, interval * 1000);
   }
 
   async checkData() {}
@@ -471,12 +458,14 @@ module.exports = class BaseDevice extends Homey.Device {
     }
   }
 
-  async scheduleTimer(seconds) {
+  scheduleTimer(seconds) {
     if (this._deleted) {
       return;
     }
     this.clearTimer();
-    this.curTimer = this.homey.setTimeout(this.onTimerFired.bind(this), seconds * 1000 + 1);
+    this.curTimer = this.homey.setTimeout(() => {
+      this.onTimerFired().catch((err) => this.log('onTimerFired error', err));
+    }, seconds * 1000 + 1);
   }
 
   async onTimerFired() {
@@ -485,8 +474,10 @@ module.exports = class BaseDevice extends Homey.Device {
     }
     try {
       this.clearTimer();
-      this.homey.app._timerFiredTrigger.trigger(this, { state: 1 }, {});
-      this.log(`Timer fired for: ${this._sensibo.getDeviceId()}`);
+      this.homey.app._timerFiredTrigger
+        .trigger(this, { state: 1 }, {})
+        .then(() => this.log(`Timer fired for: ${this._sensibo.getDeviceId()}`))
+        .catch((err) => this.log('Error triggering Timer fired:', err));
     } catch (err) {
       this.log('onTimerFired error', err);
     }
@@ -503,13 +494,10 @@ module.exports = class BaseDevice extends Homey.Device {
         mode = mode || 'auto';
         await this.setCapabilityValue('thermostat_mode', mode).catch((err) => this.log(err));
       }
-      this.homey.app._turnedOnTrigger.trigger(this, { state: 1 }, {});
+      this.homey.app._turnedOnTrigger.trigger(this, { state: 1 }, {}).catch((err) => this.log('Error triggering Turned on:', err));
       this.log(`turned on OK: ${this._sensibo.getDeviceId()}`);
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onActionTurnOn error', message);
       throw message;
     } finally {
@@ -526,13 +514,10 @@ module.exports = class BaseDevice extends Homey.Device {
       if (this.hasCapability('thermostat_mode')) {
         await this.setCapabilityValue('thermostat_mode', 'off').catch((err) => this.log(err));
       }
-      this.homey.app._turnedOffTrigger.trigger(this, { state: 0 }, {});
+      this.homey.app._turnedOffTrigger.trigger(this, { state: 0 }, {}).catch((err) => this.log('Error triggering Turned off:', err));
       this.log(`turned off OK: ${this._sensibo.getDeviceId()}`);
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onActionTurnOff error', message);
       throw message;
     } finally {
@@ -549,10 +534,7 @@ module.exports = class BaseDevice extends Homey.Device {
         this.log(`set fan mode OK: ${this._sensibo.getDeviceId()} -> ${mode}`);
       }
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onActionSetMode error', message);
       throw message;
     } finally {
@@ -658,10 +640,6 @@ module.exports = class BaseDevice extends Homey.Device {
     }
   }
 
-  async onActionPureBoost(enabled) {
-    await this.onUpdatePureBoost(enabled);
-  }
-
   async isTimerEnabled() {
     try {
       const isEnabled = await this._sensibo.isTimerEnabled();
@@ -689,7 +667,7 @@ module.exports = class BaseDevice extends Homey.Device {
       await this.ensureDeviceAvailable();
       this._hasTimer = false;
       this._hasTimerEnabled = false;
-      this.homey.app._timerDeletedTrigger.trigger(this, { homey: true }, {});
+      this.homey.app._timerDeletedTrigger.trigger(this, { homey: true }, {}).catch((err) => this.log('Error triggering Timer deleted:', err));
     } catch (err) {
       await this.handleApiFailure('onDeleteTimer', err);
     } finally {
@@ -698,36 +676,31 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onSetTimer(minutesFromNow, on, mode, fanLevel, targetTemperature) {
+    this.log('onSetTimer', minutesFromNow, on, on === 'on', mode, fanLevel, targetTemperature);
+    const newAcState = {
+      on: on !== 'nop' ? on === 'on' : undefined,
+      mode: mode !== 'nop' ? mode : undefined,
+      fanLevel: fanLevel !== 'nop' ? fanLevel : undefined,
+      targetTemperature: targetTemperature >= 10 ? targetTemperature : undefined
+    };
+    if (minutesFromNow <= 0) {
+      throw new Error('Minutes from now must be specified.');
+    }
+    if (minutesFromNow > 1440) {
+      throw new Error('Minutes from now cannot be larger than 1440.');
+    }
+    if (newAcState.on === undefined && newAcState.mode === undefined && newAcState.fanLevel === undefined && newAcState.targetTemperature === undefined) {
+      throw new Error('At least one parameter must be specified.');
+    }
     try {
-      this.log('onSetTimer', minutesFromNow, on, on === 'on', mode, fanLevel, targetTemperature);
       this.clearCheckData();
-      const newAcState = {
-        on: on !== 'nop' ? on === 'on' : undefined,
-        mode: mode !== 'nop' ? mode : undefined,
-        fanLevel: fanLevel !== 'nop' ? fanLevel : undefined,
-        targetTemperature: targetTemperature >= 10 ? targetTemperature : undefined
-      };
-      if (minutesFromNow <= 0) {
-        throw new Error('Minutes from now must be specified.');
-      }
-      if (minutesFromNow > 1440) {
-        throw new Error('Minutes from now cannot be larger than 1440.');
-      }
-      if (newAcState.on === undefined && newAcState.mode === undefined && newAcState.fanLevel === undefined && newAcState.targetTemperature === undefined) {
-        throw new Error('At least one parameter must be specified.');
-      }
       await this._sensibo.setCurrentTimer(minutesFromNow, newAcState);
       await this.ensureDeviceAvailable();
       this._hasTimer = true;
       this._hasTimerEnabled = true;
-      this.homey.app._timerCreatedTrigger.trigger(this, { homey: true }, {});
+      this.homey.app._timerCreatedTrigger.trigger(this, { homey: true }, {}).catch((err) => this.log('Error triggering Timer created:', err));
     } catch (err) {
-      if (this.isApiFailureError(err)) {
-        await this.handleApiFailure('onSetTimer', err);
-      }
-      const message = this.getApiFailureMessage(err);
-      this.log('onSetTimer error', message);
-      throw message;
+      await this.handleApiFailure('onSetTimer', err);
     } finally {
       this.scheduleCheckData();
     }
@@ -740,10 +713,7 @@ module.exports = class BaseDevice extends Homey.Device {
       this.queueAcStatePatch({ light: state });
       this.log(`set light OK: ${this._sensibo.getDeviceId()} -> ${state}`);
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onControlLight error', message);
       throw message;
     } finally {
@@ -789,10 +759,7 @@ module.exports = class BaseDevice extends Homey.Device {
       this.queueAcStatePatch({ targetTemperature: value });
       this.log(`set target temperature OK: ${this._sensibo.getDeviceId()} -> ${value}`);
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onUpdateTargetTemperature error', message);
       throw message;
     } finally {
@@ -808,19 +775,16 @@ module.exports = class BaseDevice extends Homey.Device {
         if (value === 'off') {
           this.queueAcStatePatch({ on: false });
           await this.setCapabilityValue('se_onoff', false).catch((err) => this.log(err));
-          this.homey.app._turnedOffTrigger.trigger(this, { state: 0 }, {});
+          this.homey.app._turnedOffTrigger.trigger(this, { state: 0 }, {}).catch((err) => this.log('Error triggering Turned off:', err));
         } else {
           this.queueAcStatePatch({ on: true, mode: value });
           await this.setCapabilityValue('se_onoff', true).catch((err) => this.log(err));
-          this.homey.app._turnedOnTrigger.trigger(this, { state: 1 }, {});
+          this.homey.app._turnedOnTrigger.trigger(this, { state: 1 }, {}).catch((err) => this.log('Error triggering Turned on:', err));
         }
         this.log(`set thermostat OK: ${this._sensibo.getDeviceId()} -> ${value}`);
       }
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onUpdateThermostatMode error', message);
       throw message;
     } finally {
@@ -837,10 +801,7 @@ module.exports = class BaseDevice extends Homey.Device {
         this.log(`set fan level OK: ${this._sensibo.getDeviceId()} -> ${value}`);
       }
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onUpdateFanlevel error', message);
       throw message;
     } finally {
@@ -857,10 +818,7 @@ module.exports = class BaseDevice extends Homey.Device {
         this.log(`set swing OK: ${this._sensibo.getDeviceId()} -> ${value}`);
       }
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onUpdateSwing error', message);
       throw message;
     } finally {
@@ -877,10 +835,7 @@ module.exports = class BaseDevice extends Homey.Device {
         this.log(`set horizontal swing OK: ${this._sensibo.getDeviceId()} -> ${value}`);
       }
     } catch (err) {
-      let message = err;
-      if (err.response.data.message !== undefined) {
-        message = err.response.data.message;
-      }
+      const message = this.getApiFailureMessage(err);
       this.log('onUpdateHorizontalSwing error', message);
       throw message;
     } finally {
