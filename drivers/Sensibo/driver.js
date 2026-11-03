@@ -11,6 +11,6 @@ module.exports = class SensiboDriver extends BaseDriver {
     // skyplus = Sensibo Air
     // airq = Sensibo AirQ and Sensibo Air Pro
     return device.productModel && (device.productModel.includes('sky') || device.productModel.includes('airq'));
-  }
+  };
 
 };

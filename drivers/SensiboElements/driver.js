@@ -8,7 +8,7 @@ module.exports = class SensiboElementsDriver extends BaseDriver {
 
   filterProductModel = (device) => {
     return device.productModel === 'elements';
-  }
+  };
 
   deviceName = (device) => `Sensibo Elements ${device.room.name}`;
 
