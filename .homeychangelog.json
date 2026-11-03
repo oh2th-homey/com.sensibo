@@ -202,5 +202,8 @@
   },
   "1.22.5": {
     "en": "FIX: Repair updates the API key for all devices and restores availability; migrates device class on repair."
+  },
+  "1.23.0": {
+    "en": "Updated for Homey v12.9.0 / Node.js 22 with a 30-second API request timeout and fixes for crashes and unclear error messages."
   }
 }
