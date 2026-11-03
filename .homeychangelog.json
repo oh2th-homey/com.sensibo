@@ -205,5 +205,8 @@
   },
   "1.23.0": {
     "en": "Updated for Homey v12.9.0 / Node.js 22 with a 30-second API request timeout and fixes for crashes and unclear error messages."
+  },
+  "1.23.1": {
+    "en": "FIX: Power or fan changes sometimes resetting the AC's target temperature: a single change is now sent on its own, and multiple changes still go as one command, so the AC beeps once."
   }
 }
