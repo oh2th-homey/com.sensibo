@@ -208,5 +208,8 @@
   },
   "1.23.1": {
     "en": "FIX: Power or fan changes sometimes resetting the AC's target temperature: a single change is now sent on its own, and multiple changes still go as one command, so the AC beeps once."
+  },
+  "1.24.0": {
+    "en": "NEW: The fan level and swing pickers on the device now show the options your AC supports, including Strong, and turning the AC on or off appears in the device timeline."
   }
 }
