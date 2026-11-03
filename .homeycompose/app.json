@@ -11,7 +11,18 @@
   },
   "description": {
     "en": "Make your air conditioner smart",
-    "nl": "Maak je airconditioner slim"
+    "nl": "Maak je airconditioner slim",
+    "ar": "اجعل مكيف الهواء الخاص بك ذكيًا",
+    "da": "Gør din aircondition smart",
+    "de": "Machen Sie Ihre Klimaanlage intelligent",
+    "es": "Haz que tu aire acondicionado sea inteligente",
+    "fr": "Rendez votre climatiseur intelligent",
+    "it": "Rendi il tuo condizionatore intelligente",
+    "ko": "에어컨을 스마트하게 만드세요",
+    "no": "Gjør klimaanlegget ditt smart",
+    "pl": "Spraw, aby Twój klimatyzator był inteligentny",
+    "ru": "Сделайте ваш кондиционер умным",
+    "sv": "Gör din luftkonditionering smart"
   },
   "category": [
     "climate"
