@@ -11,5 +11,14 @@
   "getable": true,
   "setable": true,
   "uiQuickAction": true,
-  "greyout": true
+  "greyout": true,
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Turned on",
+    "nl": "Aangezet"
+  },
+  "insightsTitleFalse": {
+    "en": "Turned off",
+    "nl": "Uitgezet"
+  }
 }
