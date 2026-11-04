@@ -214,5 +214,8 @@
   },
   "1.25.0": {
     "en": "NEW: Flow cards to set the Climate React rule above and below its thresholds, and a trigger when the Climate React settings change; FIX: the Room Sensor battery level now drops as the battery drains."
+  },
+  "1.26.0": {
+    "en": "NEW: When a Room Sensor is the primary sensor in the Sensibo app, the AC shows its temperature and humidity and a Use Room Sensor indicator, and newly paired Room Sensors get the name they have in the Sensibo app."
   }
 }
