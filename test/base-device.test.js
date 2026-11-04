@@ -14,6 +14,7 @@ Module._load = function loadWithHomeyStub(request, ...args) {
   return originalLoad.call(this, request, ...args);
 };
 const BaseDevice = require('../drivers/BaseDevice');
+const { translate } = require('./i18n');
 // Lab Sensibo Air, remote limited to stopped / full range swings
 const labLimitedRemote = require('../samples/pods/skyplus-celsius-climate-react-resaved.json');
 
@@ -39,7 +40,7 @@ const createClient = () => {
 const createDevice = (sensibo, patch) => {
   const device = Object.create(BaseDevice.prototype);
   device.log = () => {};
-  device.homey = { clearTimeout: () => {} };
+  device.homey = { clearTimeout: () => {}, __: translate };
   device._sensibo = sensibo;
   device._pendingAcStatePatch = patch;
   device._acStateBatchResolvers = [];
@@ -143,12 +144,11 @@ test('a Climate React rule on an unconfigured device fails with a readable messa
   const device = createDevice(sensibo, {});
   device.clearCheckData = () => {};
   device.scheduleCheckData = () => {};
-  device.homey.__ = (key) => key;
   await assert.rejects(
     device.onActionSetClimateReactRule('low', {
       type: 'temperature', threshold: 20, on: 'off', targetTemperature: 20
     }),
-    { message: 'errors.climate_react_not_configured' }
+    { message: translate('errors.climate_react_not_configured') }
   );
   assert.deepStrictEqual(device.unavailableErrors, []);
 });
@@ -182,7 +182,6 @@ test('Climate React rule cards offer what the remote supports, first the unchang
   const sensibo = createClient();
   sensibo._remoteCapabilities = remoteCapabilities;
   const device = createDevice(sensibo, {});
-  device.homey.__ = () => '- Unchanged -';
   const ids = async (autocomplete, query = '') => (await device.withUnchangedOption(query, autocomplete.call(device, query, {}))).map((item) => item.id);
 
   assert.deepStrictEqual(await ids(device.onModeAutocomplete), ['nop', 'cool', 'heat', 'fan', 'dry', 'auto']);
@@ -241,4 +240,30 @@ test('devices whose info lists no room sensors keep Use Room Sensor away', async
   await device.onDeviceInfoReceived({ productModel: 'motion_sensor', measurements: { temperature: 22.1, humidity: 42 } });
   assert.strictEqual(device.hasCapability('se_use_roomsensor'), false);
   assert.strictEqual(device.caps.get('measure_temperature'), 22.1);
+});
+
+test('Flow dropdowns name AC values in the user language', async () => {
+  const sensibo = createClient();
+  sensibo._remoteCapabilities = labLimitedRemote.result.remoteCapabilities;
+  const device = createDevice(sensibo, {});
+  assert.deepStrictEqual(await device.onModeAutocomplete('', {}), [
+    { id: 'cool', name: 'Cool' }, { id: 'heat', name: 'Heat' }, { id: 'fan', name: 'Fan Only' }, { id: 'dry', name: 'Dry' }, { id: 'auto', name: 'Automatic' }
+  ]);
+  assert.deepStrictEqual(await device.onSwingAutocomplete('full', {}), [{ id: 'rangeFull', name: translate('swing.rangeFull') }]);
+  // A value without a translation gets a readable name
+  assert.strictEqual(device.valueTitle('fan_level', 'super_turbo'), 'Super turbo');
+});
+
+test('timer and API errors are translated', async () => {
+  const device = createDevice(createClient(), {});
+  device.clearCheckData = () => {};
+  device.scheduleCheckData = () => {};
+  await assert.rejects(device.onSetTimer(0, 'on', 'nop', 'nop', 0), { message: translate('errors.timer_minutes_required') });
+  await assert.rejects(device.onSetTimer(1441, 'on', 'nop', 'nop', 0), { message: 'Minutes from now can be at most 1440.' });
+  await assert.rejects(device.onSetTimer(5, 'nop', 'nop', 'nop', 0), { message: translate('errors.timer_nothing_to_set') });
+  assert.strictEqual(device.getApiFailureMessage({}), translate('errors.unknown_api_error'));
+  const sensibo = new Sensibo({
+    homey: { __: translate }, apikey: 'key', deviceId: 'pod', logger: () => {}
+  });
+  assert.strictEqual(sensibo.createTimeoutError('GET', 'https://example.invalid/?apiKey=key').message, "The Sensibo API didn't answer within 30 seconds.");
 });

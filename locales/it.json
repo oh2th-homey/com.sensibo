@@ -1,18 +1,23 @@
 {
   "pair": {
     "title": "Sensibo",
-    "subtitle": "Rendi il tuo condizionatore intelligente",
     "apikey_help": "Vai su https://home.sensibo.com/me/api per ottenere una chiave API",
     "apikey_header": "Inserisci la chiave API",
     "apikey_label": "Chiave API",
-    "valid_apikey": "Inserisci una chiave API valida",
     "submit": "Invia"
   },
   "errors": {
     "failed_to_retrieve_devices": "Impossibile recuperare i dispositivi.",
     "no_devices": "Nessun dispositivo trovato.",
     "light_not_supported": "La luce non è supportata per questo dispositivo.",
-    "climate_react_not_configured": "Salva Climate React una volta nell'app Sensibo prima di modificarlo da Homey."
+    "climate_react_not_configured": "Salva Climate React una volta nell'app Sensibo prima di modificarlo da Homey.",
+    "timer_minutes_required": "Imposta i minuti da adesso.",
+    "timer_minutes_too_large": "I minuti da adesso possono essere al massimo __max__.",
+    "timer_nothing_to_set": "Scegli almeno un'impostazione da modificare con il timer.",
+    "api_timeout": "L'API Sensibo non ha risposto entro __seconds__ secondi.",
+    "unknown_api_error": "Errore sconosciuto dall'API Sensibo.",
+    "device_deleted": "Questo dispositivo è stato eliminato.",
+    "change_not_sent": "L'app si è fermata prima che la modifica fosse inviata a Sensibo."
   },
   "thermostat_mode": {
     "auto": "Automatica",
@@ -59,5 +64,17 @@
   },
   "flow": {
     "unchanged": "- Invariato -"
+  },
+  "light": {
+    "on": "Acceso",
+    "off": "Spento",
+    "dim": "Attenuato"
+  },
+  "climate_react": {
+    "on": "Acceso",
+    "off": "Spento",
+    "fan": "ventola",
+    "swing": "oscillazione",
+    "horizontal_swing": "orizzontale"
   }
 }

@@ -1,18 +1,23 @@
 {
   "pair": {
     "title": "Sensibo",
-    "subtitle": "Rendez votre climatiseur intelligent",
     "apikey_help": "Allez sur https://home.sensibo.com/me/api pour obtenir une clé API",
     "apikey_header": "Entrez la clé API",
     "apikey_label": "Clé API",
-    "valid_apikey": "Veuillez entrer une clé API valide",
     "submit": "Valider"
   },
   "errors": {
     "failed_to_retrieve_devices": "Échec de la récupération des appareils.",
     "no_devices": "Aucun appareil trouvé.",
     "light_not_supported": "La lumière n'est pas prise en charge pour cet appareil.",
-    "climate_react_not_configured": "Enregistrez Climate React une fois dans l'application Sensibo avant de le modifier depuis Homey."
+    "climate_react_not_configured": "Enregistrez Climate React une fois dans l'application Sensibo avant de le modifier depuis Homey.",
+    "timer_minutes_required": "Indiquez le nombre de minutes à partir de maintenant.",
+    "timer_minutes_too_large": "Le nombre de minutes peut être au maximum de __max__.",
+    "timer_nothing_to_set": "Choisissez au moins un réglage que le minuteur doit modifier.",
+    "api_timeout": "L'API Sensibo n'a pas répondu dans les __seconds__ secondes.",
+    "unknown_api_error": "Erreur inconnue de l'API Sensibo.",
+    "device_deleted": "Cet appareil a été supprimé.",
+    "change_not_sent": "L'application s'est arrêtée avant l'envoi de la modification à Sensibo."
   },
   "thermostat_mode": {
     "auto": "Automatique",
@@ -59,5 +64,17 @@
   },
   "flow": {
     "unchanged": "- Inchangé -"
+  },
+  "light": {
+    "on": "Allumé",
+    "off": "Éteint",
+    "dim": "Tamisé"
+  },
+  "climate_react": {
+    "on": "Allumé",
+    "off": "Éteint",
+    "fan": "ventilateur",
+    "swing": "oscillation",
+    "horizontal_swing": "horizontal"
   }
 }

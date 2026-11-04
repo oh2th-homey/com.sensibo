@@ -40,7 +40,7 @@ module.exports = class BaseDevice extends Homey.Device {
     this._acStateBatchResolvers = [];
     this._acStateBatchRejectors = [];
     for (const reject of rejectors) {
-      reject(new Error('Device uninitialized before batched acState flush'));
+      reject(new Error(this.homey.__('errors.change_not_sent')));
     }
   }
 
@@ -66,7 +66,7 @@ module.exports = class BaseDevice extends Homey.Device {
 
   queueAcStatePatch(patch) {
     if (this._deleted) {
-      throw new Error('Device deleted');
+      throw new Error(this.homey.__('errors.device_deleted'));
     }
     // Keep local state in sync with queued updates so subsequent validations use the effective pending state.
     this._sensibo.updateAcState(patch);
@@ -124,7 +124,7 @@ module.exports = class BaseDevice extends Homey.Device {
     if (err && typeof err.message === 'string' && err.message.length > 0) {
       return err.message;
     }
-    return 'Unknown API error';
+    return this.homey.__('errors.unknown_api_error');
   }
 
   async setUnavailableFromApiError(err) {
@@ -210,6 +210,25 @@ module.exports = class BaseDevice extends Homey.Device {
     }
   }
 
+  // Translated title of an AC value (mode, fan level, swing, ...) from locales/<i18nPrefix>.<id>.
+  // Unknown values fall back to a readable id, e.g. medium_high -> Medium high, fixedMiddleTop -> Fixed middle top.
+  valueTitle(i18nPrefix, id) {
+    const key = `${i18nPrefix}.${id}`;
+    const title = this.homey.__(key);
+    if (title && title !== key) {
+      return title;
+    }
+    const readable = id.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+    return readable.charAt(0).toUpperCase() + readable.slice(1);
+  }
+
+  // Flow autocomplete list of AC values with translated names, filtered by the typed query
+  valueAutocomplete(query, ids, i18nPrefix) {
+    return ids
+      .map((id) => ({ id, name: this.valueTitle(i18nPrefix, id) }))
+      .filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+  }
+
   // Set the picker values of an enum capability to what the remote device supports.
   // Known ids are listed in the given order, new ones are appended.
   // Titles come from locales/<i18nPrefix>.<id>, unknown values fall back to a readable id.
@@ -227,16 +246,7 @@ module.exports = class BaseDevice extends Homey.Device {
     if (util.arraysEqualIgnoreOrder(ids, currentIds)) {
       return;
     }
-    const values = ids.map((id) => {
-      const key = `${i18nPrefix}.${id}`;
-      const title = this.homey.__(key);
-      // e.g. medium_high -> Medium high, fixedMiddleTop -> Fixed middle top
-      const readable = id.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
-      return {
-        id,
-        title: title && title !== key ? title : readable.charAt(0).toUpperCase() + readable.slice(1)
-      };
-    });
+    const values = ids.map((id) => ({ id, title: this.valueTitle(i18nPrefix, id) }));
     await this.setCapabilityOptions(capabilityId, { values });
     this.log(`Updated ${capabilityId} options ->`, ids);
   }
@@ -612,19 +622,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onModeAutocomplete(query, args) {
-    const modes = this._sensibo.getModes() || ['cool', 'heat', 'fan', 'auto', 'dry'];
-    return Promise.resolve(
-      modes
-        .map((mode) => {
-          return {
-            id: mode,
-            name: mode[0].toUpperCase() + mode.substr(1).toLowerCase()
-          };
-        })
-        .filter((result) => {
-          return result.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-        })
-    );
+    return this.valueAutocomplete(query, this._sensibo.getModes() || ['cool', 'heat', 'fan', 'auto', 'dry'], 'thermostat_mode');
   }
 
   async onActionSetFanLevel(fanLevel) {
@@ -635,21 +633,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onFanLevelAutocomplete(query, args) {
-    const fanLevels = this._sensibo.getAllFanLevels() || ['auto', 'high', 'medium', 'low'];
-    return Promise.resolve(
-      fanLevels
-        .map((fanLevel) => {
-          let name = fanLevel[0].toUpperCase() + fanLevel.substr(1).toLowerCase();
-          name = name.replace('_', ' ');
-          return {
-            id: fanLevel,
-            name
-          };
-        })
-        .filter((result) => {
-          return result.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-        })
-    );
+    return this.valueAutocomplete(query, this._sensibo.getAllFanLevels() || ['auto', 'high', 'medium', 'low'], 'fan_level');
   }
 
   async onActionSetSwing(swing) {
@@ -660,21 +644,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onSwingAutocomplete(query, args) {
-    const items = this._sensibo.getAllSwings() || ['stopped', 'fixedBottom', 'fixedTop', 'rangeTop', 'rangeFull'];
-    return Promise.resolve(
-      items
-        .map((item) => {
-          let name = item[0].toUpperCase() + item.substr(1).toLowerCase();
-          name = name.replace('_', ' ');
-          return {
-            id: item,
-            name
-          };
-        })
-        .filter((result) => {
-          return result.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-        })
-    );
+    return this.valueAutocomplete(query, this._sensibo.getAllSwings() || ['stopped', 'fixedBottom', 'fixedTop', 'rangeTop', 'rangeFull'], 'swing');
   }
 
   async onActionSetHorizontalSwing(horizontalSwing) {
@@ -685,21 +655,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onHorizontalSwingAutocomplete(query, args) {
-    const items = this._sensibo.getAllHorizontalSwings() || ['stopped', 'fixedLeft', 'fixedRight', 'rangeCenter', 'rangeFull'];
-    return Promise.resolve(
-      items
-        .map((item) => {
-          let name = item[0].toUpperCase() + item.substr(1).toLowerCase();
-          name = name.replace('_', ' ');
-          return {
-            id: item,
-            name
-          };
-        })
-        .filter((result) => {
-          return result.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-        })
-    );
+    return this.valueAutocomplete(query, this._sensibo.getAllHorizontalSwings() || ['stopped', 'fixedLeft', 'fixedRight', 'rangeCenter', 'rangeFull'], 'horizontal_swing');
   }
 
   async onActionClimateReact(enabled) {
@@ -794,13 +750,13 @@ module.exports = class BaseDevice extends Homey.Device {
       targetTemperature: targetTemperature >= 10 ? targetTemperature : undefined
     };
     if (minutesFromNow <= 0) {
-      throw new Error('Minutes from now must be specified.');
+      throw new Error(this.homey.__('errors.timer_minutes_required'));
     }
     if (minutesFromNow > 1440) {
-      throw new Error('Minutes from now cannot be larger than 1440.');
+      throw new Error(this.homey.__('errors.timer_minutes_too_large', { max: 1440 }));
     }
     if (newAcState.on === undefined && newAcState.mode === undefined && newAcState.fanLevel === undefined && newAcState.targetTemperature === undefined) {
-      throw new Error('At least one parameter must be specified.');
+      throw new Error(this.homey.__('errors.timer_nothing_to_set'));
     }
     try {
       this.clearCheckData();
@@ -832,21 +788,7 @@ module.exports = class BaseDevice extends Homey.Device {
   }
 
   async onLightAutocomplete(query, args) {
-    const items = this._sensibo.getAllLights() || ['on', 'off'];
-    return Promise.resolve(
-      items
-        .map((item) => {
-          let name = item[0].toUpperCase() + item.substr(1).toLowerCase();
-          name = name.replace('_', ' ');
-          return {
-            id: item,
-            name
-          };
-        })
-        .filter((result) => {
-          return result.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
-        })
-    );
+    return this.valueAutocomplete(query, this._sensibo.getAllLights() || ['on', 'off'], 'light');
   }
 
   async onSyncPowerState(state) {

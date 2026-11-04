@@ -5,6 +5,10 @@ const assert = require('node:assert');
 const {
   buildClimateReactConfig, climateReactTokens, climateReactFingerprint, thresholdToApi, thresholdFromApi, CLIMATE_REACT_NOT_CONFIGURED
 } = require('../lib/climate-react');
+const { translate } = require('./i18n');
+
+// Translated value names as the Sensibo device passes them (BaseDevice.valueTitle)
+const title = (prefix, id) => translate(`${prefix}.${id}`);
 // Saved in the Sensibo app with the AC in Fahrenheit: above 76.2 °F cool 63 °F, below 69.8 °F heat 79 °F
 const savedInApp = require('../samples/smartmode/get-fahrenheit-feelslike.json');
 const celsiusWithFahrenheitRules = require('../samples/pods/skyplus-celsius-climate-react-in-fahrenheit.json');
@@ -78,12 +82,12 @@ test('Fahrenheit thresholds with one decimal survive the round trip', () => {
 
 test('tokens show thresholds and states in the AC unit', () => {
   const config = buildClimateReactConfig(current(), 'high', rule({ threshold: 76, targetTemperature: 62, mode: 'cool' }), 'F');
-  const tokens = climateReactTokens(config, 'F');
+  const tokens = climateReactTokens(config, 'F', title);
   assert.strictEqual(tokens.high_threshold, 76);
   assert.strictEqual(tokens.low_threshold, 50);
   assert.strictEqual(tokens.unit, '°F');
   assert.strictEqual(tokens.climate_react_enabled, true);
-  assert.strictEqual(tokens.high_state, 'On, cool, 62°F, fan medium_high, swing fixedMiddleTop, horizontal fixedCenterRight');
+  assert.strictEqual(tokens.high_state, 'On, Cool, 62°F, fan Medium high, swing Fixed middle top, horizontal Fixed center right');
 });
 
 test('the fingerprint ignores the enabled flag', () => {
@@ -97,12 +101,12 @@ test('the fingerprint ignores the enabled flag', () => {
 
 test('a configuration saved in the Sensibo app shows as the app shows it', () => {
   const { result } = savedInApp;
-  const tokens = climateReactTokens(result, 'F');
+  const tokens = climateReactTokens(result, 'F', title);
   assert.strictEqual(tokens.type, 'feelsLike');
   assert.strictEqual(tokens.high_threshold, 76.2);
   assert.strictEqual(tokens.low_threshold, 69.8);
-  assert.strictEqual(tokens.high_state, 'On, cool, 63°F, fan auto, swing stopped, horizontal stopped');
-  assert.strictEqual(tokens.low_state, 'On, heat, 79°F, fan auto, swing stopped, horizontal stopped');
+  assert.strictEqual(tokens.high_state, 'On, Cool, 63°F, fan Auto, swing Stopped, horizontal Stopped');
+  assert.strictEqual(tokens.low_state, 'On, Heat, 79°F, fan Auto, swing Stopped, horizontal Stopped');
 });
 
 test('a rule changed from Homey keeps the rest of a configuration saved in the Sensibo app', () => {
@@ -125,11 +129,11 @@ test('a rule change on an AC switched back to Celsius stores both rules in Celsi
   assert.deepStrictEqual(config.highTemperatureState, { ...smartMode.highTemperatureState, targetTemperature: 18, temperatureUnit: 'C' });
   // The other rule is converted to Celsius, as saving in the Sensibo app does
   assert.deepStrictEqual(config.lowTemperatureState, resavedInApp.result.smartMode.lowTemperatureState);
-  const tokens = climateReactTokens(smartMode, 'C');
+  const tokens = climateReactTokens(smartMode, 'C', title);
   assert.strictEqual(tokens.high_threshold, 26.1);
   assert.strictEqual(tokens.low_threshold, 21);
   assert.strictEqual(tokens.unit, '°C');
-  assert.strictEqual(tokens.low_state, 'On, heat, 79°F, fan auto, swing stopped, horizontal stopped');
+  assert.strictEqual(tokens.low_state, 'On, Heat, 79°F, fan Auto, swing Stopped, horizontal Stopped');
 });
 
 test('rules in another unit are converted like the Sensibo app does', () => {

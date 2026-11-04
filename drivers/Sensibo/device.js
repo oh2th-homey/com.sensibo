@@ -179,7 +179,7 @@ module.exports = class SensiboDevice extends BaseDevice {
   async onClimateReactConfigReceived(config) {
     const fingerprint = climateReactFingerprint(config);
     if (this._lastClimateReactConfig !== undefined && this._lastClimateReactConfig !== fingerprint) {
-      const tokens = climateReactTokens(config, this.getTemperatureUnit());
+      const tokens = climateReactTokens(config, this.getTemperatureUnit(), (prefix, id) => this.valueTitle(prefix, id));
       this.homey.app._climateReactSettingsChangedTrigger
         .trigger(this, tokens, {})
         .then(() => this.log(`Climate React settings change triggered: ${this._sensibo.getDeviceId()}`, tokens))

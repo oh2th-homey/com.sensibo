@@ -1,18 +1,23 @@
 {
   "pair": {
     "title": "سينسيبو",
-    "subtitle": "اجعل مكيف الهواء الخاص بك ذكيًا",
     "apikey_help": "اذهب إلى https://home.sensibo.com/me/api للحصول على مفتاح API",
     "apikey_header": "أدخل مفتاح API",
     "apikey_label": "مفتاح API",
-    "valid_apikey": "أدخل مفتاح API صالح",
     "submit": "إرسال"
   },
   "errors": {
     "failed_to_retrieve_devices": "فشل في استرجاع الأجهزة.",
     "no_devices": "لم يتم العثور على أي أجهزة.",
     "light_not_supported": "الإضاءة غير مدعومة لهذا الجهاز.",
-    "climate_react_not_configured": "احفظ Climate React مرة واحدة في تطبيق Sensibo قبل تغييره من Homey."
+    "climate_react_not_configured": "احفظ Climate React مرة واحدة في تطبيق Sensibo قبل تغييره من Homey.",
+    "timer_minutes_required": "حدد عدد الدقائق من الآن.",
+    "timer_minutes_too_large": "يمكن أن يكون عدد الدقائق من الآن __max__ كحد أقصى.",
+    "timer_nothing_to_set": "اختر إعدادًا واحدًا على الأقل ليغيّره المؤقت.",
+    "api_timeout": "لم تستجب واجهة Sensibo البرمجية خلال __seconds__ ثانية.",
+    "unknown_api_error": "خطأ غير معروف من واجهة Sensibo البرمجية.",
+    "device_deleted": "تم حذف هذا الجهاز.",
+    "change_not_sent": "توقف التطبيق قبل إرسال التغيير إلى Sensibo."
   },
   "thermostat_mode": {
     "auto": "تلقائي",
@@ -59,5 +64,17 @@
   },
   "flow": {
     "unchanged": "- بدون تغيير -"
+  },
+  "light": {
+    "on": "تشغيل",
+    "off": "إيقاف",
+    "dim": "خافت"
+  },
+  "climate_react": {
+    "on": "تشغيل",
+    "off": "إيقاف",
+    "fan": "المروحة",
+    "swing": "التأرجح",
+    "horizontal_swing": "أفقي"
   }
 }

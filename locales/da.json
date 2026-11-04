@@ -1,18 +1,23 @@
 {
   "pair": {
     "title": "Sensibo",
-    "subtitle": "Gør din aircondition smart",
     "apikey_help": "Gå til https://home.sensibo.com/me/api for at få en API-nøgle",
     "apikey_header": "Indtast API-nøglen",
     "apikey_label": "API-nøgle",
-    "valid_apikey": "Indtast en gyldig API-nøgle",
     "submit": "Send"
   },
   "errors": {
     "failed_to_retrieve_devices": "Kunne ikke hente enheder.",
     "no_devices": "Ingen enheder blev fundet.",
     "light_not_supported": "Lys understøttes ikke for denne enhed.",
-    "climate_react_not_configured": "Gem Climate React én gang i Sensibo-appen, før du ændrer det fra Homey."
+    "climate_react_not_configured": "Gem Climate React én gang i Sensibo-appen, før du ændrer det fra Homey.",
+    "timer_minutes_required": "Angiv antal minutter fra nu.",
+    "timer_minutes_too_large": "Antal minutter fra nu kan højst være __max__.",
+    "timer_nothing_to_set": "Vælg mindst én indstilling, som timeren skal ændre.",
+    "api_timeout": "Sensibo-API'et svarede ikke inden for __seconds__ sekunder.",
+    "unknown_api_error": "Ukendt fejl fra Sensibo-API'et.",
+    "device_deleted": "Denne enhed er slettet.",
+    "change_not_sent": "Appen stoppede, før ændringen blev sendt til Sensibo."
   },
   "thermostat_mode": {
     "auto": "Automatisk",
@@ -59,5 +64,17 @@
   },
   "flow": {
     "unchanged": "- Uændret -"
+  },
+  "light": {
+    "on": "Tændt",
+    "off": "Slukket",
+    "dim": "Dæmpet"
+  },
+  "climate_react": {
+    "on": "Tændt",
+    "off": "Slukket",
+    "fan": "blæser",
+    "swing": "luftretning",
+    "horizontal_swing": "vandret"
   }
 }

@@ -1,18 +1,23 @@
 {
   "pair": {
     "title": "Sensibo",
-    "subtitle": "Сделайте ваш кондиционер умным",
     "apikey_help": "Перейдите на https://home.sensibo.com/me/api, чтобы получить API-ключ",
     "apikey_header": "Введите API-ключ",
     "apikey_label": "API-ключ",
-    "valid_apikey": "Введите действительный API-ключ",
     "submit": "Отправить"
   },
   "errors": {
     "failed_to_retrieve_devices": "Не удалось получить устройства.",
     "no_devices": "Устройства не найдены.",
     "light_not_supported": "Подсветка не поддерживается для этого устройства.",
-    "climate_react_not_configured": "Сохраните Climate React один раз в приложении Sensibo, прежде чем изменять его из Homey."
+    "climate_react_not_configured": "Сохраните Climate React один раз в приложении Sensibo, прежде чем изменять его из Homey.",
+    "timer_minutes_required": "Укажите количество минут от текущего момента.",
+    "timer_minutes_too_large": "Количество минут от текущего момента не может превышать __max__.",
+    "timer_nothing_to_set": "Выберите хотя бы одну настройку, которую должен изменить таймер.",
+    "api_timeout": "API Sensibo не ответил в течение __seconds__ секунд.",
+    "unknown_api_error": "Неизвестная ошибка API Sensibo.",
+    "device_deleted": "Это устройство удалено.",
+    "change_not_sent": "Приложение остановилось до отправки изменения в Sensibo."
   },
   "thermostat_mode": {
     "auto": "Автоматически",
@@ -59,5 +64,17 @@
   },
   "flow": {
     "unchanged": "- Без изменений -"
+  },
+  "light": {
+    "on": "Вкл.",
+    "off": "Выкл.",
+    "dim": "Приглушено"
+  },
+  "climate_react": {
+    "on": "Вкл.",
+    "off": "Выкл.",
+    "fan": "вентилятор",
+    "swing": "качание",
+    "horizontal_swing": "горизонтально"
   }
 }

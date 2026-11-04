@@ -1,18 +1,23 @@
 {
   "pair": {
     "title": "Sensibo",
-    "subtitle": "Maak je airconditioner slim",
     "apikey_help": "Ga naar https://home.sensibo.com/me/api om een API-sleutel te krijgen",
     "apikey_header": "Voer de API-sleutel in",
     "apikey_label": "API-sleutel",
-    "valid_apikey": "Voer een geldige API-sleutel in",
     "submit": "Versturen"
   },
   "errors": {
     "failed_to_retrieve_devices": "Het ophalen van apparaten is mislukt.",
     "no_devices": "Geen apparaten gevonden.",
     "light_not_supported": "Licht wordt niet ondersteund voor dit apparaat.",
-    "climate_react_not_configured": "Sla Climate React eenmaal op in de Sensibo-app voordat je het vanuit Homey wijzigt."
+    "climate_react_not_configured": "Sla Climate React eenmaal op in de Sensibo-app voordat je het vanuit Homey wijzigt.",
+    "timer_minutes_required": "Stel het aantal minuten in.",
+    "timer_minutes_too_large": "Het aantal minuten kan maximaal __max__ zijn.",
+    "timer_nothing_to_set": "Kies ten minste één instelling die de timer wijzigt.",
+    "api_timeout": "De Sensibo-API reageerde niet binnen __seconds__ seconden.",
+    "unknown_api_error": "Onbekende fout van de Sensibo-API.",
+    "device_deleted": "Dit apparaat is verwijderd.",
+    "change_not_sent": "De app is gestopt voordat de wijziging naar Sensibo is verzonden."
   },
   "thermostat_mode": {
     "auto": "Automatisch",
@@ -59,5 +64,17 @@
   },
   "flow": {
     "unchanged": "- Ongewijzigd -"
+  },
+  "light": {
+    "on": "Aan",
+    "off": "Uit",
+    "dim": "Gedimd"
+  },
+  "climate_react": {
+    "on": "Aan",
+    "off": "Uit",
+    "fan": "ventilator",
+    "swing": "luchtstroom",
+    "horizontal_swing": "horizontaal"
   }
 }
