@@ -375,9 +375,15 @@ module.exports = class BaseDevice extends Homey.Device {
       }
       this._hasTimer = hasTimer;
       this._hasTimerEnabled = hasTimerEnabled;
+      const roomSensor = util.roomSensorState(result);
+      if (roomSensor) {
+        await this.updateRoomSensorCapability(roomSensor);
+      }
       if (result.measurements) {
-        await this.updateIfChanged('measure_temperature', result.measurements.temperature);
-        await this.updateIfChanged('measure_humidity', result.measurements.humidity);
+        // With a Room Sensor as the primary sensor, temperature and humidity come from it
+        const climate = roomSensor && roomSensor.measurements ? roomSensor.measurements : result.measurements;
+        await this.updateIfChanged('measure_temperature', climate.temperature);
+        await this.updateIfChanged('measure_humidity', climate.humidity);
         if (result.measurements.batteryVoltage) {
           if (result.productModel === 'motion_sensor') {
             await this.updateIfChanged('measure_battery', util.batteryPercent(result.measurements.batteryVoltage));
@@ -459,6 +465,23 @@ module.exports = class BaseDevice extends Homey.Device {
       if (Object.hasOwn(result, 'smartMode') && this.onClimateReactSettingsReceived) {
         await this.onClimateReactSettingsReceived({ result: result.smartMode || {} });
       }
+    }
+  }
+
+  // "Use Room Sensor" shows whether the Room Sensor is the AC's primary sensor in the Sensibo app.
+  // It only exists while the AC has a Room Sensor.
+  async updateRoomSensorCapability({ hasRoomSensor, inUse }) {
+    try {
+      if (hasRoomSensor && !this.hasCapability('se_use_roomsensor')) {
+        await this.addCapability('se_use_roomsensor');
+      } else if (!hasRoomSensor && this.hasCapability('se_use_roomsensor')) {
+        await this.removeCapability('se_use_roomsensor');
+      }
+      if (hasRoomSensor) {
+        await this.updateIfChanged('se_use_roomsensor', inUse);
+      }
+    } catch (err) {
+      this.log('updateRoomSensorCapability error', err);
     }
   }
 

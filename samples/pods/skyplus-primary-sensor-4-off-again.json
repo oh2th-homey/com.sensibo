@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "result": {
+    "motionSensors": [
+      {
+        "id": "motion_sensor_id",
+        "name": "Room Sensor for lab",
+        "qrId": "qwertyuiop",
+        "firmwareVersion": "V17",
+        "firmwareType": "nrf52",
+        "macAddress": "00:00:00:00:00:05",
+        "productModel": "motion_sensor",
+        "configGroup": "V17",
+        "serial": "motion_sensor_serial",
+        "parentDeviceUid": "skyplus_id",
+        "measurements": {
+          "time": {
+            "time": "2026-11-04T07:22:12.406112Z",
+            "secondsAgo": 14
+          },
+          "rssi": -47,
+          "temperature": 22.1,
+          "humidity": 42.0,
+          "motion": true,
+          "batteryVoltage": 3000
+        },
+        "connectionStatus": {
+          "isAlive": true,
+          "lastSeen": {
+            "time": "2026-11-04T07:22:12.406112Z",
+            "secondsAgo": 14
+          }
+        },
+        "isMainSensor": false
+      }
+    ],
+    "mainMeasurementsSensor": null,
+    "measurements": {
+      "time": {
+        "time": "2026-11-04T07:22:12.406112Z",
+        "secondsAgo": 15
+      },
+      "temperature": 22.8,
+      "humidity": 40.3,
+      "feelsLike": 22.8,
+      "rssi": -71,
+      "motion": false,
+      "roomIsOccupied": true
+    }
+  }
+}

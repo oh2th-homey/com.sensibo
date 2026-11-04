@@ -1,6 +1,7 @@
 'use strict';
 
 const BaseDriver = require('../BaseDriver');
+const { roomSensorName } = require('../../lib/util');
 
 module.exports = class SensiboRoomSensorDriver extends BaseDriver {
 
@@ -30,8 +31,9 @@ module.exports = class SensiboRoomSensorDriver extends BaseDriver {
     return filtered
       .map((device) => {
         const mainDevice = mainDevices[device.parentDeviceUid];
+        const room = mainDevice ? `${mainDevice.room.name} ` : '';
         return {
-          name: `Sensibo Room Sensor ${mainDevice.room.name} (${++dev})`,
+          name: roomSensorName(device, `Sensibo Room Sensor ${room}(${++dev})`),
           data: {
             id: device.id,
           },

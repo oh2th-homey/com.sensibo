@@ -193,3 +193,52 @@ test('Climate React rule cards offer what the remote supports, first the unchang
   assert.deepStrictEqual(await ids(device.onSwingAutocomplete, 'range'), ['rangeFull']);
   assert.deepStrictEqual(await ids(device.onSwingAutocomplete, 'unch'), ['nop']);
 });
+
+// AC device that records capability changes, for the device info handler
+const createInfoDevice = (capabilities) => {
+  const device = createDevice(createClient(), {});
+  const caps = new Map(capabilities.map((cap) => [cap, null]));
+  device.getData = () => ({ id: 'pod' });
+  device.homey.clock = { getTimezone: () => 'UTC' };
+  device.getSettings = () => ({});
+  device.hasCapability = (cap) => caps.has(cap);
+  device.addCapability = async (cap) => caps.set(cap, null);
+  device.removeCapability = async (cap) => caps.delete(cap);
+  device.updateIfChanged = async (cap, value) => {
+    if (caps.has(cap) && value !== undefined) caps.set(cap, value);
+  };
+  device.caps = caps;
+  return device;
+};
+
+test('an AC shows its primary Room Sensor and goes back to its own sensor', async () => {
+  const device = createInfoDevice(['measure_temperature', 'measure_humidity']);
+  const steps = [
+    ['skyplus-primary-sensor-1-off', false, 22.8, 40.3],
+    ['skyplus-primary-sensor-3-on-named', true, 22.0, 42.0],
+    ['skyplus-primary-sensor-4-off-again', false, 22.8, 40.3]
+  ];
+  for (const [sample, inUse, temperature, humidity] of steps) {
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    const { result } = require(`../samples/pods/${sample}.json`);
+    await device.onDeviceInfoReceived(JSON.parse(JSON.stringify(result)));
+    assert.strictEqual(device.caps.get('se_use_roomsensor'), inUse, sample);
+    assert.strictEqual(device.caps.get('measure_temperature'), temperature, sample);
+    assert.strictEqual(device.caps.get('measure_humidity'), humidity, sample);
+  }
+});
+
+test('Use Room Sensor is removed when the AC no longer has a Room Sensor', async () => {
+  const device = createInfoDevice(['measure_temperature', 'se_use_roomsensor']);
+  await device.onDeviceInfoReceived({ motionSensors: [], mainMeasurementsSensor: null, measurements: { temperature: 21 } });
+  assert.strictEqual(device.hasCapability('se_use_roomsensor'), false);
+  assert.strictEqual(device.caps.get('measure_temperature'), 21);
+});
+
+test('devices whose info lists no room sensors keep Use Room Sensor away', async () => {
+  // Room Sensor devices themselves, and responses without motionSensors
+  const device = createInfoDevice(['measure_temperature']);
+  await device.onDeviceInfoReceived({ productModel: 'motion_sensor', measurements: { temperature: 22.1, humidity: 42 } });
+  assert.strictEqual(device.hasCapability('se_use_roomsensor'), false);
+  assert.strictEqual(device.caps.get('measure_temperature'), 22.1);
+});
