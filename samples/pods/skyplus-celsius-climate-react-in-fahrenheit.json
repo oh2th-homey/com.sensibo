@@ -1,0 +1,360 @@
+{
+  "status": "success",
+  "result": {
+    "id": "skyplus_id",
+    "room": {
+      "uid": "idAjQzSF",
+      "name": "lab",
+      "icon": "Office",
+      "pureBoostConfig": null
+    },
+    "acState": {
+      "timestamp": {
+        "time": "2026-11-04T05:45:23.964667Z",
+        "secondsAgo": 0
+      },
+      "on": true,
+      "mode": "heat",
+      "targetTemperature": 20,
+      "temperatureUnit": "C",
+      "fanLevel": "auto",
+      "swing": "stopped",
+      "horizontalSwing": "stopped"
+    },
+    "connectionStatus": {
+      "isAlive": true,
+      "lastSeen": {
+        "time": "2026-11-04T05:43:56.701783Z",
+        "secondsAgo": 86
+      }
+    },
+    "productModel": "skyplus",
+    "motionSensors": [
+      {
+        "id": "motion_sensor_id",
+        "name": null,
+        "qrId": "qwertyuiop",
+        "firmwareVersion": "V17",
+        "firmwareType": "nrf52",
+        "macAddress": "00:00:00:00:00:05",
+        "productModel": "motion_sensor",
+        "configGroup": "V17",
+        "serial": "motion_sensor_serial",
+        "parentDeviceUid": "skyplus_id",
+        "measurements": {
+          "time": {
+            "time": "2026-11-04T05:43:56.701783Z",
+            "secondsAgo": 86
+          },
+          "rssi": -46,
+          "temperature": 24.2,
+          "humidity": 42.0,
+          "motion": true,
+          "batteryVoltage": 3000
+        },
+        "connectionStatus": {
+          "isAlive": true,
+          "lastSeen": {
+            "time": "2026-11-04T05:43:56.701783Z",
+            "secondsAgo": 86
+          }
+        },
+        "isMainSensor": false
+      }
+    ],
+    "timer": null,
+    "filtersCleaning": {
+      "acOnSecondsSinceLastFiltersClean": 45961012,
+      "filtersCleanSecondsThreshold": 1080000,
+      "lastFiltersCleanTime": null,
+      "shouldCleanFilters": true
+    },
+    "remoteCapabilities": {
+      "modes": {
+        "cool": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "fanLevels": [
+            "quiet",
+            "low",
+            "medium_low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "heat": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "fanLevels": [
+            "quiet",
+            "low",
+            "medium_low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "fan": {
+          "temperatures": {},
+          "fanLevels": [
+            "quiet",
+            "low",
+            "medium_low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "dry": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "auto": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        }
+      }
+    },
+    "smartMode": {
+      "enabled": true,
+      "type": "feelsLike",
+      "deviceUid": "skyplus_id",
+      "lowTemperatureThreshold": 21.0,
+      "highTemperatureThreshold": 26.11,
+      "lowTemperatureState": {
+        "on": true,
+        "targetTemperature": 79,
+        "temperatureUnit": "F",
+        "mode": "heat",
+        "fanLevel": "auto",
+        "swing": "stopped",
+        "horizontalSwing": "stopped"
+      },
+      "highTemperatureState": {
+        "on": true,
+        "targetTemperature": 61,
+        "temperatureUnit": "F",
+        "mode": "cool",
+        "fanLevel": "auto",
+        "swing": "stopped",
+        "horizontalSwing": "stopped"
+      },
+      "lowTemperatureWebhook": null,
+      "highTemperatureWebhook": null,
+      "sync_with_ac_power": false
+    },
+    "measurements": {
+      "time": {
+        "time": "2026-11-04T05:43:56.701783Z",
+        "secondsAgo": 87
+      },
+      "temperature": 22.5,
+      "humidity": 40.8,
+      "feelsLike": 22.5,
+      "rssi": -73,
+      "motion": false,
+      "roomIsOccupied": true
+    }
+  }
+}

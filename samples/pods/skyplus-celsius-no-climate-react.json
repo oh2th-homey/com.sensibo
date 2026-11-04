@@ -1,0 +1,300 @@
+{
+  "status": "success",
+  "result": {
+    "id": "skyplus_id",
+    "room": {
+      "uid": "idAjQzSF",
+      "name": "lab",
+      "icon": "Office",
+      "pureBoostConfig": null
+    },
+    "acState": {
+      "timestamp": {
+        "time": "2026-11-04T05:21:47.995603Z",
+        "secondsAgo": 0
+      },
+      "on": true,
+      "mode": "heat",
+      "targetTemperature": 20,
+      "temperatureUnit": "C",
+      "fanLevel": "auto",
+      "swing": "stopped",
+      "horizontalSwing": "stopped"
+    },
+    "connectionStatus": {
+      "isAlive": true,
+      "lastSeen": {
+        "time": "2026-11-04T05:21:38.104514Z",
+        "secondsAgo": 8
+      }
+    },
+    "productModel": "skyplus",
+    "timer": null,
+    "filtersCleaning": {
+      "acOnSecondsSinceLastFiltersClean": 45938518,
+      "filtersCleanSecondsThreshold": 1080000,
+      "lastFiltersCleanTime": null,
+      "shouldCleanFilters": true
+    },
+    "remoteCapabilities": {
+      "modes": {
+        "cool": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "fanLevels": [
+            "quiet",
+            "low",
+            "medium_low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "heat": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "fanLevels": [
+            "quiet",
+            "low",
+            "medium_low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "fan": {
+          "temperatures": {},
+          "fanLevels": [
+            "quiet",
+            "low",
+            "medium_low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "dry": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        },
+        "auto": {
+          "temperatures": {
+            "F": {
+              "isNative": false,
+              "values": [
+                61,
+                63,
+                64,
+                66,
+                68,
+                70,
+                72,
+                73,
+                75,
+                77,
+                79,
+                81,
+                82,
+                84,
+                86
+              ]
+            },
+            "C": {
+              "isNative": true,
+              "values": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            }
+          },
+          "swing": [
+            "stopped",
+            "rangeFull"
+          ],
+          "horizontalSwing": [
+            "stopped",
+            "rangeFull"
+          ]
+        }
+      }
+    },
+    "smartMode": null,
+    "measurements": {
+      "time": {
+        "time": "2026-11-04T05:21:38.104514Z",
+        "secondsAgo": 9
+      },
+      "temperature": 22.5,
+      "humidity": 40.7,
+      "feelsLike": 22.5,
+      "rssi": -75,
+      "motion": false,
+      "roomIsOccupied": null
+    }
+  }
+}

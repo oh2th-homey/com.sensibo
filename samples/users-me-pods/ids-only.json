@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": "airq_id"
+    },
+    {
+      "id": "device_2_id"
+    },
+    {
+      "id": "device_3_id"
+    },
+    {
+      "id": "skyplus_id"
+    }
+  ],
+  "isPartial": false
+}

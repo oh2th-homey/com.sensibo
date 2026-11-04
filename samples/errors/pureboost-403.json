@@ -25,7 +25,7 @@
       "validateStatus": "Function: validateStatus",
       "headers": {},
       "method": "put",
-      "url": "https://home.sensibo.com/api/v2/pods/bQ9xT4Aa/pureboost?apiKey=TSij2LQ7qilKBOY0lLbUEhxHJCvvlf",
+      "url": "https://home.sensibo.com/api/v2/pods/airq_id/pureboost?apiKey=your_api_key",
       "data": "{\"enabled\":false}"
     },
     "request": {
@@ -54,7 +54,7 @@
       "_headerSent": true,
       "_closed": true,
       "socket": {},
-      "_header": "PUT /api/v2/pods/bQ9xT4Aa/pureboost?apiKey=TSij2LQ7qilKBOY0lLbUEhxHJCvvlf HTTP/1.1\r\n" +
+      "_header": "PUT /api/v2/pods/airq_id/pureboost?apiKey=your_api_key HTTP/1.1\r\n" +
         "Accept: application/json, text/plain, */*\r\n" +
         "Content-Type: application/json\r\n" +
         "Accept-Encoding: gzip\r\n" +
@@ -71,7 +71,7 @@
       "maxHeaderSize": undefined,
       "insecureHTTPParser": undefined,
       "joinDuplicateHeaders": undefined,
-      "path": "/api/v2/pods/bQ9xT4Aa/pureboost?apiKey=TSij2LQ7qilKBOY0lLbUEhxHJCvvlf",
+      "path": "/api/v2/pods/airq_id/pureboost?apiKey=your_api_key",
       "_ended": true,
       "res": {},
       "aborted": false,

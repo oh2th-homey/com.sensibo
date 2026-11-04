@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "result": {
+    "enabled": true,
+    "type": "feelsLike",
+    "deviceUid": "skyplus_id",
+    "lowTemperatureThreshold": 21.0,
+    "highTemperatureThreshold": 24.555555555555557,
+    "lowTemperatureState": {
+      "on": true,
+      "targetTemperature": 79,
+      "temperatureUnit": "F",
+      "mode": "heat",
+      "fanLevel": "auto",
+      "swing": "stopped",
+      "horizontalSwing": "stopped"
+    },
+    "highTemperatureState": {
+      "on": true,
+      "targetTemperature": 63,
+      "temperatureUnit": "F",
+      "mode": "cool",
+      "fanLevel": "auto",
+      "swing": "stopped",
+      "horizontalSwing": "stopped"
+    },
+    "lowTemperatureWebhook": null,
+    "highTemperatureWebhook": null,
+    "sync_with_ac_power": false
+  }
+}
