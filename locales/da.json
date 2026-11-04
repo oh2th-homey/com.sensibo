@@ -1,7 +1,7 @@
 {
   "pair": {
     "title": "Sensibo",
-    "apikey_help": "Gå til https://home.sensibo.com/me/api for at få en API-nøgle",
+    "apikey_help": "Gå til https://home.sensibo.com/me/api for at få en API-nøgle.",
     "apikey_header": "Indtast API-nøglen",
     "apikey_label": "API-nøgle",
     "submit": "Send"

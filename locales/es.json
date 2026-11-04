@@ -1,7 +1,7 @@
 {
   "pair": {
     "title": "Sensibo",
-    "apikey_help": "Ve a https://home.sensibo.com/me/api para obtener una clave API",
+    "apikey_help": "Ve a https://home.sensibo.com/me/api para obtener una clave API.",
     "apikey_header": "Introduce la clave API",
     "apikey_label": "Clave API",
     "submit": "Enviar"

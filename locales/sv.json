@@ -1,7 +1,7 @@
 {
   "pair": {
     "title": "Sensibo",
-    "apikey_help": "Gå till https://home.sensibo.com/me/api för att få en API-nyckel",
+    "apikey_help": "Gå till https://home.sensibo.com/me/api för att få en API-nyckel.",
     "apikey_header": "Ange API-nyckeln",
     "apikey_label": "API-nyckel",
     "submit": "Skicka"

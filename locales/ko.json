@@ -1,7 +1,7 @@
 {
   "pair": {
     "title": "센시보",
-    "apikey_help": "API 키를 얻으려면 https://home.sensibo.com/me/api 로 이동하세요",
+    "apikey_help": "API 키를 얻으려면 https://home.sensibo.com/me/api 로 이동하세요.",
     "apikey_header": "API 키 입력",
     "apikey_label": "API 키",
     "submit": "제출"

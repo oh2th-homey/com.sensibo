@@ -1,7 +1,7 @@
 {
   "pair": {
     "title": "Sensibo",
-    "apikey_help": "Go to https://home.sensibo.com/me/api to get an API key",
+    "apikey_help": "Go to https://home.sensibo.com/me/api to get an API key.",
     "apikey_header": "Enter the API key",
     "apikey_label": "API key",
     "submit": "Submit"
