@@ -211,5 +211,8 @@
   },
   "1.24.0": {
     "en": "NEW: The fan level and swing pickers on the device now show the options your AC supports, including Strong, and turning the AC on or off appears in the device timeline."
+  },
+  "1.25.0": {
+    "en": "NEW: Flow cards to set the Climate React rule above and below its thresholds, and a trigger when the Climate React settings change; FIX: the Room Sensor battery level now drops as the battery drains."
   }
 }
