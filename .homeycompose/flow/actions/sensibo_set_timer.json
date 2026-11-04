@@ -2,15 +2,48 @@
   "id": "sensibo_set_timer",
   "title": {
     "en": "Set timer",
-    "nl": "Timer instellen"
+    "nl": "Timer instellen",
+    "da": "Indstil timer",
+    "de": "Timer einstellen",
+    "es": "Establecer temporizador",
+    "fr": "Définir une minuterie",
+    "it": "Imposta timer",
+    "no": "Sett timer",
+    "sv": "Ställ in timer",
+    "pl": "Ustaw minutnik",
+    "ru": "Установить таймер",
+    "ko": "타이머 설정",
+    "ar": "ضبط المؤقت"
   },
   "titleFormatted": {
     "en": "Set timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
-    "nl": "Timer instellen [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]"
+    "nl": "Timer instellen [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "da": "Indstil timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "de": "Timer einstellen [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "es": "Configurar temporizador [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "fr": "Régler le minuteur [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "it": "Imposta timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "no": "Sett timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "sv": "Ställ in timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "pl": "Ustaw timer [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "ru": "Установить таймер [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "ko": "타이머 설정 [[minutesFromNow]], [[on]], [[mode]], [[fanLevel]], [[targetTemperature]]",
+    "ar": "اضبط المؤقت [[minutesFromNow]]، [[on]]، [[mode]]، [[fanLevel]]، [[targetTemperature]]"
   },
   "hint": {
     "en": "Set minutes from now and select one or more parameters to be changed when the timer fires.",
-    "nl": "Stel het aantal minuten in en selecteer een of meer parameters die worden gewijzigd wanneer de timer afgaat."
+    "nl": "Stel het aantal minuten in en selecteer een of meer parameters die worden gewijzigd wanneer de timer afgaat.",
+    "da": "Indstil minutter fra nu og vælg en eller flere parametre, der skal ændres, når timeren udløber.",
+    "de": "Stellen Sie die Minuten ab jetzt ein und wählen Sie einen oder mehrere Parameter aus, die geändert werden sollen, wenn der Timer abläuft.",
+    "es": "Establece minutos a partir de ahora y selecciona uno o más parámetros para cambiar cuando se active el temporizador.",
+    "fr": "Définissez le nombre de minutes à partir de maintenant et sélectionnez un ou plusieurs paramètres à modifier lorsque le minuteur se déclenche.",
+    "it": "Imposta i minuti da ora e seleziona uno o più parametri da modificare quando il timer si attiva.",
+    "no": "Still inn antall minutter fra nå, og velg én eller flere parametere som skal endres når timeren utløses.",
+    "sv": "Ställ in minuter från nu och välj en eller flera parametrar som ska ändras när timern går igång.",
+    "pl": "Ustaw liczbę minut od teraz i wybierz jeden lub więcej parametrów do zmiany, gdy timer się uruchomi.",
+    "ru": "Установите количество минут от текущего момента и выберите один или несколько параметров, которые нужно изменить, когда таймер сработает.",
+    "ko": "지금부터 몇 분 후로 설정하고 타이머가 작동할 때 변경할 하나 이상의 매개변수를 선택하세요.",
+    "ar": "قم بتعيين الدقائق من الآن واختر واحدًا أو أكثر من المعايير لتغييرها عند انتهاء المؤقت."
   },
   "args": [
     {
@@ -26,14 +59,36 @@
       "step": 1,
       "placeholder": {
         "en": "Minutes from now",
-        "nl": "Aantal minuten vanaf nu"
+        "nl": "Aantal minuten vanaf nu",
+        "da": "Minutter fra nu",
+        "de": "Minuten ab jetzt",
+        "es": "Minutos a partir de ahora",
+        "fr": "Dans quelques minutes",
+        "it": "Tra pochi minuti",
+        "no": "Minutter fra nå",
+        "sv": "Minuter från nu",
+        "pl": "Za kilka minut",
+        "ru": "Через несколько минут",
+        "ko": "지금부터 몇 분 후",
+        "ar": "دقائق من الآن"
       }
     },
     {
       "name": "on",
       "title": {
         "en": "On / off",
-        "nl": "Aan / uit"
+        "nl": "Aan / uit",
+        "da": "Tænd / sluk",
+        "de": "Ein / Aus",
+        "es": "Encender / apagar",
+        "fr": "Marche / arrêt",
+        "it": "Acceso / spento",
+        "no": "På / av",
+        "sv": "På / av",
+        "pl": "Włącz / wyłącz",
+        "ru": "Вкл / выкл",
+        "ko": "켜기 / 끄기",
+        "ar": "تشغيل / إيقاف تشغيل"
       },
       "type": "dropdown",
       "values": [
@@ -41,21 +96,54 @@
           "id": "nop",
           "label": {
             "en": "- Unchanged -",
-            "nl": "- Ongewijzigd -"
+            "nl": "- Ongewijzigd -",
+            "da": "- Uændret -",
+            "de": "- Unverändert -",
+            "es": "- Sin cambios -",
+            "fr": "- Inchangé -",
+            "it": "- Invariato -",
+            "no": "- Uendret -",
+            "sv": "- Oförändrad -",
+            "pl": "- Bez zmian -",
+            "ru": "- Без изменений -",
+            "ko": "- 변경되지 않음 -",
+            "ar": "- بدون تغيير -"
           }
         },
         {
           "id": "off",
           "label": {
             "en": "Off",
-            "nl": "Uit"
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączone",
+            "ru": "Выкл.",
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
           "id": "on",
           "label": {
             "en": "On",
-            "nl": "Aan"
+            "nl": "Aan",
+            "da": "Til",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Activé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączone",
+            "ru": "Включено",
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         }
       ]
@@ -64,7 +152,18 @@
       "name": "mode",
       "title": {
         "en": "Mode",
-        "nl": "Modus"
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       },
       "type": "dropdown",
       "values": [
@@ -72,41 +171,108 @@
           "id": "nop",
           "label": {
             "en": "- Unchanged -",
-            "nl": "- Ongewijzigd -"
+            "nl": "- Ongewijzigd -",
+            "da": "- Uændret -",
+            "de": "- Unverändert -",
+            "es": "- Sin cambios -",
+            "fr": "- Inchangé -",
+            "it": "- Invariato -",
+            "no": "- Uendret -",
+            "sv": "- Oförändrad -",
+            "pl": "- Bez zmian -",
+            "ru": "- Без изменений -",
+            "ko": "- 변경되지 않음 -",
+            "ar": "- بدون تغيير -"
           }
         },
         {
           "id": "cool",
           "label": {
             "en": "Cool",
-            "nl": "Koelen"
+            "nl": "Koelen",
+            "da": "Sejt",
+            "de": "Kühl",
+            "es": "Genial",
+            "fr": "Génial",
+            "it": "Fantastico!",
+            "no": "Kult",
+            "sv": "Cool",
+            "pl": "Fajnie",
+            "ru": "Круто",
+            "ko": "쿨",
+            "ar": "رائع"
           }
         },
         {
           "id": "heat",
           "label": {
             "en": "Heat",
-            "nl": "Verwarmen"
+            "nl": "Verwarmen",
+            "da": "Varme",
+            "de": "Heizen",
+            "es": "Calor",
+            "fr": "Chauffage",
+            "it": "Riscaldamento",
+            "no": "Varme",
+            "sv": "Värme",
+            "pl": "Ciepło",
+            "ru": "Тепло",
+            "ko": "난방",
+            "ar": "حرارة"
           }
         },
         {
           "id": "fan",
           "label": {
             "en": "Fan",
-            "nl": "Ventileren"
+            "nl": "Ventileren",
+            "da": "Blæser",
+            "de": "Ventilator",
+            "es": "Ventilador",
+            "fr": "Ventilateur",
+            "it": "Ventilatore",
+            "no": "Vifte",
+            "sv": "Fläkt",
+            "pl": "Wentylator",
+            "ru": "Вентилятор",
+            "ko": "팬",
+            "ar": "مروحة"
           }
         },
         {
           "id": "auto",
           "label": {
-            "en": "Auto"
+            "en": "Auto",
+            "nl": "Auto",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Auto",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Auto",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
           "id": "dry",
           "label": {
             "en": "Dry",
-            "nl": "Drogen"
+            "nl": "Drogen",
+            "da": "Tør",
+            "de": "Trocken",
+            "es": "Seco",
+            "fr": "Sec",
+            "it": "Secco",
+            "no": "Tørr",
+            "sv": "Torr",
+            "pl": "Sucho",
+            "ru": "Сухой",
+            "ko": "건조",
+            "ar": "جاف"
           }
         }
       ]
@@ -115,7 +281,18 @@
       "name": "fanLevel",
       "title": {
         "en": "Fan level",
-        "nl": "Ventilatorsnelheid"
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserniveau",
+        "de": "Lüfterstufe",
+        "es": "Nivel del ventilador",
+        "fr": "Niveau de ventilation",
+        "it": "Livello ventola",
+        "no": "Viftenivå",
+        "sv": "Fläkthastighet",
+        "pl": "Poziom wentylatora",
+        "ru": "Уровень вентилятора",
+        "ko": "팬 레벨",
+        "ar": "مستوى المروحة"
       },
       "type": "dropdown",
       "values": [
@@ -123,34 +300,90 @@
           "id": "nop",
           "label": {
             "en": "- Unchanged -",
-            "nl": "- Ongewijzigd -"
+            "nl": "- Ongewijzigd -",
+            "da": "- Uændret -",
+            "de": "- Unverändert -",
+            "es": "- Sin cambios -",
+            "fr": "- Inchangé -",
+            "it": "- Invariato -",
+            "no": "- Uendret -",
+            "sv": "- Oförändrad -",
+            "pl": "- Bez zmian -",
+            "ru": "- Без изменений -",
+            "ko": "- 변경되지 않음 -",
+            "ar": "- بدون تغيير -"
           }
         },
         {
           "id": "auto",
           "label": {
-            "en": "Auto"
+            "en": "Auto",
+            "nl": "Auto",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Auto",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Auto",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
           "id": "high",
           "label": {
             "en": "High",
-            "nl": "Hoog"
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높음",
+            "ar": "مرتفع"
           }
         },
         {
           "id": "medium",
           "label": {
             "en": "Medium",
-            "nl": "Middel"
+            "nl": "Middel",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
           "id": "low",
           "label": {
             "en": "Low",
-            "nl": "Laag"
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Faible",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮음",
+            "ar": "منخفض"
           }
         }
       ]
@@ -165,7 +398,18 @@
       "labelDecimals": 0,
       "title": {
         "en": "Target temperature",
-        "nl": "Doeltemperatuur"
+        "nl": "Doeltemperatuur",
+        "da": "Måltemperatur",
+        "de": "Zieltemperatur",
+        "es": "Temperatura objetivo",
+        "fr": "Température cible",
+        "it": "Temperatura target",
+        "no": "Måltemperatur",
+        "sv": "Måltemperatur",
+        "pl": "Temperatura docelowa",
+        "ru": "Целевая температура",
+        "ko": "목표 온도",
+        "ar": "درجة الحرارة المستهدفة"
       }
     }
   ]

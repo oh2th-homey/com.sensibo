@@ -2,14 +2,37 @@
   "id": "se_ac_state_changed",
   "title": {
     "en": "AC state changed",
-    "nl": "AC status veranderd"
+    "nl": "AC status veranderd",
+    "da": "AC-tilstand ændret",
+    "de": "AC-Status geändert",
+    "es": "Estado del aire acondicionado cambiado",
+    "fr": "État du climatiseur modifié",
+    "it": "Stato del condizionatore cambiato",
+    "no": "AC-tilstand endret",
+    "sv": "AC-status ändrad",
+    "pl": "Stan klimatyzacji zmieniony",
+    "ru": "Состояние кондиционера изменено",
+    "ko": "에어컨 상태 변경됨",
+    "ar": "تم تغيير حالة المكيف"
   },
   "tokens": [
     {
       "name": "status",
       "type": "string",
       "title": {
-        "en": "Status"
+        "en": "Status",
+        "nl": "Status",
+        "da": "Status",
+        "de": "Status",
+        "es": "Estado",
+        "fr": "Statut",
+        "it": "Stato",
+        "no": "Status",
+        "sv": "Status",
+        "pl": "Status",
+        "ru": "Статус",
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "example": "Success"
     },
@@ -18,7 +41,18 @@
       "type": "string",
       "title": {
         "en": "Reason",
-        "nl": "Reden"
+        "nl": "Reden",
+        "da": "Årsag",
+        "de": "Grund",
+        "es": "Razón",
+        "fr": "Raison",
+        "it": "Motivo",
+        "no": "Årsak",
+        "sv": "Anledning",
+        "pl": "Powód",
+        "ru": "Причина",
+        "ko": "이유",
+        "ar": "السبب"
       },
       "example": "ScheduledCommand"
     },
@@ -27,7 +61,18 @@
       "type": "string",
       "title": {
         "en": "Failure reason",
-        "nl": "Faalreden"
+        "nl": "Faalreden",
+        "da": "Fejlårsag",
+        "de": "Fehlerursache",
+        "es": "Razón del fallo",
+        "fr": "Raison de l'échec",
+        "it": "Motivo del fallimento",
+        "no": "Feilårsak",
+        "sv": "Orsak till fel",
+        "pl": "Powód niepowodzenia",
+        "ru": "Причина сбоя",
+        "ko": "실패 이유",
+        "ar": "سبب الفشل"
       },
       "example": "Some reason"
     },
@@ -36,7 +81,18 @@
       "type": "boolean",
       "title": {
         "en": "On",
-        "nl": "Aan"
+        "nl": "Aan",
+        "da": "Til",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Activé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
       },
       "example": true
     },
@@ -45,7 +101,18 @@
       "type": "string",
       "title": {
         "en": "Fan level",
-        "nl": "Ventilatorsnelheid"
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserniveau",
+        "de": "Ventilatorstufe",
+        "es": "Nivel del ventilador",
+        "fr": "Niveau de ventilation",
+        "it": "Livello ventola",
+        "no": "Viftenivå",
+        "sv": "Fläkthastighet",
+        "pl": "Poziom wentylatora",
+        "ru": "Уровень вентилятора",
+        "ko": "팬 레벨",
+        "ar": "مستوى المروحة"
       },
       "example": "low"
     },
@@ -54,7 +121,18 @@
       "type": "number",
       "title": {
         "en": "Target temperature",
-        "nl": "Doeltemperatuur"
+        "nl": "Doeltemperatuur",
+        "da": "Måltemperatur",
+        "de": "Zieltemperatur",
+        "es": "Temperatura objetivo",
+        "fr": "Température cible",
+        "it": "Temperatura target",
+        "no": "Måltemperatur",
+        "sv": "Måltemperatur",
+        "pl": "Temperatura docelowa",
+        "ru": "Целевая температура",
+        "ko": "목표 온도",
+        "ar": "درجة الحرارة المستهدفة"
       },
       "example": 23
     },
@@ -63,7 +141,18 @@
       "type": "string",
       "title": {
         "en": "Mode",
-        "nl": "Modus"
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       },
       "example": "cool"
     },
@@ -72,7 +161,18 @@
       "type": "string",
       "title": {
         "en": "Swing",
-        "nl": "Luchtstroom"
+        "nl": "Luchtstroom",
+        "da": "Sving",
+        "de": "Swing",
+        "es": "Swing",
+        "fr": "Swing",
+        "it": "Oscillazione",
+        "no": "Svinge",
+        "sv": "Swinga",
+        "pl": "Swing",
+        "ru": "Качели",
+        "ko": "스윙",
+        "ar": "تأرجح"
       },
       "example": "stopped"
     }

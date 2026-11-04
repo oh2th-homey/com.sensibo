@@ -2,15 +2,48 @@
   "id": "sensibo_cr_below",
   "title": {
     "en": "Set Climate React below low threshold",
-    "nl": "Climate React onder lage drempel instellen"
+    "nl": "Climate React onder lage drempel instellen",
+    "da": "Indstil Climate React under lav tærskel",
+    "de": "Stelle Climate React unterhalb der unteren Schwelle ein.",
+    "es": "Configura Climate React por debajo del umbral bajo",
+    "fr": "Définir Climate React en dessous du seuil bas",
+    "it": "Imposta Climate React al di sotto della soglia minima",
+    "no": "Sett Climate React under lav terskel",
+    "sv": "Ställ in Climate React under låg tröskelvärde",
+    "pl": "Ustaw Climate React poniżej dolnego progu",
+    "ru": "Установить Climate React ниже нижнего порога",
+    "ko": "Climate React을 낮은 임계값 아래로 설정하세요.",
+    "ar": "اضبط Climate React تحت العتبة المنخفضة"
   },
   "titleFormatted": {
     "en": "When [[type]] drops below [[threshold]] turn AC [[on]] with mode [[mode]], fan level [[fanLevel]], swing [[swing]], horizontal swing [[horizontalSwing]] and target temperature [[targetTemperature]]",
-    "nl": "Als [[type]] onder [[threshold]] daalt, zet AC [[on]] met modus [[mode]], ventilatorsnelheid [[fanLevel]], luchtstroom [[swing]], horizontale luchtstroom [[horizontalSwing]] en doeltemperatuur [[targetTemperature]]"
+    "nl": "Als [[type]] onder [[threshold]] daalt, zet AC [[on]] met modus [[mode]], ventilatorsnelheid [[fanLevel]], luchtstroom [[swing]], horizontale luchtstroom [[horizontalSwing]] en doeltemperatuur [[targetTemperature]]",
+    "da": "Når [[type]] falder under [[threshold]], sæt AC til [[on]] med tilstand [[mode]], ventilatorniveau [[fanLevel]], sving [[swing]], vandret sving [[horizontalSwing]] og måltemperatur [[targetTemperature]]",
+    "de": "Wenn [[type]] unter [[threshold]] fällt, Klimaanlage auf [[on]] setzen mit Modus [[mode]], Lüfterstufe [[fanLevel]], Swing [[swing]], horizontalem Swing [[horizontalSwing]] und Zieltemperatur [[targetTemperature]]",
+    "es": "Cuando [[type]] baje de [[threshold]], poner el aire acondicionado en [[on]] con modo [[mode]], nivel de ventilador [[fanLevel]], oscilación [[swing]], oscilación horizontal [[horizontalSwing]] y temperatura objetivo [[targetTemperature]]",
+    "fr": "Lorsque [[type]] descend sous [[threshold]], mettre la climatisation sur [[on]] avec le mode [[mode]], le niveau de ventilation [[fanLevel]], l'oscillation [[swing]], l'oscillation horizontale [[horizontalSwing]] et la température cible [[targetTemperature]]",
+    "it": "Quando [[type]] scende sotto [[threshold]], imposta il condizionatore su [[on]] con modalità [[mode]], livello della ventola [[fanLevel]], oscillazione [[swing]], oscillazione orizzontale [[horizontalSwing]] e temperatura obiettivo [[targetTemperature]]",
+    "no": "Når [[type]] faller under [[threshold]], sett AC til [[on]] med modus [[mode]], viftehastighet [[fanLevel]], luftretning [[swing]], horisontal luftretning [[horizontalSwing]] og måltemperatur [[targetTemperature]]",
+    "sv": "När [[type]] sjunker under [[threshold]], ställ AC på [[on]] med läge [[mode]], fläkthastighet [[fanLevel]], luftriktning [[swing]], horisontell luftriktning [[horizontalSwing]] och måltemperatur [[targetTemperature]]",
+    "pl": "Gdy [[type]] spadnie poniżej [[threshold]], ustaw klimatyzację na [[on]] w trybie [[mode]], z poziomem wentylatora [[fanLevel]], nawiewem [[swing]], nawiewem poziomym [[horizontalSwing]] i temperaturą docelową [[targetTemperature]]",
+    "ru": "Когда [[type]] опускается ниже [[threshold]], кондиционер: [[on]], режим [[mode]], уровень вентилятора [[fanLevel]], качание [[swing]], горизонтальное качание [[horizontalSwing]], целевая температура [[targetTemperature]]",
+    "ko": "[[type]]이(가) [[threshold]]보다 낮아지면 에어컨 [[on]], 모드 [[mode]], 팬 레벨 [[fanLevel]], 스윙 [[swing]], 수평 스윙 [[horizontalSwing]], 목표 온도 [[targetTemperature]]",
+    "ar": "عندما ينخفض [[type]] إلى أقل من [[threshold]]، اضبط المكيف على [[on]] بوضع [[mode]] ومستوى المروحة [[fanLevel]] والتأرجح [[swing]] والتأرجح الأفقي [[horizontalSwing]] ودرجة الحرارة المستهدفة [[targetTemperature]]"
   },
   "hint": {
     "en": "Changes one Climate React rule and keeps the other as it is. Temperatures are in the AC's unit (°C or °F), humidity in %. The trigger type applies to both rules. Climate React must have been saved once in the Sensibo app.",
-    "nl": "Wijzigt één Climate React-regel en laat de andere ongewijzigd. Temperaturen zijn in de eenheid van de AC (°C of °F), luchtvochtigheid in %. Het triggertype geldt voor beide regels. Climate React moet eenmaal in de Sensibo-app zijn opgeslagen."
+    "nl": "Wijzigt één Climate React-regel en laat de andere ongewijzigd. Temperaturen zijn in de eenheid van de AC (°C of °F), luchtvochtigheid in %. Het triggertype geldt voor beide regels. Climate React moet eenmaal in de Sensibo-app zijn opgeslagen.",
+    "da": "Ændrer én Climate React-regel og beholder den anden som den er. Temperaturer er i AC'ens enhed (°C eller °F), luftfugtighed i %. Udløsertype gælder for begge regler. Climate React skal være gemt én gang i Sensibo-appen.",
+    "de": "Ändert eine Climate React-Regel und behält die andere bei. Temperaturen sind in der Einheit der Klimaanlage (°C oder °F), Luftfeuchtigkeit in %. Der Auslösetyp gilt für beide Regeln. Climate React muss einmal in der Sensibo-App gespeichert worden sein.",
+    "es": "Cambia una regla de Climate React y mantiene la otra tal como está. Las temperaturas están en la unidad del aire acondicionado (°C o °F), la humedad en %. El tipo de activador se aplica a ambas reglas. Climate React debe haberse guardado al menos una vez en la aplicación Sensibo.",
+    "fr": "Modifie une règle Climate React et garde l'autre telle quelle. Les températures sont dans l'unité du climatiseur (°C ou °F), l'humidité en %. Le type de déclencheur s'applique aux deux règles. Climate React doit avoir été enregistré une fois dans l'application Sensibo.",
+    "it": "Modifica una regola di Climate React e mantiene l'altra così com'è. Le temperature sono nell'unità del condizionatore (°C o °F), l'umidità in %. Il tipo di trigger si applica a entrambe le regole. Climate React deve essere stato salvato almeno una volta nell'app Sensibo.",
+    "no": "Endrer én Climate React-regel og beholder den andre som den er. Temperaturer er i AC-enhetens enhet (°C eller °F), fuktighet i %. Utløsertype gjelder for begge regler. Climate React må ha blitt lagret én gang i Sensibo-appen.",
+    "sv": "Ändrar en Climate React-regel och behåller den andra som den är. Temperaturer är i AC:ns enhet (°C eller °F), luftfuktighet i %. Utlösartypen gäller för båda reglerna. Climate React måste ha sparats en gång i Sensibo-appen.",
+    "pl": "Zmienia jedną regułę Climate React, a drugą pozostawia bez zmian. Temperatury są w jednostkach klimatyzatora (°C lub °F), wilgotność w %. Typ wyzwalacza dotyczy obu reguł. Climate React musi być zapisany przynajmniej raz w aplikacji Sensibo.",
+    "ru": "Изменяет одно правило Climate React и оставляет другое без изменений. Температура указана в единицах кондиционера (°C или °F), влажность в %. Тип триггера применяется к обоим правилам. Climate React должен быть сохранен хотя бы один раз в приложении Sensibo.",
+    "ko": "하나의 Climate React 규칙을 변경하고 다른 하나는 그대로 유지합니다. 온도는 에어컨의 단위(°C 또는 °F)로 표시되며, 습도는 %로 표시됩니다. 트리거 유형은 두 규칙 모두에 적용됩니다. Climate React는 Sensibo 앱에서 한 번 저장되어야 합니다.",
+    "ar": "يتم تغيير قاعدة واحدة من قواعد Climate React وتبقى الأخرى كما هي. درجات الحرارة تكون بوحدة المكيف (°م أو °ف)، والرطوبة بالنسبة المئوية. نوع المشغل ينطبق على كلا القاعدتين. يجب أن يتم حفظ Climate React مرة واحدة على الأقل في تطبيق Sensibo."
   },
   "args": [
     {
@@ -23,28 +56,72 @@
       "type": "dropdown",
       "title": {
         "en": "Trigger",
-        "nl": "Trigger"
+        "nl": "Trigger",
+        "da": "Udløser",
+        "de": "Auslöser",
+        "es": "Disparador",
+        "fr": "Déclencheur",
+        "it": "Attiva",
+        "no": "Utløser",
+        "sv": "Utlösare",
+        "pl": "Wyzwalacz",
+        "ru": "Триггер",
+        "ko": "트리거",
+        "ar": "تشغيل"
       },
       "values": [
         {
           "id": "temperature",
           "label": {
             "en": "Temperature",
-            "nl": "Temperatuur"
+            "nl": "Temperatuur",
+            "da": "Temperatur",
+            "de": "Temperatur",
+            "es": "Temperatura",
+            "fr": "Température",
+            "it": "Temperatura",
+            "no": "Temperatur",
+            "sv": "Temperatur",
+            "pl": "Temperatura",
+            "ru": "Температура",
+            "ko": "온도",
+            "ar": "درجة الحرارة"
           }
         },
         {
           "id": "humidity",
           "label": {
             "en": "Humidity",
-            "nl": "Luchtvochtigheid"
+            "nl": "Luchtvochtigheid",
+            "da": "Fugtighed",
+            "de": "Luftfeuchtigkeit",
+            "es": "Humedad",
+            "fr": "Humidité",
+            "it": "Umidità",
+            "no": "Fuktighet",
+            "sv": "Luftfuktighet",
+            "pl": "Wilgotność",
+            "ru": "Влажность",
+            "ko": "습도",
+            "ar": "الرطوبة"
           }
         },
         {
           "id": "feelsLike",
           "label": {
             "en": "Feels like",
-            "nl": "Gevoelstemperatuur"
+            "nl": "Gevoelstemperatuur",
+            "da": "Føles som",
+            "de": "Fühlt sich an wie",
+            "es": "Se siente como",
+            "fr": "Ressenti comme",
+            "it": "Percepita come",
+            "no": "Føles som",
+            "sv": "Känns som",
+            "pl": "Odczuwalna temperatura",
+            "ru": "Ощущается как",
+            "ko": "체감 온도",
+            "ar": "يشعر وكأنه"
           }
         }
       ]
@@ -57,11 +134,33 @@
       "step": 0.1,
       "title": {
         "en": "Threshold",
-        "nl": "Drempel"
+        "nl": "Drempel",
+        "da": "Tærskelværdi",
+        "de": "Schwellenwert",
+        "es": "Umbral",
+        "fr": "Seuil",
+        "it": "Soglia",
+        "no": "Terskel",
+        "sv": "Tröskelvärde",
+        "pl": "Próg",
+        "ru": "Порог",
+        "ko": "임계값",
+        "ar": "الحد الأدنى"
       },
       "placeholder": {
         "en": "°C, °F or %",
-        "nl": "°C, °F of %"
+        "nl": "°C, °F of %",
+        "da": "°C, °F eller %",
+        "de": "°C, °F oder %",
+        "es": "°C, °F o %",
+        "fr": "°C, °F ou %",
+        "it": "°C, °F o %",
+        "no": "°C, °F eller %",
+        "sv": "°C, °F eller %",
+        "pl": "°C, °F lub %",
+        "ru": "°C, °F или %",
+        "ko": "°C, °F 또는 %",
+        "ar": "درجة مئوية (°C)، درجة فهرنهايت (°F) أو نسبة مئوية (%)"
       }
     },
     {
@@ -69,21 +168,54 @@
       "type": "dropdown",
       "title": {
         "en": "On / off",
-        "nl": "Aan / uit"
+        "nl": "Aan / uit",
+        "da": "Tænd / sluk",
+        "de": "Ein / aus",
+        "es": "Encender / apagar",
+        "fr": "Marche / arrêt",
+        "it": "Acceso / spento",
+        "no": "På / av",
+        "sv": "På / av",
+        "pl": "Włącz / wyłącz",
+        "ru": "Вкл / выкл",
+        "ko": "켜기 / 끄기",
+        "ar": "تشغيل / إيقاف تشغيل"
       },
       "values": [
         {
           "id": "on",
           "label": {
             "en": "On",
-            "nl": "Aan"
+            "nl": "Aan",
+            "da": "Tændt",
+            "de": "An",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Wł.",
+            "ru": "Вкл.",
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         },
         {
           "id": "off",
           "label": {
             "en": "Off",
-            "nl": "Uit"
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wył.",
+            "ru": "Выкл.",
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         }
       ]
@@ -93,11 +225,33 @@
       "type": "autocomplete",
       "title": {
         "en": "Mode",
-        "nl": "Modus"
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       },
       "placeholder": {
         "en": "Mode...",
-        "nl": "Modus..."
+        "nl": "Modus...",
+        "da": "Tilstand...",
+        "de": "Modus...",
+        "es": "Modo...",
+        "fr": "Mode...",
+        "it": "Modalità...",
+        "no": "Modus...",
+        "sv": "Läge...",
+        "pl": "Tryb...",
+        "ru": "Режим...",
+        "ko": "모드...",
+        "ar": "الوضع..."
       }
     },
     {
@@ -105,11 +259,33 @@
       "type": "autocomplete",
       "title": {
         "en": "Fan level",
-        "nl": "Ventilatorsnelheid"
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserniveau",
+        "de": "Lüfterstufe",
+        "es": "Nivel del ventilador",
+        "fr": "Niveau de ventilation",
+        "it": "Livello ventola",
+        "no": "Viftenivå",
+        "sv": "Fläkthastighet",
+        "pl": "Poziom wentylatora",
+        "ru": "Уровень вентилятора",
+        "ko": "팬 레벨",
+        "ar": "مستوى المروحة"
       },
       "placeholder": {
         "en": "Fan level...",
-        "nl": "Ventilatorsnelheid..."
+        "nl": "Ventilatorsnelheid...",
+        "da": "Ventilatorniveau...",
+        "de": "Ventilatorstufe...",
+        "es": "Nivel del ventilador...",
+        "fr": "Niveau de ventilation...",
+        "it": "Livello ventola...",
+        "no": "Viftenivå...",
+        "sv": "Fläkthastighet...",
+        "pl": "Poziom wentylatora...",
+        "ru": "Уровень вентилятора...",
+        "ko": "팬 레벨...",
+        "ar": "مستوى المروحة..."
       }
     },
     {
@@ -117,11 +293,33 @@
       "type": "autocomplete",
       "title": {
         "en": "Swing",
-        "nl": "Luchtstroom"
+        "nl": "Luchtstroom",
+        "da": "Sving",
+        "de": "Swing",
+        "es": "Swing",
+        "fr": "Swing",
+        "it": "Oscillazione",
+        "no": "Svinge",
+        "sv": "Swinga",
+        "pl": "Swing",
+        "ru": "Качели",
+        "ko": "스윙",
+        "ar": "تأرجح"
       },
       "placeholder": {
         "en": "Swing...",
-        "nl": "Luchtstroom..."
+        "nl": "Luchtstroom...",
+        "da": "Sving...",
+        "de": "Swing...",
+        "es": "Swing...",
+        "fr": "Swing...",
+        "it": "Swing...",
+        "no": "Sving...",
+        "sv": "Sväng...",
+        "pl": "Swing...",
+        "ru": "Качели...",
+        "ko": "스윙...",
+        "ar": "تأرجح..."
       }
     },
     {
@@ -129,11 +327,33 @@
       "type": "autocomplete",
       "title": {
         "en": "Horizontal swing",
-        "nl": "Horizontale luchtstroom"
+        "nl": "Horizontale luchtstroom",
+        "da": "Horisontal sving",
+        "de": "Horizontaler Schwenk",
+        "es": "Oscilación horizontal",
+        "fr": "Balancement horizontal",
+        "it": "Oscillazione orizzontale",
+        "no": "Horisontal sving",
+        "sv": "Horisontell svängning",
+        "pl": "Poziomy ruch",
+        "ru": "Горизонтальное качание",
+        "ko": "수평 스윙",
+        "ar": "التأرجح الأفقي"
       },
       "placeholder": {
         "en": "Horizontal swing...",
-        "nl": "Horizontale luchtstroom..."
+        "nl": "Horizontale luchtstroom...",
+        "da": "Horisontal sving...",
+        "de": "Horizontaler Schwenk...",
+        "es": "Oscilación horizontal...",
+        "fr": "Balancement horizontal...",
+        "it": "Oscillazione orizzontale...",
+        "no": "Horisontal sving...",
+        "sv": "Horisontell svängning...",
+        "pl": "Poziomy ruch...",
+        "ru": "Горизонтальное качание...",
+        "ko": "수평 스윙...",
+        "ar": "التأرجح الأفقي..."
       }
     },
     {
@@ -144,11 +364,33 @@
       "step": 1,
       "title": {
         "en": "Target temperature",
-        "nl": "Doeltemperatuur"
+        "nl": "Doeltemperatuur",
+        "da": "Måltemperatur",
+        "de": "Zieltemperatur",
+        "es": "Temperatura objetivo",
+        "fr": "Température cible",
+        "it": "Temperatura target",
+        "no": "Måltemperatur",
+        "sv": "Måltemperatur",
+        "pl": "Temperatura docelowa",
+        "ru": "Целевая температура",
+        "ko": "목표 온도",
+        "ar": "درجة الحرارة المستهدفة"
       },
       "placeholder": {
         "en": "°C or °F",
-        "nl": "°C of °F"
+        "nl": "°C of °F",
+        "da": "°C eller °F",
+        "de": "°C oder °F",
+        "es": "°C o °F",
+        "fr": "°C ou °F",
+        "it": "°C o °F",
+        "no": "°C eller °F",
+        "sv": "°C eller °F",
+        "pl": "°C lub °F",
+        "ru": "°C или °F",
+        "ko": "°C 또는 °F",
+        "ar": "°م أو °ف"
       }
     }
   ]

@@ -2,15 +2,48 @@
   "id": "sensibo_pureboost",
   "title": {
     "en": "Control Pure Boost",
-    "nl": "Pure Boost aan/uit"
+    "nl": "Pure Boost aan/uit",
+    "da": "Kontroller Pure Boost",
+    "de": "Steuere Pure Boost",
+    "es": "Controlar Pure Boost",
+    "fr": "Contrôler Pure Boost",
+    "it": "Controlla Pure Boost",
+    "no": "Kontroller Pure Boost",
+    "sv": "Styr Pure Boost",
+    "pl": "Kontroluj Pure Boost",
+    "ru": "Управление Pure Boost",
+    "ko": "Pure Boost 제어",
+    "ar": "تحكم في Pure Boost"
   },
   "titleFormatted": {
     "en": "Pure Boost [[enabled]]",
-    "nl": "Pure Boost [[enabled]]"
+    "nl": "Pure Boost [[enabled]]",
+    "da": "Pure Boost [[enabled]]",
+    "de": "Pure Boost [[enabled]]",
+    "es": "Pure Boost [[enabled]]",
+    "fr": "Pure Boost [[enabled]]",
+    "it": "Pure Boost [[enabled]]",
+    "no": "Pure Boost [[enabled]]",
+    "sv": "Pure Boost [[enabled]]",
+    "pl": "Pure Boost [[enabled]]",
+    "ru": "Pure Boost [[enabled]]",
+    "ko": "Pure Boost [[enabled]]",
+    "ar": "Pure Boost [[enabled]]"
   },
   "hint": {
     "en": "Enable or disable Pure Boost",
-    "nl": "Zet Pure Boost aan of uit"
+    "nl": "Zet Pure Boost aan of uit",
+    "da": "Aktivér eller deaktiver Pure Boost",
+    "de": "Pure Boost aktivieren oder deaktivieren",
+    "es": "Activar o desactivar Pure Boost",
+    "fr": "Activer ou désactiver Pure Boost",
+    "it": "Abilita o disabilita Pure Boost",
+    "no": "Aktiver eller deaktiver Pure Boost",
+    "sv": "Aktivera eller inaktivera Pure Boost",
+    "pl": "Włącz lub wyłącz Pure Boost",
+    "ru": "Включить или отключить Pure Boost",
+    "ko": "Pure Boost 활성화 또는 비활성화",
+    "ar": "تفعيل أو تعطيل Pure Boost"
   },
   "args": [
     {
@@ -22,7 +55,18 @@
       "name": "enabled",
       "title": {
         "en": "State",
-        "nl": "Status"
+        "nl": "Status",
+        "da": "Tilstand",
+        "de": "Status",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Stat",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "type": "dropdown",
       "values": [
@@ -30,14 +74,36 @@
           "id": "off",
           "label": {
             "en": "Off",
-            "nl": "Uit"
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączone",
+            "ru": "Выкл.",
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
           "id": "on",
           "label": {
             "en": "On",
-            "nl": "Aan"
+            "nl": "Aan",
+            "da": "Til",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Activé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączone",
+            "ru": "Включено",
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         }
       ]

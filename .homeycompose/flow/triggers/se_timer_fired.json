@@ -2,7 +2,18 @@
   "id": "se_timer_fired",
   "title": {
     "en": "Timer fired",
-    "nl": "Timer afgelopen"
+    "nl": "Timer afgelopen",
+    "da": "Timer udløst",
+    "de": "Timer ausgelöst",
+    "es": "Temporizador activado",
+    "fr": "Minuteur déclenché",
+    "it": "Timer attivato",
+    "no": "Tidsur utløst",
+    "sv": "Timer utlöste",
+    "pl": "Timer uruchomiony",
+    "ru": "Таймер сработал",
+    "ko": "타이머 작동됨",
+    "ar": "تم تشغيل المؤقت"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "number",
       "title": {
         "en": "State",
-        "nl": "Status"
+        "nl": "Status",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "example": 1
     }

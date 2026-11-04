@@ -2,7 +2,18 @@
   "id": "se_onoff_false",
   "title": {
     "en": "Device turned off",
-    "nl": "Apparaat uitgeschakeld"
+    "nl": "Apparaat uitgeschakeld",
+    "da": "Enheden er slukket",
+    "de": "Gerät ausgeschaltet",
+    "es": "Dispositivo apagado",
+    "fr": "Appareil éteint",
+    "it": "Dispositivo spento",
+    "no": "Enheten er slått av",
+    "sv": "Enheten är avstängd",
+    "pl": "Urządzenie wyłączone",
+    "ru": "Устройство выключено",
+    "ko": "장치가 꺼졌습니다.",
+    "ar": "الجهاز مغلق"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "number",
       "title": {
         "en": "State",
-        "nl": "Status"
+        "nl": "Status",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "example": 0
     }

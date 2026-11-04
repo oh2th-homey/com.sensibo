@@ -2,15 +2,48 @@
   "id": "sensibo_cr",
   "title": {
     "en": "Control Climate React",
-    "nl": "Control Reactie regelen"
+    "nl": "Climate React regelen",
+    "da": "Styr Climate React",
+    "de": "Steuere Climate React",
+    "es": "Controlar Climate React",
+    "fr": "Contrôler Climate React",
+    "it": "Controlla Climate React",
+    "no": "Kontroller Climate React",
+    "sv": "Styr Climate React",
+    "pl": "Kontroluj Climate React",
+    "ru": "Управление Climate React",
+    "ko": "Climate React 제어",
+    "ar": "تحكم في Climate React"
   },
   "titleFormatted": {
     "en": "Climate React [[enabled]]",
-    "nl": "Zet Climate React [[enabled]]"
+    "nl": "Zet Climate React [[enabled]]",
+    "da": "Climate React [[enabled]]",
+    "de": "Climate React [[enabled]]",
+    "es": "Climate React [[enabled]]",
+    "fr": "Climate React [[enabled]]",
+    "it": "Climate React [[enabled]]",
+    "no": "Climate React [[enabled]]",
+    "sv": "Climate React [[enabled]]",
+    "pl": "Climate React [[enabled]]",
+    "ru": "Climate React [[enabled]]",
+    "ko": "Climate React [[enabled]]",
+    "ar": "Climate React [[enabled]]"
   },
   "hint": {
     "en": "Enable or disable Climate React",
-    "nl": "Schakel Climate React in of uit"
+    "nl": "Schakel Climate React in of uit",
+    "da": "Aktivér eller deaktiver Climate React",
+    "de": "Climate React aktivieren oder deaktivieren",
+    "es": "Activar o desactivar Climate React",
+    "fr": "Activer ou désactiver Climate React",
+    "it": "Abilita o disabilita Climate React",
+    "no": "Aktiver eller deaktiver Climate React",
+    "sv": "Aktivera eller inaktivera Climate React",
+    "pl": "Włącz lub wyłącz Climate React",
+    "ru": "Включить или отключить Climate React",
+    "ko": "Climate React 활성화 또는 비활성화",
+    "ar": "تفعيل أو تعطيل Climate React"
   },
   "args": [
     {
@@ -22,7 +55,18 @@
       "name": "enabled",
       "title": {
         "en": "State",
-        "nl": "Status"
+        "nl": "Status",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "type": "dropdown",
       "values": [
@@ -30,14 +74,36 @@
           "id": "off",
           "label": {
             "en": "Off",
-            "nl": "Uit"
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączone",
+            "ru": "Выкл.",
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
           "id": "on",
           "label": {
             "en": "On",
-            "nl": "Aan"
+            "nl": "Aan",
+            "da": "Til",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Activé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączone",
+            "ru": "Включено",
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         }
       ]

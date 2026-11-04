@@ -2,7 +2,18 @@
   "id": "alarm_filter",
   "title": {
     "en": "Filter alarm changed",
-    "nl": "Alarm filter veranderd"
+    "nl": "Alarm filter veranderd",
+    "da": "Filteralarm ændret",
+    "de": "Filteralarm geändert",
+    "es": "Alarma de filtro cambiada",
+    "fr": "Alarme de filtre modifiée",
+    "it": "Allarme filtro modificato",
+    "no": "Filteralarm endret",
+    "sv": "Filterlarm ändrat",
+    "pl": "Alarm filtra zmieniony",
+    "ru": "Сигнал фильтра изменен",
+    "ko": "필터 알람이 변경되었습니다.",
+    "ar": "تم تغيير إنذار الفلتر"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "boolean",
       "title": {
         "en": "State",
-        "nl": "Status"
+        "nl": "Status",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "example": true
     }

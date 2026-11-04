@@ -2,7 +2,18 @@
   "id": "se_onoff_is_on",
   "title": {
     "en": "Device is !{{on|off}}",
-    "nl": "Apparaat is !{{aan|uit}}"
+    "nl": "Apparaat is !{{aan|uit}}",
+    "da": "Enheden er !{{tændt|slukket}}",
+    "de": "Gerät ist !{{ein|aus}}",
+    "es": "El dispositivo está !{{encendido|apagado}}",
+    "fr": "L'appareil est !{{allumé|éteint}}",
+    "it": "Il dispositivo è !{{acceso|spento}}",
+    "no": "Enheten er !{{på|av}}",
+    "sv": "Enheten är !{{på|av}}",
+    "pl": "Urządzenie jest !{{włączone|wyłączone}}",
+    "ru": "Устройство !{{включено|выключено}}",
+    "ko": "장치가 !{{켜짐|꺼짐}}",
+    "ar": "الجهاز !{{تشغيل|إيقاف}}"
   },
   "args": [
     {

@@ -1,12 +1,23 @@
 {
-	"type": "number",
-	"title": {
-		"en": "Indoor Air Quality Score",
-    "nl": "Binnenluchtkwaliteitsscore"
-	},
-	"icon": "./assets/iaq.svg",
-	"getable": true,
-	"setable": false,
-	"uiComponent": "sensor",
-	"insights": true
+  "type": "number",
+  "title": {
+    "en": "Indoor Air Quality Score",
+    "nl": "Binnenluchtkwaliteitsscore",
+    "da": "Indendørs luftkvalitetsvurdering",
+    "de": "Luftqualitätsbewertung für Innenräume",
+    "es": "Puntuación de Calidad del Aire Interior",
+    "fr": "Score de qualité de l'air intérieur",
+    "it": "Punteggio Qualità dell'Aria Interna",
+    "no": "Innendørs luftkvalitetspoeng",
+    "sv": "Inomhusluftkvalitetspoäng",
+    "pl": "Wynik Jakości Powietrza Wewnątrz",
+    "ru": "Индекс качества воздуха в помещении",
+    "ko": "실내 공기질 점수",
+    "ar": "درجة جودة الهواء الداخلي"
+  },
+  "icon": "./assets/iaq.svg",
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
 }

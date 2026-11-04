@@ -2,11 +2,33 @@
   "type": "enum",
   "title": {
     "en": "Horizontal swing",
-    "nl": "Horizontale luchtstroom"
+    "nl": "Horizontale luchtstroom",
+    "da": "Horisontal sving",
+    "de": "Horizontaler Schwenk",
+    "es": "Oscilación horizontal",
+    "fr": "Balancement horizontal",
+    "it": "Oscillazione orizzontale",
+    "no": "Horisontal sving",
+    "sv": "Horisontell svängning",
+    "pl": "Poziomy ruch",
+    "ru": "Горизонтальное качание",
+    "ko": "수평 스윙",
+    "ar": "التأرجح الأفقي"
   },
   "desc": {
     "en": "Horizontal swing",
-    "nl": "Horizontale luchtstroom"
+    "nl": "Horizontale luchtstroom",
+    "da": "Horisontal sving",
+    "de": "Horizontaler Schwenk",
+    "es": "Oscilación horizontal",
+    "fr": "Balancement horizontal",
+    "it": "Oscillazione orizzontale",
+    "no": "Horisontal sving",
+    "sv": "Horisontell svängning",
+    "pl": "Poziomy ruch wahadłowy",
+    "ru": "Горизонтальное качание",
+    "ko": "수평 스윙",
+    "ar": "التأرجح الأفقي"
   },
   "getable": true,
   "setable": true,
@@ -17,63 +39,162 @@
       "id": "stopped",
       "title": {
         "en": "Stopped",
-        "nl": "Gestopt"
+        "nl": "Gestopt",
+        "da": "Stoppet",
+        "de": "Gestoppt",
+        "es": "Detenido",
+        "fr": "Arrêté",
+        "it": "Fermato",
+        "no": "Stoppet",
+        "sv": "Stoppad",
+        "pl": "Zatrzymano",
+        "ru": "Остановлено",
+        "ko": "중지됨",
+        "ar": "توقف"
       }
     },
     {
       "id": "fixedLeft",
       "title": {
         "en": "Fixed left",
-        "nl": "Vast links"
+        "nl": "Vast links",
+        "da": "Fast venstre",
+        "de": "Fest links",
+        "es": "Fijo a la izquierda",
+        "fr": "Fixé à gauche",
+        "it": "Fisso a sinistra",
+        "no": "Fast venstre",
+        "sv": "Fast vänster",
+        "pl": "Naprawiono lewą stronę",
+        "ru": "Исправлено слева",
+        "ko": "고정 왼쪽",
+        "ar": "تم الإصلاح على اليسار"
       }
     },
     {
       "id": "fixedCenterLeft",
       "title": {
         "en": "Fixed center left",
-        "nl": "Vast midden links"
+        "nl": "Vast midden links",
+        "da": "Fast venstre midt",
+        "de": "Fest links zentriert",
+        "es": "Centro izquierdo fijo",
+        "fr": "Centre gauche fixe",
+        "it": "Fisso al centro sinistra",
+        "no": "Fast senter venstre",
+        "sv": "Fast mitt vänster",
+        "pl": "Stałe centrum lewe",
+        "ru": "Фиксированный центр слева",
+        "ko": "고정 중앙 왼쪽",
+        "ar": "ثابت في الوسط الأيسر"
       }
     },
     {
       "id": "fixedCenter",
       "title": {
         "en": "Fixed center",
-        "nl": "Vast midden"
+        "nl": "Vast midden",
+        "da": "Fast center",
+        "de": "Fester Mittelpunkt",
+        "es": "Centro fijo",
+        "fr": "Centre fixe",
+        "it": "Centro fisso",
+        "no": "Fast senter",
+        "sv": "Fast mittpunkt",
+        "pl": "Stałe centrum",
+        "ru": "Фиксированный центр",
+        "ko": "고정 센터",
+        "ar": "مركز ثابت"
       }
     },
     {
       "id": "fixedCenterRight",
       "title": {
         "en": "Fixed center right",
-        "nl": "Vast midden rechts"
+        "nl": "Vast midden rechts",
+        "da": "Fast center højre",
+        "de": "Fest zentriert rechts",
+        "es": "Centro derecho fijo",
+        "fr": "Fixé au centre à droite",
+        "it": "Fisso al centro a destra",
+        "no": "Fast senter høyre",
+        "sv": "Fast mitt höger",
+        "pl": "Stałe centrum prawe",
+        "ru": "Фиксированный центр справа",
+        "ko": "고정 중앙 오른쪽",
+        "ar": "ثابت في الوسط الأيمن"
       }
     },
     {
       "id": "fixedRight",
       "title": {
         "en": "Fixed right",
-        "nl": "Vast rechts"
+        "nl": "Vast rechts",
+        "da": "Fastgjort rigtigt",
+        "de": "Fest eingestellt",
+        "es": "Arreglado, ¿verdad?",
+        "fr": "Corrigé, c'est bon.",
+        "it": "Risolto giusto",
+        "no": "Fast til høyre",
+        "sv": "Fast fixad",
+        "pl": "Naprawione, prawda?",
+        "ru": "Исправлено правильно",
+        "ko": "고정 완료",
+        "ar": "تم الإصلاح بنجاح"
       }
     },
     {
       "id": "fixedLeftRight",
       "title": {
         "en": "Fixed left right",
-        "nl": "Vast links rechts"
+        "nl": "Vast links rechts",
+        "da": "Fast venstre højre",
+        "de": "Fest links rechts",
+        "es": "Arreglado izquierda derecha",
+        "fr": "Fixé gauche droite",
+        "it": "Risolto sinistra destra",
+        "no": "Fikset venstre høyre",
+        "sv": "Fast vänster höger",
+        "pl": "Naprawiono lewo prawo",
+        "ru": "Исправлено влево вправо",
+        "ko": "왼쪽 오른쪽 고정됨",
+        "ar": "تم إصلاح اليسار واليمين"
       }
     },
     {
       "id": "rangeCenter",
       "title": {
         "en": "Range center",
-        "nl": "Bereik midden"
+        "nl": "Bereik midden",
+        "da": "Rækkeviddecenter",
+        "de": "Reichweitenzentrum",
+        "es": "Centro de rango",
+        "fr": "Centre de portée",
+        "it": "Centro intervallo",
+        "no": "Rekkeviddesenter",
+        "sv": "Räckviddscenter",
+        "pl": "Centrum zasięgu",
+        "ru": "Центр диапазона",
+        "ko": "범위 중심",
+        "ar": "مركز النطاق"
       }
     },
     {
       "id": "rangeFull",
       "title": {
         "en": "Range full",
-        "nl": "Bereik volledig"
+        "nl": "Bereik volledig",
+        "da": "Rækkevidde fuld",
+        "de": "Reichweite voll",
+        "es": "Rango completo",
+        "fr": "Portée complète",
+        "it": "Intervallo completo",
+        "no": "Rekkevidde full",
+        "sv": "Räckvidd fullständig",
+        "pl": "Zasięg pełny",
+        "ru": "Диапазон полный",
+        "ko": "범위 가득함",
+        "ar": "النطاق ممتلئ"
       }
     }
   ]

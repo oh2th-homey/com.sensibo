@@ -2,11 +2,33 @@
   "type": "enum",
   "title": {
     "en": "Fan level",
-    "nl": "Ventilatorsnelheid"
+    "nl": "Ventilatorsnelheid",
+    "da": "Blæserniveau",
+    "de": "Ventilatorstufe",
+    "es": "Nivel del ventilador",
+    "fr": "Niveau de ventilation",
+    "it": "Livello della ventola",
+    "no": "Viftenivå",
+    "sv": "Fläkthastighet",
+    "pl": "Poziom wentylatora",
+    "ru": "Уровень вентилятора",
+    "ko": "팬 레벨",
+    "ar": "مستوى المروحة"
   },
   "desc": {
     "en": "Fan level",
-    "nl": "Ventilatorsnelheid"
+    "nl": "Ventilatorsnelheid",
+    "da": "Blæserniveau",
+    "de": "Ventilatorstufe",
+    "es": "Nivel del ventilador",
+    "fr": "Niveau de ventilation",
+    "it": "Livello ventola",
+    "no": "Viftenivå",
+    "sv": "Fläkthastighet",
+    "pl": "Poziom wentylatora",
+    "ru": "Уровень вентилятора",
+    "ko": "팬 레벨",
+    "ar": "مستوى المروحة"
   },
   "getable": true,
   "setable": true,
@@ -17,14 +39,36 @@
       "id": "high",
       "title": {
         "en": "High",
-        "nl": "Hoog"
+        "nl": "Hoog",
+        "da": "Høj",
+        "de": "Hoch",
+        "es": "Alto",
+        "fr": "Élevé",
+        "it": "Alto",
+        "no": "Høy",
+        "sv": "Hög",
+        "pl": "Wysoki",
+        "ru": "Высокий",
+        "ko": "높음",
+        "ar": "مرتفع"
       }
     },
     {
       "id": "low",
       "title": {
         "en": "Low",
-        "nl": "Laag"
+        "nl": "Laag",
+        "da": "Lav",
+        "de": "Niedrig",
+        "es": "Bajo",
+        "fr": "Faible",
+        "it": "Basso",
+        "no": "Lav",
+        "sv": "Låg",
+        "pl": "Niski",
+        "ru": "Низкий",
+        "ko": "낮음",
+        "ar": "منخفض"
       }
     }
   ]

@@ -17,7 +17,18 @@
   },
   "desc": {
     "en": "State of the device",
-    "nl": "Status van het apparaat"
+    "nl": "Status van het apparaat",
+    "da": "Enhedens tilstand",
+    "de": "Status des Geräts",
+    "es": "Estado del dispositivo",
+    "fr": "État de l'appareil",
+    "it": "Stato del dispositivo",
+    "no": "Enhetens tilstand",
+    "sv": "Enhetens status",
+    "pl": "Stan urządzenia",
+    "ru": "Состояние устройства",
+    "ko": "장치 상태",
+    "ar": "حالة الجهاز"
   },
   "getable": true,
   "setable": true,

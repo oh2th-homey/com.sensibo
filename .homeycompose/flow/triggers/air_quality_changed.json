@@ -2,7 +2,18 @@
   "id": "air_quality_changed",
   "title": {
     "en": "Air quality changed",
-    "nl": "Luchtkwaliteit veranderd"
+    "nl": "Luchtkwaliteit veranderd",
+    "da": "Luftkvaliteten er ændret",
+    "de": "Luftqualität hat sich geändert",
+    "es": "La calidad del aire cambió",
+    "fr": "La qualité de l'air a changé",
+    "it": "La qualità dell'aria è cambiata",
+    "no": "Luftkvaliteten har endret seg",
+    "sv": "Luftkvaliteten har ändrats",
+    "pl": "Jakość powietrza się zmieniła",
+    "ru": "Качество воздуха изменилось",
+    "ko": "공기 질이 변경되었습니다.",
+    "ar": "تغيرت جودة الهواء"
   },
   "args": [
     {
@@ -17,7 +28,18 @@
       "type": "string",
       "title": {
         "en": "Air quality",
-        "nl": "Luchtkwaliteit"
+        "nl": "Luchtkwaliteit",
+        "da": "Luftkvalitet",
+        "de": "Luftqualität",
+        "es": "Calidad del aire",
+        "fr": "Qualité de l'air",
+        "it": "Qualità dell'aria",
+        "no": "Luftkvalitet",
+        "sv": "Luftkvalitet",
+        "pl": "Jakość powietrza",
+        "ru": "Качество воздуха",
+        "ko": "공기 질",
+        "ar": "جودة الهواء"
       },
       "example": "Excellent"
     }

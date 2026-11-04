@@ -1,36 +1,48 @@
 {
-	"id": "Sensibo",
-	"name": {
-		"en": "Sensibo"
-	},
-	"$extends": [
-		"defaults"
-	],
-	"class": "airconditioning",
-	"capabilities": [
-		"se_onoff",
-		"target_temperature",
-		"thermostat_mode",
-		"se_fanlevel",
-		"se_fandirection",
-		"measure_temperature",
-		"measure_humidity",
-		"se_last_seen",
-		"alarm_filter",
-		"se_filter_run_hours",
-		"se_filter_due_hours",
-		"se_filter_due_date"
-	],
-	"capabilitiesOptions": {
-		"se_onoff": {
-			"greyout": true
-		},
-		"target_temperature": {
-			"decimals": 0,
-			"min": 10,
-			"max": 31,
-			"step": 1
-		},
+  "id": "Sensibo",
+  "name": {
+    "en": "Sensibo",
+    "nl": "Sensibo",
+    "da": "Sensibo",
+    "de": "Sensibo",
+    "es": "Sensibo",
+    "fr": "Sensibo",
+    "it": "Sensibo",
+    "no": "Sensibo",
+    "sv": "Sensibo",
+    "pl": "Sensibo",
+    "ru": "Sensibo",
+    "ko": "Sensibo",
+    "ar": "Sensibo"
+  },
+  "$extends": [
+    "defaults"
+  ],
+  "class": "airconditioning",
+  "capabilities": [
+    "se_onoff",
+    "target_temperature",
+    "thermostat_mode",
+    "se_fanlevel",
+    "se_fandirection",
+    "measure_temperature",
+    "measure_humidity",
+    "se_last_seen",
+    "alarm_filter",
+    "se_filter_run_hours",
+    "se_filter_due_hours",
+    "se_filter_due_date"
+  ],
+  "capabilitiesOptions": {
+    "se_onoff": {
+      "greyout": true
+    },
+    "target_temperature": {
+      "decimals": 0,
+      "min": 10,
+      "max": 31,
+      "step": 1
+    },
     "thermostat_mode": {
       "values": [
         {
@@ -107,5 +119,5 @@
         }
       ]
     }
-	}
+  }
 }

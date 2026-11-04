@@ -3,13 +3,35 @@
   "type": "number",
   "label": {
     "en": "Delay for offline",
-    "nl": "Vertraging voor offline"
+    "nl": "Vertraging voor offline",
+    "da": "Forsinkelse ved offline",
+    "de": "Verzögerung bei Offline-Modus",
+    "es": "Retraso por estar sin conexión",
+    "fr": "Délai pour hors ligne",
+    "it": "Ritardo per offline",
+    "no": "Forsinkelse for frakoblet",
+    "sv": "Fördröjning vid offline-läge",
+    "pl": "Opóźnienie dla trybu offline",
+    "ru": "Задержка при оффлайн режиме",
+    "ko": "오프라인 지연",
+    "ar": "تأخير عند عدم الاتصال بالإنترنت"
   },
   "value": 300,
   "min": 120,
   "max": 3600,
   "hint": {
     "en": "Delay when checking if the device is offline (seconds)",
-    "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)"
+    "nl": "Vertraging bij het controleren of het apparaat offline is (seconden)",
+    "da": "Forsinkelse ved kontrol af, om enheden er offline (sekunder)",
+    "de": "Verzögerung beim Überprüfen, ob das Gerät offline ist (Sekunden)",
+    "es": "Retraso al verificar si el dispositivo está desconectado (segundos)",
+    "fr": "Délai lors de la vérification si l'appareil est hors ligne (secondes)",
+    "it": "Ritardo nel controllo se il dispositivo è offline (secondi)",
+    "no": "Forsinkelse ved sjekking om enheten er offline (sekunder)",
+    "sv": "Fördröjning vid kontroll om enheten är offline (sekunder)",
+    "pl": "Opóźnienie przy sprawdzaniu, czy urządzenie jest offline (sekundy)",
+    "ru": "Задержка при проверке, находится ли устройство в оффлайн-режиме (в секундах)",
+    "ko": "장치가 오프라인인지 확인할 때의 지연 시간(초)",
+    "ar": "تأخير عند التحقق مما إذا كان الجهاز غير متصل (بالثواني)"
   }
 }

@@ -2,11 +2,33 @@
   "type": "boolean",
   "title": {
     "en": "Filter Alarm",
-    "nl": "Filter alarm"
+    "nl": "Filter alarm",
+    "da": "Filteralarm",
+    "de": "Filteralarm",
+    "es": "Alarma de filtro",
+    "fr": "Alerte Filtre",
+    "it": "Allarme Filtro",
+    "no": "Filteralarm",
+    "sv": "Filterlarm",
+    "pl": "Alarm filtra",
+    "ru": "Сигнал фильтра",
+    "ko": "필터 알람",
+    "ar": "تنبيه الفلتر"
   },
   "desc": {
     "en": "Filter needs cleaning",
-    "nl": "Filter moet worden schoongemaakt"
+    "nl": "Filter moet worden schoongemaakt",
+    "da": "Filteren skal rengøres",
+    "de": "Filter muss gereinigt werden",
+    "es": "El filtro necesita limpieza.",
+    "fr": "Le filtre a besoin d'être nettoyé.",
+    "it": "Il filtro ha bisogno di essere pulito",
+    "no": "Filteret trenger rengjøring",
+    "sv": "Filtret behöver rengöras",
+    "pl": "Filtr wymaga czyszczenia",
+    "ru": "Фильтр нуждается в очистке",
+    "ko": "필터를 청소해야 합니다.",
+    "ar": "يحتاج الفلتر إلى تنظيف"
   },
   "icon": "./assets/air_filter.svg",
   "getable": true,

@@ -2,7 +2,18 @@
   "id": "se_timer_created",
   "title": {
     "en": "Timer created",
-    "nl": "Timer aangemaakt"
+    "nl": "Timer aangemaakt",
+    "da": "Timer oprettet",
+    "de": "Timer erstellt",
+    "es": "Temporizador creado",
+    "fr": "Minuteur créé",
+    "it": "Timer creato",
+    "no": "Tidsur opprettet",
+    "sv": "Timer skapad",
+    "pl": "Utworzono timer",
+    "ru": "Таймер создан",
+    "ko": "타이머가 생성되었습니다.",
+    "ar": "تم إنشاء المؤقت"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "boolean",
       "title": {
         "en": "From Homey flow",
-        "nl": "Van Homey flow"
+        "nl": "Van Homey flow",
+        "da": "Fra Homey-flow",
+        "de": "Aus Homey-Flow",
+        "es": "Desde el flujo de Homey",
+        "fr": "Depuis le flux Homey",
+        "it": "Dal flusso Homey",
+        "no": "Fra Homey-flow",
+        "sv": "Från Homey-flöde",
+        "pl": "Z przepływu Homey",
+        "ru": "Из потока Homey",
+        "ko": "Homey 플로우에서",
+        "ar": "من تدفق Homey"
       },
       "example": true
     }

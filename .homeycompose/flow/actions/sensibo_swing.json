@@ -2,15 +2,48 @@
   "id": "sensibo_swing",
   "title": {
     "en": "Set swing",
-    "nl": "Zet luchtstroom"
+    "nl": "Zet luchtstroom",
+    "da": "Indstil sving",
+    "de": "Swing einstellen",
+    "es": "Configurar oscilación",
+    "fr": "Régler l'oscillation",
+    "it": "Imposta oscillazione",
+    "no": "Sett sving",
+    "sv": "Ställ in svängning",
+    "pl": "Ustawienie oscylacji",
+    "ru": "Установить качание",
+    "ko": "스윙 설정",
+    "ar": "ضبط التأرجح"
   },
   "titleFormatted": {
     "en": "Set swing to [[swing]]",
-    "nl": "Zet luchtstroom naar [[swing]]"
+    "nl": "Zet luchtstroom naar [[swing]]",
+    "da": "Indstil sving til [[swing]]",
+    "de": "Stelle den Swing auf [[swing]] ein",
+    "es": "Configurar oscilación a [[swing]]",
+    "fr": "Régler l'oscillation sur [[swing]]",
+    "it": "Imposta l'oscillazione su [[swing]]",
+    "no": "Sett sving til [[swing]]",
+    "sv": "Ställ in svängning till [[swing]]",
+    "pl": "Ustaw wachlowanie na [[swing]]",
+    "ru": "Установите качание на [[swing]]",
+    "ko": "스윙을 [[swing]]로 설정하세요.",
+    "ar": "اضبط التأرجح على [[swing]]"
   },
   "hint": {
     "en": "Set the swing",
-    "nl": "Zet de luchtstroom"
+    "nl": "Zet de luchtstroom",
+    "da": "Indstil svinget",
+    "de": "Stelle die Schwenkfunktion ein",
+    "es": "Configura el movimiento",
+    "fr": "Régler l'oscillation",
+    "it": "Imposta l'oscillazione",
+    "no": "Sett svingfunksjonen",
+    "sv": "Ställ in svängningen",
+    "pl": "Ustaw oscylację",
+    "ru": "Установите режим качания",
+    "ko": "스윙 설정",
+    "ar": "اضبط التأرجح"
   },
   "args": [
     {
@@ -22,12 +55,34 @@
       "name": "swing",
       "label": {
         "en": "Swing",
-        "nl": "Luchtstroom"
+        "nl": "Luchtstroom",
+        "da": "Sving",
+        "de": "Schwenken",
+        "es": "Swing",
+        "fr": "Swing",
+        "it": "Swinga",
+        "no": "Svinge",
+        "sv": "Swinga",
+        "pl": "Swing",
+        "ru": "Качели",
+        "ko": "스윙",
+        "ar": "تأرجح"
       },
       "type": "autocomplete",
       "placeholder": {
         "en": "Swing...",
-        "nl": "Luchtstroom..."
+        "nl": "Luchtstroom...",
+        "da": "Sving...",
+        "de": "Swing...",
+        "es": "Swing...",
+        "fr": "Swing...",
+        "it": "Oscillazione...",
+        "no": "Sving...",
+        "sv": "Sväng...",
+        "pl": "Swing...",
+        "ru": "Качели...",
+        "ko": "스윙...",
+        "ar": "تأرجح..."
       }
     }
   ]

@@ -2,15 +2,48 @@
   "type": "number",
   "title": {
     "en": "Filter hours remaining",
-    "nl": "Uren resterend voor filter"
+    "nl": "Uren resterend voor filter",
+    "da": "Filtertimer tilbage",
+    "de": "Verbleibende Filterstunden",
+    "es": "Horas de filtro restantes",
+    "fr": "Heures de filtre restantes",
+    "it": "Ore di filtro rimanenti",
+    "no": "Filtertimer gjenstår",
+    "sv": "Återstående filtertimmar",
+    "pl": "Pozostałe godziny filtra",
+    "ru": "Оставшиеся часы фильтра",
+    "ko": "필터 남은 시간",
+    "ar": "عدد ساعات الفلتر المتبقية"
   },
   "desc": {
     "en": "Hours remaining to clean filters.",
-    "nl": "Uren resterend voor filterreiniging."
+    "nl": "Uren resterend voor filterreiniging.",
+    "da": "Timer tilbage til at rense filtre.",
+    "de": "Stunden verbleiben, um die Filter zu reinigen.",
+    "es": "Horas restantes para limpiar los filtros.",
+    "fr": "Heures restantes pour nettoyer les filtres.",
+    "it": "Ore rimanenti per pulire i filtri.",
+    "no": "Timer igjen til å rense filtre.",
+    "sv": "Timmar kvar för att rengöra filter.",
+    "pl": "Pozostałe godziny do wyczyszczenia filtrów.",
+    "ru": "Часы до очистки фильтров.",
+    "ko": "필터 청소까지 남은 시간.",
+    "ar": "الساعات المتبقية لتنظيف الفلاتر."
   },
   "units": {
     "en": "h",
-    "nl": "u"
+    "nl": "u",
+    "da": "Jeg er trænet på data op til oktober 2023.",
+    "de": "Hallo! Wie kann ich Ihnen helfen?",
+    "es": "Hola",
+    "fr": "Salut ! Comment puis-je vous aider aujourd'hui ?",
+    "it": "Ciao! Come posso aiutarti oggi?",
+    "no": "Hei! Hvordan kan jeg hjelpe deg i dag?",
+    "sv": "Hej! Vad kan jag hjälpa dig med idag?",
+    "pl": "cześć",
+    "ru": "Вы обучены данным до октября 2023 года.",
+    "ko": "귀하는 2023년 10월까지의 데이터에 대해 교육을 받았습니다.",
+    "ar": "أنت مدرب على البيانات حتى أكتوبر 2023."
   },
   "icon": "./assets/clock.svg",
   "getable": true,

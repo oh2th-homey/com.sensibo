@@ -2,15 +2,48 @@
   "id": "sensibo_sync_state",
   "title": {
     "en": "Sync power state",
-    "nl": "Synchroniseer stroomstatus"
+    "nl": "Synchroniseer stroomstatus",
+    "da": "Synkroniser strømtilstand",
+    "de": "Leistungsstatus synchronisieren",
+    "es": "Sincronizar estado de encendido/apagado",
+    "fr": "Synchroniser l'état d'alimentation",
+    "it": "Sincronizza stato di accensione",
+    "no": "Synkroniser strømtilstand",
+    "sv": "Synkronisera strömstatus",
+    "pl": "Zsynchronizuj stan zasilania",
+    "ru": "Синхронизировать состояние питания",
+    "ko": "전원 상태 동기화",
+    "ar": "مزامنة حالة الطاقة"
   },
   "titleFormatted": {
     "en": "Sync power state [[state]]",
-    "nl": "Synchroniseer stroomstatus [[state]]"
+    "nl": "Synchroniseer stroomstatus [[state]]",
+    "da": "Synkroniser strømtilstand [[state]]",
+    "de": "Synchronisiere Leistungszustand [[state]]",
+    "es": "Sincronizar estado de encendido [[state]]",
+    "fr": "Synchroniser l'état d'alimentation [[state]]",
+    "it": "Sincronizza stato di accensione [[state]]",
+    "no": "Synkroniser strømtilstand [[state]]",
+    "sv": "Synkronisera strömstatus [[state]]",
+    "pl": "Zsynchronizuj stan zasilania [[state]]",
+    "ru": "Синхронизировать состояние питания [[state]]",
+    "ko": "전원 상태 [[state]] 동기화",
+    "ar": "مزامنة حالة الطاقة [[state]]"
   },
   "hint": {
     "en": "Sync the power state of the Sensibo",
-    "nl": "Synchroniseer de stroomstatus van de Sensibo"
+    "nl": "Synchroniseer de stroomstatus van de Sensibo",
+    "da": "Synkroniser strømtilstanden for Sensibo",
+    "de": "Synchronisiere den Betriebszustand des Sensibo.",
+    "es": "Sincroniza el estado de encendido del Sensibo.",
+    "fr": "Synchronisez l'état d'alimentation du Sensibo.",
+    "it": "Sincronizza lo stato di accensione del Sensibo",
+    "no": "Synkroniser strømtilstanden til Sensibo",
+    "sv": "Synkronisera strömstatusen för Sensibo",
+    "pl": "Zsynchronizuj stan zasilania Sensibo",
+    "ru": "Синхронизируйте состояние питания Sensibo",
+    "ko": "Sensibo의 전원 상태 동기화",
+    "ar": "مزامنة حالة الطاقة لجهاز Sensibo"
   },
   "args": [
     {
@@ -22,7 +55,18 @@
       "name": "state",
       "title": {
         "en": "Power state",
-        "nl": "Stroomstatus"
+        "nl": "Stroomstatus",
+        "da": "Strømtilstand",
+        "de": "Leistungszustand",
+        "es": "Estado de encendido/apagado",
+        "fr": "État d'alimentation",
+        "it": "Stato di accensione/spegnimento",
+        "no": "Strømtilstand",
+        "sv": "Strömläge",
+        "pl": "Stan zasilania",
+        "ru": "Состояние питания",
+        "ko": "전원 상태",
+        "ar": "حالة الطاقة"
       },
       "type": "dropdown",
       "values": [
@@ -30,14 +74,36 @@
           "id": "off",
           "label": {
             "en": "Off",
-            "nl": "Uit"
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączone",
+            "ru": "Выкл.",
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
           "id": "on",
           "label": {
             "en": "On",
-            "nl": "Aan"
+            "nl": "Aan",
+            "da": "Til",
+            "de": "An",
+            "es": "Encendido",
+            "fr": "Activé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączone",
+            "ru": "Включено",
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         }
       ]

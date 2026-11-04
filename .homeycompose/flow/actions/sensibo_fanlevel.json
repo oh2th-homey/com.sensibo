@@ -3,15 +3,48 @@
   "deprecated": true,
   "title": {
     "en": "Set the fan level",
-    "nl": "Stel de ventilatorsnelheid in"
+    "nl": "Stel de ventilatorsnelheid in",
+    "da": "Indstil blæserniveauet",
+    "de": "Stelle die Lüfterstufe ein",
+    "es": "Ajusta el nivel del ventilador",
+    "fr": "Régler le niveau du ventilateur",
+    "it": "Imposta il livello della ventola",
+    "no": "Sett viftehastigheten",
+    "sv": "Ställ in fläkthastigheten",
+    "pl": "Ustaw poziom wentylatora",
+    "ru": "Установите уровень вентилятора",
+    "ko": "팬 레벨 설정",
+    "ar": "اضبط مستوى المروحة"
   },
   "titleFormatted": {
     "en": "Set fan level to [[fanLevel]]",
-    "nl": "Stel ventilatorsnelheid in op [[fanLevel]]"
+    "nl": "Stel ventilatorsnelheid in op [[fanLevel]]",
+    "da": "Indstil ventilatorniveau til [[fanLevel]]",
+    "de": "Stelle die Lüfterstufe auf [[fanLevel]] ein",
+    "es": "Establecer el nivel del ventilador a [[fanLevel]]",
+    "fr": "Régler le niveau du ventilateur sur [[fanLevel]]",
+    "it": "Imposta il livello della ventola su [[fanLevel]]",
+    "no": "Sett viftehastighet til [[fanLevel]]",
+    "sv": "Ställ in fläkthastighet till [[fanLevel]]",
+    "pl": "Ustaw poziom wentylatora na [[fanLevel]]",
+    "ru": "Установить уровень вентилятора на [[fanLevel]]",
+    "ko": "팬 레벨을 [[fanLevel]]로 설정하세요.",
+    "ar": "اضبط مستوى المروحة إلى [[fanLevel]]"
   },
   "hint": {
     "en": "Set the fan level (auto, high, medium or low)",
-    "nl": "Stel de ventilatorsnelheid in (auto, hoog, middel of laag)"
+    "nl": "Stel de ventilatorsnelheid in (auto, hoog, middel of laag)",
+    "da": "Indstil blæserniveauet (auto, høj, medium eller lav)",
+    "de": "Stelle die Lüfterstufe ein (auto, hoch, mittel oder niedrig)",
+    "es": "Establece el nivel del ventilador (auto, alto, medio o bajo)",
+    "fr": "Réglez le niveau du ventilateur (auto, élevé, moyen ou bas)",
+    "it": "Imposta il livello della ventola (auto, alto, medio o basso)",
+    "no": "Sett viftehastigheten (auto, høy, middels eller lav)",
+    "sv": "Ställ in fläkthastigheten (auto, hög, medel eller låg)",
+    "pl": "Ustaw poziom wentylatora (auto, wysoki, średni lub niski)",
+    "ru": "Установите уровень вентилятора (авто, высокий, средний или низкий)",
+    "ko": "팬 수준 설정 (자동, 높음, 중간 또는 낮음)",
+    "ar": "اضبط مستوى المروحة (تلقائي، عالي، متوسط أو منخفض)"
   },
   "args": [
     {
@@ -23,35 +56,91 @@
       "name": "fanLevel",
       "title": {
         "en": "Fan level",
-        "nl": "Ventilatorsnelheid"
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserniveau",
+        "de": "Ventilatorstufe",
+        "es": "Nivel del ventilador",
+        "fr": "Niveau de ventilation",
+        "it": "Livello ventola",
+        "no": "Viftenivå",
+        "sv": "Fläkthastighet",
+        "pl": "Poziom wentylatora",
+        "ru": "Уровень вентилятора",
+        "ko": "팬 레벨",
+        "ar": "مستوى المروحة"
       },
       "type": "dropdown",
       "values": [
         {
           "id": "auto",
           "label": {
-            "en": "Auto"
+            "en": "Auto",
+            "nl": "Auto",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Auto",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Auto",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
           "id": "high",
           "label": {
             "en": "High",
-            "nl": "Hoog"
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높음",
+            "ar": "مرتفع"
           }
         },
         {
           "id": "medium",
           "label": {
             "en": "Medium",
-            "nl": "Middel"
+            "nl": "Middel",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
           "id": "low",
           "label": {
             "en": "Low",
-            "nl": "Laag"
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Faible",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮음",
+            "ar": "منخفض"
           }
         }
       ]

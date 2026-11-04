@@ -2,11 +2,33 @@
   "type": "enum",
   "title": {
     "en": "Fan level",
-    "nl": "Ventilatorsnelheid"
+    "nl": "Ventilatorsnelheid",
+    "da": "Blæserniveau",
+    "de": "Ventilatorstufe",
+    "es": "Nivel del ventilador",
+    "fr": "Niveau de ventilation",
+    "it": "Livello ventola",
+    "no": "Viftenivå",
+    "sv": "Fläkthastighet",
+    "pl": "Poziom wentylatora",
+    "ru": "Уровень вентилятора",
+    "ko": "팬 레벨",
+    "ar": "مستوى المروحة"
   },
   "desc": {
     "en": "Fan level",
-    "nl": "Ventilatorsnelheid"
+    "nl": "Ventilatorsnelheid",
+    "da": "Blæserniveau",
+    "de": "Lüfterstufe",
+    "es": "Nivel del ventilador",
+    "fr": "Niveau de ventilation",
+    "it": "Livello ventola",
+    "no": "Viftenivå",
+    "sv": "Fläkthastighet",
+    "pl": "Poziom wentylatora",
+    "ru": "Уровень вентилятора",
+    "ko": "팬 레벨",
+    "ar": "مستوى المروحة"
   },
   "getable": true,
   "setable": true,
@@ -16,56 +38,145 @@
     {
       "id": "auto",
       "title": {
-        "en": "Auto"
+        "en": "Auto",
+        "nl": "Auto",
+        "da": "Auto",
+        "de": "Auto",
+        "es": "Auto",
+        "fr": "Auto",
+        "it": "Auto",
+        "no": "Auto",
+        "sv": "Auto",
+        "pl": "Auto",
+        "ru": "Авто",
+        "ko": "자동",
+        "ar": "تلقائي"
       }
     },
     {
       "id": "strong",
       "title": {
         "en": "Strong",
-        "nl": "Krachtig"
+        "nl": "Krachtig",
+        "da": "Stærk",
+        "de": "Stark",
+        "es": "Fuerte",
+        "fr": "Fort",
+        "it": "Forte",
+        "no": "Sterk",
+        "sv": "Stark",
+        "pl": "Silny",
+        "ru": "Сильный",
+        "ko": "강력한",
+        "ar": "قوي"
       }
     },
     {
       "id": "high",
       "title": {
         "en": "High",
-        "nl": "Hoog"
+        "nl": "Hoog",
+        "da": "Høj",
+        "de": "Hoch",
+        "es": "Alto",
+        "fr": "Élevé",
+        "it": "Alto",
+        "no": "Høy",
+        "sv": "Hög",
+        "pl": "Wysoki",
+        "ru": "Высокий",
+        "ko": "높음",
+        "ar": "مرتفع"
       }
     },
     {
       "id": "medium_high",
       "title": {
         "en": "Medium high",
-        "nl": "Middel hoog"
+        "nl": "Middel hoog",
+        "da": "Mellem høj",
+        "de": "Mittel hoch",
+        "es": "Medio alto",
+        "fr": "Moyennement élevé",
+        "it": "Medio alto",
+        "no": "Middels høy",
+        "sv": "Medelhög",
+        "pl": "Średnio wysoki",
+        "ru": "Средне-высокий",
+        "ko": "중간 높음",
+        "ar": "متوسط مرتفع"
       }
     },
     {
       "id": "medium",
       "title": {
         "en": "Medium",
-        "nl": "Middel"
+        "nl": "Middel",
+        "da": "Mellem",
+        "de": "Mittel",
+        "es": "Medio",
+        "fr": "Moyen",
+        "it": "Medio",
+        "no": "Middels",
+        "sv": "Medium",
+        "pl": "Średni",
+        "ru": "Средний",
+        "ko": "중간",
+        "ar": "متوسط"
       }
     },
     {
       "id": "medium_low",
       "title": {
         "en": "Medium low",
-        "nl": "Middel laag"
+        "nl": "Middel laag",
+        "da": "Mellem lav",
+        "de": "Mittel niedrig",
+        "es": "Medio bajo",
+        "fr": "Moyen bas",
+        "it": "Medio basso",
+        "no": "Middels lav",
+        "sv": "Medel-låg",
+        "pl": "Średnio niski",
+        "ru": "Средне-низкий",
+        "ko": "중간 낮음",
+        "ar": "منخفض متوسط"
       }
     },
     {
       "id": "low",
       "title": {
         "en": "Low",
-        "nl": "Laag"
+        "nl": "Laag",
+        "da": "Lav",
+        "de": "Niedrig",
+        "es": "Bajo",
+        "fr": "Faible",
+        "it": "Basso",
+        "no": "Lav",
+        "sv": "Låg",
+        "pl": "Niski",
+        "ru": "Низкий",
+        "ko": "낮음",
+        "ar": "منخفض"
       }
     },
     {
       "id": "quiet",
       "title": {
         "en": "Quiet",
-        "nl": "Stil"
+        "nl": "Stil",
+        "da": "Stille",
+        "de": "Leise",
+        "es": "Silencioso",
+        "fr": "Silencieux",
+        "it": "Silenzioso",
+        "no": "Stille",
+        "sv": "Tyst",
+        "pl": "Cichy",
+        "ru": "Тихий",
+        "ko": "조용히",
+        "ar": "هادئ"
       }
     }
   ]

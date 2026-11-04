@@ -2,7 +2,18 @@
   "id": "light_on",
   "title": {
     "en": "Is light turned !{{on|off}}",
-    "nl": "Is licht !{{aan|uit}}"
+    "nl": "Is licht !{{aan|uit}}",
+    "da": "Er lyset !{{tændt|slukket}}",
+    "de": "Ist das Licht !{{an|aus}}?",
+    "es": "¿Está la luz !{{encendida|apagada}}?",
+    "fr": "La lumière est-elle !{{allumée|éteinte}}",
+    "it": "La luce è !{{accesa|spenta}}",
+    "no": "Er lyset slått !{{på|av}}",
+    "sv": "Är ljuset !{{på|av}}",
+    "pl": "Czy światło jest !{{włączone|wyłączone}}",
+    "ru": "Свет !{{включён|выключен}}",
+    "ko": "조명이 !{{켜짐|꺼짐}} 상태인가요?",
+    "ar": "هل الضوء !{{مُشغّل|مُطفأ}}"
   },
   "args": [
     {

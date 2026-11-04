@@ -1,20 +1,32 @@
 {
-	"id": "SensiboElements",
-	"name": {
-		"en": "Sensibo Elements"
-	},
-	"$extends": [
-		"defaults"
-	],
-	"class": "other",
-	"capabilities": [
-		"measure_temperature",
-		"measure_humidity",
-		"measure_co2",
-		"measure_pm25",
-		"measure_tvoc",
-		"measure_etoh",
-		"se_last_seen",
-		"se_last_seen_seconds"
-	]
+  "id": "SensiboElements",
+  "name": {
+    "en": "Sensibo Elements",
+    "nl": "Sensibo Elements",
+    "da": "Sensibo Elements",
+    "de": "Sensibo Elements",
+    "es": "Sensibo Elements",
+    "fr": "Sensibo Elements",
+    "it": "Sensibo Elements",
+    "no": "Sensibo Elements",
+    "sv": "Sensibo Elements",
+    "pl": "Sensibo Elements",
+    "ru": "Sensibo Elements",
+    "ko": "Sensibo Elements",
+    "ar": "Sensibo Elements"
+  },
+  "$extends": [
+    "defaults"
+  ],
+  "class": "other",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_co2",
+    "measure_pm25",
+    "measure_tvoc",
+    "measure_etoh",
+    "se_last_seen",
+    "se_last_seen_seconds"
+  ]
 }

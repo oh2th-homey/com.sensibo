@@ -2,11 +2,33 @@
   "type": "number",
   "title": {
     "en": "Last seen seconds ago",
-    "nl": "Laatst gezien seconden geleden"
+    "nl": "Laatst gezien seconden geleden",
+    "da": "Sidst set for få sekunder siden",
+    "de": "Zuletzt vor wenigen Sekunden gesehen",
+    "es": "Visto por última vez hace segundos",
+    "fr": "Vu il y a quelques secondes",
+    "it": "Visto pochi secondi fa",
+    "no": "Sist sett for noen sekunder siden",
+    "sv": "Senast sedd för några sekunder sedan",
+    "pl": "Ostatnio widziany kilka sekund temu",
+    "ru": "Последний раз видели несколько секунд назад",
+    "ko": "몇 초 전에 마지막으로 확인됨",
+    "ar": "آخر ظهور منذ ثوانٍ قليلة"
   },
   "desc": {
     "en": "Last seen seconds ago",
-    "nl": "Laatst gezien seconden geleden"
+    "nl": "Laatst gezien seconden geleden",
+    "da": "Sidst set for få sekunder siden",
+    "de": "Zuletzt vor wenigen Sekunden gesehen",
+    "es": "Visto por última vez hace segundos",
+    "fr": "Vu il y a quelques secondes",
+    "it": "Visto pochi secondi fa",
+    "no": "Sist sett for noen sekunder siden",
+    "sv": "Senast sedd för några sekunder sedan",
+    "pl": "Ostatnio widziany kilka sekund temu",
+    "ru": "Последний раз видели несколько секунд назад",
+    "ko": "몇 초 전에 마지막으로 확인됨",
+    "ar": "آخر ظهور منذ ثوانٍ قليلة"
   },
   "icon": "./assets/clock.svg",
   "getable": true,

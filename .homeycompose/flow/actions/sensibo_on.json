@@ -2,11 +2,33 @@
   "id": "sensibo_on",
   "title": {
     "en": "Turn on",
-    "nl": "Zet aan"
+    "nl": "Zet aan",
+    "da": "Tænd",
+    "de": "Einschalten",
+    "es": "Encender",
+    "fr": "Allumer",
+    "it": "Accendi",
+    "no": "Slå på",
+    "sv": "Slå på",
+    "pl": "Włącz",
+    "ru": "Включить",
+    "ko": "켜기",
+    "ar": "تشغيل"
   },
   "hint": {
     "en": "Turn on",
-    "nl": "Zet aan"
+    "nl": "Zet aan",
+    "da": "Tænd",
+    "de": "Einschalten",
+    "es": "Encender",
+    "fr": "Allumer",
+    "it": "Accendi",
+    "no": "Slå på",
+    "sv": "Slå på",
+    "pl": "Włącz",
+    "ru": "Включить",
+    "ko": "켜기",
+    "ar": "تشغيل"
   },
   "args": [
     {

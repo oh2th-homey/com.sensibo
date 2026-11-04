@@ -1,19 +1,34 @@
 {
-	"id": "SensiboRoomSensor",
-	"name": {
-		"en": "Sensibo Room Sensor"
-	},
-	"$extends": [
-		"defaults"
-	],
-	"class": "sensor",
-	"capabilities": [
-		"measure_temperature",
-		"measure_humidity",
-		"se_last_seen",
-		"measure_battery"
-	],
-	"energy": {
-		"batteries": ["AAA", "AAA"]
-	}
+  "id": "SensiboRoomSensor",
+  "name": {
+    "en": "Sensibo Room Sensor",
+    "nl": "Sensibo Room Sensor",
+    "da": "Sensibo Room Sensor",
+    "de": "Sensibo Room Sensor",
+    "es": "Sensibo Room Sensor",
+    "fr": "Sensibo Room Sensor",
+    "it": "Sensibo Room Sensor",
+    "no": "Sensibo Room Sensor",
+    "sv": "Sensibo Room Sensor",
+    "pl": "Sensibo Room Sensor",
+    "ru": "Sensibo Room Sensor",
+    "ko": "Sensibo Room Sensor",
+    "ar": "Sensibo Room Sensor"
+  },
+  "$extends": [
+    "defaults"
+  ],
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "se_last_seen",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  }
 }

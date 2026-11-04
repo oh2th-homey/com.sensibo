@@ -1,16 +1,38 @@
 {
-	"type": "number",
-	"title": {
-		"en": "Ethanol",
-    "nl": "Ethanol"
-	},
-	"units": {
-		"en": "ppm",
-    "nl": "ppm"
-	},
-	"icon": "./assets/EtOH.svg",
-	"uiComponent": "sensor",
-	"getable": true,
-	"setable": false,
-	"insights": true
+  "type": "number",
+  "title": {
+    "en": "Ethanol",
+    "nl": "Ethanol",
+    "da": "Ethanol",
+    "de": "Ethanol",
+    "es": "Etanol",
+    "fr": "Éthanol",
+    "it": "Etanolo",
+    "no": "Etanol",
+    "sv": "Ethanol",
+    "pl": "Etanol",
+    "ru": "Этанол",
+    "ko": "에탄올",
+    "ar": "الإيثانول"
+  },
+  "units": {
+    "en": "ppm",
+    "nl": "ppm",
+    "da": "ppm",
+    "de": "ppm",
+    "es": "ppm",
+    "fr": "ppm",
+    "it": "ppm",
+    "no": "ppm",
+    "sv": "ppm",
+    "pl": "ppm",
+    "ru": "ppm",
+    "ko": "ppm",
+    "ar": "جزء في المليون"
+  },
+  "icon": "./assets/EtOH.svg",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "insights": true
 }

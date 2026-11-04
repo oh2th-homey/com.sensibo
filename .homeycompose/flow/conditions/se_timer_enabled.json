@@ -2,7 +2,18 @@
   "id": "se_timer_enabled",
   "title": {
     "en": "Timer is !{{enabled|disabled}}",
-    "nl": "Timer is !{{ingeschakeld|uitgeschakeld}}"
+    "nl": "Timer is !{{ingeschakeld|uitgeschakeld}}",
+    "da": "Timer er !{{aktiveret|deaktiveret}}",
+    "de": "Timer ist !{{aktiviert|deaktiviert}}",
+    "es": "El temporizador está !{{activado|desactivado}}",
+    "fr": "Le minuteur est !{{activé|désactivé}}",
+    "it": "Il timer è !{{abilitato|disabilitato}}",
+    "no": "Timer er !{{aktivert|deaktivert}}",
+    "sv": "Timer är !{{aktiverad|inaktiverad}}",
+    "pl": "Timer jest !{{włączony|wyłączony}}",
+    "ru": "Таймер !{{включен|выключен}}",
+    "ko": "타이머가 !{{활성화됨|비활성화됨}}",
+    "ar": "المؤقت !{{مفعل|معطل}}"
   },
   "args": [
     {

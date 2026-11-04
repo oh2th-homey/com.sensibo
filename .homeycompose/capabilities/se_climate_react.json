@@ -1,10 +1,34 @@
 {
   "type": "enum",
   "title": {
-    "en": "Climate React"
+    "en": "Climate React",
+    "nl": "Climate React",
+    "da": "Climate React",
+    "de": "Climate React",
+    "es": "Climate React",
+    "fr": "Climate React",
+    "it": "Climate React",
+    "no": "Climate React",
+    "sv": "Climate React",
+    "pl": "Climate React",
+    "ru": "Climate React",
+    "ko": "Climate React",
+    "ar": "Climate React"
   },
   "desc": {
-    "en": "Climate React"
+    "en": "Climate React",
+    "nl": "Climate React",
+    "da": "Climate React",
+    "de": "Climate React",
+    "es": "Climate React",
+    "fr": "Climate React",
+    "it": "Climate React",
+    "no": "Climate React",
+    "sv": "Climate React",
+    "pl": "Climate React",
+    "ru": "Climate React",
+    "ko": "Climate React",
+    "ar": "Climate React"
   },
   "getable": true,
   "setable": true,
@@ -14,13 +38,37 @@
     {
       "id": "off",
       "title": {
-        "en": "Off"
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Fra",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączone",
+        "ru": "Выкл.",
+        "ko": "끄기",
+        "ar": "إيقاف"
       }
     },
     {
       "id": "on",
       "title": {
-        "en": "On"
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "An",
+        "es": "Encendido",
+        "fr": "Activé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

@@ -2,7 +2,18 @@
   "id": "se_climate_react_changed",
   "title": {
     "en": "Climate React changed",
-    "nl": "Climate React veranderd"
+    "nl": "Climate React veranderd",
+    "da": "Climate React ændret",
+    "de": "Climate React geändert",
+    "es": "Climate React cambiado",
+    "fr": "Climate React modifié",
+    "it": "Climate React modificato",
+    "no": "Climate React endret",
+    "sv": "Climate React ändrad",
+    "pl": "Climate React zmieniono",
+    "ru": "Climate React изменён",
+    "ko": "Climate React 변경됨",
+    "ar": "تم تغيير Climate React"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "boolean",
       "title": {
         "en": "Climate React enabled",
-        "nl": "Climate React ingeschakeld"
+        "nl": "Climate React ingeschakeld",
+        "da": "Climate React aktiveret",
+        "de": "Climate React aktiviert",
+        "es": "Climate React activado",
+        "fr": "Climate React activé",
+        "it": "Climate React attivato",
+        "no": "Climate React aktivert",
+        "sv": "Climate React aktiverad",
+        "pl": "Funkcja Climate React włączona",
+        "ru": "Climate React включен",
+        "ko": "Climate React 활성화됨",
+        "ar": "تم تفعيل Climate React"
       },
       "example": true
     },
@@ -18,7 +40,19 @@
       "name": "climate_react",
       "type": "string",
       "title": {
-        "en": "Climate React"
+        "en": "Climate React",
+        "nl": "Climate React",
+        "da": "Climate React",
+        "de": "Climate React",
+        "es": "Climate React",
+        "fr": "Climate React",
+        "it": "Climate React",
+        "no": "Climate React",
+        "sv": "Climate React",
+        "pl": "Climate React",
+        "ru": "Climate React",
+        "ko": "Climate React",
+        "ar": "Climate React"
       },
       "example": "enabled"
     }

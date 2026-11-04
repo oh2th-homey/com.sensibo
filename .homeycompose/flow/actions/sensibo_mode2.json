@@ -2,15 +2,48 @@
   "id": "sensibo_mode2",
   "title": {
     "en": "Set the fan mode",
-    "nl": "Stel de ventilatormodus in"
+    "nl": "Stel de ventilatormodus in",
+    "da": "Indstil ventilatortilstanden",
+    "de": "Stelle den Lüftermodus ein",
+    "es": "Configura el modo del ventilador",
+    "fr": "Réglez le mode ventilateur",
+    "it": "Imposta la modalità ventilatore",
+    "no": "Sett vifte-modus",
+    "sv": "Ställ in fläktläget",
+    "pl": "Ustaw tryb wentylatora",
+    "ru": "Установите режим вентилятора",
+    "ko": "팬 모드 설정",
+    "ar": "اضبط وضع المروحة"
   },
   "titleFormatted": {
     "en": "Set the fan mode to [[mode]]",
-    "nl": "Stel de ventilatormodus in op [[mode]]"
+    "nl": "Stel de ventilatormodus in op [[mode]]",
+    "da": "Indstil ventilatortilstanden til [[mode]]",
+    "de": "Stelle den Lüftermodus auf [[mode]] ein.",
+    "es": "Configura el modo del ventilador a [[mode]]",
+    "fr": "Réglez le mode du ventilateur sur [[mode]]",
+    "it": "Imposta la modalità ventilatore su [[mode]]",
+    "no": "Sett vifteinnstillingen til [[mode]]",
+    "sv": "Ställ in fläktläget till [[mode]]",
+    "pl": "Ustaw tryb wentylatora na [[mode]]",
+    "ru": "Установите режим вентилятора на [[mode]]",
+    "ko": "팬 모드를 [[mode]]로 설정하세요.",
+    "ar": "اضبط وضع المروحة على [[mode]]"
   },
   "hint": {
     "en": "Set the mode",
-    "nl": "Stel de modus in"
+    "nl": "Stel de modus in",
+    "da": "Indstil tilstanden",
+    "de": "Modus einstellen",
+    "es": "Establecer el modo",
+    "fr": "Définir le mode",
+    "it": "Imposta la modalità",
+    "no": "Sett modus",
+    "sv": "Ställ in läget",
+    "pl": "Ustaw tryb",
+    "ru": "Установите режим",
+    "ko": "모드를 설정하세요",
+    "ar": "اضبط الوضع"
   },
   "args": [
     {
@@ -22,12 +55,34 @@
       "name": "mode",
       "label": {
         "en": "Mode",
-        "nl": "Modus"
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       },
       "type": "autocomplete",
       "placeholder": {
         "en": "Mode...",
-        "nl": "Modus..."
+        "nl": "Modus...",
+        "da": "Tilstand...",
+        "de": "Modus...",
+        "es": "Modo...",
+        "fr": "Mode...",
+        "it": "Modalità...",
+        "no": "Modus...",
+        "sv": "Läge...",
+        "pl": "Tryb...",
+        "ru": "Режим...",
+        "ko": "모드...",
+        "ar": "الوضع..."
       }
     }
   ]

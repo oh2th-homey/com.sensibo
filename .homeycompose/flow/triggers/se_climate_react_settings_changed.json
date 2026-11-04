@@ -2,11 +2,33 @@
   "id": "se_climate_react_settings_changed",
   "title": {
     "en": "Climate React settings changed",
-    "nl": "Climate React-instellingen veranderd"
+    "nl": "Climate React-instellingen veranderd",
+    "da": "Indstillinger for Climate React ændret",
+    "de": "Climate React-Einstellungen geändert",
+    "es": "Configuraciones de Climate React cambiadas",
+    "fr": "Paramètres de Climate React modifiés",
+    "it": "Impostazioni di Climate React modificate",
+    "no": "Climate React-innstillinger endret",
+    "sv": "Climate React-inställningar ändrade",
+    "pl": "Ustawienia Climate React zostały zmienione",
+    "ru": "Настройки Climate React изменены",
+    "ko": "Climate React 설정이 변경되었습니다.",
+    "ar": "تم تغيير إعدادات Climate React"
   },
   "hint": {
     "en": "The thresholds, trigger type or AC states were changed, from Homey or the Sensibo app. Temperatures are in the AC's unit.",
-    "nl": "De drempels, het triggertype of de AC-standen zijn gewijzigd, vanuit Homey of de Sensibo-app. Temperaturen zijn in de eenheid van de AC."
+    "nl": "De drempels, het triggertype of de AC-standen zijn gewijzigd, vanuit Homey of de Sensibo-app. Temperaturen zijn in de eenheid van de AC.",
+    "da": "Tærsklerne, udløsertype eller AC-tilstande blev ændret, enten fra Homey eller Sensibo-appen. Temperaturerne er i AC'ens enhed.",
+    "de": "Die Schwellenwerte, der Auslösetyp oder die AC-Zustände wurden geändert, entweder von Homey oder der Sensibo-App. Die Temperaturen sind in der Einheit der Klimaanlage angegeben.",
+    "es": "Los umbrales, el tipo de activador o los estados del aire acondicionado se cambiaron, desde Homey o la app de Sensibo. Las temperaturas están en la unidad del aire acondicionado.",
+    "fr": "Les seuils, le type de déclenchement ou les états de la climatisation ont été modifiés, depuis Homey ou l'application Sensibo. Les températures sont dans l'unité de la climatisation.",
+    "it": "Le soglie, il tipo di trigger o gli stati del condizionatore sono stati modificati, da Homey o dall'app Sensibo. Le temperature sono nell'unità del condizionatore.",
+    "no": "Tersklene, utløsertype eller AC-tilstander ble endret, fra Homey eller Sensibo-appen. Temperaturene er i AC-enheten.",
+    "sv": "Tröskelvärden, utlösartyp eller AC-tillstånd ändrades, antingen från Homey eller Sensibo-appen. Temperaturerna är i AC:ns enhet.",
+    "pl": "Progi, typ wyzwalacza lub stany klimatyzatora zostały zmienione, z poziomu Homey lub aplikacji Sensibo. Temperatury są w jednostkach klimatyzatora.",
+    "ru": "Пороги, тип триггера или состояния кондиционера были изменены, из Homey или приложения Sensibo. Температуры указаны в единицах кондиционера.",
+    "ko": "임계값, 트리거 유형 또는 에어컨 상태가 Homey 또는 Sensibo 앱에서 변경되었습니다. 온도는 에어컨의 단위로 표시됩니다.",
+    "ar": "تم تغيير العتبات أو نوع المشغل أو حالات المكيف، من خلال Homey أو تطبيق Sensibo. درجات الحرارة بوحدة المكيف."
   },
   "tokens": [
     {
@@ -14,7 +36,18 @@
       "type": "boolean",
       "title": {
         "en": "Climate React enabled",
-        "nl": "Climate React ingeschakeld"
+        "nl": "Climate React ingeschakeld",
+        "da": "Climate React aktiveret",
+        "de": "Climate React aktiviert",
+        "es": "Climate React activado",
+        "fr": "Climate React activé",
+        "it": "Climate React attivato",
+        "no": "Climate React aktivert",
+        "sv": "Climate React aktiverad",
+        "pl": "Funkcja Climate React włączona",
+        "ru": "Climate React включен",
+        "ko": "Climate React 활성화됨",
+        "ar": "تم تفعيل Climate React"
       },
       "example": true
     },
@@ -23,7 +56,18 @@
       "type": "string",
       "title": {
         "en": "Trigger",
-        "nl": "Trigger"
+        "nl": "Trigger",
+        "da": "Udløser",
+        "de": "Auslöser",
+        "es": "Disparador",
+        "fr": "Déclencheur",
+        "it": "Attiva",
+        "no": "Utløser",
+        "sv": "Utlösare",
+        "pl": "Wyzwalacz",
+        "ru": "Триггер",
+        "ko": "트리거",
+        "ar": "تشغيل"
       },
       "example": "temperature"
     },
@@ -32,7 +76,18 @@
       "type": "string",
       "title": {
         "en": "Unit",
-        "nl": "Eenheid"
+        "nl": "Eenheid",
+        "da": "Enhed",
+        "de": "Einheit",
+        "es": "Unidad",
+        "fr": "Unité",
+        "it": "Unità",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Jednostka",
+        "ru": "Устройство",
+        "ko": "장치",
+        "ar": "الوحدة"
       },
       "example": "°F"
     },
@@ -41,7 +96,18 @@
       "type": "number",
       "title": {
         "en": "Low threshold",
-        "nl": "Lage drempel"
+        "nl": "Lage drempel",
+        "da": "Lav tærskel",
+        "de": "Niedrige Schwelle",
+        "es": "Umbral bajo",
+        "fr": "Seuil bas",
+        "it": "Soglia bassa",
+        "no": "Lav terskel",
+        "sv": "Låg tröskel",
+        "pl": "Niski próg",
+        "ru": "Низкий порог",
+        "ko": "낮은 임계값",
+        "ar": "عتبة منخفضة"
       },
       "example": 76
     },
@@ -50,7 +116,18 @@
       "type": "number",
       "title": {
         "en": "High threshold",
-        "nl": "Hoge drempel"
+        "nl": "Hoge drempel",
+        "da": "Høj tærskel",
+        "de": "Hoher Schwellenwert",
+        "es": "Umbral alto",
+        "fr": "Seuil élevé",
+        "it": "Soglia alta",
+        "no": "Høy terskel",
+        "sv": "Hög tröskel",
+        "pl": "Wysoki próg",
+        "ru": "Высокий порог",
+        "ko": "높은 임계값",
+        "ar": "عتبة عالية"
       },
       "example": 76
     },
@@ -59,7 +136,18 @@
       "type": "string",
       "title": {
         "en": "Below low threshold",
-        "nl": "Onder lage drempel"
+        "nl": "Onder lage drempel",
+        "da": "Under lav tærskel",
+        "de": "Unterhalb der unteren Schwelle",
+        "es": "Por debajo del umbral bajo",
+        "fr": "En dessous du seuil bas",
+        "it": "Sotto la soglia bassa",
+        "no": "Under lav terskel",
+        "sv": "Under låg tröskelvärde",
+        "pl": "Poniżej niskiego progu",
+        "ru": "Ниже нижнего порога",
+        "ko": "낮은 임계값 이하",
+        "ar": "أقل من الحد الأدنى"
       },
       "example": "On, cool, 86°F, fan auto"
     },
@@ -68,7 +156,18 @@
       "type": "string",
       "title": {
         "en": "Above high threshold",
-        "nl": "Boven hoge drempel"
+        "nl": "Boven hoge drempel",
+        "da": "Over høj tærskel",
+        "de": "Über dem hohen Schwellenwert",
+        "es": "Por encima del umbral alto",
+        "fr": "Au-dessus du seuil élevé",
+        "it": "Sopra la soglia alta",
+        "no": "Over høy terskel",
+        "sv": "Över hög tröskelvärde",
+        "pl": "Powyżej wysokiego progu",
+        "ru": "Выше высокого порога",
+        "ko": "높은 임계값 이상",
+        "ar": "فوق العتبة العالية"
       },
       "example": "On, cool, 62°F, fan auto"
     }

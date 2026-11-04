@@ -2,11 +2,33 @@
   "id": "sensibo_delete_timer",
   "title": {
     "en": "Delete timer",
-    "nl": "Timer verwijderen"
+    "nl": "Timer verwijderen",
+    "da": "Slet timer",
+    "de": "Timer löschen",
+    "es": "Eliminar temporizador",
+    "fr": "Supprimer le minuteur",
+    "it": "Elimina timer",
+    "no": "Slett timer",
+    "sv": "Ta bort timer",
+    "pl": "Usuń timer",
+    "ru": "Удалить таймер",
+    "ko": "타이머 삭제",
+    "ar": "حذف المؤقت"
   },
   "hint": {
     "en": "Delete the current timer",
-    "nl": "Verwijder de huidige timer"
+    "nl": "Verwijder de huidige timer",
+    "da": "Slet den nuværende timer",
+    "de": "Aktuellen Timer löschen",
+    "es": "Eliminar el temporizador actual",
+    "fr": "Supprimer le minuteur actuel",
+    "it": "Elimina il timer attuale",
+    "no": "Slett den nåværende timeren",
+    "sv": "Ta bort den nuvarande timern",
+    "pl": "Usuń obecny timer",
+    "ru": "Удалить текущий таймер",
+    "ko": "현재 타이머 삭제",
+    "ar": "احذف المؤقت الحالي"
   },
   "args": [
     {

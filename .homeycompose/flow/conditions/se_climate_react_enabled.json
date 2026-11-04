@@ -2,7 +2,18 @@
   "id": "se_climate_react_enabled",
   "title": {
     "en": "Climate React is !{{enabled|disabled}}",
-    "nl": "Climate React is !{{ingeschakeld|uitgeschakeld}}"
+    "nl": "Climate React is !{{ingeschakeld|uitgeschakeld}}",
+    "da": "Climate React er !{{aktiveret|deaktiveret}}",
+    "de": "Climate React ist !{{aktiviert|deaktiviert}}",
+    "es": "Climate React está !{{activado|desactivado}}",
+    "fr": "Climate React est !{{activé|désactivé}}",
+    "it": "Climate React è !{{abilitato|disabilitato}}",
+    "no": "Climate React er !{{aktivert|deaktivert}}",
+    "sv": "Climate React är !{{aktiverad|inaktiverad}}",
+    "pl": "Climate React jest !{{włączony|wyłączony}}",
+    "ru": "Climate React !{{включён|выключен}}",
+    "ko": "Climate React가 !{{활성화됨|비활성화됨}}",
+    "ar": "Climate React !{{مفعّل|معطّل}}"
   },
   "args": [
     {

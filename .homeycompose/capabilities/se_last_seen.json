@@ -2,11 +2,33 @@
   "type": "string",
   "title": {
     "en": "Last seen",
-    "nl": "Laatst gezien"
+    "nl": "Laatst gezien",
+    "da": "Sidst set",
+    "de": "Zuletzt gesehen",
+    "es": "Visto por última vez",
+    "fr": "Vu pour la dernière fois",
+    "it": "Ultima visualizzazione",
+    "no": "Sist sett",
+    "sv": "Senast sedd",
+    "pl": "Ostatnio widziany",
+    "ru": "Последний раз в сети",
+    "ko": "마지막으로 본 시간",
+    "ar": "آخر ظهور"
   },
   "desc": {
     "en": "Last seen",
-    "nl": "Laatst gezien"
+    "nl": "Laatst gezien",
+    "da": "Sidst set",
+    "de": "Zuletzt gesehen",
+    "es": "Visto por última vez",
+    "fr": "Vu pour la dernière fois",
+    "it": "Ultima visualizzazione",
+    "no": "Sist sett",
+    "sv": "Senast sedd",
+    "pl": "Ostatnio widziany",
+    "ru": "Последний раз в сети",
+    "ko": "마지막으로 본 시간",
+    "ar": "آخر ظهور"
   },
   "icon": "./assets/clock.svg",
   "getable": true,

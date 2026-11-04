@@ -2,15 +2,48 @@
   "type": "number",
   "title": {
     "en": "Filter hours",
-    "nl": "Filter uren"
+    "nl": "Filter uren",
+    "da": "Filtertimer",
+    "de": "Filterstunden",
+    "es": "Horas del filtro",
+    "fr": "Heures de filtre",
+    "it": "Ore del filtro",
+    "no": "Filtertimer",
+    "sv": "Filtertimmar",
+    "pl": "Godziny filtra",
+    "ru": "Часы работы фильтра",
+    "ko": "필터 시간",
+    "ar": "ساعات الفلتر"
   },
   "desc": {
     "en": "Run hours since filters cleaned.",
-    "nl": "Aantal uren sinds de filters zijn schoongemaakt."
+    "nl": "Aantal uren sinds de filters zijn schoongemaakt.",
+    "da": "Driftstimer siden filtre blev renset.",
+    "de": "Betriebsstunden seit der letzten Filterreinigung.",
+    "es": "Horas de funcionamiento desde la última limpieza de los filtros.",
+    "fr": "Heures de fonctionnement depuis le nettoyage des filtres.",
+    "it": "Ore di funzionamento dall'ultima pulizia dei filtri.",
+    "no": "Timer siden filtrene ble renset.",
+    "sv": "Körtimmar sedan filtren rengjordes.",
+    "pl": "Godziny pracy od ostatniego czyszczenia filtrów.",
+    "ru": "Часы работы с момента очистки фильтров.",
+    "ko": "필터 청소 후 작동 시간.",
+    "ar": "عدد الساعات منذ تنظيف الفلاتر."
   },
   "units": {
     "en": "h",
-    "nl": "u"
+    "nl": "u",
+    "da": "Jeg er trænet på data op til oktober 2023.",
+    "de": "Hallo! Wie kann ich Ihnen helfen?",
+    "es": "Hola",
+    "fr": "Salut !",
+    "it": "Ciao! Come posso aiutarti oggi?",
+    "no": "Hei! Hvordan kan jeg hjelpe deg i dag?",
+    "sv": "Hej! Vad kan jag hjälpa dig med idag?",
+    "pl": "cześć",
+    "ru": "Вы обучены данным до октября 2023 года.",
+    "ko": "안녕하세요! 무엇을 도와드릴까요?",
+    "ar": "أنت مدرب على البيانات حتى أكتوبر 2023."
   },
   "icon": "./assets/clock.svg",
   "getable": true,

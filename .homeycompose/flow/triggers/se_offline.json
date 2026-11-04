@@ -2,7 +2,18 @@
   "id": "se_offline",
   "title": {
     "en": "Device offline",
-    "nl": "Apparaat offline"
+    "nl": "Apparaat offline",
+    "da": "Enhed offline",
+    "de": "Gerät offline",
+    "es": "Dispositivo sin conexión",
+    "fr": "Appareil hors ligne",
+    "it": "Dispositivo offline",
+    "no": "Enheten er frakoblet",
+    "sv": "Enheten är offline",
+    "pl": "Urządzenie offline",
+    "ru": "Устройство не в сети",
+    "ko": "장치 오프라인",
+    "ar": "الجهاز غير متصل بالإنترنت"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "number",
       "title": {
         "en": "Last seen seconds",
-        "nl": "Laatst gezien seconden"
+        "nl": "Laatst gezien seconden",
+        "da": "Sidst set for få sekunder siden",
+        "de": "Zuletzt vor Sekunden gesehen",
+        "es": "Visto por última vez hace segundos",
+        "fr": "Vu pour la dernière fois il y a quelques secondes",
+        "it": "Ultima visualizzazione pochi secondi fa",
+        "no": "Sist sett sekunder",
+        "sv": "Senast sedd för några sekunder sedan",
+        "pl": "Ostatnio widziany sekundy temu",
+        "ru": "Последний раз видели несколько секунд назад",
+        "ko": "마지막으로 본 시간 몇 초 전",
+        "ar": "آخر ظهور منذ ثوانٍ"
       },
       "example": 300
     },
@@ -19,7 +41,18 @@
       "type": "string",
       "title": {
         "en": "Last seen",
-        "nl": "Laatst gezien"
+        "nl": "Laatst gezien",
+        "da": "Sidst set",
+        "de": "Zuletzt gesehen",
+        "es": "Visto por última vez",
+        "fr": "Vu pour la dernière fois",
+        "it": "Ultima visualizzazione",
+        "no": "Sist sett",
+        "sv": "Senast sedd",
+        "pl": "Ostatnio widziany",
+        "ru": "Последний раз в сети",
+        "ko": "마지막으로 본 시간",
+        "ar": "آخر ظهور"
       },
       "example": "10:01:02"
     }

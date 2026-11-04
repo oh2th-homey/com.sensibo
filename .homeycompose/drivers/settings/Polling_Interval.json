@@ -3,13 +3,35 @@
   "type": "number",
   "label": {
     "en": "Polling interval",
-    "nl": "Polling interval"
+    "nl": "Polling interval",
+    "da": "Polling-interval",
+    "de": "Abfrageintervall",
+    "es": "Intervalo de sondeo",
+    "fr": "Intervalle de sondage",
+    "it": "Intervallo di polling",
+    "no": "Spørringsintervall",
+    "sv": "Pollingintervall",
+    "pl": "Interwał odpytywania",
+    "ru": "Интервал опроса",
+    "ko": "폴링 간격",
+    "ar": "فترة الاستطلاع"
   },
   "value": 60,
   "min": 15,
   "max": 300,
   "hint": {
     "en": "Polling interval (seconds)",
-    "nl": "Polling interval (seconden)"
+    "nl": "Polling interval (seconden)",
+    "da": "Polling-interval (sekunder)",
+    "de": "Abfrageintervall (Sekunden)",
+    "es": "Intervalo de sondeo (segundos)",
+    "fr": "Intervalle de sondage (secondes)",
+    "it": "Intervallo di polling (secondi)",
+    "no": "Pollingintervall (sekunder)",
+    "sv": "Pollingintervall (sekunder)",
+    "pl": "Interwał odpytywania (sekundy)",
+    "ru": "Интервал опроса (в секундах)",
+    "ko": "폴링 간격 (초)",
+    "ar": "فترة الاستطلاع (بالثواني)"
   }
 }

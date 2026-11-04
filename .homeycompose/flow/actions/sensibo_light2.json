@@ -2,15 +2,48 @@
   "id": "sensibo_light2",
   "title": {
     "en": "Control light",
-    "nl": "Bedien licht"
+    "nl": "Bedien licht",
+    "da": "Styr lys",
+    "de": "Licht steuern",
+    "es": "Controlar la luz",
+    "fr": "Contrôler la lumière",
+    "it": "Controlla la luce",
+    "no": "Kontroller lys",
+    "sv": "Styr ljus",
+    "pl": "Steruj światłem",
+    "ru": "Управление светом",
+    "ko": "조명 제어",
+    "ar": "تحكم في الضوء"
   },
   "titleFormatted": {
     "en": "Turn light [[state]]",
-    "nl": "Zet licht [[state]]"
+    "nl": "Zet licht [[state]]",
+    "da": "Sæt lyset til [[state]]",
+    "de": "Licht [[state]] schalten",
+    "es": "Poner la luz en [[state]]",
+    "fr": "Mettre la lumière sur [[state]]",
+    "it": "Imposta la luce su [[state]]",
+    "no": "Sett lyset til [[state]]",
+    "sv": "Ställ in ljuset på [[state]]",
+    "pl": "Ustaw światło na [[state]]",
+    "ru": "Свет: [[state]]",
+    "ko": "조명을 [[state]](으)로 설정",
+    "ar": "ضبط الضوء على [[state]]"
   },
   "hint": {
     "en": "Control light",
-    "nl": "Bedien licht"
+    "nl": "Bedien licht",
+    "da": "Styr lys",
+    "de": "Licht steuern",
+    "es": "Controlar la luz",
+    "fr": "Contrôler la lumière",
+    "it": "Controlla la luce",
+    "no": "Kontroller lys",
+    "sv": "Styr ljus",
+    "pl": "Steruj światłem",
+    "ru": "Управление светом",
+    "ko": "조명 제어",
+    "ar": "تحكم في الضوء"
   },
   "args": [
     {
@@ -22,12 +55,34 @@
       "name": "state",
       "label": {
         "en": "Light state",
-        "nl": "Lichtstatus"
+        "nl": "Lichtstatus",
+        "da": "Lysstatus",
+        "de": "Lichtzustand",
+        "es": "Estado de la luz",
+        "fr": "État de la lumière",
+        "it": "Stato della luce",
+        "no": "Lysstatus",
+        "sv": "Ljusstillstånd",
+        "pl": "Stan światła",
+        "ru": "Состояние света",
+        "ko": "조명 상태",
+        "ar": "حالة الضوء"
       },
       "type": "autocomplete",
       "placeholder": {
         "en": "Light state...",
-        "nl": "Lichtstatus..."
+        "nl": "Lichtstatus...",
+        "da": "Lysstatus...",
+        "de": "Lichtzustand...",
+        "es": "Estado de la luz...",
+        "fr": "État de la lumière...",
+        "it": "Stato della luce...",
+        "no": "Lysstatus...",
+        "sv": "Ljusstillstånd...",
+        "pl": "Stan światła...",
+        "ru": "Состояние света...",
+        "ko": "조명 상태...",
+        "ar": "حالة الضوء..."
       }
     }
   ]

@@ -2,15 +2,48 @@
   "id": "sensibo_fanlevel2",
   "title": {
     "en": "Set the fan level",
-    "nl": "Stel de ventilatorsnelheid in"
+    "nl": "Stel de ventilatorsnelheid in",
+    "da": "Indstil blæserniveauet",
+    "de": "Stelle die Lüfterstufe ein",
+    "es": "Establecer el nivel del ventilador",
+    "fr": "Régler le niveau du ventilateur",
+    "it": "Imposta il livello della ventola",
+    "no": "Sett viftehastigheten",
+    "sv": "Ställ in fläkthastigheten",
+    "pl": "Ustaw poziom wentylatora",
+    "ru": "Установите уровень вентилятора",
+    "ko": "팬 속도 설정",
+    "ar": "اضبط مستوى المروحة"
   },
   "titleFormatted": {
     "en": "Set the fan level to [[fanLevel]]",
-    "nl": "Stel de ventilatorsnelheid in op [[fanLevel]]"
+    "nl": "Stel de ventilatorsnelheid in op [[fanLevel]]",
+    "da": "Indstil ventilatorniveauet til [[fanLevel]]",
+    "de": "Stelle die Lüfterstufe auf [[fanLevel]] ein.",
+    "es": "Establece el nivel del ventilador a [[fanLevel]]",
+    "fr": "Réglez le niveau du ventilateur sur [[fanLevel]]",
+    "it": "Imposta il livello della ventola su [[fanLevel]]",
+    "no": "Sett viftehastigheten til [[fanLevel]]",
+    "sv": "Ställ in fläkthastigheten till [[fanLevel]]",
+    "pl": "Ustaw poziom wentylatora na [[fanLevel]]",
+    "ru": "Установите уровень вентилятора на [[fanLevel]]",
+    "ko": "팬 속도를 [[fanLevel]]로 설정하세요.",
+    "ar": "اضبط مستوى المروحة إلى [[fanLevel]]"
   },
   "hint": {
     "en": "Set the fan level",
-    "nl": "Stel de ventilatorsnelheid in"
+    "nl": "Stel de ventilatorsnelheid in",
+    "da": "Indstil blæserniveauet",
+    "de": "Stelle die Lüfterstufe ein",
+    "es": "Establecer el nivel del ventilador",
+    "fr": "Régler le niveau du ventilateur",
+    "it": "Imposta il livello della ventola",
+    "no": "Sett viftehastigheten",
+    "sv": "Ställ in fläkthastigheten",
+    "pl": "Ustaw poziom wentylatora",
+    "ru": "Установите уровень вентилятора",
+    "ko": "팬 레벨 설정",
+    "ar": "اضبط مستوى المروحة"
   },
   "args": [
     {
@@ -22,12 +55,34 @@
       "name": "fanLevel",
       "label": {
         "en": "Fan level",
-        "nl": "Ventilatorsnelheid"
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserniveau",
+        "de": "Ventilatorstufe",
+        "es": "Nivel del ventilador",
+        "fr": "Niveau de ventilation",
+        "it": "Livello ventola",
+        "no": "Viftenivå",
+        "sv": "Fläkthastighet",
+        "pl": "Poziom wentylatora",
+        "ru": "Уровень вентилятора",
+        "ko": "팬 레벨",
+        "ar": "مستوى المروحة"
       },
       "type": "autocomplete",
       "placeholder": {
         "en": "Fan level...",
-        "nl": "Ventilatorsnelheid..."
+        "nl": "Ventilatorsnelheid...",
+        "da": "Ventilatorniveau...",
+        "de": "Ventilatorstufe...",
+        "es": "Nivel del ventilador...",
+        "fr": "Niveau de ventilation...",
+        "it": "Livello ventola...",
+        "no": "Viftenivå...",
+        "sv": "Fläkthastighet...",
+        "pl": "Poziom wentylatora...",
+        "ru": "Уровень вентилятора...",
+        "ko": "팬 레벨...",
+        "ar": "مستوى المروحة..."
       }
     }
   ]

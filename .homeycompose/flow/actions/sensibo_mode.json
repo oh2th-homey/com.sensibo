@@ -3,15 +3,48 @@
   "deprecated": true,
   "title": {
     "en": "Set the fan mode",
-    "nl": "Stel de ventilatormodus in"
+    "nl": "Stel de ventilatormodus in",
+    "da": "Indstil ventilatortilstanden",
+    "de": "Stelle den Lüftermodus ein",
+    "es": "Configura el modo del ventilador",
+    "fr": "Réglez le mode ventilateur",
+    "it": "Imposta la modalità ventilatore",
+    "no": "Sett vifteinnstilling",
+    "sv": "Ställ in fläktläget",
+    "pl": "Ustaw tryb wentylatora",
+    "ru": "Установите режим вентилятора",
+    "ko": "팬 모드 설정",
+    "ar": "اضبط وضع المروحة"
   },
   "titleFormatted": {
     "en": "Set the fan mode to [[mode]]",
-    "nl": "Stel de ventilatormodus in op [[mode]]"
+    "nl": "Stel de ventilatormodus in op [[mode]]",
+    "da": "Indstil ventilatortilstanden til [[mode]]",
+    "de": "Stelle den Lüftermodus auf [[mode]] ein.",
+    "es": "Configura el modo del ventilador a [[mode]]",
+    "fr": "Réglez le mode du ventilateur sur [[mode]]",
+    "it": "Imposta la modalità ventilatore su [[mode]]",
+    "no": "Sett vifteinnstillingen til [[mode]]",
+    "sv": "Ställ in fläktläget till [[mode]]",
+    "pl": "Ustaw tryb wentylatora na [[mode]]",
+    "ru": "Установите режим вентилятора на [[mode]]",
+    "ko": "팬 모드를 [[mode]]로 설정하세요.",
+    "ar": "اضبط وضع المروحة على [[mode]]"
   },
   "hint": {
     "en": "Set the mode (heat, cool, fan, auto or dry)",
-    "nl": "Stel de modus in (warmte, koelen, ventileren, auto of drogen)"
+    "nl": "Stel de modus in (warmte, koelen, ventileren, auto of drogen)",
+    "da": "Indstil tilstand (varme, køl, ventilator, auto eller tør)",
+    "de": "Stelle den Modus ein (Heizen, Kühlen, Lüften, Auto oder Trocknen)",
+    "es": "Configura el modo (calor, frío, ventilador, automático o seco)",
+    "fr": "Réglez le mode (chauffage, refroidissement, ventilateur, automatique ou déshumidification)",
+    "it": "Imposta la modalità (riscaldamento, raffreddamento, ventilatore, automatico o deumidificazione)",
+    "no": "Sett modus (varme, kjøling, vifte, auto eller tørr)",
+    "sv": "Ställ in läget (värme, kyla, fläkt, auto eller torr)",
+    "pl": "Ustaw tryb (ogrzewanie, chłodzenie, wentylator, auto lub osuszanie)",
+    "ru": "Установите режим (обогрев, охлаждение, вентилятор, авто или осушение)",
+    "ko": "모드를 설정하세요 (난방, 냉방, 선풍기, 자동 또는 제습)",
+    "ar": "اضبط الوضع (تدفئة، تبريد، مروحة، تلقائي أو جاف)"
   },
   "args": [
     {
@@ -23,7 +56,18 @@
       "name": "mode",
       "title": {
         "en": "Mode",
-        "nl": "Modus"
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드",
+        "ar": "الوضع"
       },
       "type": "dropdown",
       "values": [
@@ -31,34 +75,90 @@
           "id": "cool",
           "label": {
             "en": "Cool",
-            "nl": "Koelen"
+            "nl": "Koelen",
+            "da": "Sejt",
+            "de": "Kühl",
+            "es": "Genial",
+            "fr": "Cool",
+            "it": "Fantastico!",
+            "no": "Kult",
+            "sv": "Cool",
+            "pl": "Fajnie",
+            "ru": "Круто",
+            "ko": "멋져요",
+            "ar": "رائع"
           }
         },
         {
           "id": "heat",
           "label": {
             "en": "Heat",
-            "nl": "Verwarmen"
+            "nl": "Verwarmen",
+            "da": "Varme",
+            "de": "Heizen",
+            "es": "Calor",
+            "fr": "Chaleur",
+            "it": "Riscaldamento",
+            "no": "Varme",
+            "sv": "Värme",
+            "pl": "Ciepło",
+            "ru": "Тепло",
+            "ko": "난방",
+            "ar": "حرارة"
           }
         },
         {
           "id": "fan",
           "label": {
             "en": "Fan",
-            "nl": "Ventileren"
+            "nl": "Ventileren",
+            "da": "Blæser",
+            "de": "Ventilator",
+            "es": "Ventilador",
+            "fr": "Ventilateur",
+            "it": "Ventilatore",
+            "no": "Vifte",
+            "sv": "Fläkt",
+            "pl": "Wentylator",
+            "ru": "Вентилятор",
+            "ko": "팬",
+            "ar": "مروحة"
           }
         },
         {
           "id": "auto",
           "label": {
-            "en": "Auto"
+            "en": "Auto",
+            "nl": "Auto",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Auto",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Auto",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
           "id": "dry",
           "label": {
             "en": "Dry",
-            "nl": "Drogen"
+            "nl": "Drogen",
+            "da": "Tør",
+            "de": "Trocken",
+            "es": "Seco",
+            "fr": "Sec",
+            "it": "Secco",
+            "no": "Tørr",
+            "sv": "Torr",
+            "pl": "Sucho",
+            "ru": "Сухой",
+            "ko": "건조",
+            "ar": "جاف"
           }
         }
       ]

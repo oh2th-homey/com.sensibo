@@ -2,7 +2,18 @@
   "id": "se_timer_deleted",
   "title": {
     "en": "Timer deleted",
-    "nl": "Timer verwijderd"
+    "nl": "Timer verwijderd",
+    "da": "Timer slettet",
+    "de": "Timer gelöscht",
+    "es": "Temporizador eliminado",
+    "fr": "Minuteur supprimé",
+    "it": "Timer eliminato",
+    "no": "Timer slettet",
+    "sv": "Timer raderad",
+    "pl": "Timer usunięty",
+    "ru": "Таймер удалён",
+    "ko": "타이머가 삭제되었습니다.",
+    "ar": "تم حذف المؤقت"
   },
   "tokens": [
     {
@@ -10,7 +21,18 @@
       "type": "boolean",
       "title": {
         "en": "From Homey flow",
-        "nl": "Van Homey flow"
+        "nl": "Van Homey flow",
+        "da": "Fra Homey-flow",
+        "de": "Aus Homey-Flow",
+        "es": "Desde el flujo de Homey",
+        "fr": "Depuis le flux Homey",
+        "it": "Dal flusso Homey",
+        "no": "Fra Homey-flow",
+        "sv": "Från Homey-flöde",
+        "pl": "Z przepływu Homey",
+        "ru": "Из потока Homey",
+        "ko": "Homey 플로우에서",
+        "ar": "من تدفق Homey"
       },
       "example": true
     }

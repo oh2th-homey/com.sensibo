@@ -2,11 +2,33 @@
   "type": "enum",
   "title": {
     "en": "Swing",
-    "nl": "Luchtstroom"
+    "nl": "Luchtstroom",
+    "da": "Sving",
+    "de": "Schwenken",
+    "es": "Swing",
+    "fr": "Swing",
+    "it": "Swinga",
+    "no": "Svinge",
+    "sv": "Swinga",
+    "pl": "Swinguj",
+    "ru": "Качели",
+    "ko": "스윙",
+    "ar": "تأرجح"
   },
   "desc": {
     "en": "Swing",
-    "nl": "Luchtstroom"
+    "nl": "Luchtstroom",
+    "da": "Sving",
+    "de": "Swing",
+    "es": "Swing",
+    "fr": "Swing",
+    "it": "Oscillazione",
+    "no": "Svinge",
+    "sv": "Swinga",
+    "pl": "Swing",
+    "ru": "Качели",
+    "ko": "스윙",
+    "ar": "تأرجح"
   },
   "getable": true,
   "setable": true,
@@ -17,85 +39,216 @@
       "id": "stopped",
       "title": {
         "en": "Stopped",
-        "nl": "Gestopt"
+        "nl": "Gestopt",
+        "da": "Stoppet",
+        "de": "Gestoppt",
+        "es": "Detenido",
+        "fr": "Arrêté",
+        "it": "Fermato",
+        "no": "Stoppet",
+        "sv": "Stoppad",
+        "pl": "Zatrzymano",
+        "ru": "Остановлено",
+        "ko": "중지됨",
+        "ar": "توقف"
       }
     },
     {
       "id": "fixedBottom",
       "title": {
         "en": "Fixed bottom",
-        "nl": "Vast onder"
-
+        "nl": "Vast onder",
+        "da": "Fast bundet",
+        "de": "Fester Boden",
+        "es": "Fijo en la parte inferior",
+        "fr": "Fixé en bas",
+        "it": "Fisso in basso",
+        "no": "Fast bunn",
+        "sv": "Fast botten",
+        "pl": "Stałe dolne",
+        "ru": "Фиксированное дно",
+        "ko": "고정 하단",
+        "ar": "ثابت في الأسفل"
       }
     },
     {
       "id": "fixedMiddleBottom",
       "title": {
         "en": "Fixed middle bottom",
-        "nl": "Vast midden onder"
+        "nl": "Vast midden onder",
+        "da": "Fast midt nederst",
+        "de": "Fest unten in der Mitte",
+        "es": "Fijo en el centro inferior",
+        "fr": "Fixé en bas au centre",
+        "it": "Fisso in basso al centro",
+        "no": "Fast midt nederst",
+        "sv": "Fast mitt i botten",
+        "pl": "Stałe środkowe dolne",
+        "ru": "Фиксированное среднее нижнее положение",
+        "ko": "고정 중간 하단",
+        "ar": "ثابت في الوسط السفلي"
       }
     },
     {
       "id": "fixedMiddle",
       "title": {
         "en": "Fixed middle",
-        "nl": "Vast midden"
+        "nl": "Vast midden",
+        "da": "Fast midtpunkt",
+        "de": "Feste Mitte",
+        "es": "Fijo en el medio",
+        "fr": "Fixé au milieu",
+        "it": "Fisso centrale",
+        "no": "Fast midtstilling",
+        "sv": "Fast mittläge",
+        "pl": "Stała środkowa",
+        "ru": "Фиксированное среднее",
+        "ko": "고정 중간",
+        "ar": "ثابت في المنتصف"
       }
     },
     {
       "id": "fixedMiddleTop",
       "title": {
         "en": "Fixed middle top",
-        "nl": "Vast midden boven"
+        "nl": "Vast midden boven",
+        "da": "Fastgjort midt foroven",
+        "de": "Feststehend oben in der Mitte",
+        "es": "Fijo en el centro superior",
+        "fr": "Fixé au milieu en haut",
+        "it": "Fisso in alto al centro",
+        "no": "Fast midt på toppen",
+        "sv": "Fast mitt uppe",
+        "pl": "Stałe środkowe górne",
+        "ru": "Фиксированная середина сверху",
+        "ko": "고정 중간 상단",
+        "ar": "ثابت في الوسط العلوي"
       }
     },
     {
       "id": "fixedTop",
       "title": {
         "en": "Fixed top",
-        "nl": "Vast boven"
+        "nl": "Vast boven",
+        "da": "Fast top",
+        "de": "Feststehend oben",
+        "es": "Fijo arriba",
+        "fr": "Fixé en haut",
+        "it": "Fisso in alto",
+        "no": "Fast topp",
+        "sv": "Fast topposition",
+        "pl": "Stała góra",
+        "ru": "Фиксированный верх",
+        "ko": "고정 상단",
+        "ar": "ثابت في الأعلى"
       }
     },
     {
       "id": "rangeBottom",
       "title": {
         "en": "Range bottom",
-        "nl": "Bereik onder"
+        "nl": "Bereik onder",
+        "da": "Rækkevidde bund",
+        "de": "Bereich unten",
+        "es": "Rango inferior",
+        "fr": "Plage inférieure",
+        "it": "Limite inferiore",
+        "no": "Rekkevidde bunn",
+        "sv": "Lägsta räckvidd",
+        "pl": "Dolny zakres",
+        "ru": "Нижний предел диапазона",
+        "ko": "범위 하한",
+        "ar": "الحد الأدنى للنطاق"
       }
     },
     {
       "id": "rangeMiddle",
       "title": {
         "en": "Range middle",
-        "nl": "Bereik midden"
+        "nl": "Bereik midden",
+        "da": "Mellem rækkevidde",
+        "de": "Mittlerer Bereich",
+        "es": "Rango medio",
+        "fr": "Plage moyenne",
+        "it": "Intervallo medio",
+        "no": "Rekkevidde midt",
+        "sv": "Mellanläge för räckvidd",
+        "pl": "Średni zasięg",
+        "ru": "Средний диапазон",
+        "ko": "중간 범위",
+        "ar": "المدى المتوسط"
       }
     },
     {
       "id": "rangeTop",
       "title": {
         "en": "Range top",
-        "nl": "Bereik boven"
+        "nl": "Bereik boven",
+        "da": "Range top",
+        "de": "Reichweite oben",
+        "es": "Rango superior",
+        "fr": "Plage maximale",
+        "it": "Gamma superiore",
+        "no": "Rekkevidde topp",
+        "sv": "Räckvidd topp",
+        "pl": "Zakres górny",
+        "ru": "Верхняя часть диапазона",
+        "ko": "범위 상단",
+        "ar": "المدى الأعلى"
       }
     },
     {
       "id": "rangeFull",
       "title": {
         "en": "Range full",
-        "nl": "Bereik volledig"
+        "nl": "Bereik volledig",
+        "da": "Rækkevidde fuld",
+        "de": "Reichweite voll",
+        "es": "Rango completo",
+        "fr": "Portée complète",
+        "it": "Intervallo completo",
+        "no": "Rekkevidde full",
+        "sv": "Räckvidd fullständig",
+        "pl": "Zasięg pełny",
+        "ru": "Диапазон полный",
+        "ko": "범위 가득함",
+        "ar": "النطاق ممتلئ"
       }
     },
     {
       "id": "horizontal",
       "title": {
         "en": "Horizontal",
-        "nl": "Horizontaal"
+        "nl": "Horizontaal",
+        "da": "Horisontal",
+        "de": "Horizontal",
+        "es": "Horizontal",
+        "fr": "Horizontal",
+        "it": "Orizzontale",
+        "no": "Horisontal",
+        "sv": "Horisontell",
+        "pl": "Poziomy",
+        "ru": "Горизонтальный",
+        "ko": "수평",
+        "ar": "أفقي"
       }
     },
     {
       "id": "both",
       "title": {
         "en": "Both",
-        "nl": "Beide"
+        "nl": "Beide",
+        "da": "Begge",
+        "de": "Beide",
+        "es": "Ambos",
+        "fr": "Les deux",
+        "it": "Entrambi",
+        "no": "Begge",
+        "sv": "Båda",
+        "pl": "Oba",
+        "ru": "Оба",
+        "ko": "둘 다",
+        "ar": "كلاهما"
       }
     }
   ]

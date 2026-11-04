@@ -1,48 +1,96 @@
 {
-	"id": "SensiboPure",
-	"name": {
-		"en": "Sensibo Pure"
-	},
-	"$extends": [
-		"defaults"
-	],
-	"class": "airpurifier",
-	"capabilities": [
-		"se_onoff",
-		"se_fanlevel_pure",
+  "id": "SensiboPure",
+  "name": {
+    "en": "Sensibo Pure",
+    "nl": "Sensibo Pure",
+    "da": "Sensibo Pure",
+    "de": "Sensibo Pure",
+    "es": "Sensibo Pure",
+    "fr": "Sensibo Pure",
+    "it": "Sensibo Pure",
+    "no": "Sensibo Pure",
+    "sv": "Sensibo Pure",
+    "pl": "Sensibo Pure",
+    "ru": "Sensibo Pure",
+    "ko": "Sensibo Pure",
+    "ar": "Sensibo Pure"
+  },
+  "$extends": [
+    "defaults"
+  ],
+  "class": "airpurifier",
+  "capabilities": [
+    "se_onoff",
+    "se_fanlevel_pure",
     "level_aqi",
-		"se_last_seen",
-		"se_last_seen_seconds",
-		"alarm_filter",
-		"se_filter_run_hours",
-		"se_filter_due_hours",
-		"se_filter_due_date"
-	],
-	"capabilitiesOptions": {
-		"se_onoff": {
-			"greyout": true
-		},
+    "se_last_seen",
+    "se_last_seen_seconds",
+    "alarm_filter",
+    "se_filter_run_hours",
+    "se_filter_due_hours",
+    "se_filter_due_date"
+  ],
+  "capabilitiesOptions": {
+    "se_onoff": {
+      "greyout": true
+    },
     "level_aqi": {
       "values": [
         {
           "id": "good",
           "title": {
-            "en": "Good"
+            "en": "Good",
+            "nl": "Goed",
+            "da": "Godt",
+            "de": "Gut",
+            "es": "Bueno",
+            "fr": "Bien",
+            "it": "Buono",
+            "no": "Bra",
+            "sv": "Bra",
+            "pl": "Dobrze",
+            "ru": "Хорошо",
+            "ko": "좋아요",
+            "ar": "جيد"
           }
         },
         {
           "id": "fair",
           "title": {
-            "en": "Fair"
+            "en": "Fair",
+            "nl": "Eerlijk",
+            "da": "Retfærdig",
+            "de": "Fair",
+            "es": "Justo",
+            "fr": "Équitable",
+            "it": "Giusto",
+            "no": "Rettferdig",
+            "sv": "Rättvis",
+            "pl": "Sprawiedliwy",
+            "ru": "Справедливо",
+            "ko": "공정한",
+            "ar": "عادل"
           }
         },
         {
           "id": "poor",
           "title": {
-            "en": "Poor"
+            "en": "Poor",
+            "nl": "Slecht",
+            "da": "Dårlig",
+            "de": "Schlecht",
+            "es": "Pobre",
+            "fr": "Pauvre",
+            "it": "Scarso",
+            "no": "Dårlig",
+            "sv": "Dålig",
+            "pl": "Słaby",
+            "ru": "Плохо",
+            "ko": "부족한",
+            "ar": "ضعيف"
           }
         }
       ]
     }
-	}
+  }
 }
