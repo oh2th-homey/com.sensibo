@@ -2662,8 +2662,19 @@
     "se_onoff": {
       "type": "boolean",
       "title": {
-        "en": "State",
-        "nl": "Status"
+        "en": "Turned on",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet",
+        "fr": "Activé",
+        "it": "Attivato",
+        "sv": "Aktiverad",
+        "no": "Aktivert",
+        "es": "Encendido",
+        "da": "Tændt",
+        "ru": "Включено",
+        "pl": "Włączone",
+        "ko": "전원",
+        "ar": "مشغل"
       },
       "desc": {
         "en": "State of the device",
@@ -2676,11 +2687,33 @@
       "insights": true,
       "insightsTitleTrue": {
         "en": "Turned on",
-        "nl": "Aangezet"
+        "nl": "Aangezet",
+        "de": "Eingeschaltet",
+        "fr": "Activé",
+        "it": "Attivato",
+        "sv": "Aktiverad",
+        "no": "Aktivert",
+        "es": "Encendido",
+        "da": "Tændt",
+        "ru": "Включено",
+        "pl": "Włączone",
+        "ko": "전원 켜짐",
+        "ar": "مشغل"
       },
       "insightsTitleFalse": {
         "en": "Turned off",
-        "nl": "Uitgezet"
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet",
+        "fr": "Désactivé",
+        "it": "Disattivato",
+        "sv": "Inaktiverad",
+        "no": "Deaktivert",
+        "es": "Apagado",
+        "da": "Slukket",
+        "ru": "Выключено",
+        "pl": "Wyłączone",
+        "ko": "전원 꺼짐",
+        "ar": "متوقف"
       }
     }
   }
