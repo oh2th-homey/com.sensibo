@@ -380,7 +380,7 @@ module.exports = class BaseDevice extends Homey.Device {
         await this.updateIfChanged('measure_humidity', result.measurements.humidity);
         if (result.measurements.batteryVoltage) {
           if (result.productModel === 'motion_sensor') {
-            await this.updateIfChanged('measure_battery', Math.round(3000 / result.measurements.batteryVoltage) * 100);
+            await this.updateIfChanged('measure_battery', util.batteryPercent(result.measurements.batteryVoltage));
           }
         }
         if (result.measurements.co2) {
