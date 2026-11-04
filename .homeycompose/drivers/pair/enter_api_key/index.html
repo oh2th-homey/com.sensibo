@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Shared by all drivers. Edit .homeycompose/drivers/pair/enter_api_key/index.html and .homeycompose/drivers/repair/enter_api_key/index.html (kept identical); drivers/*/pair and drivers/*/repair are generated from them. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+
+<header class="homey-header">
+    <div class="grid_center">
+        <img class="logo" src="../../../assets/logo.png" alt="Sensibo"/>
+    </div>
+    <p class="homey-subtitle" id="apikey-help"></p>
+</header>
+
+<form class="homey-form">
+    <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" data-i18n="pair.apikey_header"></legend>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="apikey" data-i18n="pair.apikey_label"></label>
+            <input class="homey-form-input"
+                   id="apikey"
+                   type="text"
+                   maxlength="255"
+            />
+        </div>
+    </fieldset>
+
+    <button class="homey-button-primary-full"
+            id="submit"
+            data-i18n="pair.submit"
+    ></button>
+</form>
+
+<script type="text/javascript">
+  Homey.setTitle(Homey.__('pair.title'));
+
+  // Help text with the address of Sensibo's API key page as a link
+  const API_KEY_URL = 'https://home.sensibo.com/me/api';
+  const openApiKeyPage = (e) => {
+    e.preventDefault();
+    if (typeof Homey.openURL === 'function') {
+      Homey.openURL(API_KEY_URL);
+    } else if (typeof Homey.popup === 'function') {
+      Homey.popup(API_KEY_URL);
+    } else {
+      window.open(API_KEY_URL, '_blank');
+    }
+  };
+  const help = document.getElementById('apikey-help');
+  const link = document.createElement('a');
+  link.href = API_KEY_URL;
+  link.textContent = API_KEY_URL.replace('https://', '');
+  link.onclick = openApiKeyPage;
+  const parts = Homey.__('pair.apikey_help').split(API_KEY_URL);
+  help.append(parts[0], link, ...parts.slice(1));
+  if (parts.length === 1) {
+    // The translation has no address: show the link after it
+    help.insertBefore(document.createTextNode(' '), link);
+    help.append(link);
+  }
+
+  document.getElementById('submit').onclick = (e) => {
+    e.preventDefault();
+    Homey.showLoadingOverlay();
+    const apikey = document.getElementById("apikey").value;
+
+    Homey.emit('apikey_input', { apikey: apikey }, (err, result) => {
+      Homey.hideLoadingOverlay();
+      if (err) {
+        Homey.alert(err, 'error', () => {
+          Homey.done();
+        });
+      }
+    });
+  };
+</script>
+</body>
+</html>

@@ -4,10 +4,13 @@
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "connectivity": ["cloud"],
+  "connectivity": [
+    "cloud"
+  ],
   "pair": [
     {
-      "id": "enter_api_key"
+      "id": "enter_api_key",
+      "$template": "enter_api_key"
     },
     {
       "id": "list_devices",
@@ -23,7 +26,8 @@
   ],
   "repair": [
     {
-      "id": "enter_api_key"
+      "id": "enter_api_key",
+      "$template": "enter_api_key"
     }
   ]
 }
