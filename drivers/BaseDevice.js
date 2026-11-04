@@ -5,6 +5,11 @@ const Sensibo = require('../lib/sensibo');
 const util = require('../lib/util');
 const { NOP, CLIMATE_REACT_NOT_CONFIGURED, buildClimateReactConfig } = require('../lib/climate-react');
 
+// All locale files, to give runtime picker values translated titles in every language
+const LANGUAGES = ['en', 'nl', 'de', 'fr', 'it', 'sv', 'no', 'es', 'da', 'ru', 'pl', 'ko', 'ar'];
+// eslint-disable-next-line import/no-dynamic-require, global-require
+const LOCALES = Object.fromEntries(LANGUAGES.map((language) => [language, require(`../locales/${language}.json`)]));
+
 module.exports = class BaseDevice extends Homey.Device {
   async onInit() {
     await this.migrate();
@@ -222,6 +227,23 @@ module.exports = class BaseDevice extends Homey.Device {
     return readable.charAt(0).toUpperCase() + readable.slice(1);
   }
 
+  // Title of an AC value as a translation object for capability options, e.g. { en: 'Quiet', sv: 'Tyst', ... }.
+  // Homey shows it in the current language and follows a language change; English falls back to a readable id.
+  valueTitles(i18nPrefix, id) {
+    const titles = {};
+    for (const language of LANGUAGES) {
+      const section = LOCALES[language][i18nPrefix];
+      if (section && typeof section[id] === 'string') {
+        titles[language] = section[id];
+      }
+    }
+    if (!titles.en) {
+      const readable = id.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+      titles.en = readable.charAt(0).toUpperCase() + readable.slice(1);
+    }
+    return titles;
+  }
+
   // Flow autocomplete list of AC values with translated names, filtered by the typed query
   valueAutocomplete(query, ids, i18nPrefix) {
     return ids
@@ -241,12 +263,11 @@ module.exports = class BaseDevice extends Homey.Device {
     } catch (err) {
       currentOptions = {};
     }
-    const currentIds = (currentOptions.values || []).map((option) => option.id);
-    // Update only if there are changes
-    if (util.arraysEqualIgnoreOrder(ids, currentIds)) {
+    const values = ids.map((id) => ({ id, title: this.valueTitles(i18nPrefix, id) }));
+    // Update only if the values or their titles changed; titles stored as plain strings by older versions are replaced
+    if (JSON.stringify(currentOptions.values || []) === JSON.stringify(values)) {
       return;
     }
-    const values = ids.map((id) => ({ id, title: this.valueTitle(i18nPrefix, id) }));
     await this.setCapabilityOptions(capabilityId, { values });
     this.log(`Updated ${capabilityId} options ->`, ids);
   }

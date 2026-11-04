@@ -267,3 +267,25 @@ test('timer and API errors are translated', async () => {
   });
   assert.strictEqual(sensibo.createTimeoutError('GET', 'https://example.invalid/?apiKey=key').message, "The Sensibo API didn't answer within 30 seconds.");
 });
+
+test('picker values get titles in every language and old English-only titles are replaced', async () => {
+  const device = createDevice(createClient(), {});
+  let options = { values: [{ id: 'quiet', title: 'Quiet' }, { id: 'auto', title: 'Auto' }] };
+  const writes = [];
+  device.getCapabilityOptions = () => options;
+  device.setCapabilityOptions = async (cap, opts) => {
+    writes.push(cap);
+    options = opts;
+  };
+  await device.updateEnumCapabilityValues('se_fanlevel', ['auto', 'quiet'], 'fan_level', ['quiet', 'low', 'auto']);
+  assert.deepStrictEqual(writes, ['se_fanlevel']);
+  assert.deepStrictEqual(options.values.map((value) => value.id), ['quiet', 'auto']);
+  assert.strictEqual(options.values[0].title.en, 'Quiet');
+  assert.strictEqual(options.values[0].title.sv, 'Tyst');
+  assert.strictEqual(Object.keys(options.values[0].title).length, 13);
+  // Same values and titles: nothing is written again
+  await device.updateEnumCapabilityValues('se_fanlevel', ['auto', 'quiet'], 'fan_level', ['quiet', 'low', 'auto']);
+  assert.deepStrictEqual(writes, ['se_fanlevel']);
+  // A value without a translation gets a readable English title
+  assert.deepStrictEqual(device.valueTitles('fan_level', 'super_turbo'), { en: 'Super turbo' });
+});
