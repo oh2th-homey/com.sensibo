@@ -1,0 +1,85 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": "LRYjt8FaxD",
+      "time": {
+        "time": "2026-11-04T07:00:17Z",
+        "secondsAgo": 16
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T07:00:33.630745Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 21,
+        "temperatureUnit": "C",
+        "fanLevel": "quiet",
+        "swing": "stopped",
+        "horizontalSwing": "fixedCenter"
+      },
+      "changedProperties": [
+        "fanLevel"
+      ],
+      "reason": "ExternalIrCommand",
+      "failureReason": null
+    },
+    {
+      "id": "LFnbwDwWZP",
+      "time": {
+        "time": "2026-11-04T07:00:16Z",
+        "secondsAgo": 17
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T07:00:33.630821Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 21,
+        "temperatureUnit": "C",
+        "fanLevel": "auto",
+        "swing": "stopped",
+        "horizontalSwing": "fixedCenter"
+      },
+      "changedProperties": [
+        "fanLevel",
+        "swing",
+        "horizontalSwing"
+      ],
+      "reason": "ExternalIrCommand",
+      "failureReason": null
+    },
+    {
+      "id": "7cjQpQC6BS",
+      "time": {
+        "time": "2026-11-04T07:00:03Z",
+        "secondsAgo": 30
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T07:00:33.630867Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 21,
+        "temperatureUnit": "C",
+        "fanLevel": "medium"
+      },
+      "changedProperties": [
+        "mode",
+        "targetTemperature"
+      ],
+      "reason": "UserAPI",
+      "failureReason": null
+    }
+  ],
+  "isPartial": true
+}

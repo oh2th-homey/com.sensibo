@@ -1,0 +1,85 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": "8PAcTqp9Dn",
+      "time": {
+        "time": "2026-11-04T06:58:03Z",
+        "secondsAgo": 68
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T06:59:11.620137Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "fan",
+        "fanLevel": "medium",
+        "swing": "fixedMiddleTop",
+        "horizontalSwing": "rangeFull"
+      },
+      "changedProperties": [
+        "mode",
+        "targetTemperature",
+        "fanLevel",
+        "swing",
+        "horizontalSwing"
+      ],
+      "reason": "Trigger",
+      "failureReason": null
+    },
+    {
+      "id": "Fhsz8cqsGt",
+      "time": {
+        "time": "2026-11-04T06:55:20Z",
+        "secondsAgo": 231
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T06:59:11.620190Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 21,
+        "temperatureUnit": "C",
+        "fanLevel": "medium_high",
+        "swing": "stopped",
+        "horizontalSwing": "fixedCenter"
+      },
+      "changedProperties": [
+        "fanLevel",
+        "swing",
+        "horizontalSwing"
+      ],
+      "reason": "ExternalIrCommand",
+      "failureReason": null
+    },
+    {
+      "id": "FP5tHm954o",
+      "time": {
+        "time": "2026-11-04T06:45:02Z",
+        "secondsAgo": 849
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T06:59:11.620217Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "fanLevel": "medium"
+      },
+      "changedProperties": [
+        "mode",
+        "targetTemperature"
+      ],
+      "reason": "UserAPI",
+      "failureReason": null
+    }
+  ],
+  "isPartial": true
+}

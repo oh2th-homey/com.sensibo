@@ -1,0 +1,83 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": "PPogecLm6N",
+      "time": {
+        "time": "2026-11-04T06:55:01Z",
+        "secondsAgo": 120
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T06:57:01.103086Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 20,
+        "temperatureUnit": "C",
+        "fanLevel": "auto",
+        "swing": "stopped",
+        "horizontalSwing": "stopped"
+      },
+      "changedProperties": [
+        "targetTemperature"
+      ],
+      "reason": "UserAPI",
+      "failureReason": null
+    },
+    {
+      "id": "QEUh4H9mEA",
+      "time": {
+        "time": "2026-11-04T06:52:39Z",
+        "secondsAgo": 262
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T06:57:01.103141Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 21,
+        "temperatureUnit": "C",
+        "fanLevel": "auto",
+        "swing": "stopped",
+        "horizontalSwing": "stopped"
+      },
+      "changedProperties": [
+        "targetTemperature"
+      ],
+      "reason": "UserRequest",
+      "failureReason": null
+    },
+    {
+      "id": "34kAZE2eXz",
+      "time": {
+        "time": "2026-11-04T06:15:02Z",
+        "secondsAgo": 2519
+      },
+      "status": "Success",
+      "acState": {
+        "timestamp": {
+          "time": "2026-11-04T06:57:01.103177Z",
+          "secondsAgo": 0
+        },
+        "on": true,
+        "mode": "heat",
+        "targetTemperature": 20,
+        "temperatureUnit": "C",
+        "fanLevel": "auto"
+      },
+      "changedProperties": [
+        "mode",
+        "targetTemperature"
+      ],
+      "reason": "UserAPI",
+      "failureReason": null
+    }
+  ],
+  "isPartial": true
+}

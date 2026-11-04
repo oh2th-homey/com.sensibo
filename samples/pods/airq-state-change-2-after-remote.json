@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "result": {
+    "acState": {
+      "timestamp": {
+        "time": "2026-11-04T07:02:40.868113Z",
+        "secondsAgo": 0
+      },
+      "on": true,
+      "mode": "heat",
+      "targetTemperature": 21,
+      "temperatureUnit": "C",
+      "fanLevel": "low",
+      "swing": "stopped",
+      "horizontalSwing": "fixedCenter"
+    },
+    "lastStateChange": {
+      "time": "2026-11-04T07:02:20Z",
+      "secondsAgo": 20
+    },
+    "lastStateChangeToOn": {
+      "time": "2026-11-03T13:45:03Z",
+      "secondsAgo": 62257
+    },
+    "lastStateChangeToOff": {
+      "time": "2026-11-03T13:42:18Z",
+      "secondsAgo": 62422
+    }
+  }
+}

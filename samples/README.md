@@ -14,12 +14,14 @@ Before adding a sample:
 - Replace personal data: user names, emails, MAC addresses (`00:00:00:00:00:<n>`), serial numbers (`<productModel>_serial`), QR ids, Wi-Fi SSIDs and locations.
 - Room names and room uids may stay.
 
+File names use the `productModel` value: `airq` is the Sensibo Air Pro, `skyplus` the Sky Plus.
+
 ## `users-me-pods/`: all devices of the account
 
 | File | Request | Notes |
 | --- | --- | --- |
 | `ids-only.json` | `GET /users/me/pods` | Without `fields` only the ids are returned |
-| `all-fields.json` | `GET /users/me/pods?fields=*` | Every field of all devices: Air Q, Sky Plus with a classic Room Sensor, Pure, Elements |
+| `all-fields.json` | `GET /users/me/pods?fields=*` | Every field of all devices: Air Pro (`productModel: airq`), Sky Plus with a classic Room Sensor, Pure, Elements |
 | `poll-item-ac-fahrenheit.json` | `GET /users/me/pods?fields=id,room,productModel,acState,measurements,motionSensors,timer,connectionStatus,filtersCleaning` | One device from the shared poll, AC in Fahrenheit: `acState.temperatureUnit` is `F` with `nativeTargetTemperature` in Celsius, measurements stay in Celsius |
 
 ## `pods/`: one device
@@ -32,6 +34,34 @@ All with `GET /pods/:device_id?fields=id,room,productModel,acState,measurements,
 | `skyplus-fahrenheit-room-sensor.json` | AC in Fahrenheit, Climate React changed from the API (`smartmode/post-response.json`). Classic Room Sensor paired (`productModel: motion_sensor`, firmware V17): its `motion` sets the AC's `roomIsOccupied` |
 | `skyplus-celsius-climate-react-in-fahrenheit.json` | The same AC switched back to Celsius: the Climate React rules keep their Fahrenheit targets, Sensibo does not convert them |
 | `skyplus-celsius-climate-react-resaved.json` | Climate React then saved again in the Sensibo app: both rules' targets converted to Celsius (79 °F → 26 °C, 61 °F → 16 °C, the same table as `toCelsius` in `lib/util.js`), thresholds unchanged |
+
+State change test on the lab Sky Plus, with `GET /pods/:device_id?fields=lastStateChange,lastStateChangeToOn,lastStateChangeToOff,acState`:
+
+| File | Notes |
+| --- | --- |
+| `skyplus-state-change-1-baseline.json` | Before the test. Rewriting the Climate React settings from Homey earlier did not move `lastStateChange` |
+| `skyplus-state-change-2-after-app.json` | Target temperature changed in the Sensibo app: `lastStateChange` moved at once, about a second after the history entry. `acState.timestamp` is only the response time |
+| `skyplus-state-change-3-after-remote.json` | Meant to show a change with the AC's own remote, but the remote was used on another AC by mistake. Only shows a later `UserAPI` change from Homey; says nothing about IR capture |
+| `skyplus-state-change-4-after-timer.json` | A one-minute Sensibo timer turned the AC off: `lastStateChange` and `lastStateChangeToOff` moved to the same second |
+
+State change test on the Air Pro (`airq`) in room aula, same request. Its `UserAPI` changes every quarter-hour come from energy price Flows on another Homey:
+
+| File | Notes |
+| --- | --- |
+| `airq-state-change-1-before-remote.json` | `lastStateChange` is the time of the last `ExternalIrCommand` entry (07:00:17): a command from the AC's own remote moves it |
+| `airq-state-change-2-after-remote.json` | Fan level changed with the remote (quiet → low): `lastStateChange` moved to the press |
+
+## `acstates/`: AC state history
+
+`GET /pods/:device_id/acStates?limit=3`, from the same test.
+
+| File | Notes |
+| --- | --- |
+| `history-after-app.json` | Newest first. Each entry has `changedProperties` and a `reason`: `UserRequest` from the Sensibo app, `UserAPI` from the API (Homey). An entry's `acState.timestamp` is only the response time |
+| `airq-history-ir-and-trigger.json` | Air Pro: `ExternalIrCommand` is a command from the AC's own remote, captured by the Air Pro. `Trigger` is Climate React acting on its threshold (Climate React is on for aula), and it moved `lastStateChange` to the same second. In fan mode the state has no target temperature |
+| `airq-history-remote-press.json` | Air Pro: one remote press gives two `ExternalIrCommand` entries a second apart, first the full state the remote sent, then the change |
+| `history-after-remote.json` | Same test step: the remote was used on another AC by mistake, so this says nothing about IR capture. The new entry is a `UserAPI` change |
+| `history-after-timer.json` | The timer is recorded as `ScheduledCommand`, changing only `on` |
 
 ## `smartmode/`: Climate React
 
