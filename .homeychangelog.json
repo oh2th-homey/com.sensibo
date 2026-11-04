@@ -217,5 +217,8 @@
   },
   "1.26.0": {
     "en": "NEW: When a Room Sensor is the primary sensor in the Sensibo app, the AC shows its temperature and humidity and a Use Room Sensor indicator, and newly paired Room Sensors get the name they have in the Sensibo app."
+  },
+  "1.27.0": {
+    "en": "NEW: The app is translated into all 13 Homey languages, with the same value names everywhere; FIX: the mode, fan level and swing pickers on the device now follow the Homey language."
   }
 }
