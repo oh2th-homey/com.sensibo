@@ -9,5 +9,15 @@
     "no-empty-function": "off",
     "padded-blocks": "off",
     "no-nested-ternary": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "test/**/*.js"
+      ],
+      "rules": {
+        "node/no-unpublished-require": "off"
+      }
+    }
+  ]
 }
