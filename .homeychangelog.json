@@ -220,5 +220,8 @@
   },
   "1.27.0": {
     "en": "NEW: The app is translated into all 13 Homey languages, with the same value names everywhere; FIX: the mode, fan level and swing pickers on the device now follow the Homey language."
+  },
+  "1.27.1": {
+    "en": "FIX: The address of Sensibo's API key page on the pairing screen is now a link you can tap."
   }
 }
