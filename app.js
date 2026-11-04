@@ -25,6 +25,7 @@ class SensiboApp extends Homey.App {
     this._offlineTrigger = this.homey.flow.getDeviceTriggerCard('se_offline');
     this._acStateChangedTrigger = this.homey.flow.getDeviceTriggerCard('se_ac_state_changed');
     this._climateReactChangedTrigger = this.homey.flow.getDeviceTriggerCard('se_climate_react_changed');
+    this._climateReactSettingsChangedTrigger = this.homey.flow.getDeviceTriggerCard('se_climate_react_settings_changed');
     this._triggerAirQualityChanged = this.homey.flow.getDeviceTriggerCard('air_quality_changed');
     this._timerCreatedTrigger = this.homey.flow.getDeviceTriggerCard('se_timer_created');
     this._timerFiredTrigger = this.homey.flow.getDeviceTriggerCard('se_timer_fired');
@@ -74,6 +75,18 @@ class SensiboApp extends Homey.App {
       .registerAutocompleteListener((query, args) => args.device.onHorizontalSwingAutocomplete(query, args));
 
     this.homey.flow.getActionCard('sensibo_cr').registerRunListener((args, state) => args.device.onActionClimateReact(args.enabled));
+
+    for (const side of ['high', 'low']) {
+      const card = this.homey.flow
+        .getActionCard(side === 'high' ? 'sensibo_cr_above' : 'sensibo_cr_below')
+        .registerRunListener((args, state) => args.device.onActionSetClimateReactRule(side, args));
+      card.getArgument('mode').registerAutocompleteListener((query, args) => args.device.withUnchangedOption(query, args.device.onModeAutocomplete(query, args)));
+      card.getArgument('fanLevel').registerAutocompleteListener((query, args) => args.device.withUnchangedOption(query, args.device.onFanLevelAutocomplete(query, args)));
+      card.getArgument('swing').registerAutocompleteListener((query, args) => args.device.withUnchangedOption(query, args.device.onSwingAutocomplete(query, args)));
+      card
+        .getArgument('horizontalSwing')
+        .registerAutocompleteListener((query, args) => args.device.withUnchangedOption(query, args.device.onHorizontalSwingAutocomplete(query, args)));
+    }
 
     this.homey.flow.getActionCard('sensibo_pureboost').registerRunListener((args, state) => args.device.onUpdatePureBoost(args.enabled));
 

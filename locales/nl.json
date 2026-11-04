@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "Het ophalen van apparaten is mislukt.",
     "no_devices": "Geen apparaten gevonden.",
-    "light_not_supported": "Licht wordt niet ondersteund voor dit apparaat."
+    "light_not_supported": "Licht wordt niet ondersteund voor dit apparaat.",
+    "climate_react_not_configured": "Sla Climate React eenmaal op in de Sensibo-app voordat je het vanuit Homey wijzigt."
   },
   "thermostat_mode": {
     "auto": "Automatisch",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "Vast links rechts",
     "rangeCenter": "Bereik midden",
     "rangeFull": "Bereik volledig"
+  },
+  "flow": {
+    "unchanged": "- Ongewijzigd -"
   }
 }

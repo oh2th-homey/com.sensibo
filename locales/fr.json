@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "Échec de la récupération des appareils.",
     "no_devices": "Aucun appareil trouvé.",
-    "light_not_supported": "La lumière n'est pas prise en charge pour cet appareil."
+    "light_not_supported": "La lumière n'est pas prise en charge pour cet appareil.",
+    "climate_react_not_configured": "Enregistrez Climate React une fois dans l'application Sensibo avant de le modifier depuis Homey."
   },
   "thermostat_mode": {
     "auto": "Automatique",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "Fixe gauche droite",
     "rangeCenter": "Balayage centre",
     "rangeFull": "Balayage complet"
+  },
+  "flow": {
+    "unchanged": "- Inchangé -"
   }
 }

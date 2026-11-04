@@ -3,6 +3,7 @@
 const Homey = require('homey');
 const Sensibo = require('../lib/sensibo');
 const util = require('../lib/util');
+const { NOP, CLIMATE_REACT_NOT_CONFIGURED, buildClimateReactConfig } = require('../lib/climate-react');
 
 module.exports = class BaseDevice extends Homey.Device {
   async onInit() {
@@ -454,6 +455,10 @@ module.exports = class BaseDevice extends Homey.Device {
         // Run hours since last filter clean
         await this.updateIfChanged('se_filter_run_hours', Math.floor(result.filtersCleaning.acOnSecondsSinceLastFiltersClean / 3600));
       }
+      // Climate React comes with the shared poll, null when it has never been configured
+      if (Object.hasOwn(result, 'smartMode') && this.onClimateReactSettingsReceived) {
+        await this.onClimateReactSettingsReceived({ result: result.smartMode || {} });
+      }
     }
   }
 
@@ -679,6 +684,47 @@ module.exports = class BaseDevice extends Homey.Device {
     if (this.hasCapability('se_climate_react')) {
       await this.setCapabilityValue('se_climate_react', enabled).catch((err) => this.log(err));
     }
+  }
+
+  // The AC's temperature unit, Climate React flow cards take temperatures in it
+  getTemperatureUnit() {
+    const acState = this._sensibo.getAcState() || {};
+    return acState.temperatureUnit === 'F' ? 'F' : 'C';
+  }
+
+  async onActionSetClimateReactRule(side, args) {
+    const rule = {
+      type: args.type,
+      threshold: args.threshold,
+      on: args.on,
+      mode: args.mode && args.mode.id,
+      fanLevel: args.fanLevel && args.fanLevel.id,
+      swing: args.swing && args.swing.id,
+      horizontalSwing: args.horizontalSwing && args.horizontalSwing.id,
+      targetTemperature: args.targetTemperature
+    };
+    try {
+      this.clearCheckData();
+      const current = await this._sensibo.getClimateReactSettings();
+      const config = buildClimateReactConfig(current && current.result, side, rule, this.getTemperatureUnit());
+      this.log(`set Climate React ${side} rule: ${this._sensibo.getDeviceId()}`, config);
+      await this._sensibo.setClimateReactSettings(config);
+      await this.ensureDeviceAvailable();
+    } catch (err) {
+      if (err && err.code === CLIMATE_REACT_NOT_CONFIGURED) {
+        throw new Error(this.homey.__('errors.climate_react_not_configured'));
+      }
+      await this.handleApiFailure('onActionSetClimateReactRule', err);
+    } finally {
+      this.scheduleCheckData();
+    }
+  }
+
+  // Autocomplete for a Climate React rule: the AC's values, first an option that keeps the current value
+  async withUnchangedOption(query, itemsPromise) {
+    const items = await itemsPromise;
+    const unchanged = { id: NOP, name: this.homey.__('flow.unchanged') };
+    return unchanged.name.toLowerCase().includes(query.toLowerCase()) || !query ? [unchanged, ...items] : items;
   }
 
   async isTimerEnabled() {

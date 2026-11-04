@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "장치를 가져오지 못했습니다.",
     "no_devices": "장치를 찾을 수 없습니다.",
-    "light_not_supported": "이 장치에서는 조명이 지원되지 않습니다."
+    "light_not_supported": "이 장치에서는 조명이 지원되지 않습니다.",
+    "climate_react_not_configured": "Homey에서 변경하기 전에 Sensibo 앱에서 Climate React를 한 번 저장하세요."
   },
   "thermostat_mode": {
     "auto": "자동",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "좌우 고정",
     "rangeCenter": "중앙 스윙",
     "rangeFull": "전체 스윙"
+  },
+  "flow": {
+    "unchanged": "- 변경 없음 -"
   }
 }

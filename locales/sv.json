@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "Misslyckades med att hämta enheter.",
     "no_devices": "Inga enheter hittades.",
-    "light_not_supported": "Ljuset stöds inte för denna enhet."
+    "light_not_supported": "Ljuset stöds inte för denna enhet.",
+    "climate_react_not_configured": "Spara Climate React en gång i Sensibo-appen innan du ändrar det från Homey."
   },
   "thermostat_mode": {
     "auto": "Automatiskt",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "Fast vänster höger",
     "rangeCenter": "Svep mitten",
     "rangeFull": "Svep full"
+  },
+  "flow": {
+    "unchanged": "- Oförändrad -"
   }
 }

@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "Geräte konnten nicht abgerufen werden.",
     "no_devices": "Es wurden keine Geräte gefunden.",
-    "light_not_supported": "Licht wird für dieses Gerät nicht unterstützt."
+    "light_not_supported": "Licht wird für dieses Gerät nicht unterstützt.",
+    "climate_react_not_configured": "Speichere Climate React einmal in der Sensibo-App, bevor du es in Homey änderst."
   },
   "thermostat_mode": {
     "auto": "Automatisch",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "Fest links rechts",
     "rangeCenter": "Schwenk Mitte",
     "rangeFull": "Schwenk voll"
+  },
+  "flow": {
+    "unchanged": "- Unverändert -"
   }
 }

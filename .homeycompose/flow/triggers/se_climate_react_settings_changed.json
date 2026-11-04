@@ -1,0 +1,83 @@
+{
+  "id": "se_climate_react_settings_changed",
+  "title": {
+    "en": "Climate React settings changed",
+    "nl": "Climate React-instellingen veranderd"
+  },
+  "hint": {
+    "en": "The thresholds, trigger type or AC states were changed, from Homey or the Sensibo app. Temperatures are in the AC's unit.",
+    "nl": "De drempels, het triggertype of de AC-standen zijn gewijzigd, vanuit Homey of de Sensibo-app. Temperaturen zijn in de eenheid van de AC."
+  },
+  "tokens": [
+    {
+      "name": "climate_react_enabled",
+      "type": "boolean",
+      "title": {
+        "en": "Climate React enabled",
+        "nl": "Climate React ingeschakeld"
+      },
+      "example": true
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "title": {
+        "en": "Trigger",
+        "nl": "Trigger"
+      },
+      "example": "temperature"
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "title": {
+        "en": "Unit",
+        "nl": "Eenheid"
+      },
+      "example": "°F"
+    },
+    {
+      "name": "low_threshold",
+      "type": "number",
+      "title": {
+        "en": "Low threshold",
+        "nl": "Lage drempel"
+      },
+      "example": 76
+    },
+    {
+      "name": "high_threshold",
+      "type": "number",
+      "title": {
+        "en": "High threshold",
+        "nl": "Hoge drempel"
+      },
+      "example": 76
+    },
+    {
+      "name": "low_state",
+      "type": "string",
+      "title": {
+        "en": "Below low threshold",
+        "nl": "Onder lage drempel"
+      },
+      "example": "On, cool, 86°F, fan auto"
+    },
+    {
+      "name": "high_state",
+      "type": "string",
+      "title": {
+        "en": "Above high threshold",
+        "nl": "Boven hoge drempel"
+      },
+      "example": "On, cool, 62°F, fan auto"
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=Sensibo"
+    }
+  ]
+}

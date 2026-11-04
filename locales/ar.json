@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "فشل في استرجاع الأجهزة.",
     "no_devices": "لم يتم العثور على أي أجهزة.",
-    "light_not_supported": "الإضاءة غير مدعومة لهذا الجهاز."
+    "light_not_supported": "الإضاءة غير مدعومة لهذا الجهاز.",
+    "climate_react_not_configured": "احفظ Climate React مرة واحدة في تطبيق Sensibo قبل تغييره من Homey."
   },
   "thermostat_mode": {
     "auto": "تلقائي",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "ثابت يسار ويمين",
     "rangeCenter": "تأرجح وسط",
     "rangeFull": "تأرجح كامل"
+  },
+  "flow": {
+    "unchanged": "- بدون تغيير -"
   }
 }

@@ -2,6 +2,7 @@
 
 const BaseDevice = require('../BaseDevice');
 const { randomDelay } = require('../../lib/util');
+const { climateReactTokens, climateReactFingerprint } = require('../../lib/climate-react');
 
 module.exports = class SensiboDevice extends BaseDevice {
   async onInit() {
@@ -98,9 +99,7 @@ module.exports = class SensiboDevice extends BaseDevice {
         await randomDelay(this.homey, 1, 3);
         const acStatesData = await this._sensibo.getAcStates();
         await this.onAcStatesReceived(acStatesData);
-        await randomDelay(this.homey, 2, 10);
-        const climateReactSettings = await this._sensibo.getClimateReactSettings();
-        await this.onClimateReactSettingsReceived(climateReactSettings);
+        // Climate React settings come with the app's shared poll (onDeviceInfoReceived)
         await this.ensureDeviceAvailable();
       }
     } catch (err) {
@@ -173,6 +172,19 @@ module.exports = class SensiboDevice extends BaseDevice {
         }
         this._lastClimateReact = result.enabled;
       }
+      await this.onClimateReactConfigReceived(result);
     }
+  }
+
+  async onClimateReactConfigReceived(config) {
+    const fingerprint = climateReactFingerprint(config);
+    if (this._lastClimateReactConfig !== undefined && this._lastClimateReactConfig !== fingerprint) {
+      const tokens = climateReactTokens(config, this.getTemperatureUnit());
+      this.homey.app._climateReactSettingsChangedTrigger
+        .trigger(this, tokens, {})
+        .then(() => this.log(`Climate React settings change triggered: ${this._sensibo.getDeviceId()}`, tokens))
+        .catch((err) => this.log('Error triggering Climate React settings change:', err));
+    }
+    this._lastClimateReactConfig = fingerprint;
   }
 };

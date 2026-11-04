@@ -1,0 +1,155 @@
+{
+  "id": "sensibo_cr_above",
+  "title": {
+    "en": "Set Climate React above high threshold",
+    "nl": "Climate React boven hoge drempel instellen"
+  },
+  "titleFormatted": {
+    "en": "When [[type]] rises above [[threshold]] turn AC [[on]] with mode [[mode]], fan level [[fanLevel]], swing [[swing]], horizontal swing [[horizontalSwing]] and target temperature [[targetTemperature]]",
+    "nl": "Als [[type]] boven [[threshold]] stijgt, zet AC [[on]] met modus [[mode]], ventilatorsnelheid [[fanLevel]], luchtstroom [[swing]], horizontale luchtstroom [[horizontalSwing]] en doeltemperatuur [[targetTemperature]]"
+  },
+  "hint": {
+    "en": "Changes one Climate React rule and keeps the other as it is. Temperatures are in the AC's unit (°C or °F), humidity in %. The trigger type applies to both rules. Climate React must have been saved once in the Sensibo app.",
+    "nl": "Wijzigt één Climate React-regel en laat de andere ongewijzigd. Temperaturen zijn in de eenheid van de AC (°C of °F), luchtvochtigheid in %. Het triggertype geldt voor beide regels. Climate React moet eenmaal in de Sensibo-app zijn opgeslagen."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=Sensibo"
+    },
+    {
+      "name": "type",
+      "type": "dropdown",
+      "title": {
+        "en": "Trigger",
+        "nl": "Trigger"
+      },
+      "values": [
+        {
+          "id": "temperature",
+          "label": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        },
+        {
+          "id": "humidity",
+          "label": {
+            "en": "Humidity",
+            "nl": "Luchtvochtigheid"
+          }
+        },
+        {
+          "id": "feelsLike",
+          "label": {
+            "en": "Feels like",
+            "nl": "Gevoelstemperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "min": -40,
+      "max": 120,
+      "step": 0.1,
+      "title": {
+        "en": "Threshold",
+        "nl": "Drempel"
+      },
+      "placeholder": {
+        "en": "°C, °F or %",
+        "nl": "°C, °F of %"
+      }
+    },
+    {
+      "name": "on",
+      "type": "dropdown",
+      "title": {
+        "en": "On / off",
+        "nl": "Aan / uit"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "nl": "Aan"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mode",
+      "type": "autocomplete",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "placeholder": {
+        "en": "Mode...",
+        "nl": "Modus..."
+      }
+    },
+    {
+      "name": "fanLevel",
+      "type": "autocomplete",
+      "title": {
+        "en": "Fan level",
+        "nl": "Ventilatorsnelheid"
+      },
+      "placeholder": {
+        "en": "Fan level...",
+        "nl": "Ventilatorsnelheid..."
+      }
+    },
+    {
+      "name": "swing",
+      "type": "autocomplete",
+      "title": {
+        "en": "Swing",
+        "nl": "Luchtstroom"
+      },
+      "placeholder": {
+        "en": "Swing...",
+        "nl": "Luchtstroom..."
+      }
+    },
+    {
+      "name": "horizontalSwing",
+      "type": "autocomplete",
+      "title": {
+        "en": "Horizontal swing",
+        "nl": "Horizontale luchtstroom"
+      },
+      "placeholder": {
+        "en": "Horizontal swing...",
+        "nl": "Horizontale luchtstroom..."
+      }
+    },
+    {
+      "name": "targetTemperature",
+      "type": "number",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "title": {
+        "en": "Target temperature",
+        "nl": "Doeltemperatuur"
+      },
+      "placeholder": {
+        "en": "°C or °F",
+        "nl": "°C of °F"
+      }
+    }
+  ]
+}

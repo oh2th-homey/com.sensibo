@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "Kunne ikke hente enheter.",
     "no_devices": "Ingen enheter ble funnet.",
-    "light_not_supported": "Lys støttes ikke for denne enheten."
+    "light_not_supported": "Lys støttes ikke for denne enheten.",
+    "climate_react_not_configured": "Lagre Climate React én gang i Sensibo-appen før du endrer det fra Homey."
   },
   "thermostat_mode": {
     "auto": "Automatisk",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "Fast venstre høyre",
     "rangeCenter": "Sveip midten",
     "rangeFull": "Sveip full"
+  },
+  "flow": {
+    "unchanged": "- Uendret -"
   }
 }

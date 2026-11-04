@@ -11,7 +11,8 @@
   "errors": {
     "failed_to_retrieve_devices": "Не удалось получить устройства.",
     "no_devices": "Устройства не найдены.",
-    "light_not_supported": "Подсветка не поддерживается для этого устройства."
+    "light_not_supported": "Подсветка не поддерживается для этого устройства.",
+    "climate_react_not_configured": "Сохраните Climate React один раз в приложении Sensibo, прежде чем изменять его из Homey."
   },
   "thermostat_mode": {
     "auto": "Автоматически",
@@ -55,5 +56,8 @@
     "fixedLeftRight": "Фиксировано слева и справа",
     "rangeCenter": "Качание центр",
     "rangeFull": "Качание полное"
+  },
+  "flow": {
+    "unchanged": "- Без изменений -"
   }
 }
