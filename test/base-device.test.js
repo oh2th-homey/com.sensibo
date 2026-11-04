@@ -14,7 +14,7 @@ Module._load = function loadWithHomeyStub(request, ...args) {
   return originalLoad.call(this, request, ...args);
 };
 const BaseDevice = require('../drivers/BaseDevice');
-// Lab Sky Plus, remote limited to stopped / full range swings
+// Lab Sensibo Air, remote limited to stopped / full range swings
 const labLimitedRemote = require('../samples/pods/skyplus-celsius-climate-react-resaved.json');
 
 Module._load = originalLoad;
@@ -177,7 +177,7 @@ test('device info without smartMode leaves Climate React alone', async () => {
 });
 
 test('Climate React rule cards offer what the remote supports, first the unchanged option', async () => {
-  // Lab Sky Plus with a remote limited to stopped / full range swings
+  // Lab Sensibo Air with a remote limited to stopped / full range swings
   const { remoteCapabilities } = labLimitedRemote.result;
   const sensibo = createClient();
   sensibo._remoteCapabilities = remoteCapabilities;

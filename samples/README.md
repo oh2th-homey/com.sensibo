@@ -14,14 +14,14 @@ Before adding a sample:
 - Replace personal data: user names, emails, MAC addresses (`00:00:00:00:00:<n>`), serial numbers (`<productModel>_serial`), QR ids, Wi-Fi SSIDs and locations.
 - Room names and room uids may stay.
 
-File names use the `productModel` value: `airq` is the Sensibo Air Pro, `skyplus` the Sky Plus.
+File names use the `productModel` value: `airq` is the Sensibo Air Pro, `skyplus` the Sensibo Air (basic).
 
 ## `users-me-pods/`: all devices of the account
 
 | File | Request | Notes |
 | --- | --- | --- |
 | `ids-only.json` | `GET /users/me/pods` | Without `fields` only the ids are returned |
-| `all-fields.json` | `GET /users/me/pods?fields=*` | Every field of all devices: Air Pro (`productModel: airq`), Sky Plus with a classic Room Sensor, Pure, Elements |
+| `all-fields.json` | `GET /users/me/pods?fields=*` | Every field of all devices: Air Pro (`productModel: airq`), Air (`skyplus`) with a classic Room Sensor, Pure, Elements |
 | `poll-item-ac-fahrenheit.json` | `GET /users/me/pods?fields=id,room,productModel,acState,measurements,motionSensors,timer,connectionStatus,filtersCleaning` | One device from the shared poll, AC in Fahrenheit: `acState.temperatureUnit` is `F` with `nativeTargetTemperature` in Celsius, measurements stay in Celsius |
 
 ## `pods/`: one device
@@ -35,7 +35,7 @@ All with `GET /pods/:device_id?fields=id,room,productModel,acState,measurements,
 | `skyplus-celsius-climate-react-in-fahrenheit.json` | The same AC switched back to Celsius: the Climate React rules keep their Fahrenheit targets, Sensibo does not convert them |
 | `skyplus-celsius-climate-react-resaved.json` | Climate React then saved again in the Sensibo app: both rules' targets converted to Celsius (79 °F → 26 °C, 61 °F → 16 °C, the same table as `toCelsius` in `lib/util.js`), thresholds unchanged |
 
-Primary sensor test on the lab Sky Plus (#45), with `GET /pods/:device_id?fields=mainMeasurementsSensor,measurements,motionSensors`:
+Primary sensor test on the lab Air (`skyplus`, #45), with `GET /pods/:device_id?fields=mainMeasurementsSensor,measurements,motionSensors`:
 
 | File | Notes |
 | --- | --- |
@@ -44,7 +44,7 @@ Primary sensor test on the lab Sky Plus (#45), with `GET /pods/:device_id?fields
 | `skyplus-primary-sensor-3-on-named.json` | First reading after the switch: the AC's own `measurements` still come from its built-in sensor (22.7 °C / 40.3 %), not from the primary Room Sensor (22.0 °C / 42.0 %). The sensor has been given a `name`; the Sensibo app shows `name`, or `qrId` when it is `null` |
 | `skyplus-primary-sensor-4-off-again.json` | Switched back to the AC's built-in sensor: `mainMeasurementsSensor` is `null` and `isMainSensor` is `false` again; the sensor keeps its name |
 
-State change test on the lab Sky Plus, with `GET /pods/:device_id?fields=lastStateChange,lastStateChangeToOn,lastStateChangeToOff,acState`:
+State change test on the lab Air (`skyplus`), with `GET /pods/:device_id?fields=lastStateChange,lastStateChangeToOn,lastStateChangeToOff,acState`:
 
 | File | Notes |
 | --- | --- |

@@ -40,7 +40,7 @@ test('a Room Sensor is named as the Sensibo app shows it', () => {
 });
 
 test('the primary Room Sensor is read from mainMeasurementsSensor', () => {
-  // Lab Sky Plus: Room Sensor not primary, primary without and with a fresh reading, back to the built-in sensor
+  // Lab Sensibo Air: Room Sensor not primary, primary without and with a fresh reading, back to the built-in sensor
   assert.deepStrictEqual(roomSensorState(unnamedSample.result), { hasRoomSensor: true, inUse: false, measurements: undefined });
   for (const sample of [primarySample, namedSample]) {
     const state = roomSensorState(sample.result);
