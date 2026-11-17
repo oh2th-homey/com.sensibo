@@ -227,6 +227,35 @@ test('an AC shows its primary Room Sensor and goes back to its own sensor', asyn
   }
 });
 
+test('measurements from the event stream update the values and leave the AC state and the timer alone', async () => {
+  const device = createInfoDevice(['measure_temperature', 'measure_humidity', 'target_temperature', 'se_onoff', 'alarm_filter']);
+  device.clearTimer = () => assert.fail('the timer must stay');
+  await device.onMeasurementsReceived({ productModel: 'skyplus', measurements: { temperature: 23.4, humidity: 51 } });
+  assert.strictEqual(device.caps.get('measure_temperature'), 23.4);
+  assert.strictEqual(device.caps.get('measure_humidity'), 51);
+  assert.strictEqual(device.caps.get('target_temperature'), null);
+  assert.strictEqual(device.caps.get('se_onoff'), null);
+  // An event without measurements changes nothing
+  await device.onMeasurementsReceived({ productModel: 'skyplus' });
+  assert.strictEqual(device.caps.get('measure_temperature'), 23.4);
+});
+
+test('with an open event stream the device polls its AC states slowly', async () => {
+  const device = createInfoDevice([]);
+  const timers = [];
+  let streamOpen = true;
+  device.getSettings = () => ({ Polling_Interval: 60 });
+  device.getApiKey = () => 'key';
+  device.homey.setTimeout = (fn, ms) => timers.push(ms);
+  device.homey.app = { isStreamOpen: () => streamOpen, streamPollInterval: 900 };
+  device.scheduleCheckData();
+  // The app asks for a read right after a change
+  device.scheduleCheckData(1);
+  streamOpen = false;
+  device.scheduleCheckData();
+  assert.deepStrictEqual(timers, [900000, 1000, 60000]);
+});
+
 test('Use Room Sensor is removed when the AC no longer has a Room Sensor', async () => {
   const device = createInfoDevice(['measure_temperature', 'se_use_roomsensor']);
   await device.onDeviceInfoReceived({ motionSensors: [], mainMeasurementsSensor: null, measurements: { temperature: 21 } });
