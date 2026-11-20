@@ -410,68 +410,7 @@ module.exports = class BaseDevice extends Homey.Device {
       if (roomSensor) {
         await this.updateRoomSensorCapability(roomSensor);
       }
-      if (result.measurements) {
-        // With a Room Sensor as the primary sensor, temperature and humidity come from it
-        const climate = roomSensor && roomSensor.measurements ? roomSensor.measurements : result.measurements;
-        await this.updateIfChanged('measure_temperature', climate.temperature);
-        await this.updateIfChanged('measure_humidity', climate.humidity);
-        if (result.measurements.batteryVoltage) {
-          if (result.productModel === 'motion_sensor') {
-            await this.updateIfChanged('measure_battery', util.batteryPercent(result.measurements.batteryVoltage));
-          }
-        }
-        if (result.measurements.co2) {
-          await this.updateIfChanged('measure_co2', result.measurements.co2);
-        }
-        if (result.measurements.tvoc) {
-          // Sensibo API returns TVOC in ppb, Homey expects µg/m³.
-          // Approximate conversion: 1 ppb ≈ 4.09 µg/m³ (approximation at 25°C, 1 atm)
-          await this.updateIfChanged('measure_tvoc', Math.round(result.measurements.tvoc * 4.09));
-        }
-        if (result.measurements.etoh) {
-          await this.updateIfChanged('measure_etoh', result.measurements.etoh);
-        }
-        if (result.measurements.iaq) {
-          await this.updateIfChanged('measure_iaq', result.measurements.iaq);
-        }
-        // PM2.5 is different for Pure (air_quality reference) and Elements (pm25 value)
-        if (result.measurements.pm25) {
-          if (result.productModel === 'pure') {
-            const level_aqi = util.LEVEL_AQI[result.measurements.pm25];
-            if (level_aqi) {
-              await this.updateIfChanged('level_aqi', level_aqi);
-            }
-          }
-          if (result.productModel === 'elements') {
-            await this.updateIfChanged('measure_pm25', result.measurements.pm25);
-          }
-        }
-        if (result.measurements.time) {
-          const lastSeen = new Date(result.measurements.time.time).toLocaleTimeString('POSIX', { hour12: false, timeZone: this.homey.clock.getTimezone() });
-
-          await this.updateIfChanged('se_last_seen_seconds', result.measurements.time.secondsAgo);
-          await this.updateIfChanged('se_last_seen', lastSeen);
-
-          const settings = await this.getSettings();
-          const limitOffline = settings.Delay_Offline || 300;
-
-          if (result.measurements.time.secondsAgo > limitOffline && !this._offlineTrigged) {
-            try {
-              await this.homey.app._offlineTrigger.trigger(
-                this,
-                {
-                  seconds_ago: result.measurements.time.secondsAgo,
-                  last_seen: lastSeen
-                },
-                {}
-              );
-              this._offlineTrigged = true;
-            } catch (error) {
-              this._offlineTrigged = false;
-            }
-          }
-        }
-      }
+      await this.onMeasurementsReceived(result);
       // Does the device have filters and their cleaning information.
       if (this.hasCapability('alarm_filter')) {
         // Update and trigger alarm_filter if changed.
@@ -495,6 +434,74 @@ module.exports = class BaseDevice extends Homey.Device {
       // Climate React comes with the shared poll, null when it has never been configured
       if (Object.hasOwn(result, 'smartMode') && this.onClimateReactSettingsReceived) {
         await this.onClimateReactSettingsReceived({ result: result.smartMode || {} });
+      }
+    }
+  }
+
+  // Measurements of the device, from the shared poll or from an event of the event stream
+  async onMeasurementsReceived(result) {
+    if (!result || !result.measurements) {
+      return;
+    }
+    const roomSensor = util.roomSensorState(result);
+    // With a Room Sensor as the primary sensor, temperature and humidity come from it
+    const climate = roomSensor && roomSensor.measurements ? roomSensor.measurements : result.measurements;
+    await this.updateIfChanged('measure_temperature', climate.temperature);
+    await this.updateIfChanged('measure_humidity', climate.humidity);
+    if (result.measurements.batteryVoltage) {
+      if (result.productModel === 'motion_sensor') {
+        await this.updateIfChanged('measure_battery', util.batteryPercent(result.measurements.batteryVoltage));
+      }
+    }
+    if (result.measurements.co2) {
+      await this.updateIfChanged('measure_co2', result.measurements.co2);
+    }
+    if (result.measurements.tvoc) {
+      // Sensibo API returns TVOC in ppb, Homey expects µg/m³.
+      // Approximate conversion: 1 ppb ≈ 4.09 µg/m³ (approximation at 25°C, 1 atm)
+      await this.updateIfChanged('measure_tvoc', Math.round(result.measurements.tvoc * 4.09));
+    }
+    if (result.measurements.etoh) {
+      await this.updateIfChanged('measure_etoh', result.measurements.etoh);
+    }
+    if (result.measurements.iaq) {
+      await this.updateIfChanged('measure_iaq', result.measurements.iaq);
+    }
+    // PM2.5 is different for Pure (air_quality reference) and Elements (pm25 value)
+    if (result.measurements.pm25) {
+      if (result.productModel === 'pure') {
+        const level_aqi = util.LEVEL_AQI[result.measurements.pm25];
+        if (level_aqi) {
+          await this.updateIfChanged('level_aqi', level_aqi);
+        }
+      }
+      if (result.productModel === 'elements') {
+        await this.updateIfChanged('measure_pm25', result.measurements.pm25);
+      }
+    }
+    if (result.measurements.time) {
+      const lastSeen = new Date(result.measurements.time.time).toLocaleTimeString('POSIX', { hour12: false, timeZone: this.homey.clock.getTimezone() });
+
+      await this.updateIfChanged('se_last_seen_seconds', result.measurements.time.secondsAgo);
+      await this.updateIfChanged('se_last_seen', lastSeen);
+
+      const settings = await this.getSettings();
+      const limitOffline = settings.Delay_Offline || 300;
+
+      if (result.measurements.time.secondsAgo > limitOffline && !this._offlineTrigged) {
+        try {
+          await this.homey.app._offlineTrigger.trigger(
+            this,
+            {
+              seconds_ago: result.measurements.time.secondsAgo,
+              last_seen: lastSeen
+            },
+            {}
+          );
+          this._offlineTrigged = true;
+        } catch (error) {
+          this._offlineTrigged = false;
+        }
       }
     }
   }
@@ -543,6 +550,10 @@ module.exports = class BaseDevice extends Homey.Device {
     if (!interval) {
       const settings = this.getSettings();
       interval = settings.Polling_Interval || 30;
+      // With an open event stream the app tells the device when its AC state changed
+      if (this.homey.app.isStreamOpen(this.getApiKey())) {
+        interval = Math.max(interval, this.homey.app.streamPollInterval);
+      }
     }
     this.curTimeout = this.homey.setTimeout(() => {
       this.checkData().catch((err) => this.log('checkData error', err));
